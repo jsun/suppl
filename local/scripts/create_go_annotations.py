@@ -44,7 +44,7 @@ def calc_go_levels(goterm, go, go_level):
         
         
 
-def proc_main(obofile, goslimfile, annfile, go2carhrfile, carhr2gofile):
+def proc_main(obofile, goslimfile, annfile, go2carhrfile):
     
     ## create ID mapping object for exchanging ID from TAIR to CARHR.
     tair2carhr = {}
@@ -68,6 +68,11 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile, carhr2gofile):
                 if buf_records[5] not in go2carhr:
                     go2carhr[buf_records[5]] = []
                 go2carhr[buf_records[5]].append(tair2carhr[buf_records[0]])
+    
+    
+    for goterm in go2carhr.keys():
+        go2carhr[goterm] = list(set(go2carhr[goterm]))
+    
    
     ## create GO object for calculating the levels
     go = {}
@@ -103,7 +108,6 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile, carhr2gofile):
         get_parental_goterms(goterm, go, del_targets)
     del_targets = list(set(del_targets))
     
-
     ## delete GO terms (consists of <10 or >500 genes) and parental temrs.
     go2carhr_filtered = {}
     carhr2go_filtered = {}
@@ -118,16 +122,26 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile, carhr2gofile):
                         carhr2go_filtered[gene].append(goterm)
     
     
+    ## delete GO terms (consists of <10 or >500 temrs)
+    #go2carhr_filtered = {}
+    #carhr2go_filtered = {}
+    #for goterm in go2carhr.keys():
+    #    if goterm in go:
+    #        if 10 < len(go2carhr[goterm]) and len(go2carhr[goterm]) < 500:
+    #                go2carhr_filtered[goterm] = go2carhr[goterm];
+                
+    
+    
     with open(go2carhrfile, 'w') as go2carhrfh:
         for goterm in go2carhr_filtered.keys():
             go2carhrfh.write(goterm + '\t')
-            go2carhrfh.write(';'.join(go2carhr_filtered[goterm]) + '\n')
+            go2carhrfh.write(';'.join(list(set(go2carhr_filtered[goterm]))) + '\n')
     
     
-    with open(carhr2gofile, 'w') as carhr2gofh:
-        for gene in carhr2go_filtered.keys():
-            carhr2gofh.write(gene + '\t')
-            carhr2gofh.write(';'.join(carhr2go_filtered[gene]) + '\n')
+    #with open(carhr2gofile, 'w') as carhr2gofh:
+    #    for gene in carhr2go_filtered.keys():
+    #        carhr2gofh.write(gene + '\t')
+    #        carhr2gofh.write(';'.join(list(set(carhr2go_filtered[gene]))) + '\n')
     
 
 
@@ -139,8 +153,7 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--goslim', required = True)
     parser.add_argument('-a', '--ann', required = True)
     parser.add_argument('-j', '--go2carhr', required = True)
-    parser.add_argument('-k', '--carhr2go', required = True)
     args = parser.parse_args()
     
-    proc_main(args.obo, args.goslim, args.ann, args.go2carhr, args.carhr2go)
+    proc_main(args.obo, args.goslim, args.ann, args.go2carhr)
     
