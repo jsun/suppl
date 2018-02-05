@@ -69,7 +69,6 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile):
                     go2carhr[buf_records[5]] = []
                 go2carhr[buf_records[5]].append(tair2carhr[buf_records[0]])
     
-    
     for goterm in go2carhr.keys():
         go2carhr[goterm] = list(set(go2carhr[goterm]))
     
@@ -93,11 +92,11 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile):
                     go[go_term].append(buf[6:16])
     
     
-    ## delete GO terms higher at 1-4 levels.
+    ## delete GO terms higher at 1-3 levels.
     go_under4 = {}
     for goterm in go.keys():
         goterm_lower_level = max(extend_list(calc_go_levels(goterm, go, go_level = 1)))
-        if goterm_lower_level > 4:
+        if goterm_lower_level > 3:
             go_under4[goterm] = go[goterm]
     go = go_under4
     
@@ -109,26 +108,26 @@ def proc_main(obofile, goslimfile, annfile, go2carhrfile):
     del_targets = list(set(del_targets))
     
     ## delete GO terms (consists of <10 or >500 genes) and parental temrs.
-    go2carhr_filtered = {}
-    carhr2go_filtered = {}
-    for goterm in go2carhr.keys():
-        if goterm in go:
-            if 10 < len(go2carhr[goterm]) and len(go2carhr[goterm]) < 500:
-                if goterm not in del_targets:
-                    go2carhr_filtered[goterm] = go2carhr[goterm]
-                    for gene in go2carhr_filtered[goterm]:
-                        if gene not in carhr2go_filtered:
-                            carhr2go_filtered[gene] = []
-                        carhr2go_filtered[gene].append(goterm)
-    
-    
-    ## delete GO terms (consists of <10 or >500 temrs)
     #go2carhr_filtered = {}
     #carhr2go_filtered = {}
     #for goterm in go2carhr.keys():
     #    if goterm in go:
     #        if 10 < len(go2carhr[goterm]) and len(go2carhr[goterm]) < 500:
-    #                go2carhr_filtered[goterm] = go2carhr[goterm];
+    #            if goterm not in del_targets:
+    #                go2carhr_filtered[goterm] = go2carhr[goterm]
+    #                for gene in go2carhr_filtered[goterm]:
+    #                    if gene not in carhr2go_filtered:
+    #                        carhr2go_filtered[gene] = []
+    #                    carhr2go_filtered[gene].append(goterm)
+    
+    
+    ## delete GO terms (consists of <10 or >500 temrs)
+    go2carhr_filtered = {}
+    carhr2go_filtered = {}
+    for goterm in go2carhr.keys():
+        if goterm in go:
+            if 10 < len(go2carhr[goterm]) and len(go2carhr[goterm]) < 500:
+                    go2carhr_filtered[goterm] = go2carhr[goterm];
                 
     
     

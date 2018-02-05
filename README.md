@@ -71,8 +71,26 @@ cd data_analysis/
 bash create_go_annotations.sh
 ```
 
+Move mapping and counting results form `rnaseq_processing` to `data_analysis` directory.
+
+```
+mv rnaseq_processing/counts/results/counts data_analysis/data/
+```
+
+Then, calculate exons length for each gene to calculate FPKM.
 
 
+```
+cd data_analysis/lib/src
+python ${SCRIPTDIR}/calc_exons_length.py --gffa ${GENOMELEAFDIR}/camara/genome.modified.gff \
+                                         --gffr ${GENOMELEAFDIR}/crivularis/genome.modified.gff \
+                                         --output gene_length.tsv
+
+python ${SCRIPTDIR}/create_gene_chr_list.py --gff ${GENOMELEAFDIR}/camara/genome.modified.gff > gene_chr.txt
+
+```
+
+Then, use the `main_analysis.R` to perform gene expression analysis.
 
 
 
