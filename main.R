@@ -235,8 +235,11 @@ doEdgeR <- function(x, g, fdr.cutoff, figname) {
     plotSmear(dds, de.tags  = rownames(df)[df$FDR < fdr.cutoff])
     dev.off()
     df <- data.frame(gene = rownames(df), BindTairName(df))
+    df <- data.frame(CarID = rownames(df), ATID = df$TAIR, Symbols = df$name, Description = df$description, log2Ratio = df$logFC, FDR = df$FDR)
     df
 }
+
+
 
 
 
@@ -266,6 +269,8 @@ for (i in 1:length(TAIR2CARHR)) {
 
 
 
+
+
 .gettairs <- read.table('./zurich/car2tair_rbh_obh_20180423/chir2atid_rbh_obh_20160711/results/rbh_chir2tair/carhr2tair.txt', sep = '\t', stringsAsFactors = F)
 .getcarhrs <- read.table('./zurich/car2tair_rbh_obh_20180423/chir2atid_rbh_obh_20160711/results/rbh_chir2tair/tair2carhr.txt', sep = '\t', stringsAsFactors = F)
 .carhr2tarivec <- .gettairs[, 2]
@@ -290,7 +295,32 @@ getCARHRs <- function(x) {
 }
 
 
+CARHR2TAIR <- .gettairs[, 2]
+names(CARHR2TAIR) <- .gettairs[, 1]
+TAIR2CARHR <- .getcarhrs[, 2]
+names(TAIR2CARHR) <- .getcarhrs[, 1]
 
+
+.x <- read.table('./data/gene_aliases_20140331.txt.adjusted', sep = '\t')
+TAIR2NAME <- .x[, 2]
+TAIR2DESC <- .x[, 3]
+names(TAIR2NAME) <- names(TAIR2DESC) <- .x[, 1]
+
+CARHR2SYMBOL <- TAIR2NAME[CARHR2TAIR]
+CARHR2DESC   <- TAIR2DESC[CARHR2TAIR]
+names(CARHR2SYMBOL) <- names(CARHR2DESC) <- names(CARHR2TAIR)
+
+for (.i in names(CARHR2DESC)) {
+    if (!is.na(CARHR2DESC[[.i]]) && CARHR2DESC[[.i]] == 'NA') {
+        CARHR2DESC[[.i]] <- NA
+    }
+}
+for (.i in names(CARHR2SYMBOL)) {
+    if (!is.na(CARHR2SYMBOL[[.i]]) && CARHR2SYMBOL[[.i]] == 'NA') {
+        CARHR2SYMBOL[[.i]] <- NA
+    }
+}
+CARHR2NAME <- CARHR2SYMBOL
 
 
 
@@ -316,7 +346,8 @@ getCARHRs <- function(x) {
 #}
 
 
-geneID2GO <- readMappings('topgo/AT_GO_all_subset.txt2')
+geneID2GO <- readMappings('data/AT_GO_all.txt')
+#geneID2GO <- readMappings('topgo/AT_GO_all_subset.txt2')
 #geneID2GO <- readMappings('topgo/AT_GO_all_subset.txt.20180605')
 #.x <- read.table('topgo/chi_m25.txt.adjusted')
 #carhrID2tairID <- as.character(.x[, 2])
@@ -324,12 +355,14 @@ geneID2GO <- readMappings('topgo/AT_GO_all_subset.txt2')
 #tairID2carhrID <- as.character(.x[, 1])
 #names(tairID2carhrID) <- as.character(.x[, 2])
 #rm(.x)
- 
+
+.annotatedTairs <- read.table('data/go.num.txt', sep = '\t')
+annotatedTairs <- .annotatedTairs[, 2]
+names(annotatedTairs) <- .annotatedTairs[, 1]
+
 doTopGO <- function(allgene, siggene) {
-    #allgene.tair <- as.character(CARHR2TAIR[allgene])
-    #siggene.tair <- as.character(CARHR2TAIR[siggene])
-    #allgene.tair <- allgene.tair[!is.na(allgene.tair)]
-    #siggene.tair <- siggene.tair[!is.na(siggene.tair)]
+    allgene <- as.character(allgene)
+    siggene <- as.character(siggene)
     allgene.tair <- getTAIRs(allgene)
     siggene.tair <- getTAIRs(siggene)
     allgene.f <- as.numeric(allgene.tair %in% siggene.tair)
@@ -340,13 +373,14 @@ doTopGO <- function(allgene, siggene) {
     #classic_fisher <- runTest(topgo.obj, algorithm = "classic", statistic = "fisher")
     elim_fisher    <- runTest(topgo.obj, algorithm = "elim", statistic = "fisher")
     #weight01_fisher  <- runTest(topgo.obj, algorithm = "weight01", statistic = "fisher")
-    topgotable  <- GenTable(topgo.obj,
+    topgotable  <- GenTable(topgo.obj, numChar = 200,
                             # classicFisher = classic_fisher,
                             elimFisher = elim_fisher,
                             #weight01 = weight01_fisher,
                             orderBy = "elimFisher", ranksOf = "classicFisher", topNodes = 600)
     topgotable <- topgotable[topgotable[, 3] > 10, ]
     topgotable <- topgotable[topgotable[, 3] < 500, ]
+    topgotable <- data.frame(topgotable, TAIR10annotated = annotatedTairs[topgotable[, 1]])
     topgotable
 }
 
@@ -411,6 +445,7 @@ barplotExp <- function(interesth, fig.prefix = 'test') {
 
 ak.deg <- function(D) {
     fDEG <- aDEG <- hDEG <- NULL
+    fDEGat <- aDEGat <- hDEGat <- NULL
     fdr.cutoff <- 0.05
     
     # DEG for amara
@@ -423,30 +458,37 @@ ak.deg <- function(D) {
 
     # DEG for flexuosa
     for (dt in c('0418', '0502', '0516')) {
-        fdeg <- NULL
+        fdeg <- fdegat <- NULL
         .f <- f[, grep(dt, colnames(f))]
         # ir x sl
         .f1 <- .f[, grep('IR1|KT2', colnames(.f))]
         .l1 <- sapply(strsplit(colnames(.f1), '_'), function(x) {x[[1]]})
         fdeg[['KT2_IR1']] <- doEdgeR(.f1, .l1, fdr.cutoff, paste0('flexall_KT2_vs_IR1_', dt))
+        fdegat[['KT2_IR1']] <- fdeg[['KT2_IR1']][(fdeg[['KT2_IR1']][, 1] %in% names(CARHR2TAIR)), ]
         # ir x br
         .f2 <- .f[, grep('IR1|KT5', colnames(.f))]
         .l2 <- sapply(strsplit(colnames(.f2), '_'), function(x) {x[[1]]})
         fdeg[['KT5_IR1']] <- doEdgeR(.f2, .l2, fdr.cutoff, paste0('flexall_KT5_vs_IR1_', dt))
+        fdegat[['KT5_IR1']] <- fdeg[['KT5_IR1']][(fdeg[['KT5_IR1']][, 1] %in% names(CARHR2TAIR)), ]
         # sl x br
         .f3 <- .f[, grep('KT2|KT5', colnames(.f))]
         .l3 <- sapply(strsplit(colnames(.f3), '_'), function(x) {x[[1]]})
         fdeg[['KT5_KT2']] <- doEdgeR(.f3, .l3, fdr.cutoff, paste0('flexall_KT5_KT2_', dt))
+        fdegat[['KT5_KT2']] <- fdeg[['KT5_KT2']][(fdeg[['KT5_KT2']][, 1] %in% names(CARHR2TAIR)), ]
         fDEG[[dt]] <- fdeg
+        fDEGat[[dt]] <- fdegat
     }
-    fDEG2 <- NULL
+    fDEG2 <- fDEG2at <- NULL
     for (nm1 in names(fDEG)) {
         for (nm2 in names(fDEG[[nm1]])) {
-            print(paste0(nm1, ' ', nm2, ' ', sum(fDEG[[nm1]][[nm2]]$FDR < fdr.cutoff)))
+            print(paste0(nm1, ' ', nm2, ' ', sum(fDEG[[nm1]][[nm2]]$FDR < fdr.cutoff),
+                         '  AT:', sum(fDEGat[[nm1]][[nm2]]$FDR < fdr.cutoff)))
             fDEG2[[paste0(nm1, '_', nm2)]] <- fDEG[[nm1]][[nm2]]
+            fDEG2at[[paste0(nm1, '_', nm2)]] <- fDEGat[[nm1]][[nm2]]
         }
     }
     WriteExcel(fDEG2, file = 'result/DEG.xlsx')
+    WriteExcel(fDEG2, file = 'result/DEG.AT.xlsx')
     
     
     # topGO
@@ -455,8 +497,8 @@ ak.deg <- function(D) {
     for (dt in names(fDEG)) {
         for (cp in names(fDEG[[dt]])) {
             degtable <- fDEG[[dt]][[cp]]
-            allgene <- rownames(degtable)
-            siggene <- rownames(degtable)[degtable$FDR < fdr.cutoff]
+            allgene <- degtable$CarID
+            siggene <- degtable$CarID[degtable$FDR < fdr.cutoff]
             fDEGGO[[dt]][[cp]] <- doTopGO(allgene, siggene)
             fDEGGO2[[paste0(dt, '_', cp)]] <- fDEGGO[[dt]][[cp]]
         }
@@ -503,18 +545,18 @@ ak.deg <- function(D) {
     rsheat.carhr <- .getGOGene('0009408')
     
     for (dt in names(fDEG)) {
-        v <- list(KT2_IR1 = intersect(rownames(fDEG[[dt]][['KT2_IR1']])[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
-                  KT5_IR1 = intersect(rownames(fDEG[[dt]][['KT5_IR1']])[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
-                  KT5_KT2 = intersect(rownames(fDEG[[dt]][['KT5_KT2']])[fDEG[[dt]][['KT5_KT2']]$FDR < fdr.cutoff], watdep.carhr))
+        v <- list(KT2_IR1 = intersect(fDEG[[dt]][['KT2_IR1']]$CarID[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
+                  KT5_IR1 = intersect(fDEG[[dt]][['KT5_IR1']]$CarID[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
+                  KT5_KT2 = intersect(fDEG[[dt]][['KT5_KT2']]$CarID[fDEG[[dt]][['KT5_KT2']]$FDR < fdr.cutoff], watdep.carhr))
         png(paste0('fig/venn-date-', dt, '.png'), 500, 500)
         venn(v)
         dev.off()
     }
      
     for (cp in names(fDEG[[1]])) {
-        v <- list(d0418 = intersect(rownames(fDEG[['0418']][[cp]])[fDEG[['0418']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
-                  d0502 = intersect(rownames(fDEG[['0502']][[cp]])[fDEG[['0502']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
-                  d0516 = intersect(rownames(fDEG[['0516']][[cp]])[fDEG[['0516']][[cp]]$FDR < fdr.cutoff], watdep.carhr))
+        v <- list(d0418 = intersect(fDEG[['0418']][[cp]]$CarID[fDEG[['0418']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
+                  d0502 = intersect(fDEG[['0502']][[cp]]$CarID[fDEG[['0502']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
+                  d0516 = intersect(fDEG[['0516']][[cp]]$CarID[fDEG[['0516']][[cp]]$FDR < fdr.cutoff], watdep.carhr))
         png(paste0('fig/venn-site-', cp, '.png'), 500, 500)
         venn(v)
         dev.off()
@@ -534,42 +576,40 @@ ak.deg <- function(D) {
     .kt5.ama   <- a[, grep('KT5_A_0502', colnames(a))]
     
     zpDEG <- doEdgeR(cbind(.ir1.hir, .kt5.ama), c(rep('IRI-H', 3), rep('KT5-A', 3)), fdr.cutoff, 'IR1-H_KT5-A')
-    zpdeg.allgene <- rownames(zpDEG)
-    zpdeg.siggene <- rownames(zpDEG)[zpDEG$FDR < fdr.cutoff]
-    zpdeg.siggeneup <- rownames(zpDEG)[zpDEG$FDR < fdr.cutoff & zpDEG$logFC > 0]
-    zpdeg.siggenedw <- rownames(zpDEG)[zpDEG$FDR < fdr.cutoff & zpDEG$logFC < 0]
+    zpdeg.allgene <- zpDEG$CarID
+    zpdeg.siggene <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff]
+    zpdeg.siggeneup <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff & zpDEG$log2Ratio > 0]
+    zpdeg.siggenedw <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff & zpDEG$log2Ratio < 0]
     zpDEGGO <- doTopGO(zpdeg.allgene, zpdeg.siggene)
     zpDEGGOup <- doTopGO(zpdeg.allgene, zpdeg.siggeneup)
     zpDEGGOdw <- doTopGO(zpdeg.allgene, zpdeg.siggenedw)
-    WriteExcel(list(DEG = zpDEG, GO = zpDEGGO, GO_A_highexp = zpDEGGOup, GO_H_highexp = zpDEGGOdw),
+    WriteExcel(list(DEG = zpDEG, DEGAT = zpDEG[(zpDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zpDEGGO, GO_A_highexp = zpDEGGOup, GO_H_highexp = zpDEGGOdw),
                     file = 'result/0502_ama_hir_deg.xlsx')
-    
-    zpDEG.watdep <- intersect(zpdeg.siggene, watdep.carhr)
+    zpDEG.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
     barplotExp(zpDEG.watdep, '0502ama_hir_DEG_waterdeprivation')
-    zpDEG.rscold <- intersect(zpdeg.siggene, rscold.carhr)
+    zpDEG.rscold <- intersect(as.character(zpdeg.siggene), as.character(rscold.carhr))
     barplotExp(zpDEG.rscold, '0502ama_hir_DEG_responsetocold')
-    zpDEG.rsheat <- intersect(zpdeg.siggene, rsheat.carhr)
+    zpDEG.rsheat <- intersect(as.character(zpdeg.siggene), as.character(rsheat.carhr))
     barplotExp(zpDEG.rsheat, '0502ama_hir_DEG_responsetoheat')
     
     
     ziDEG <- fDEG[['0502']][['KT5_IR1']]
-    zideg.allgene <- rownames(ziDEG)
-    zideg.siggene <- rownames(ziDEG)[ziDEG$FDR < fdr.cutoff]
-    zideg.siggeneup <- rownames(ziDEG)[ziDEG$FDR < fdr.cutoff & ziDEG$logFC > 0]
-    zideg.siggenedw <- rownames(ziDEG)[ziDEG$FDR < fdr.cutoff & ziDEG$logFC < 0]
+    zideg.allgene <- ziDEG$CarID
+    zideg.siggene <- ziDEG$CarID[ziDEG$FDR < fdr.cutoff]
+    zideg.siggeneup <- ziDEG$CarID[ziDEG$FDR < fdr.cutoff & ziDEG$log2Ratio > 0]
+    zideg.siggenedw <- ziDEG$CarID[ziDEG$FDR < fdr.cutoff & ziDEG$log2Ratio < 0]
     ziDEGGO <- doTopGO(zideg.allgene, zideg.siggene)
     ziDEGGOup <- doTopGO(zideg.allgene, zideg.siggeneup)
     ziDEGGOdw <- doTopGO(zideg.allgene, zideg.siggenedw)
-    WriteExcel(list(DEG = ziDEG, GO = ziDEGGO, GO_KT5_highexp = ziDEGGOup, GO_IR1_highexp = ziDEGGOdw),
+    WriteExcel(list(DEG = ziDEG, DEGAT = ziDEG[(ziDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = ziDEGGO, GO_KT5_highexp = ziDEGGOup, GO_IR1_highexp = ziDEGGOdw),
                     file = 'result/0502_flexall_flexall_deg.xlsx')
  
-
-    sdd <- intersect(intersect(zideg.siggene, zpdeg.siggene), watdep.carhr)
+    sdd <- intersect(intersect(as.character(zideg.siggene), as.character(zpdeg.siggene)), as.character(watdep.carhr))
     barplotExp(sdd, '0502shared_water_deprivation')
     
     
-    
-        
     zfDEG[['IR1-H_IR1-F']] <- doEdgeR(cbind(.ir1.hir, .ir1.flex), c(rep('IR1-H', 3), rep('IR1-F', 3)), fdr.cutoff, 'IR1-H_IR1-F')
     zfDEG[['IR1-H_KT5-F']] <- doEdgeR(cbind(.ir1.hir, .kt5.flex), c(rep('IR1-H', 3), rep('KT5-F', 3)), fdr.cutoff, 'IR1-H_KT5-F')
     zfDEG[['KT5-A_KT5-F']] <- doEdgeR(cbind(.kt5.ama, .kt5.flex), c(rep('KT5-A', 3), rep('KT5-F', 3)), fdr.cutoff, 'KT5-A_KT5-F')
@@ -636,15 +676,26 @@ ak.deg <- function(D) {
     # goto homeoroq_tmp directory and run the shell.
     # run.calcpval.1.sh
     # run.calcpval.2.sh
-    fRT <- NULL
+    fRT <- fRTtb <- fRTat <- NULL
     for (dname in list.dirs('homeoroq_tmp')) {
         if (dname == 'homeoroq_tmp') {next}
         x <- read.table(paste0(dname, '/result.txt'), header = TRUE)
         x <- data.frame(x, sigGene = as.numeric(x$ratioSD < 0.3 & x$padj < fdr.cutoff))
+        y <- x[, c('gene', 'padj', 'ratioSD', 'sigGene')]
+        rownames(x) <- x[, 1]
+        rownames(y) <- y[, 1]
+        x <- BindTairName(x)
+        y <- BindTairName(y)
+        print(paste0(dname, ' ', sum(x$sigGene),
+                     '  AT:', sum(x[x$gene %in% names(CARHR2TAIR), ]$sigGene)))
+        x <- x[order(-x$sigGene), ]
+        y <- y[order(-y$sigGene), ]
         fRT[[strsplit(dname, '/')[[1]][2]]] <- x
-        print(paste0(dname, ' ', sum(x$sigGene)))
+        fRTtb[[strsplit(dname, '/')[[1]][2]]] <- y
+        fRTat[[strsplit(dname, '/')[[1]][2]]] <- y[y$gene %in% names(CARHR2TAIR), ]
     }
-    WriteExcel(fRT, file = 'result/RatioDiffGene.xlsx')
+    WriteExcel(fRTtb, file = 'result/RatioDiffGene.xlsx')
+    WriteExcel(fRTat, file = 'result/RatioDiffGeneAT.xlsx')
 
     # topGO
     fRTGO <- fRT
