@@ -11,6 +11,7 @@ library(reshape2)
 library(openxlsx)
 library(gplots)
 library(RColorBrewer)
+library(eulerr)
 
 FIG_PATH <- '~/research/cardamine3/fig'
 
@@ -234,8 +235,8 @@ doEdgeR <- function(x, g, fdr.cutoff, figname) {
     png(paste0('fig/', figname, '.png'), 500, 400)
     plotSmear(dds, de.tags  = rownames(df)[df$FDR < fdr.cutoff])
     dev.off()
-    df <- data.frame(gene = rownames(df), BindTairName(df))
-    df <- data.frame(CarID = rownames(df), ATID = df$TAIR, Symbols = df$name, Description = df$description, log2Ratio = df$logFC, FDR = df$FDR)
+    df <- data.frame(gene = as.character(rownames(df)), BindTairName(df))
+    df <- data.frame(CarID = as.character(rownames(df)), ATID = df$TAIR, Symbols = df$name, Description = df$description, log2Ratio = df$logFC, FDR = df$FDR)
     df
 }
 
@@ -488,7 +489,7 @@ ak.deg <- function(D) {
         }
     }
     WriteExcel(fDEG2, file = 'result/DEG.xlsx')
-    WriteExcel(fDEG2, file = 'result/DEG.AT.xlsx')
+    WriteExcel(fDEG2at, file = 'result/DEG.AT.xlsx')
     
     
     # topGO
@@ -544,28 +545,67 @@ ak.deg <- function(D) {
     rscold.carhr <- .getGOGene('0009409')
     rsheat.carhr <- .getGOGene('0009408')
     
+    vk <- NULL
     for (dt in names(fDEG)) {
-        v <- list(KT2_IR1 = intersect(fDEG[[dt]][['KT2_IR1']]$CarID[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
+        v <- list(KT2_IR1 = intersect(fDEG[[dt]][['KT2_IR1']]$CarID[fDEG[[dt]][['KT2_IR1']]$FDR < fdr.cutoff], watdep.carhr),
                   KT5_IR1 = intersect(fDEG[[dt]][['KT5_IR1']]$CarID[fDEG[[dt]][['KT5_IR1']]$FDR < fdr.cutoff], watdep.carhr),
                   KT5_KT2 = intersect(fDEG[[dt]][['KT5_KT2']]$CarID[fDEG[[dt]][['KT5_KT2']]$FDR < fdr.cutoff], watdep.carhr))
-        png(paste0('fig/venn-date-', dt, '.png'), 500, 500)
-        venn(v)
-        dev.off()
+		vuq <- unique(unlist(v))
+		vdf <- matrix(FALSE, ncol = 3, nrow = length(vuq))
+		rownames(vdf) <- vuq
+		colnames(vdf) <- c('KT2_IR1', 'KT5_IR1', 'KT5_KT2')
+		vdf[v[['KT2_IR1']], 'KT2_IR1'] <- TRUE
+		vdf[v[['KT5_IR1']], 'KT5_IR1'] <- TRUE
+		vdf[v[['KT5_KT2']], 'KT5_KT2'] <- TRUE
+		fit <- euler(vdf)
+        png(paste0('fig/vennDEG-date-', dt, '.png'), 500, 500)
+		print(plot(fit, quantities = F, lty = 1, shape = 'ellipse', labels = F,
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+        png(paste0('fig/vennDEG-date-', dt, '.labeled.png'), 500, 500)
+		print(plot(fit, quantities = list(cex = 1.9), lty = 1, shape = 'ellipse',
+			 labels = list(cex = 1.4), 
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
     }
-     
+	
+	
+    vs <- NULL
     for (cp in names(fDEG[[1]])) {
         v <- list(d0418 = intersect(fDEG[['0418']][[cp]]$CarID[fDEG[['0418']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
                   d0502 = intersect(fDEG[['0502']][[cp]]$CarID[fDEG[['0502']][[cp]]$FDR < fdr.cutoff], watdep.carhr),
                   d0516 = intersect(fDEG[['0516']][[cp]]$CarID[fDEG[['0516']][[cp]]$FDR < fdr.cutoff], watdep.carhr))
-        png(paste0('fig/venn-site-', cp, '.png'), 500, 500)
-        venn(v)
-        dev.off()
+		vuq <- unique(unlist(v))
+		vdf <- matrix(FALSE, ncol = 3, nrow = length(vuq))
+		rownames(vdf) <- vuq
+		colnames(vdf) <- c('0418', '0502', '0516')
+		vdf[v[['d0418']], '0418'] <- TRUE
+		vdf[v[['d0502']], '0502'] <- TRUE
+		vdf[v[['d0516']], '0516'] <- TRUE
+		fit <- euler(vdf)
+        png(paste0('fig/vennDEG-site-', cp, '.png'), 500, 500)
+		print(plot(fit, quantities = F, lty = 1, shape = 'ellipse', labels = F,
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+        png(paste0('fig/vennDEG-site-', cp, '.labeled.png'), 500, 500)
+		print(plot(fit, quantities = list(cex = 1.9), lty = 1, shape = 'ellipse',
+			 labels = list(cex = 1.4), 
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
     }
     
- 
-    
+    interestd <- NULL
+    for (nm1 in names(fDEG)) {
+        for (nm2 in names(fDEG[[nm1]])) {
+            interestd <- c(interestd, intersect(fDEG[[nm1]][[nm2]]$CarID[fDEG[[nm1]][[nm2]]$FDR < fdr.cutoff], watdep.carhr))
+        }
+    }
+    interestd <- unique(interestd)
+    barplotExp(interestd, 'flexuosa_DEG_waterdeprivation')
+    WriteExcel(list(Sheet1 = BindTairName(interestd)), './result/flexuosa_DEG_waterdeprivation.xlsx')
+
+
     # 0502
-    zaDEG <- zhDEG <- zfDEG <- NULL
     .ir1.hir   <- h[, grep('IR1_H_0502', colnames(h))]
     .ir1.flex  <- f[, grep('IR1_F_0502', colnames(f))]
     .ir1.flexa <- fA[, grep('IR1_F_0502', colnames(fA))]
@@ -575,6 +615,7 @@ ak.deg <- function(D) {
     .kt5.flexh <- fH[, grep('KT5_F_0502', colnames(fH))]
     .kt5.ama   <- a[, grep('KT5_A_0502', colnames(a))]
     
+    # amara vs hirsuta // KT5 vs IR1, 0502
     zpDEG <- doEdgeR(cbind(.ir1.hir, .kt5.ama), c(rep('IRI-H', 3), rep('KT5-A', 3)), fdr.cutoff, 'IR1-H_KT5-A')
     zpdeg.allgene <- zpDEG$CarID
     zpdeg.siggene <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff]
@@ -585,14 +626,41 @@ ak.deg <- function(D) {
     zpDEGGOdw <- doTopGO(zpdeg.allgene, zpdeg.siggenedw)
     WriteExcel(list(DEG = zpDEG, DEGAT = zpDEG[(zpDEG$CarID %in% names(CARHR2TAIR)), ],
                     GO = zpDEGGO, GO_A_highexp = zpDEGGOup, GO_H_highexp = zpDEGGOdw),
-                    file = 'result/0502_ama_hir_deg.xlsx')
+                    file = 'result/amara0502_hirsuta0502_DEG.xlsx')
     zpDEG.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
-    barplotExp(zpDEG.watdep, '0502ama_hir_DEG_waterdeprivation')
+    barplotExp(zpDEG.watdep, 'amara0502_vs_hirsuta0502_waterdeprivation')
     zpDEG.rscold <- intersect(as.character(zpdeg.siggene), as.character(rscold.carhr))
-    barplotExp(zpDEG.rscold, '0502ama_hir_DEG_responsetocold')
+    barplotExp(zpDEG.rscold, 'amara0502_vs_hirsuta0502_responsetocold')
     zpDEG.rsheat <- intersect(as.character(zpdeg.siggene), as.character(rsheat.carhr))
-    barplotExp(zpDEG.rsheat, '0502ama_hir_DEG_responsetoheat')
-    
+    barplotExp(zpDEG.rsheat, 'amara0502_vs_hirsuta0502_responsetoheat')
+
+    # flexuoasa vs hirsuta // IR1, 0502
+    zhDEG <- doEdgeR(cbind(.ir1.flex, .ir1.hir), c(rep('IR1-F', 3), rep('IR1-H', 3)), fdr.cutoff, 'IR1-F_IR1-H')
+    zhdeg.allgene <- zhDEG$CarID
+    zhdeg.siggene <- zhDEG$CarID[zhDEG$FDR < fdr.cutoff]
+    zhdeg.siggeneup <- zhDEG$CarID[zhDEG$FDR < fdr.cutoff & zhDEG$log2Ratio > 0]
+    zhdeg.siggenedw <- zhDEG$CarID[zhDEG$FDR < fdr.cutoff & zhDEG$log2Ratio < 0]
+    zhDEGGO <- doTopGO(zhdeg.allgene, zhdeg.siggene)
+    zhDEGGOup <- doTopGO(zhdeg.allgene, zhdeg.siggeneup)
+    zhDEGGOdw <- doTopGO(zhdeg.allgene, zhdeg.siggenedw)
+    WriteExcel(list(DEG = zhDEG, DEGAT = zhDEG[(zhDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zhDEGGO, GO_H_highexp = zhDEGGOup, GO_F_highexp = zhDEGGOdw),
+                    file = 'result/flexuosa0502IR1_hirsuta0502IR1_DEG.xlsx')
+
+
+    # flexuoasa vs amara // KT5, 0502
+    zaDEG <- doEdgeR(cbind(.kt5.flex, .kt5.ama), c(rep('KT5-F', 3), rep('KT5-A', 3)), fdr.cutoff, 'KT5-F_KT5-A')
+    zadeg.allgene <- zaDEG$CarID
+    zadeg.siggene <- zaDEG$CarID[zaDEG$FDR < fdr.cutoff]
+    zadeg.siggeneup <- zaDEG$CarID[zaDEG$FDR < fdr.cutoff & zaDEG$log2Ratio > 0]
+    zadeg.siggenedw <- zaDEG$CarID[zaDEG$FDR < fdr.cutoff & zaDEG$log2Ratio < 0]
+    zaDEGGO <- doTopGO(zadeg.allgene, zadeg.siggene)
+    zaDEGGOup <- doTopGO(zadeg.allgene, zadeg.siggeneup)
+    zaDEGGOdw <- doTopGO(zadeg.allgene, zadeg.siggenedw)
+    WriteExcel(list(DEG = zaDEG, DEGAT = zaDEG[(zaDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zaDEGGO, GO_H_highexp = zaDEGGOup, GO_A_highexp = zaDEGGOdw),
+                    file = 'result/flexuosa0502KT5_amara0502KT5_DEG.xlsx')
+
     
     ziDEG <- fDEG[['0502']][['KT5_IR1']]
     zideg.allgene <- ziDEG$CarID
@@ -604,33 +672,14 @@ ak.deg <- function(D) {
     ziDEGGOdw <- doTopGO(zideg.allgene, zideg.siggenedw)
     WriteExcel(list(DEG = ziDEG, DEGAT = ziDEG[(ziDEG$CarID %in% names(CARHR2TAIR)), ],
                     GO = ziDEGGO, GO_KT5_highexp = ziDEGGOup, GO_IR1_highexp = ziDEGGOdw),
-                    file = 'result/0502_flexall_flexall_deg.xlsx')
- 
-    sdd <- intersect(intersect(as.character(zideg.siggene), as.character(zpdeg.siggene)), as.character(watdep.carhr))
-    barplotExp(sdd, '0502shared_water_deprivation')
+                    file = 'result/flexuosa0502KT5_flexuosa0502IR1_DEG.xlsx')
     
     
-    zfDEG[['IR1-H_IR1-F']] <- doEdgeR(cbind(.ir1.hir, .ir1.flex), c(rep('IR1-H', 3), rep('IR1-F', 3)), fdr.cutoff, 'IR1-H_IR1-F')
-    zfDEG[['IR1-H_KT5-F']] <- doEdgeR(cbind(.ir1.hir, .kt5.flex), c(rep('IR1-H', 3), rep('KT5-F', 3)), fdr.cutoff, 'IR1-H_KT5-F')
-    zfDEG[['KT5-A_KT5-F']] <- doEdgeR(cbind(.kt5.ama, .kt5.flex), c(rep('KT5-A', 3), rep('KT5-F', 3)), fdr.cutoff, 'KT5-A_KT5-F')
-    zfDEG[['KT5-A_IR1-F']] <- doEdgeR(cbind(.kt5.ama, .ir1.flex), c(rep('KT5-A', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-A_IR1-F')
-    zfDEG[['KT5-F_IR1-F']] <- doEdgeR(cbind(.kt5.flex, .ir1.flex), c(rep('KT5-F', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-F_IR1-F')
-
-    zaDEG[['IR1-H_IR1-Fa']] <- doEdgeR(cbind(.ir1.hir, .ir1.flexa), c(rep('IR1-H', 3), rep('IR1-F', 3)), fdr.cutoff, 'IR1-H_IR1-Fa')
-    zaDEG[['IR1-H_KT5-Fa']] <- doEdgeR(cbind(.ir1.hir, .kt5.flexa), c(rep('IR1-H', 3), rep('KT5-F', 3)), fdr.cutoff, 'IR1-H_KT5-Fa')
-    zaDEG[['KT5-A_KT5-Fa']] <- doEdgeR(cbind(.kt5.ama, .kt5.flexa), c(rep('KT5-A', 3), rep('KT5-F', 3)), fdr.cutoff, 'KT5-A_KT5-Fa')
-    zaDEG[['KT5-A_IR1-Fa']] <- doEdgeR(cbind(.kt5.ama, .ir1.flexa), c(rep('KT5-A', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-A_IR1-Fa')
-    zaDEG[['KT5-Fa_IR1-Fa']] <- doEdgeR(cbind(.kt5.flexa, .ir1.flexa), c(rep('KT5-F', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-Fa_IR1-Fa')
-
-    zhDEG[['IR1-H_IR1-Fh']] <- doEdgeR(cbind(.ir1.hir, .ir1.flexh), c(rep('IR1-H', 3), rep('IR1-F', 3)), fdr.cutoff, 'IR1-H_IR1-Fh')
-    zhDEG[['IR1-H_KT5-Fh']] <- doEdgeR(cbind(.ir1.hir, .kt5.flexh), c(rep('IR1-H', 3), rep('KT5-F', 3)), fdr.cutoff, 'IR1-H_KT3-Fh')
-    zhDEG[['KT5-A_KT5-Fh']] <- doEdgeR(cbind(.kt5.ama, .kt5.flexh), c(rep('KT5-A', 3), rep('KT5-F', 3)), fdr.cutoff, 'KT5-A_KT5-Fh')
-    zhDEG[['KT5-A_IR1-Fh']] <- doEdgeR(cbind(.kt5.ama, .ir1.flexh), c(rep('KT5-A', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-A_IR1-Fh')
-    zhDEG[['KT5-Fh_IR1-Fh']] <- doEdgeR(cbind(.kt5.flexh, .ir1.flexh), c(rep('KT5-F', 3), rep('IR1-F', 3)), fdr.cutoff, 'KT5-Fh_IR1-Fh')
     
-    sapply(zfDEG, function(x) {table(x$FDR < fdr.cutoff)})
-    sapply(zaDEG, function(x) {table(x$FDR < fdr.cutoff)})
-    sapply(zhDEG, function(x) {table(x$FDR < fdr.cutoff)})
+    
+    zideg.siggene.watdep <- intersect(as.character(zideg.siggene), as.character(watdep.carhr))
+    zpdeg.siggene.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
+    barplotExp(intersect(zideg.siggene.watdep, zpdeg.siggene.watdep), 'parent0502DEG_flexuosa0502DEG_shared_waterdeprivation')
     
     
    
@@ -732,10 +781,25 @@ ak.deg <- function(D) {
         for (dm in names(frt)) {
             frt2[[gsub(paste0(dt, '_'), '', dm)]] <- intersect(frt[[dm]]$gene[frt[[dm]]$sigGene == 1], watdep.carhr)
         }
+		vuq <- unique(unlist(frt2))
+		vdf <- matrix(FALSE, ncol = 3, nrow = length(vuq))
+		rownames(vdf) <- vuq
+		colnames(vdf) <- c('KT2_IR1', 'KT5_IR1', 'KT5_KT2')
+		vdf[frt2[['KT2_IR1']], 'KT2_IR1'] <- TRUE
+		vdf[frt2[['KT5_IR1']], 'KT5_IR1'] <- TRUE
+		vdf[frt2[['KT5_KT2']], 'KT5_KT2'] <- TRUE
+		fit <- euler(vdf)
         png(paste0('fig/vennDiffRatio-date-', dt, '.png'), 500, 500)
-        venn(frt2)
-        dev.off()
-    }
+		print(plot(fit, quantities = F, lty = 1, shape = 'ellipse', labels = F,
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+        png(paste0('fig/vennDiffRatio-date-', dt, '.labeled.png'), 500, 500)
+		print(plot(fit, quantities = list(cex = 1.9), lty = 1, shape = 'ellipse',
+			 labels = list(cex = 1.4), 
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+ 	}
+
 
     for (dt in c('KT2_IR1', 'KT5_KT2', 'KT5_IR1')) {
         frt <- fRT[grep(dt, names(fRT))]
@@ -743,13 +807,28 @@ ak.deg <- function(D) {
         for (dm in names(frt)) {
             frt2[[gsub(paste0('_', dt), '', dm)]] <- intersect(frt[[dm]]$gene[frt[[dm]]$sigGene == 1], watdep.carhr)
         }
+		vuq <- unique(unlist(frt2))
+		vdf <- matrix(FALSE, ncol = 3, nrow = length(vuq))
+		rownames(vdf) <- vuq
+		colnames(vdf) <- c('0418', '0502', '0516')
+		vdf[frt2[['0418']], '0418'] <- TRUE
+		vdf[frt2[['0502']], '0502'] <- TRUE
+		vdf[frt2[['0516']], '0516'] <- TRUE
+		fit <- euler(vdf)
         png(paste0('fig/vennDiffRatio-site-', dt, '.png'), 500, 500)
-        venn(frt2)
-        dev.off()
-    }
-    
+		print(plot(fit, quantities = F, lty = 1, shape = 'ellipse', labels = F,
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+        png(paste0('fig/vennDiffRatio-site-', dt, '.labeled.png'), 500, 500)
+		print(plot(fit, quantities = list(cex = 1.9), lty = 1, shape = 'ecllipse',
+			 labels = list(cex = 1.4), 
+			 fill = list(fill = c("purple", "darkorange", "forestgreen"), alpha = 0.3)))
+		dev.off()
+	}
+
+
     # barplots
-    interesth <- NULL
+    interesth <- interesth0502 <- NULL
     for (dt in c('KT2_IR1', 'KT5_KT2', 'KT2_IR1')) {
         frt <- fRT[grep(dt, names(fRT))]
         for (dm in names(frt)) {
@@ -757,9 +836,19 @@ ak.deg <- function(D) {
         }
     }
     interesth <- unique(interesth)
-    barplotExp(interesth, '0502homeologDiffRatio_water_deprivation')
-  
-    barplotExp(intersect(interesth, sdd), '0502homeologDiffRatioAndDEG_water_deprivation')
+    WriteExcel(list(Sheet1 = BindTairName(interesth)), './result/flexuosa_sigDiffRatio_waterdeprivation.xlsx')
+    barplotExp(interesth, 'flexuosa_sigDiffRatio_waterdeprivation')
+    
+    venn(list(interesth = interesth, interestd = interestd))
+    barplotExp(intersect(interesth, interestd), 'flexuosa_DEGandSigDiffRatio_waterdeprivation')
+    WriteExcel(list(Sheet1 = BindTairName(intersect(interesth, interestd))),
+                     './result/flexuosa_DEGandSigDiffRatio_waterdeprivation.xlsx')
+
+    
+    venn(list(flexDEG = zideg.siggene.watdep, parentDEG = zpdeg.siggene.watdep, sigDiffRatio = interesth))
+    barplotExp(intersect(interesth, intersect(zideg.siggene.watdep, zpdeg.siggene.watdep)), 'target_waterdeprivation')
+    WriteExcel(list(Sheet1 = BindTairName(intersect(interesth, intersect(zideg.siggene.watdep, zpdeg.siggene.watdep)))),
+                     './result/target_waterdeprivation.xlsx')
     
 }
 
@@ -794,9 +883,6 @@ fpkm.mat <- fpkm.mat[, !is.zero.lib]
 fpkm.col <- fpkm.col[!is.zero.lib]
 colnames(fpkm.mat) <- fpkm.col
 
-
-
-
 pcaobj <- prcomp(t(log10(as.matrix(fpkm.mat + 1))), scale = FALSE)
 
 df <- data.frame(
@@ -827,37 +913,102 @@ dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = strain, shape = homeolog))
 g <- g + geom_point() + scale_color_jama()
-png(paste0(FIG_PATH, '/pca.all.libs.PC12.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.png'), 500, 500)
 print(g)
 dev.off()
 g <- ggplot(df, aes(x = PC2, y = PC3, color = strain, shape = homeolog))
 g <- g + geom_point() + scale_color_jama()
-png(paste0(FIG_PATH, '/pca.all.libs.PC23.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.png'), 500, 500)
 print(g)
 dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = site, shape = homeolog))
 g <- g + geom_point() + scale_color_uchicago()
-png(paste0(FIG_PATH, '/pca.all.libs.PC12.site.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.site.png'), 500, 500)
 print(g)
 dev.off()
 g <- ggplot(df, aes(x = PC2, y = PC3, color = site, shape = homeolog))
 g <- g + geom_point() + scale_color_uchicago()
-png(paste0(FIG_PATH, '/pca.all.libs.PC23.site.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.site.png'), 500, 500)
 print(g)
 dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = date, shape = homeolog))
 g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.all.libs.PC12.date.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.date.png'), 500, 500)
 print(g)
 dev.off()
 g <- ggplot(df, aes(x = PC2, y = PC3, color = date, shape = homeolog))
 g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.all.libs.PC23.date.png'), 500, 500)
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.date.png'), 500, 500)
 print(g)
 dev.off()
 
+
+
+
+# PCA for total PFKM
+fpkm.mat <- D$total.fpkm
+fpkm.mat <- fpkm.mat[apply(fpkm.mat > 1, 1, any), ]
+pcaobj <- prcomp(t(log10(as.matrix(fpkm.mat + 1))), scale = FALSE)
+
+df <- data.frame(
+    site = sapply(strsplit(rownames(pcaobj$x), '_'), function(x) {x[[1]]}),
+    strain = sapply(strsplit(rownames(pcaobj$x), '_'), function(x) {x[[2]]}),
+    date = sapply(strsplit(rownames(pcaobj$x), '_'), function(x) {x[[3]]}),
+    id = sapply(strsplit(rownames(pcaobj$x), '_'), function(x) {x[[4]]}),
+    pcaobj$x
+)
+df$strain <- as.character(df$strain)
+df$date <- as.character(df$date)
+df$strain[df$strain == 'A'] <- 'C. amara'
+df$strain[df$strain == 'F'] <- 'C. flexuosa'
+df$strain[df$strain == 'H'] <- 'C. hirsuta'
+df$date[df$date == '0418'] <- 'April 18'
+df$date[df$date == '0502'] <- 'May 2'
+df$date[df$date == '0516'] <- 'May 16'
+df$strain <- factor(df$strain, levels = c('C. flexuosa', 'C. amara', 'C. hirsuta'))
+df$date   <- factor(df$date,   levels = c('April 18', 'May 2', 'May 16'))
+
+
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.png'), 800, 300)
+v <- pcaobj$sdev ^ 2
+names(v) <- colnames(pcaobj$x)
+barplot(v / sum(v) * 100, las = 2)
+dev.off()
+
+g <- ggplot(df, aes(x = PC1, y = PC2, color = strain))
+g <- g + geom_point() + scale_color_jama()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC12.png'), 500, 500)
+print(g)
+dev.off()
+g <- ggplot(df, aes(x = PC2, y = PC3, color = strain))
+g <- g + geom_point() + scale_color_jama()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC23.png'), 500, 500)
+print(g)
+dev.off()
+
+g <- ggplot(df, aes(x = PC1, y = PC2, color = site))
+g <- g + geom_point() + scale_color_uchicago()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC12.site.png'), 500, 500)
+print(g)
+dev.off()
+g <- ggplot(df, aes(x = PC2, y = PC3, color = site))
+g <- g + geom_point() + scale_color_uchicago()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC23.site.png'), 500, 500)
+print(g)
+dev.off()
+
+g <- ggplot(df, aes(x = PC1, y = PC2, color = date))
+g <- g + geom_point() + scale_color_nejm()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC12.date.png'), 500, 500)
+print(g)
+dev.off()
+g <- ggplot(df, aes(x = PC2, y = PC3, color = date))
+g <- g + geom_point() + scale_color_nejm()
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC23.date.png'), 500, 500)
+print(g)
+dev.off()
 
 
 
