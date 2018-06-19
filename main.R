@@ -674,16 +674,40 @@ ak.deg <- function(D) {
                     GO = ziDEGGO, GO_KT5_highexp = ziDEGGOup, GO_IR1_highexp = ziDEGGOdw),
                     file = 'result/flexuosa0502KT5_flexuosa0502IR1_DEG.xlsx')
     
-    
-    
-    
     zideg.siggene.watdep <- intersect(as.character(zideg.siggene), as.character(watdep.carhr))
     zpdeg.siggene.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
     barplotExp(intersect(zideg.siggene.watdep, zpdeg.siggene.watdep), 'parent0502DEG_flexuosa0502DEG_shared_waterdeprivation')
     
     
+ 
+    # flexuoasa H vs hirsuta // IR1, 0502
+    fhDEG <- doEdgeR(cbind(.ir1.flexh, .ir1.hir), c(rep('IR1-Fh', 3), rep('IR1-H', 3)), fdr.cutoff, 'IR1-Fh_IR1-H')
+    fhdeg.allgene <- fhDEG$CarID
+    fhdeg.siggene <- fhDEG$CarID[fhDEG$FDR < fdr.cutoff]
+    fhdeg.siggeneup <- fhDEG$CarID[fhDEG$FDR < fdr.cutoff & fhDEG$log2Ratio > 0]
+    fhdeg.siggenedw <- fhDEG$CarID[fhDEG$FDR < fdr.cutoff & fhDEG$log2Ratio < 0]
+    fhDEGGO <- doTopGO(fhdeg.allgene, fhdeg.siggene)
+    fhDEGGOup <- doTopGO(fhdeg.allgene, fhdeg.siggeneup)
+    fhDEGGOdw <- doTopGO(fhdeg.allgene, fhdeg.siggenedw)
+    WriteExcel(list(DEG = fhDEG, DEGAT = fhDEG[(fhDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = fhDEGGO, GO_H_highexp = fhDEGGOup, GO_Fh_highexp = fhDEGGOdw),
+                    file = 'result/flexuosaH0502IR1_hirsuta0502IR1_DEG.xlsx')
+
+
+    # flexuoasa A vs amara // KT5, 0502
+    faDEG <- doEdgeR(cbind(.kt5.flexa, .kt5.ama), c(rep('KT5-Fa', 3), rep('KT5-A', 3)), fdr.cutoff, 'KT5-Fa_KT5-A')
+    fadeg.allgene <- faDEG$CarID
+    fadeg.siggene <- faDEG$CarID[faDEG$FDR < fdr.cutoff]
+    fadeg.siggeneup <- faDEG$CarID[faDEG$FDR < fdr.cutoff & faDEG$log2Ratio > 0]
+    fadeg.siggenedw <- faDEG$CarID[faDEG$FDR < fdr.cutoff & faDEG$log2Ratio < 0]
+    faDEGGO <- doTopGO(fadeg.allgene, fadeg.siggene)
+    faDEGGOup <- doTopGO(fadeg.allgene, fadeg.siggeneup)
+    faDEGGOdw <- doTopGO(fadeg.allgene, fadeg.siggenedw)
+    WriteExcel(list(DEG = faDEG, DEGAT = faDEG[(faDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = faDEGGO, GO_A_highexp = faDEGGOup, GO_Fa_highexp = faDEGGOdw),
+                    file = 'result/flexuosaA0502KT5_amara0502KT5_DEG.xlsx')
+
    
-    
     # ratio-changes
     fRT <- NULL
     dh <- D$fpkm$H
