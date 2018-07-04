@@ -361,7 +361,7 @@ geneID2GO <- readMappings('data/AT_GO_all.txt')
 annotatedTairs <- .annotatedTairs[, 2]
 names(annotatedTairs) <- .annotatedTairs[, 1]
 
-doTopGO <- function(allgene, siggene) {
+doTopGO <- function(allgene, siggene, topNodes = 600, alg = 'elim') {
     allgene <- as.character(allgene)
     siggene <- as.character(siggene)
     allgene.tair <- getTAIRs(allgene)
@@ -372,13 +372,13 @@ doTopGO <- function(allgene, siggene) {
                      #annot = annFUN.org, mapping = 'org.At.tair.db')
                      annot = annFUN.gene2GO, gene2GO = geneID2GO)
     #classic_fisher <- runTest(topgo.obj, algorithm = "classic", statistic = "fisher")
-    elim_fisher    <- runTest(topgo.obj, algorithm = "elim", statistic = "fisher")
+    elim_fisher    <- runTest(topgo.obj, algorithm = alg, statistic = "fisher")
     #weight01_fisher  <- runTest(topgo.obj, algorithm = "weight01", statistic = "fisher")
     topgotable  <- GenTable(topgo.obj, numChar = 200,
                             # classicFisher = classic_fisher,
                             elimFisher = elim_fisher,
                             #weight01 = weight01_fisher,
-                            orderBy = "elimFisher", ranksOf = "classicFisher", topNodes = 600)
+                            orderBy = "elimFisher", ranksOf = "classicFisher", topNodes = topNodes)
     topgotable <- topgotable[topgotable[, 3] > 10, ]
     topgotable <- topgotable[topgotable[, 3] < 500, ]
     topgotable <- data.frame(topgotable, TAIR10annotated = annotatedTairs[topgotable[, 1]])
@@ -627,6 +627,9 @@ ak.deg <- function(D) {
     WriteExcel(list(DEG = zpDEG, DEGAT = zpDEG[(zpDEG$CarID %in% names(CARHR2TAIR)), ],
                     GO = zpDEGGO, GO_A_highexp = zpDEGGOup, GO_H_highexp = zpDEGGOdw),
                     file = 'result/amara0502_hirsuta0502_DEG.xlsx')
+    dummyDEGGO <- doTopGO(rownames(f), sample(rownames(f), nrow(f) - 1000), 5500, 'classic')
+    WriteExcel(list(DEG = dummyDEGGO),
+                    file = 'result/dummy_to_check_numOfGO_in_topGO.xlsx')
     zpDEG.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
     barplotExp(zpDEG.watdep, 'amara0502_vs_hirsuta0502_waterdeprivation')
     zpDEG.rscold <- intersect(as.character(zpdeg.siggene), as.character(rscold.carhr))
@@ -936,7 +939,7 @@ barplot(v / sum(v) * 100, las = 2)
 dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = strain, shape = homeolog))
-g <- g + geom_point() + scale_color_jama()
+g <- g + geom_point(size = 2) + scale_color_jama() + theme_bw()
 png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.png'), 500, 500)
 print(g)
 dev.off()
@@ -958,13 +961,28 @@ print(g)
 dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = date, shape = homeolog))
-g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.date.png'), 500, 500)
+g <- g + geom_point(size = 8) + scale_color_manual(values = c('#B09C85', '#C16622', '#350E20')) + theme_bw()
+g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23)) 
+g <- g + theme(axis.text.x = element_text(size=23),axis.text.y = element_text(size=23)) 
+g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(size=23)) 
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC12.date.png'), 800, 800)
 print(g)
 dev.off()
 g <- ggplot(df, aes(x = PC2, y = PC3, color = date, shape = homeolog))
-g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.date.png'), 500, 500)
+g <- g + geom_point(size = 8) + scale_color_manual(values = c('#B09C85', '#C16622', '#350E20')) + theme_bw()
+g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23)) 
+g <- g + theme(axis.text.x = element_text(size=23),axis.text.y = element_text(size=23)) 
+g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(size=23)) 
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.date.png'), 800, 800)
+print(g)
+dev.off()
+df$site <- factor(df$site, levels = c('KT5', 'KT2', 'IR1'))
+g <- ggplot(df, aes(x = PC2, y = PC3, color = site, shape = homeolog))
+g <- g + geom_point(size = 8) + scale_color_manual(values = c('#2255A6', '#178541', '#F8982C')) + theme_bw()
+g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23)) 
+g <- g + theme(axis.text.x = element_text(size=23),axis.text.y = element_text(size=23)) 
+g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(size=23)) 
+png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.date.v2.png'), 800, 800)
 print(g)
 dev.off()
 
@@ -1024,13 +1042,20 @@ print(g)
 dev.off()
 
 g <- ggplot(df, aes(x = PC1, y = PC2, color = date))
-g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC12.date.png'), 500, 500)
+g <- g + geom_point(size = 8) + scale_color_manual(values = c('#B09C85', '#C16622', '#350E20')) + theme_bw()
+g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23))
+g <- g + theme(axis.text.x = element_text(size=23),axis.text.y = element_text(size=23))
+g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(size=23))
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC12.date.png'), 800, 800)
 print(g)
 dev.off()
-g <- ggplot(df, aes(x = PC2, y = PC3, color = date))
-g <- g + geom_point() + scale_color_nejm()
-png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC23.date.png'), 500, 500)
+df$site <- factor(df$site, levels = c('KT5', 'KT2', 'IR1'))
+g <- ggplot(df, aes(x = PC2, y = PC3, color = site))
+g <- g + geom_point(size = 8) + scale_color_manual(values = c('#2255A6', '#178541', '#F8982C')) + theme_bw()
+g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23)) 
+g <- g + theme(axis.text.x = element_text(size=23),axis.text.y = element_text(size=23)) 
+g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(size=23)) 
+png(paste0(FIG_PATH, '/pca.flexuosaall.libs.PC23.date.png'), 800, 800)
 print(g)
 dev.off()
 
