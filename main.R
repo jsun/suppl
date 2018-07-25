@@ -604,7 +604,6 @@ ak.deg <- function(D) {
     barplotExp(interestd, 'flexuosa_DEG_waterdeprivation')
     WriteExcel(list(Sheet1 = BindTairName(interestd)), './result/flexuosa_DEG_waterdeprivation.xlsx')
 
-
     # 0502
     .ir1.hir   <- h[, grep('IR1_H_0502', colnames(h))]
     .ir1.flex  <- f[, grep('IR1_F_0502', colnames(f))]
@@ -866,6 +865,7 @@ ak.deg <- function(D) {
     WriteExcel(list(Sheet1 = BindTairName(interesth)), './result/flexuosa_sigDiffRatio_waterdeprivation.xlsx')
     barplotExp(interesth, 'flexuosa_sigDiffRatio_waterdeprivation')
     
+    
     venn(list(interesth = interesth, interestd = interestd))
     barplotExp(intersect(interesth, interestd), 'flexuosa_DEGandSigDiffRatio_waterdeprivation')
     WriteExcel(list(Sheet1 = BindTairName(intersect(interesth, interestd))),
@@ -893,6 +893,35 @@ ak.deg(D)
 
 
 # expressed genes
+df <- data.frame(
+    size = c(colSums(D$count$H), colSums(D$count$A)),
+    read = rep(c('H-origin', 'A-origin'), each = ncol(D$count$H)),
+    site = sapply(strsplit(colnames(D$exp.homeolog$H), '_'), function(x) {x[[1]]}),
+    strain = sapply(strsplit(colnames(D$exp.homeolog$H), '_'), function(x) {x[[2]]}),
+    date = sapply(strsplit(colnames(D$exp.homeolog$H), '_'), function(x) {x[[3]]}),
+    id = sapply(strsplit(colnames(D$exp.homeolog$H), '_'), function(x) {x[[4]]})
+)
+df$strain <- as.character(df$strain)
+df$date <- as.character(df$date)
+df$strain[df$strain == 'A'] <- 'C. amara'
+df$strain[df$strain == 'F'] <- 'C. flexuosa'
+df$strain[df$strain == 'H'] <- 'C. hirsuta'
+df$date[df$date == '0418'] <- 'April 18'
+df$date[df$date == '0502'] <- 'May 2'
+df$date[df$date == '0516'] <- 'May 16'
+df$strain <- factor(df$strain, levels = c('C. hirsuta', 'C. flexuosa', 'C. amara'))
+df$date   <- factor(df$date,   levels = c('April 18', 'May 2', 'May 16'))
+df$label <- paste0(df$strain, ' ', df$site, ' (', df$date, ') #',  df$id)
+g <- ggplot(df, aes(x = label, y = size, fill = read))
+g <- g + geom_bar(stat = 'identity', position = 'fill') + coord_flip()
+g <- g + scale_fill_simpsons() + xlab('') + ylab('') + theme_bw()
+png(paste0(FIG_PATH, '/number.of.readorigins.png'), 700, 600)
+plot(g)
+dev.off()
+
+
+
+
 png(paste0(FIG_PATH, '/exp.H.homeologs.png'), 800, 500)
 barplot(colSums(D$exp.homeolog$H), las = 2)
 dev.off()
@@ -960,6 +989,7 @@ png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.site.png'), 500, 500)
 print(g)
 dev.off()
 
+# Fig 3B
 g <- ggplot(df, aes(x = PC1, y = PC2, color = date, shape = homeolog))
 g <- g + geom_point(size = 8) + scale_color_manual(values = c('#B09C85', '#C16622', '#350E20')) + theme_bw()
 g <- g + theme(axis.title.x = element_text(size=23),axis.title.y = element_text(size=23)) 
@@ -976,6 +1006,7 @@ g <- g + theme(legend.title = element_text(size=23),legend.text = element_text(s
 png(paste0(FIG_PATH, '/pca.flexuosahomeolog.libs.PC23.date.png'), 800, 800)
 print(g)
 dev.off()
+# Fig 3C
 df$site <- factor(df$site, levels = c('KT5', 'KT2', 'IR1'))
 g <- ggplot(df, aes(x = PC2, y = PC3, color = site, shape = homeolog))
 g <- g + geom_point(size = 8) + scale_color_manual(values = c('#2255A6', '#178541', '#F8982C')) + theme_bw()
