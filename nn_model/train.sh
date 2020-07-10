@@ -19,15 +19,20 @@ pyenv local jppnet
 cd nn_model
 
 
-python train.py --model L1 --output ./weights/cv_modelarch.pth \
+python train.py --model L1 --output ./weights/L1.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                 --epochs 200 --batch-size 1024 --train-mode cv
 
-python trainL2.py --model L2 --output ./weights/cv_modelarch_L2.pth \
-                  --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
-                  --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                  --epochs 200 --batch-size 1024 --train-mode cv
+python train.py --model L2 --output ./weights/L2.pth \
+                --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
+                --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
+                --epochs 200 --batch-size 1024 --train-mode cv
+
+python train.py --model L3 --output ./weights/L3.pth \
+                --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
+                --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
+                --epochs 200 --batch-size 1024 --train-mode cv
 
 
 

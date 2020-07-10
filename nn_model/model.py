@@ -134,6 +134,45 @@ class JppnetArch2L(torch.nn.Module):
 
 
 
+class JppnetArchEx(torch.nn.Module):
+    
+    
+    def __init__(self, n_hidden=12, dropout=0, activate_func='relu'):
+        super(JppnetArchEx, self).__init__()
+        
+        if isinstance(n_hidden, int):
+            n_hidden = [n_hidden]
+        
+        # input layer
+        self.input = torch.nn.Linear(16, n_hidden[0])
+        
+        # hidden layer
+        self.hidden = None
+        hidden_layers = []
+        if len(n_hidden) > 1:
+            for i in range(1, len(n_hidden)):
+                hidden_layers += [torch.nn.Linear(n_hidden[i - 1], n_hidden[i])]
+                if activate_func == 'relu':
+                    hidden_layers += [torch.nn.ReLU(inplace=True)]
+                else:
+                    hidden_layers += [torch.nn.Sigmoid()]
+                if dropout > 0:
+                    hidden_layers += [torch.nn.Dropout(p=dropout)]
+            self.hidden = torch.nn.Sequential(*hidden_layers)
+        
+        # output layer
+        self.output = torch.nn.Linear(n_hidden[-1], 1)
+    
+    
+    
+    def forward(self, x):
+        x = self.input(x)
+        if self.hidden is not None:
+            x = self.hidden(x)
+        x = self.output(x)
+        return x
+
+
 
 
 
@@ -231,13 +270,9 @@ class textDataset(torch.utils.data.Dataset):
 
 class Jppnet():
     
-    def __init__(self, model_arch='L1', n_hidden_1=12, n_hidden_2=0, dropout=0, activate_func='relu'):
-        if model_arch == 'L1':
-            self.model = JppnetArch(n_hidden=n_hidden_1, dropout=dropout, activate_func=activate_func)
-        elif model_arch == 'L2':
-            self.model = JppnetArch2L(n_hidden_1=n_hidden_1, n_hidden_2=n_hidden_2, dropout=dropout, activate_func=activate_func)
-
+    def __init__(self, n_hidden=12, dropout=0.5, activate_func='relu'):
         
+        self.model = JppnetArchEx(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model.to(self.device)
         
@@ -276,6 +311,8 @@ class Jppnet():
         
         # training and validation
         epoch_loss = {'train': [], 'valid': []}
+        _last_epoch_loss = 1e10
+        _last_epoch_loss_count = 0
         for epoch in range(num_epochs):
             
             for phase in ['train', 'valid']:
@@ -309,8 +346,18 @@ class Jppnet():
 
                 _epoch_loss = running_loss / dataset_sizes[phase]
                 
+                if phase == 'valid':
+                    if _epoch_loss < _last_epoch_loss:
+                        _last_epoch_loss = _epoch_loss
+                        _last_epoch_loss_count = 0
+                    else:
+                        _last_epoch_loss_count += 1
+            
                 #print('{} Loss: {:.4f}'.format(phase, _epoch_loss))
                 epoch_loss[phase].append(_epoch_loss)
+            
+            if _last_epoch_loss_count > 10:
+                break
         
         epoch_loss = pd.DataFrame(epoch_loss)
         return epoch_loss
