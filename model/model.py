@@ -65,110 +65,46 @@ PREFECTURE_DICT = {
 
 
 
+
+
 class JppnetArch(torch.nn.Module):
-    
     
     def __init__(self, n_hidden=12, dropout=0, activate_func='relu'):
         super(JppnetArch, self).__init__()
-        
-        self.fc1 = torch.nn.Linear(16, n_hidden)
-        self.fc2 = torch.nn.Linear(n_hidden, 1)
-        
-        if activate_func == 'relu':
-            self.activate_func = torch.nn.functional.relu
-        elif activate_func == 'sigmoid':
-            self.activate_func = torch.nn.functional.sigmoid
-        
-        if dropout > 0:
-            self.dropout = torch.nn.Dropout(p=dropout)
-        else:
-            self.dropout = None
-        
-    
-    def forward(self, x):
-        
-        x = self.activate_func(self.fc1(x))
-        if self.dropout is not None:
-            x = self.dropout(x)
-        
-        x = self.fc2(x)
-        
-        return x
-
-
-
-
-class JppnetArch2L(torch.nn.Module):
-    
-    
-    def __init__(self, n_hidden_1=12, n_hidden_2=12, dropout=0, activate_func='relu'):
-        super(JppnetArch2L, self).__init__()
-        
-        self.fc1 = torch.nn.Linear(16, n_hidden_1)
-        self.fc2 = torch.nn.Linear(n_hidden_1, n_hidden_2)
-        self.fc3 = torch.nn.Linear(n_hidden_2, 1)
-        
-        if activate_func == 'relu':
-            self.activate_func = torch.nn.functional.relu
-        elif activate_func == 'sigmoid':
-            self.activate_func = torch.nn.functional.sigmoid
-        
-        if dropout > 0:
-            self.dropout = torch.nn.Dropout(p=dropout)
-        else:
-            self.dropout = None
-        
-    
-    def forward(self, x):
-        
-        x = self.activate_func(self.fc1(x))
-        if self.dropout is not None:
-            x = self.dropout(x)
-        x = self.activate_func(self.fc2(x))
-        if self.dropout is not None:
-            x = self.dropout(x)
-        x = self.fc3(x)
-        
-        return x
-
-
-
-
-class JppnetArchEx(torch.nn.Module):
-    
-    
-    def __init__(self, n_hidden=12, dropout=0, activate_func='relu'):
-        super(JppnetArchEx, self).__init__()
         
         if isinstance(n_hidden, int):
             n_hidden = [n_hidden]
         
         # input layer
         self.input = torch.nn.Linear(16, n_hidden[0])
-        
+
         # hidden layer
-        self.hidden = None
         hidden_layers = []
         if len(n_hidden) > 1:
             for i in range(1, len(n_hidden)):
-                hidden_layers += [torch.nn.Linear(n_hidden[i - 1], n_hidden[i])]
                 if activate_func == 'relu':
                     hidden_layers += [torch.nn.ReLU(inplace=True)]
                 else:
                     hidden_layers += [torch.nn.Sigmoid()]
                 if dropout > 0:
                     hidden_layers += [torch.nn.Dropout(p=dropout)]
-            self.hidden = torch.nn.Sequential(*hidden_layers)
-        
+                hidden_layers += [torch.nn.Linear(n_hidden[i - 1], n_hidden[i])]
+
+        if activate_func == 'relu':
+            hidden_layers += [torch.nn.ReLU(inplace=True)]
+        else:
+            hidden_layers += [torch.nn.Sigmoid()]
+        if dropout > 0:
+            hidden_layers += [torch.nn.Dropout(p=dropout)]
+        self.fc = torch.nn.Sequential(*hidden_layers)
+
         # output layer
         self.output = torch.nn.Linear(n_hidden[-1], 1)
     
     
-    
     def forward(self, x):
         x = self.input(x)
-        if self.hidden is not None:
-            x = self.hidden(x)
+        x = self.fc(x)
         x = self.output(x)
         return x
 
@@ -272,7 +208,8 @@ class Jppnet():
     
     def __init__(self, n_hidden=12, dropout=0.5, activate_func='relu'):
         
-        self.model = JppnetArchEx(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
+        self.model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
+        print(self.model)
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model.to(self.device)
         
@@ -306,7 +243,7 @@ class Jppnet():
         
         # training parameters
         criterion = torch.nn.MSELoss()
-        optimizer = torch.optim.Adam(self.model.parameters(), 0.1)
+        optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-2)
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.1)
         
         # training and validation
@@ -356,7 +293,7 @@ class Jppnet():
                 #print('{} Loss: {:.4f}'.format(phase, _epoch_loss))
                 epoch_loss[phase].append(_epoch_loss)
             
-            if _last_epoch_loss_count > 10:
+            if _last_epoch_loss_count > 20:
                 break
         
         epoch_loss = pd.DataFrame(epoch_loss)

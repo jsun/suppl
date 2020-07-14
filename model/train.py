@@ -16,20 +16,20 @@ def train_cv(model, output, train_dataset, valid_dataset, batch_size=1024, epoch
     
     # hyper-parameters of network architecture
     if model == 'L1':
-        dropouts = [0, 0.2, 0.5, 0.6]
-        n_hiddens = [[i] for i in [8, 10, 12, 14, 16, 18, 20, 22]]
+        dropouts = [0, 0.2, 0.4, 0.5, 0.6, 0.7]
+        n_hiddens = [[i] for i in [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
         activate_funcs = ['relu', 'sigmoid']
         
     elif model == 'L2':
         dropouts = [0.5]
-        n_hiddens = [[i, j] for i in [ 6, 10, 14, 18, 22, 24]
-                            for j in [20, 24, 28, 32, 36, 40]]
-        activate_funcs = ['relu']
+        n_hiddens = [[i, j] for i in [ 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+                            for j in [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]]
+        activate_funcs = ['relu', 'sigmoid']
         
     elif model == 'L3':
         dropouts = [0.5]
-        n_hiddens = [[i, j, k] for i in [ 6, 10, 14, 18, 22, 24]
-                               for j in [20, 24, 28, 32, 36, 40]
+        n_hiddens = [[i, j, k] for i in [ 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+                               for j in [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]
                                for k in [20, 24, 28, 32, 36, 40]]
         activate_funcs = ['relu']
     
@@ -58,7 +58,7 @@ def train_cv(model, output, train_dataset, valid_dataset, batch_size=1024, epoch
                 eval_stats['train_mse'].extend(loss_hist['train'])
                 eval_stats['valid_mse'].extend(loss_hist['valid'])
                 for i in range(len(n_hidden)):
-                    eval_stats['n_hidden_' + str(i)] = n_hidden[i]
+                    eval_stats['n_hidden_' + str(i)].extend([n_hidden[i]] * n_tries)
                 
                 pd.DataFrame(eval_stats).to_csv(output + '_cv_stats.tsv', index=False, header=True, sep='\t')
 
@@ -76,17 +76,16 @@ def train(output, train_dataset, valid_dataset, batch_size, epochs, n_hidden=16,
     
     
     # validate 10 times (dropout the initialization effects)
+    print('-------------')
+    print('n_hidden: {}  dropout: {}  activate_func: {}'.format('-'.join([str(i) for i in n_hidden]), dropout, activate_func))
     min_loss = {'train': [], 'valid': []}
-    
     for i in range(10):
         jppnet = Jppnet(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func)
         train_history = jppnet.train(train_dataset, valid_dataset, batch_size, epochs)
 
-        min_loss['train'].append(train_history.loc[:, 'train'].iloc[-1])#.min())
-        min_loss['valid'].append(train_history.loc[:, 'valid'].iloc[-1])#.min())
+        min_loss['train'].append(train_history.loc[:, 'train'].min())
+        min_loss['valid'].append(train_history.loc[:, 'valid'].min())
     
-    print('-------------')
-    print('n_hidden: {}  dropout: {}  activate_func: {}'.format('-'.join([str(i) for i in n_hidden]), dropout, activate_func))
     print('train loss: {};    valid loss: {}'.format(np.mean(min_loss['train']),
                                                      np.mean(min_loss['valid'])))
     
