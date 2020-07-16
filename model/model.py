@@ -150,6 +150,7 @@ class textDataset(torch.utils.data.Dataset):
                 else:
                     if _y != 'NA':
                         _y = [float(_y)]
+                        #_y = [np.log10(float(_y) + 1)]
                         X.append(_x)
                         y.append(_y)
         
@@ -316,11 +317,13 @@ class Jppnet():
         with torch.set_grad_enabled(False):
             for inputs, labels in dataloader:
                 inputs = inputs.to(self.device)
-                pred['label'].extend(self.model(inputs).data.cpu().numpy().flatten())
-                pred['predicted'].extend(labels.data.cpu().numpy().flatten())
+                pred['predicted'].extend(self.model(inputs).data.cpu().numpy().flatten())
+                pred['label'].extend(labels.data.cpu().numpy().flatten())
 
 
         pred = pd.DataFrame(pred)
+        #pred.iloc[:, 0] = 10 ** pred.iloc[:, 0] - 1
+        #pred.iloc[:, 1] = 10 ** pred.iloc[:, 1] - 1
         
         return pred
 

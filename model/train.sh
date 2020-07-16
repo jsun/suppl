@@ -38,15 +38,19 @@ fi
 
 if [ ${task_id} -eq 2 ]
 then
-    python bake.py --weight ./weights/jppnet.pth \
+    python bake.py --model L2 --weight ./weights/jppnet.pth \
                --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                --epochs 1000 --batch-size 128 --mode train
 
-
-    python bake.py --weight ./weights/jppnet.pth --output valid_outputs/testrun     \
+    python bake.py --model L2 --weight ./weights/jppnet.pth --output valid_outputs/validresult     \
                --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                --mode valid
+    
+    python bake.py --model L2 --weight ./weights/jppnet.pth --output valid_outputs/testresult     \
+               --valid-dataset ../formatted_data/kyuuri_honpo_percent.test.tsv \
+               --mode valid
+    
 fi
 
 

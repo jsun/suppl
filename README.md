@@ -3,21 +3,6 @@
 ```
 # R
 source('scripts/format_data.R')
-
-
-
-
-#pp <- function() {
-#x <- read.table('test.result.percente.txt', sep = '\t', header = TRUE)
-#x$prefecture <- factor(x$prefecture, levels = rev(pref.name.en))
-#x$predicted <- x$predicted
-
-#g <- ggplot(x, aes(x = month, y = prefecture, fill =  predicted, label = round(predicted, digits=1))) +
-#    geom_tile() + geom_text() + theme_bw() + scale_fill_gradient(low = 'white', high = 'red')
-#print(g)
-#}
-
-
 ```
 
 
@@ -33,22 +18,22 @@ cd nn_model
 python bake.py --model L1 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                --epochs 10 --batch-size 1024 --train-mode train
+                --epochs 10 --batch-size 1024 --mode train
 
 python bake.py --model L1 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                --epochs 10 --batch-size 1024 --train-mode cv
+                --epochs 10 --batch-size 1024 --mode cv
 
 python bake.py --model L2 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                --epochs 10 --batch-size 1024 --train-mode cv
+                --epochs 10 --batch-size 1024 --mode cv
 
 python bake.py --model L3 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                --epochs 10 --batch-size 1024 --train-mode cv
+                --epochs 10 --batch-size 1024 --mode cv
 
 
 # grid search
