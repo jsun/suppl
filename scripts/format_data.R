@@ -122,7 +122,7 @@ generate_dataset_from_mesh <- function(incidence_matrices = NULL) {
     
     # make emtpy matrix for generating test dataset
     if (is.null(incidence_matrices)) {
-        mat <- matrix(NA, ncol = 12, nrow = length(ja2en))
+        mat <- matrix(-1, ncol = 12, nrow = length(ja2en))
         rownames(mat) <- ja2en
         colnames(mat) <- 1:12
         incidence_matrices <- list('2022' = mat)
@@ -364,6 +364,28 @@ write_delim(dat_records_test_std, path = paste0('formatted_data/kyuuri_honpo_per
 write_delim(dat_records_std, path = paste0('formatted_data/kyuuri_honpo_percent.all.tsv'),
             delim = '\t', na = 'NA')
     
+for (prefname in dat_records_train_std$prefecture) {
+    train_subset <- dat_records_train_std[dat_records_train_std$prefecture == prefname, ]
+    train_subset <- train_subset[!is.na(train_subset$incidence), ]
+    if (nrow(train_subset) > 0) {
+        write_delim(train_subset, path = paste0('formatted_data/kyuuri_honpo_percent.train.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
+    }
+    
+    valid_subset <- dat_records_valid_std[dat_records_valid_std$prefecture == prefname, ]
+    valid_subset <- valid_subset[!is.na(valid_subset$incidence), ]
+    if (nrow(valid_subset) > 0) {
+        write_delim(valid_subset, path = paste0('formatted_data/kyuuri_honpo_percent.valid.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
+    }
+    
+    test_subset <- dat_records_test_std[dat_records_test_std$prefecture == prefname, ]
+    test_subset <- test_subset[!is.na(test_subset$incidence), ]
+    if (nrow(test_subset) > 0) {
+        write_delim(test_subset, path = paste0('formatted_data/kyuuri_honpo_percent.test.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
+    }
+    
+}
+
+
 
 
 
