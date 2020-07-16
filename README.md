@@ -30,22 +30,22 @@ source('scripts/format_data.R')
 cd nn_model
 
 # test
-python train.py --model L1 --output ./weights/test_modelarch.pth \
+python bake.py --model L1 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                 --epochs 10 --batch-size 1024 --train-mode train
 
-python train.py --model L1 --output ./weights/test_modelarch.pth \
+python bake.py --model L1 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                 --epochs 10 --batch-size 1024 --train-mode cv
 
-python train.py --model L2 --output ./weights/test_modelarch.pth \
+python bake.py --model L2 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                 --epochs 10 --batch-size 1024 --train-mode cv
 
-python train.py --model L3 --output ./weights/test_modelarch.pth \
+python bake.py --model L3 --output ./weights/test_modelarch.pth \
                 --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
                 --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
                 --epochs 10 --batch-size 1024 --train-mode cv
@@ -56,27 +56,6 @@ qsub train.sh
 
 ```
 
-
-```
-cd nn_model
-
-
-python trainL2.py --model L2 --output ./weights/test_modelarch.pth \
-                  --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
-                  --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                  --epochs 10 --batch-size 1024 --train-mode train
-
-
-python trainL2.py --model L2 --output ./weights/test_modelarch.pth \
-                  --train-dataset ../formatted_data/kyuuri_honpo_percent.train.tsv \
-                  --valid-dataset ../formatted_data/kyuuri_honpo_percent.valid.tsv \
-                  --epochs 10 --batch-size 1024 --train-mode cv
-
-
-# grid search
-qsub train.sh
-
-```
 
 
 

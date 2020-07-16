@@ -209,7 +209,7 @@ class Jppnet():
     def __init__(self, n_hidden=12, dropout=0.5, activate_func='relu'):
         
         self.model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
-        print(self.model)
+        self.__best_model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model.to(self.device)
         
@@ -287,6 +287,7 @@ class Jppnet():
                     if _epoch_loss < _last_epoch_loss:
                         _last_epoch_loss = _epoch_loss
                         _last_epoch_loss_count = 0
+                        self.__best_model.load_state_dict(self.model.state_dict())
                     else:
                         _last_epoch_loss_count += 1
             
@@ -297,34 +298,30 @@ class Jppnet():
                 break
         
         epoch_loss = pd.DataFrame(epoch_loss)
+        self.model.load_state_dict(self.__best_model.state_dict())
         return epoch_loss
     
     
     
     
-    def inference(self, test_data, batch_size=None):
+    def validate(self, test_data, batch_size=None):
         
-        datasets = textDataset(test_data, is_test=True)
-        dataloader = torch.utils.data.DataLoader(datasets, batch_size=len(datasets))
+        self.model.eval()
         
+        dataset = textDataset(test_data)
+        dataloader = torch.utils.data.DataLoader(dataset, batch_size=1024, shuffle=False)
         
-        y_pred = None
+        pred = {'label': [], 'predicted': []}
+        
         with torch.set_grad_enabled(False):
-            self.model.eval()
-            
-            y_pred = None
-            for inputs in dataloader:
-                outputs = self.model(inputs)
-                
-                if y_pred is None:
-                    y_pred = outputs.data.numpy()
-                else:
-                    y_pred = np.concatenate([y_pred, outputs.data.numpy()], 0)
+            for inputs, labels in dataloader:
+                inputs = inputs.to(self.device)
+                pred['label'].extend(self.model(inputs).data.cpu().numpy().flatten())
+                pred['predicted'].extend(labels.data.cpu().numpy().flatten())
+
+
+        pred = pd.DataFrame(pred)
         
-        y_pred = pd.Series(y_pred.flatten(), name='predicted')
-        dat_inputs = pd.read_csv(test_data, sep='\t', header=0)
-        dat_outputs = pd.concat([dat_inputs, y_pred], axis=1)
-        
-        return dat_outputs
+        return pred
 
 
