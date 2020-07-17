@@ -13,7 +13,7 @@ library(gplots)
 library(RColorBrewer)
 library(eulerr)
 
-FIG_PATH <- '~/research/cardamine3/fig'
+FIG_PATH <- '~/gdrive/research/cardamine3/fig'
 
 
 
@@ -66,7 +66,8 @@ WriteExcel <- function(data.list, file.name = NULL) {
 
 # read count and FPKM data
 load.expression <- function(D) {
-    aaic.data.path <- '~/research/cardamine3/data/hir_std'
+    aaic.data.path <- '~/gdrive/research/cardamine3/data/hir_std'
+    #aaic.data.path <- '~/gdrive/research/cardamine3/data/hir_std_all'
     count.h.files <- list.files(aaic.data.path, pattern = 'orig.txt', full.names = TRUE)
     count.a.files <- list.files(aaic.data.path, pattern = 'other.txt', full.names = TRUE)
     count.u.files <- list.files(aaic.data.path, pattern = 'common.txt', full.names = TRUE)
@@ -81,7 +82,7 @@ load.expression <- function(D) {
         }
         # make column name
         v <- gsub('__on__hir.orig.txt|__on__hir.other.txt|__on__hir.common.txt', '', sort(count.files))
-        v <- sapply(strsplit(v, '/'), function(x) {x[[8]]})
+        v <- sapply(strsplit(v, '/'), function(x) {x[[9]]})
         v <- gsub('BG', 'BG_', v)
         v <- gsub('FRbr', 'KT5_', v)
         v <- gsub('FRsl', 'KT2_', v)
@@ -129,7 +130,7 @@ load.expression <- function(D) {
 
 
 load.expression.zurich <- function(FL) {
-    x <- read.table('~/research/cardamine3/zurich/CountQC_Cflex_all_on_Chir_2016-06-27--14-12-11/Count_QC/Count_QC-raw-count.txt', header = TRUE, sep = '\t')
+    x <- read.table('~/gdrive/research/cardamine3/zurich/CountQC_Cflex_all_on_Chir_2016-06-27--14-12-11/Count_QC/Count_QC-raw-count.txt', header = TRUE, sep = '\t')
     y <- x[, -1]
     rownames(y) <- x[, 1]
     
@@ -176,7 +177,7 @@ calc.fpkm <- function(D) {
         fpkm
     }
     
-    l <- read.table('~/research/cardamine3/data/genome/chir_cdna_length.tsv', header = T)
+    l <- read.table('~/gdrive/research/cardamine3/data/genome/chir_cdna_length.tsv', header = T)
     len <- l[, 2]
     names(len) <- l[, 1]
     len <- len[rownames(D$count$H)]
@@ -462,20 +463,29 @@ ak.deg <- function(D) {
         fdeg <- fdegat <- NULL
         .f <- f[, grep(dt, colnames(f))]
         # ir x sl
-        .f1 <- .f[, grep('IR1|KT2', colnames(.f))]
-        .l1 <- sapply(strsplit(colnames(.f1), '_'), function(x) {x[[1]]})
+        .f11 <- .f[, grep('KT2', colnames(.f))]
+        .f12 <- .f[, grep('IR1', colnames(.f))]
+        .f1 <- cbind(.f11, .f12)
+        .l1 <- c(rep('A', ncol(.f11)), rep('B', ncol(.f12)))
         fdeg[['KT2_IR1']] <- doEdgeR(.f1, .l1, fdr.cutoff, paste0('flexall_KT2_vs_IR1_', dt))
         fdegat[['KT2_IR1']] <- fdeg[['KT2_IR1']][(fdeg[['KT2_IR1']][, 1] %in% names(CARHR2TAIR)), ]
+        
         # ir x br
-        .f2 <- .f[, grep('IR1|KT5', colnames(.f))]
-        .l2 <- sapply(strsplit(colnames(.f2), '_'), function(x) {x[[1]]})
+        .f21 <- .f[, grep('KT5', colnames(.f))]
+        .f22 <- .f[, grep('IR1', colnames(.f))]
+        .f2 <- cbind(.f21, .f22)
+        .l2 <- c(rep('A', ncol(.f21)), rep('B', ncol(.f22)))
         fdeg[['KT5_IR1']] <- doEdgeR(.f2, .l2, fdr.cutoff, paste0('flexall_KT5_vs_IR1_', dt))
         fdegat[['KT5_IR1']] <- fdeg[['KT5_IR1']][(fdeg[['KT5_IR1']][, 1] %in% names(CARHR2TAIR)), ]
+        
         # sl x br
-        .f3 <- .f[, grep('KT2|KT5', colnames(.f))]
-        .l3 <- sapply(strsplit(colnames(.f3), '_'), function(x) {x[[1]]})
+        .f31 <- .f[, grep('KT5', colnames(.f))]
+        .f32 <- .f[, grep('KT2', colnames(.f))]
+        .f3 <- cbind(.f31, .f32)
+        .l3 <- c(rep('A', ncol(.f31)), rep('B', ncol(.f32)))
         fdeg[['KT5_KT2']] <- doEdgeR(.f3, .l3, fdr.cutoff, paste0('flexall_KT5_KT2_', dt))
         fdegat[['KT5_KT2']] <- fdeg[['KT5_KT2']][(fdeg[['KT5_KT2']][, 1] %in% names(CARHR2TAIR)), ]
+        
         fDEG[[dt]] <- fdeg
         fDEGat[[dt]] <- fdegat
     }
@@ -488,11 +498,11 @@ ak.deg <- function(D) {
             fDEG2at[[paste0(nm1, '_', nm2)]] <- fDEGat[[nm1]][[nm2]]
         }
     }
-    WriteExcel(fDEG2, file = 'result/DEG.xlsx')
-    WriteExcel(fDEG2at, file = 'result/DEG.AT.xlsx')
+    WriteExcel(fDEG2, file = 'result/DEG_flexuosa.xlsx')
+    WriteExcel(fDEG2at, file = 'result/DEGAT_flexuosa.xlsx')
     
     
-    # topGO
+    # topGO for DEG
     fDEGGO <- fDEG
     fDEGGO2 <- NULL
     for (dt in names(fDEG)) {
@@ -504,7 +514,7 @@ ak.deg <- function(D) {
             fDEGGO2[[paste0(dt, '_', cp)]] <- fDEGGO[[dt]][[cp]]
         }
     }
-    WriteExcel(fDEGGO2, file = 'result/DEGGO.xlsx')
+    WriteExcel(fDEGGO2, file = 'result/DEGGO_flexuosa.xlsx')
     
  
     used.go.id <- unique(c(unlist(sapply(fDEGGO[[1]], function(x){x[, 1]})),
@@ -615,7 +625,7 @@ ak.deg <- function(D) {
     .kt5.ama   <- a[, grep('KT5_A_0502', colnames(a))]
     
     # amara vs hirsuta // KT5 vs IR1, 0502
-    zpDEG <- doEdgeR(cbind(.ir1.hir, .kt5.ama), c(rep('IRI-H', 3), rep('KT5-A', 3)), fdr.cutoff, 'IR1-H_KT5-A')
+    zpDEG <- doEdgeR(cbind(.ir1.hir, .kt5.ama), c(rep('A', 3), rep('B', 3)), fdr.cutoff, 'IR1H_KT5A')
     zpdeg.allgene <- zpDEG$CarID
     zpdeg.siggene <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff]
     zpdeg.siggeneup <- zpDEG$CarID[zpDEG$FDR < fdr.cutoff & zpDEG$log2Ratio > 0]
@@ -623,9 +633,11 @@ ak.deg <- function(D) {
     zpDEGGO <- doTopGO(zpdeg.allgene, zpdeg.siggene)
     zpDEGGOup <- doTopGO(zpdeg.allgene, zpdeg.siggeneup)
     zpDEGGOdw <- doTopGO(zpdeg.allgene, zpdeg.siggenedw)
-    WriteExcel(list(DEG = zpDEG, DEGAT = zpDEG[(zpDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = zpDEGGO, GO_A_highexp = zpDEGGOup, GO_H_highexp = zpDEGGOdw),
-                    file = 'result/amara0502_hirsuta0502_DEG.xlsx')
+    WriteExcel(list(IR1hir_KT5ama = zpDEG, DEGAT = zpDEG[(zpDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zpDEGGO, GO_up = zpDEGGOup, GO_down = zpDEGGOdw),
+                    file = 'result/DEG0502_IR1hirvsKT5ama.xlsx')
+    
+    
     dummyDEGGO <- doTopGO(rownames(f), sample(rownames(f), nrow(f) - 1000), 5500, 'classic')
     WriteExcel(list(DEG = dummyDEGGO),
                     file = 'result/dummy_to_check_numOfGO_in_topGO.xlsx')
@@ -637,7 +649,7 @@ ak.deg <- function(D) {
     barplotExp(zpDEG.rsheat, 'amara0502_vs_hirsuta0502_responsetoheat')
 
     # flexuoasa vs hirsuta // IR1, 0502
-    zhDEG <- doEdgeR(cbind(.ir1.flex, .ir1.hir), c(rep('IR1-F', 3), rep('IR1-H', 3)), fdr.cutoff, 'IR1-F_IR1-H')
+    zhDEG <- doEdgeR(cbind(.ir1.flex, .ir1.hir), c(rep('A', 3), rep('B', 3)), fdr.cutoff, 'IR1-F_IR1-H')
     zhdeg.allgene <- zhDEG$CarID
     zhdeg.siggene <- zhDEG$CarID[zhDEG$FDR < fdr.cutoff]
     zhdeg.siggeneup <- zhDEG$CarID[zhDEG$FDR < fdr.cutoff & zhDEG$log2Ratio > 0]
@@ -645,13 +657,13 @@ ak.deg <- function(D) {
     zhDEGGO <- doTopGO(zhdeg.allgene, zhdeg.siggene)
     zhDEGGOup <- doTopGO(zhdeg.allgene, zhdeg.siggeneup)
     zhDEGGOdw <- doTopGO(zhdeg.allgene, zhdeg.siggenedw)
-    WriteExcel(list(DEG = zhDEG, DEGAT = zhDEG[(zhDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = zhDEGGO, GO_H_highexp = zhDEGGOup, GO_F_highexp = zhDEGGOdw),
-                    file = 'result/flexuosa0502IR1_hirsuta0502IR1_DEG.xlsx')
+    WriteExcel(list(IR1flex_IR1hir = zhDEG, DEGAT = zhDEG[(zhDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zhDEGGO, GO_up = zhDEGGOup, GO_down = zhDEGGOdw),
+                    file = 'result/DEG0502__IR1flexvsIR1hir.xlsx')
 
 
     # flexuoasa vs amara // KT5, 0502
-    zaDEG <- doEdgeR(cbind(.kt5.flex, .kt5.ama), c(rep('KT5-F', 3), rep('KT5-A', 3)), fdr.cutoff, 'KT5-F_KT5-A')
+    zaDEG <- doEdgeR(cbind(.kt5.flex, .kt5.ama), c(rep('A', 3), rep('B', 3)), fdr.cutoff, 'KT5-F_KT5-A')
     zadeg.allgene <- zaDEG$CarID
     zadeg.siggene <- zaDEG$CarID[zaDEG$FDR < fdr.cutoff]
     zadeg.siggeneup <- zaDEG$CarID[zaDEG$FDR < fdr.cutoff & zaDEG$log2Ratio > 0]
@@ -659,10 +671,10 @@ ak.deg <- function(D) {
     zaDEGGO <- doTopGO(zadeg.allgene, zadeg.siggene)
     zaDEGGOup <- doTopGO(zadeg.allgene, zadeg.siggeneup)
     zaDEGGOdw <- doTopGO(zadeg.allgene, zadeg.siggenedw)
-    WriteExcel(list(DEG = zaDEG, DEGAT = zaDEG[(zaDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = zaDEGGO, GO_H_highexp = zaDEGGOup, GO_A_highexp = zaDEGGOdw),
-                    file = 'result/flexuosa0502KT5_amara0502KT5_DEG.xlsx')
-
+    WriteExcel(list(KT5flex_KT5ama = zaDEG, DEGAT = zaDEG[(zaDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = zaDEGGO, GO_up = zaDEGGOup, GO_down = zaDEGGOdw),
+                    file = 'result/DEG0502__KT5flexvsKT5ama.xlsx')
+    
     
     ziDEG <- fDEG[['0502']][['KT5_IR1']]
     zideg.allgene <- ziDEG$CarID
@@ -672,9 +684,10 @@ ak.deg <- function(D) {
     ziDEGGO <- doTopGO(zideg.allgene, zideg.siggene)
     ziDEGGOup <- doTopGO(zideg.allgene, zideg.siggeneup)
     ziDEGGOdw <- doTopGO(zideg.allgene, zideg.siggenedw)
-    WriteExcel(list(DEG = ziDEG, DEGAT = ziDEG[(ziDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = ziDEGGO, GO_KT5_highexp = ziDEGGOup, GO_IR1_highexp = ziDEGGOdw),
-                    file = 'result/flexuosa0502KT5_flexuosa0502IR1_DEG.xlsx')
+    WriteExcel(list(KT5flex_IR1flex = ziDEG, DEGAT = ziDEG[(ziDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = ziDEGGO, GO_up = ziDEGGOup, GO_down = ziDEGGOdw),
+                    file = 'result/DEG0502__KT5flexvsIR1flex.xlsx')
+    
     
     zideg.siggene.watdep <- intersect(as.character(zideg.siggene), as.character(watdep.carhr))
     zpdeg.siggene.watdep <- intersect(as.character(zpdeg.siggene), as.character(watdep.carhr))
@@ -683,7 +696,7 @@ ak.deg <- function(D) {
     
  
     # flexuoasa H vs hirsuta // IR1, 0502
-    fhDEG <- doEdgeR(cbind(.ir1.flexh, .ir1.hir), c(rep('IR1-Fh', 3), rep('IR1-H', 3)), fdr.cutoff, 'IR1-Fh_IR1-H')
+    fhDEG <- doEdgeR(cbind(.ir1.flexh, .ir1.hir), c(rep('A', 3), rep('B', 3)), fdr.cutoff, 'IR1-Fh_IR1-H')
     fhdeg.allgene <- fhDEG$CarID
     fhdeg.siggene <- fhDEG$CarID[fhDEG$FDR < fdr.cutoff]
     fhdeg.siggeneup <- fhDEG$CarID[fhDEG$FDR < fdr.cutoff & fhDEG$log2Ratio > 0]
@@ -691,13 +704,13 @@ ak.deg <- function(D) {
     fhDEGGO <- doTopGO(fhdeg.allgene, fhdeg.siggene)
     fhDEGGOup <- doTopGO(fhdeg.allgene, fhdeg.siggeneup)
     fhDEGGOdw <- doTopGO(fhdeg.allgene, fhdeg.siggenedw)
-    WriteExcel(list(DEG = fhDEG, DEGAT = fhDEG[(fhDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = fhDEGGO, GO_H_highexp = fhDEGGOup, GO_Fh_highexp = fhDEGGOdw),
-                    file = 'result/flexuosaH0502IR1_hirsuta0502IR1_DEG.xlsx')
+    WriteExcel(list(IR1flexH_IR1hir = fhDEG, DEGAT = fhDEG[(fhDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = fhDEGGO, GO_up = fhDEGGOup, GO_down = fhDEGGOdw),
+                    file = 'result/DEG0502__IR1flexHvsIR1hir.xlsx')
 
 
     # flexuoasa A vs amara // KT5, 0502
-    faDEG <- doEdgeR(cbind(.kt5.flexa, .kt5.ama), c(rep('KT5-Fa', 3), rep('KT5-A', 3)), fdr.cutoff, 'KT5-Fa_KT5-A')
+    faDEG <- doEdgeR(cbind(.kt5.flexa, .kt5.ama), c(rep('A', 3), rep('B', 3)), fdr.cutoff, 'KT5-Fa_KT5-A')
     fadeg.allgene <- faDEG$CarID
     fadeg.siggene <- faDEG$CarID[faDEG$FDR < fdr.cutoff]
     fadeg.siggeneup <- faDEG$CarID[faDEG$FDR < fdr.cutoff & faDEG$log2Ratio > 0]
@@ -705,11 +718,12 @@ ak.deg <- function(D) {
     faDEGGO <- doTopGO(fadeg.allgene, fadeg.siggene)
     faDEGGOup <- doTopGO(fadeg.allgene, fadeg.siggeneup)
     faDEGGOdw <- doTopGO(fadeg.allgene, fadeg.siggenedw)
-    WriteExcel(list(DEG = faDEG, DEGAT = faDEG[(faDEG$CarID %in% names(CARHR2TAIR)), ],
-                    GO = faDEGGO, GO_A_highexp = faDEGGOup, GO_Fa_highexp = faDEGGOdw),
-                    file = 'result/flexuosaA0502KT5_amara0502KT5_DEG.xlsx')
+    WriteExcel(list(KT5flexA_KT5ama = faDEG, DEGAT = faDEG[(faDEG$CarID %in% names(CARHR2TAIR)), ],
+                    GO = faDEGGO, GO_up = faDEGGOup, GO_down = faDEGGOdw),
+                    file = 'result/DEG0502__KT5flexAvsKT5ama.xlsx')
 
    
+    
     # ratio-changes
     fRT <- NULL
     dh <- D$fpkm$H
@@ -723,7 +737,7 @@ ak.deg <- function(D) {
         
         dat <- cbind(.fh[, grep('KT2', colnames(.fh))], .fa[, grep('KT2', colnames(.fa))],
                      .fh[, grep('IR1', colnames(.fh))], .fa[, grep('IR1', colnames(.fa))])
-        tmpdir <- paste0('homeoroq_tmp/', dt, '_KT2_IR1')
+        tmpdir <- paste0('homeoroq_date/', dt, '_KT2_IR1')
         if (!dir.exists(tmpdir)) {
             dir.create(tmpdir, recursive = TRUE)
         }
@@ -732,7 +746,7 @@ ak.deg <- function(D) {
         
         dat <- cbind(.fh[, grep('KT5', colnames(.fh))], .fa[, grep('KT5', colnames(.fa))],
                      .fh[, grep('IR1', colnames(.fh))], .fa[, grep('IR1', colnames(.fa))])
-        tmpdir <- paste0('homeoroq_tmp/', dt, '_KT5_IR1')
+        tmpdir <- paste0('homeoroq_date/', dt, '_KT5_IR1')
         if (!dir.exists(tmpdir)) {
             dir.create(tmpdir, recursive = TRUE)
         }
@@ -741,19 +755,21 @@ ak.deg <- function(D) {
         
         dat <- cbind(.fh[, grep('KT5', colnames(.fh))], .fa[, grep('KT5', colnames(.fa))],
                      .fh[, grep('KT2', colnames(.fh))], .fa[, grep('KT2', colnames(.fa))])
-        tmpdir <- paste0('homeoroq_tmp/', dt, '_KT5_KT2')
+        tmpdir <- paste0('homeoroq_date/', dt, '_KT5_KT2')
         if (!dir.exists(tmpdir)) {
             dir.create(tmpdir, recursive = TRUE)
         }
         dat <- dat[rowSums(dat) > 0, ]
         write.table(dat, col.names = T, row.names = T, sep = '\t', quote = F, file = paste0(tmpdir, '/data.xls'))
     }
-    # goto homeoroq_tmp directory and run the shell.
+
+
+    # goto homeoroq_date directory and run the shell.
     # run.calcpval.1.sh
     # run.calcpval.2.sh
     fRT <- fRTtb <- fRTat <- NULL
-    for (dname in list.dirs('homeoroq_tmp')) {
-        if (dname == 'homeoroq_tmp') {next}
+    for (dname in list.dirs('homeoroq_date')) {
+        if (dname == 'homeoroq_date') {next}
         x <- read.table(paste0(dname, '/result.txt'), header = TRUE)
         x <- data.frame(x, sigGene = as.numeric(x$ratioSD < 0.3 & x$padj < fdr.cutoff))
         y <- x[, c('gene', 'padj', 'ratioSD', 'sigGene')]
@@ -769,8 +785,8 @@ ak.deg <- function(D) {
         fRTtb[[strsplit(dname, '/')[[1]][2]]] <- y
         fRTat[[strsplit(dname, '/')[[1]][2]]] <- y[y$gene %in% names(CARHR2TAIR), ]
     }
-    WriteExcel(fRTtb, file = 'result/RatioDiffGene.xlsx')
-    WriteExcel(fRTat, file = 'result/RatioDiffGeneAT.xlsx')
+    WriteExcel(fRTtb, file = 'result/RatioDiffGene_BetweeSites.xlsx')
+    WriteExcel(fRTat, file = 'result/RatioDiffGeneAT_BetweenSites.xlsx')
 
     # topGO
     fRTGO <- fRT
@@ -780,7 +796,38 @@ ak.deg <- function(D) {
         siggene <- as.character(degtable$gene[degtable$sigGene > 0])
         fRTGO[[dn]] <- doTopGO(allgene, siggene)
     }
-    WriteExcel(fRTGO, file = 'result/RatioDiffGeneGO.xlsx')
+    WriteExcel(fRTGO, file = 'result/RatioDiffGeneGO_BetweenSites.xlsx')
+    
+    
+    # venn diagram
+    # for each date
+    for (dt in c('0418', '0502', '0516')) {
+        .KT2vsIR1 <- fRTtb[[paste0(dt, '_KT2_IR1')]]
+        .KT5vsKT2 <- fRTtb[[paste0(dt, '_KT5_KT2')]]
+        .KT5vsIR1 <- fRTtb[[paste0(dt, '_KT5_IR1')]]
+        vv <- list(KT2vsIR1 = as.character(.KT2vsIR1$gene[.KT2vsIR1$sigGene == 1]),
+                   KT5vsKT2 = as.character(.KT5vsKT2$gene[.KT5vsKT2$sigGene == 1]),
+                   KT5vsIR1 = as.character(.KT5vsIR1$gene[.KT5vsIR1$sigGene == 1]))
+        png(paste0('fig/RatioDiffGene_Venn_BetweenSites_', dt, '.png'), 800, 800, res=150)
+        gplots::venn(vv)
+        dev.off()
+    }
+    # for each site-comaprison
+     for (dc in c('KT2_IR1', 'KT5_KT2', 'KT5_IR1')) {
+        d0418 <- fRTtb[[paste0('0418_', dc)]]
+        d0502 <- fRTtb[[paste0('0502_', dc)]]
+        d0516 <- fRTtb[[paste0('0516_', dc)]]
+        vv <- list(d0418 = as.character(d0418$gene[d0418$sigGene == 1]),
+                   d0502 = as.character(d0502$gene[d0502$sigGene == 1]),
+                   d0516 = as.character(d0516$gene[d0516$sigGene == 1]))
+        png(paste0('fig/RatioDiffGene_Venn_BetweenSites_', dc, '.png'), 800, 800, res=150)
+        gplots::venn(vv)
+        dev.off()
+    }
+    
+    
+    
+    
     
     used.go.id <- unique(c(unlist(sapply(fRTGO, function(x){x[, 1]}))))
     gotable   <- matrix(NA, ncol = 9, nrow = length(used.go.id))
@@ -880,6 +927,166 @@ ak.deg <- function(D) {
 }
 
 
+ak.deg.revision <- function(D) {
+    fdr.cutoff <- 0.05
+    
+    # DEHs
+    sites <- c('IR1', 'KT2', 'KT5')
+    dates <- c('0418', '0502', '0516')
+    labels <- paste(rep(sites, each = 3), rep(dates, times = 3), sep = '_')
+    deglist <- vector('list', length = length(labels))
+    names(deglist) <- labels
+    
+    degtableHup <- degtableAup <- matrix(NA, ncol = length(dates), nrow = length(sites))
+    colnames(degtableHup) <- colnames(degtableAup) <- dates
+    rownames(degtableHup) <- rownames(degtableAup) <- sites
+    
+    for (dt in sites) {
+        for (dd in dates) {
+            .lb <- paste(dt, dd, sep = '_')
+            target_libs <- intersect(grep('_F_', colnames(D$count$H)),
+                            intersect(grep(dt, colnames(D$count$H)), grep(dd, colnames(D$count$H))))
+            ch <- round(D$count$H[, target_libs])
+            ca <- round(D$count$A[, target_libs])
+            colnames(ch) <- paste0(colnames(ch), '_H')
+            colnames(ca) <- paste0(colnames(ca), '_A')
+            group_tag <- rep(c('H', 'A'), each = length(target_libs))
+            deglist[[.lb]] <- doEdgeR(cbind(ch, ca), group_tag, fdr.cutoff, paste0('DEH_', dt, '_', dd))
+            
+            # H-up: FC > 0;  A-up: FC < 0
+            degtableHup[dt, dd] <- sum(deglist[[.lb]]$FDR < fdr.cutoff & deglist[[.lb]]$log2Ratio > 0)
+            degtableAup[dt, dd] <- sum(deglist[[.lb]]$FDR < fdr.cutoff & deglist[[.lb]]$log2Ratio < 0)
+        }
+    }
+    
+    WriteExcel(deglist, file = 'result/DEH_gene_list.xlsx')
+    
+    golist_Hup <- golist_Aup <- deglist
+    for (lb in names(golist)) {golist[[lb]] <- NA}
+    for (lb in names(deglist)) {
+        degtable <- deglist[[lb]]
+        allgene <- degtable$CarID
+        siggene_Hup <- degtable$CarID[(degtable$FDR < fdr.cutoff) & (degtable$log2Ratio > 0)]
+        siggene_Aup <- degtable$CarID[(degtable$FDR < fdr.cutoff) & (degtable$log2Ratio < 0)]
+        golist_Aup[[lb]] <- doTopGO(allgene, siggene_Aup)
+        golist_Hup[[lb]] <- doTopGO(allgene, siggene_Hup)
+    }
+    WriteExcel(golist_Aup, file = 'result/DEH_GO_A-up-list.xlsx')
+    WriteExcel(golist_Hup, file = 'result/DEH_GO_H-up-list.xlsx')
+    
+    
+    
+    
+
+
+    # Homeolog expression changes
+    fRT <- NULL
+    dh <- D$fpkm$H
+    da <- D$fpkm$A
+    fh <- dh[, grep('_F_', colnames(dh))]
+    fa <- da[, grep('_F_', colnames(da))]
+    
+    for (dt in c('IR1', 'KT2', 'KT5')) {
+        frt <- NULL
+        .fh <- fh[, grep(dt, colnames(fh))]
+        .fa <- fa[, grep(dt, colnames(fa))]
+        
+        dat <- cbind(.fh[, grep('0418', colnames(.fh))], .fa[, grep('0418', colnames(.fa))],
+                     .fh[, grep('0502', colnames(.fh))], .fa[, grep('0502', colnames(.fa))])
+        tmpdir <- paste0('homeoroq_site/', dt, '_0418vs0502')
+        if (!dir.exists(tmpdir)) {
+            dir.create(tmpdir, recursive = TRUE)
+        }
+        dat <- dat[rowSums(dat) > 0, ]
+        write.table(dat, col.names = T, row.names = T, sep = '\t', quote = F, file = paste0(tmpdir, '/data.xls'))
+        
+        dat <- cbind(.fh[, grep('0502', colnames(.fh))], .fa[, grep('0502', colnames(.fa))],
+                     .fh[, grep('0516', colnames(.fh))], .fa[, grep('0516', colnames(.fa))])
+        tmpdir <- paste0('homeoroq_site/', dt, '_0502vs0516')
+        if (!dir.exists(tmpdir)) {
+            dir.create(tmpdir, recursive = TRUE)
+        }
+        dat <- dat[rowSums(dat) > 0, ]
+        write.table(dat, col.names = T, row.names = T, sep = '\t', quote = F, file = paste0(tmpdir, '/data.xls'))
+        
+        dat <- cbind(.fh[, grep('0516', colnames(.fh))], .fa[, grep('0516', colnames(.fa))],
+                     .fh[, grep('0418', colnames(.fh))], .fa[, grep('0418', colnames(.fa))])
+        tmpdir <- paste0('homeoroq_site/', dt, '_0516vs0418')
+        if (!dir.exists(tmpdir)) {
+            dir.create(tmpdir, recursive = TRUE)
+        }
+        dat <- dat[rowSums(dat) > 0, ]
+        write.table(dat, col.names = T, row.names = T, sep = '\t', quote = F, file = paste0(tmpdir, '/data.xls'))
+    }
+
+
+
+    # goto homeoroq_site directory and run the shell.
+    # run.calcpval.1.sh
+    # run.calcpval.2.sh
+    fRT <- fRTtb <- fRTat <- NULL
+    for (dname in list.dirs('homeoroq_site')) {
+        if (dname == 'homeoroq_site') {next}
+        x <- read.table(paste0(dname, '/result.txt'), header = TRUE)
+        x <- data.frame(x, sigGene = as.numeric(x$ratioSD < 0.3 & x$padj < fdr.cutoff))
+        y <- x[, c('gene', 'padj', 'ratioSD', 'sigGene')]
+        rownames(x) <- x[, 1]
+        rownames(y) <- y[, 1]
+        x <- BindTairName(x)
+        y <- BindTairName(y)
+        print(paste0(dname, ' ', sum(x$sigGene),
+                     '  AT:', sum(x[x$gene %in% names(CARHR2TAIR), ]$sigGene),
+                     '  TOTAL:', length(x$sigGene),
+                     '  TOTALAT:', nrow(x[x$gene %in% names(CARHR2TAIR), ])))
+        x <- x[order(-x$sigGene), ]
+        y <- y[order(-y$sigGene), ]
+        fRT[[strsplit(dname, '/')[[1]][2]]] <- x
+        fRTtb[[strsplit(dname, '/')[[1]][2]]] <- y
+        fRTat[[strsplit(dname, '/')[[1]][2]]] <- y[y$gene %in% names(CARHR2TAIR), ]
+    }
+    WriteExcel(fRTtb, file = 'result/RatioDiffGene_BetweeDates.xlsx')
+    WriteExcel(fRTat, file = 'result/RatioDiffGeneAT_BetweenDates.xlsx')
+
+    # topGO
+    fRTGO <- fRT
+    for (dn in names(fRT)) {
+        degtable <- fRT[[dn]]
+        allgene <- as.character(degtable$gene)
+        siggene <- as.character(degtable$gene[degtable$sigGene > 0])
+        fRTGO[[dn]] <- doTopGO(allgene, siggene)
+    }
+    WriteExcel(fRTGO, file = 'result/RatioDiffGeneGO_BetweenDates.xlsx')
+    
+    
+    # venn diagram
+    # for each date
+    for (dt in c('IR1', 'KT2', 'KT5')) {
+        d04180502 <- fRTtb[[paste0(dt, '_0418vs0502')]]
+        d05020516 <- fRTtb[[paste0(dt, '_0502vs0516')]]
+        d05160418 <- fRTtb[[paste0(dt, '_0516vs0418')]]
+        vv <- list(d0418vs0502 = as.character(d04180502$gene[d04180502$sigGene == 1]),
+                   d0502vs0516 = as.character(d05020516$gene[d05020516$sigGene == 1]),
+                   d0516vs0418 = as.character(d05160418$gene[d05160418$sigGene == 1]))
+        png(paste0('fig/RatioDiffGene_Venn_BetweenDates_', dt, '.png'), 800, 800, res=150)
+        gplots::venn(vv)
+        dev.off()
+    }
+    # for each site-comaprison
+     for (dc in c('0418vs0502', '0502vs0516', '0516vs0418')) {
+        IR1 <- fRTtb[[paste0('IR1_', dc)]]
+        KT2 <- fRTtb[[paste0('KT2_', dc)]]
+        KT5 <- fRTtb[[paste0('KT5_', dc)]]
+        vv <- list(IR1 = as.character(IR1$gene[IR1$sigGene == 1]),
+                   KT2 = as.character(KT2$gene[KT2$sigGene == 1]),
+                   KT5 = as.character(KT5$gene[KT5$sigGene == 1]))
+        png(paste0('fig/RatioDiffGene_Venn_BetweenDates_', dc, '.png'), 800, 800, res=150)
+        gplots::venn(vv)
+        dev.off()
+    }
+    
+    
+}
+
 
 stop()
 
@@ -889,6 +1096,13 @@ D <- load.expression(D)
 D <- calc.fpkm(D)
 D <- calc.exp.genes(D)
 ak.deg(D)
+ak.deg.revision(D)
+
+
+
+fpkmsheet <- list(H_homeologs = data.frame(BindTairName(rownames(D$fpkm$H)), D$fpkm$H),
+                  A_homeologs = data.frame(BindTairName(rownames(D$fpkm$A)), D$fpkm$A))
+WriteExcel(fpkmsheet, file = 'result/homeologs.fpkm.xlsx')
 
 
 
@@ -1184,6 +1398,65 @@ heatmap.2(as.matrix(1 - cc), trace = "none", scale = "none", col = COLSFUNCC2(),
 dev.off()
 
 
+
+
+
+
+
+# plot SD threshold figure
+fRT <- fRTtb <- fRTat <- NULL
+n.before <- NA
+n.after <- NA
+n.name <- NA
+for (dname in list.dirs('homeoroq_tmp')) {
+    if (dname == 'homeoroq_tmp') {next}
+    
+    n.name <- c(n.name, dname)
+    ctrlname <- strsplit(strsplit(dname, '/')[[1]][[2]], '_')[[1]][2]
+    objname  <- strsplit(strsplit(dname, '/')[[1]][[2]], '_')[[1]][3]
+    x <- read.table(paste0(dname, '/result.txt'), header = TRUE)
+
+    df <- x[, c('gene', 'padj', 'ratioSD', 'ctrlRatio', 'objRatio')]
+    df <- data.frame(df,
+              cutoff1 = ifelse(as.logical(df$padj < 0.05), 'sig', 'n'),
+              cutoff2 = ifelse(as.logical(df$padj < 0.05 & df$ratioSD < 0.3), 'sig', 'n')
+          )
+    
+    
+    df.cutoff1.sub1 <- df[df$cutoff1 == 'n', ]
+    df.cutoff1.sub2 <- df[df$cutoff1 == 'sig', ]
+    g1 <- ggplot()
+    g1 <- g1 + geom_point(data = df.cutoff1.sub1, aes(x = ctrlRatio, y = objRatio, size = 10), color = '#333333')
+    g1 <- g1 + geom_point(data = df.cutoff1.sub2, aes(x = ctrlRatio, y = objRatio, size = 10), color = '#cc0c00')
+    g1 <- g1 + xlab(ctrlname) + ylab(objname) + coord_fixed()
+    g1 <- g1 + theme(axis.text.x = element_text(size=40), axis.text.y = element_text(size=40),
+                axis.title.x = element_text(size=40), axis.title.y = element_text(size=40))
+
+    
+    df.cutoff2.sub1 <- df[df$cutoff2 == 'n', ]
+    df.cutoff2.sub2 <- df[df$cutoff2 == 'sig', ]
+    g2 <- ggplot()
+    g2 <- g2 + geom_point(data = df.cutoff2.sub1, aes(x = ctrlRatio, y = objRatio, size = 10), color = '#333333')
+    g2 <- g2 + geom_point(data = df.cutoff2.sub2, aes(x = ctrlRatio, y = objRatio, size = 10), color = '#cc0c00')
+    g2 <- g2 + xlab(ctrlname) + ylab(objname) + coord_fixed()
+    g2 <- g2 + theme(axis.text.x = element_text(size=40), axis.text.y = element_text(size=40),
+                axis.title.x = element_text(size=40), axis.title.y = element_text(size=40))
+    
+    
+    png(paste0(FIG_PATH, '/cutoff-', strsplit(dname, '/')[[1]][[2]], '-FDR.png'), 1000, 1000)
+    print(g1)
+    dev.off()
+    png(paste0(FIG_PATH, '/cutoff-', strsplit(dname, '/')[[1]][[2]], '-FDRandRatioSD.png'), 1000, 1000)
+    print(g2)
+    dev.off()
+    
+    n.before <- c(n.before, nrow(df.cutoff1.sub2))
+    n.after <- c(n.after, nrow(df.cutoff2.sub2))
+}
+
+n.siggenes <- data.frame(before.ratioSD.cutoff = n.before[-1],
+                        after.ratioSD.cutoff = n.after[-1])
+rownames(n.siggenes) <- n.name[-1]
 
 
 
