@@ -6,7 +6,7 @@ FASTQ quality control and homeolog expression quantification.
 qsub 01_qc.sh
 qsub 02_quant_hisat.sh
 qsub 03_count_hisat.sh 
-qsub 04_eagle.sh
+qsub 04_quant_eagle.sh
 ```
 
 
