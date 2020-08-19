@@ -2,6 +2,13 @@ library(tidyverse)
 library(ggsci)
 
 
+GENERATE_DATASET   <- FALSE
+NORM_SPLIT_DATASET <- TRUE
+
+
+
+
+
 
 # hash for changing japanese prefecture name into english
 pref.name.ja <- c('北海道', '青森県', '岩手県', '宮城県', '秋田県', '山形県',
@@ -289,123 +296,137 @@ normalize_records <- function(dat_records, nf) {
 
 
 
-randomize_dataset <- function(x, seed = 0, randomize_type = 'def', out_dpath = '') {
-    set.seed(seed)
-    
-    if (randomize_type == 'Type1') {
-        keep <- !is.na(x$incidence)
-        x$incidence[keep] <- sample(x$incidence[keep])
-        
-    } else if (randomize_type == 'Type2') {
-        for (prename in unique(x$prefecture)) {
-            target_prefecture <- (prename == x$prefecture)
-            is_not_na <- !is.na(x$incidence)
-            keep <- (target_prefecture) & (is_not_na)
-            if (sum(keep) > 1) {
-                x$incidence[keep] <- sample(x$incidence[keep])
-            }
-        }
-    } else {
-        stop('Set randimzie_type.')
-    }
-    
-    
-    if (!file.exists(out_dpath)) {
-        dir.create(out_dpath, showWarnings = FALSE)
-    }
-    
-    out_fpath <- paste0(out_dpath, '/kyuuri_honpo_percent.train.', randomize_type, '.', seed, '.tsv')
-    write_delim(x, path = out_fpath, delim = '\t', na = 'NA')
 
+arrange_dataset <- function(data_dpath, cutoff = 2013) {
+    
+    # load formatted data
+    dat_records <- read_tsv(paste0(data_dpath, '/data.tsv'))
+    
+    # split the original data to trainning set and validation set, and normalize both sets
+    dat_records_train <- dat_records %>% filter(year <= cutoff)
+    dat_records_valid <- dat_records %>% filter(year > cutoff)
+    nf_train <- calc_nf(dat_records_train)
+    dat_records_train_std <- normalize_records(dat_records_train, nf_train)
+    dat_records_valid_std <- normalize_records(dat_records_valid, nf_train)
+    
+    # generate whole dataset for fixing model
+    dat_records_test <- generate_dataset()
+    nf_all <- calc_nf(dat_records)
+    dat_records_std <- normalize_records(dat_records, nf_all)
+    dat_records_test_std <- normalize_records(dat_records_test, nf_all)
+    
+    # remove NA
+    dat_records_std <- dat_records_std[!is.na(dat_records_std$incidence), ]
+    dat_records_train_std <- dat_records_train_std[!is.na(dat_records_train_std$incidence), ]
+    dat_records_valid_std <- dat_records_valid_std[!is.na(dat_records_valid_std$incidence), ]
+    
+    # write records
+    # file name must be data_std.tsv, train_std.tsv, valid_std.tsv, and test_std.tsv
+    write_delim(dat_records_std,       path = paste0(data_dpath, '/data_std.tsv'), delim = '\t', na = 'NA')
+    write_delim(dat_records_test_std,  path = paste0(data_dpath, '/test_std.tsv'), delim = '\t', na = 'NA')
+    if (nrow(dat_records_train_std) > 0 && nrow(dat_records_valid_std) > 0) {
+        write_delim(dat_records_train_std, path = paste0(data_dpath, '/train_std.tsv'), delim = '\t', na = 'NA')
+        write_delim(dat_records_valid_std, path = paste0(data_dpath, '/valid_std.tsv'), delim = '\t', na = 'NA')
+    }
+
+
+    # generate train (train) data and train (valid) for cross-validation
+    dir.create(paste0(data_dpath, '/cv'), showWarnings = FALSE)
+    set.seed(2020)
+    n_cv <- 10
+    if (nrow(dat_records_train_std) > n_cv) {
+        n_ <- floor(nrow(dat_records_train_std) / n_cv)
+        k_ <- nrow(dat_records_train_std) %% n_cv
+        if (k_ == 0) {
+            idx_ <- sample(c(rep(1:n_cv, each = n_)))
+        } else {
+            idx_ <- sample(c(rep(1:n_cv, each = n_), 1:k_))
+        }
+        for (i in 1:n_cv) {
+            dat_cv_train <- dat_records_train_std[idx_ != i, ]
+            dat_cv_valid <- dat_records_train_std[idx_ == i, ]
+            write_delim(dat_cv_train, path = paste0(data_dpath, '/cv/train_std_', i, '.tsv'), delim = '\t', na = 'NA')
+            write_delim(dat_cv_valid, path = paste0(data_dpath, '/cv/valid_std_', i, '.tsv'), delim = '\t', na = 'NA')
+        }
+    }
+    
+}
+
+
+
+randomize_dataset <- function(data_dpath) {
+    
+    dat_records <- read_tsv(paste0(data_dpath, '/data_std.tsv'))
+    n_records <- sum(!is.na(dat_records$incidence))
+    
+    if (n_records > 1) {
+    
+    # randomize rows
+    dir.create(paste0(data_dpath, '/randomize_1'), showWarnings = FALSE)
+    for (i in 1:100) {
+        set.seed(2020 + i)
+        dat_records_ <- dat_records[!is.na(dat_records$incidence), ]
+        dat_records_ <- dat_records_[sample(1:nrow(dat_records_)), ]
+        train_ <- dat_records_[1:round(nrow(dat_records_) * 0.8), ]
+        valid_ <- dat_records_[(round(nrow(dat_records_) * 0.8) + 1):nrow(dat_records_), ]
+        write_delim(train_, path = paste0(data_dpath, '/randomize_1/train_', i, '.tsv'),
+                    delim = '\t', na = 'NA')
+        write_delim(valid_, path = paste0(data_dpath, '/randomize_1/valid_', i, '.tsv'),
+                    delim = '\t', na = 'NA')
+    }
+    
+    # randomize rows and  columns (pref, month, incidence)
+    dir.create(paste0(data_dpath, '/randomize_2'), showWarnings = FALSE)
+    for (i in 1:100) {
+        set.seed(2020 - i)
+        dat_records_ <- dat_records[!is.na(dat_records$incidence), ]
+        dat_records_ <- dat_records_[sample(1:nrow(dat_records_)), ]
+        dat_records_$incidence <- sample(dat_records_$incidence)
+        dat_records_$month <- sample(dat_records_$month)
+        dat_records_$prefecture <- sample(dat_records_$prefecture)
+        train_ <- dat_records_[1:round(nrow(dat_records_) * 0.8), ]
+        valid_ <- dat_records_[(round(nrow(dat_records_) * 0.8) + 1):nrow(dat_records_), ]
+        write_delim(train_, path = paste0(data_dpath, '/randomize_2/train_', i, '.tsv'),
+                    delim = '\t', na = 'NA')
+        write_delim(valid_, path = paste0(data_dpath, '/randomize_2/valid_', i, '.tsv'),
+                    delim = '\t', na = 'NA')
+    }
+    
+    }
 }
 
 
 
 
-if (FALSE) {
 
 
+if (GENERATE_DATASET) {
 
-jppnet_dat <- read_jppnet_csv()
-
-
-dat <- jppnet_dat %>%
+    jppnet_dat <- read_jppnet_csv()
+    dat <- jppnet_dat %>%
                 filter(str_detect(crop, 'キュウリ')) %>%
                 filter(disease == 'うどんこ病') %>%
                 filter(method == '本圃発病葉率') %>%
                 filter(!is.na(value))
-incidence_matrices <- make_incidence_matrix(dat, replace.na = NA)
-dat_records <- generate_dataset(incidence_matrices)
+    incidence_matrices <- make_incidence_matrix(dat, replace.na = NA)
+    dat_records <- generate_dataset(incidence_matrices)
+    
+    # file name should be `data.tsv`
+    write_delim(dat_records, path = paste0('formatted/test/data.tsv'))
+}
  
+
+
+
+if (NORM_SPLIT_DATASET) {
+    project_data_dpath <- './formatted_data'
+    
+    for (dpath in list.dirs(project_data_dpath, recursive = FALSE)) {
+        arrange_dataset(dpath)
+        randomize_dataset(dpath)
+    }
    
-# train data and validation data
-dat_records_train <- dat_records %>% filter(year <= 2013)
-dat_records_valid <- dat_records %>% filter(year > 2013)
-nf_train <- calc_nf(dat_records_train)
-dat_records_train_std <- normalize_records(dat_records_train, nf_train)
-dat_records_valid_std <- normalize_records(dat_records_valid, nf_train)
-
-
-# train data and test data (for fixing model)
-dat_records_test <- generate_dataset()
-nf_all <- calc_nf(dat_records)
-dat_records_std <- normalize_records(dat_records, nf_all)
-dat_records_test_std <- normalize_records(dat_records_test, nf_all)
-
-
-    
-# write records
-write_delim(dat_records_train_std, path = paste0('formatted_data/kyuuri_honpo_percent.train.tsv'),
-            delim = '\t', na = 'NA')
-write_delim(dat_records_valid_std, path = paste0('formatted_data/kyuuri_honpo_percent.valid.tsv'),
-            delim = '\t', na = 'NA')
-write_delim(dat_records_test_std, path = paste0('formatted_data/kyuuri_honpo_percent.test.tsv'),
-            delim = '\t', na = 'NA')
-write_delim(dat_records_std, path = paste0('formatted_data/kyuuri_honpo_percent.all.tsv'),
-            delim = '\t', na = 'NA')
-    
-for (prefname in dat_records_train_std$prefecture) {
-    train_subset <- dat_records_train_std[dat_records_train_std$prefecture == prefname, ]
-    train_subset <- train_subset[!is.na(train_subset$incidence), ]
-    if (nrow(train_subset) > 0) {
-        write_delim(train_subset, path = paste0('formatted_data/kyuuri_honpo_percent.train.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
-    }
-    
-    valid_subset <- dat_records_valid_std[dat_records_valid_std$prefecture == prefname, ]
-    valid_subset <- valid_subset[!is.na(valid_subset$incidence), ]
-    if (nrow(valid_subset) > 0) {
-        write_delim(valid_subset, path = paste0('formatted_data/kyuuri_honpo_percent.valid.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
-    }
-    
-    test_subset <- dat_records_test_std[dat_records_test_std$prefecture == prefname, ]
-    test_subset <- test_subset[!is.na(test_subset$incidence), ]
-    if (nrow(test_subset) > 0) {
-        write_delim(test_subset, path = paste0('formatted_data/kyuuri_honpo_percent.test.subset.', prefname,'.tsv'), delim = '\t', na = 'NA')
-    }
-    
 }
-
-
-
-
-
-
-x <- read_tsv('formatted_data/kyuuri_honpo_percent.train.tsv', na = 'NA')
-for (i in 1:1000) {
-    randomize_dataset(x, i, 'Type1', 'formatted_data/randomized_Type1')
-    randomize_dataset(x, i, 'Type2', 'formatted_data/randomized_Type2')
-}
-
-
-
-
-}
-
-
-
-
-
-
 
 
 
