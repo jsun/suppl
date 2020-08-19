@@ -1,6 +1,7 @@
 import os
 import sys
 import random
+import json
 import numpy as np
 import torch
 import argparse
@@ -9,21 +10,39 @@ import matplotlib.pyplot as plt
 import sklearn.metrics
 
 
-def get_params():
+def get_params(params_fpath):
     
-    params = {
-        'dropout': 0.5,
-        #'n_hidden': [10, 32, 32],
-        'n_hidden': [21, 40],
-        'activate_func': 'relu'
-    }
+    if params_fpath is None:
+        params = {
+            'dropout': 0.5,
+            #'n_hidden': [10, 32, 32],
+            'n_hidden': [21, 40],
+            'activate_func': 'relu'
+        }
+    
+    else:
+        with open(params_fpath, 'r') as jsonfh:
+            params = json.load(jsonfh)
+        
+        n_hidden = []
+        if 'n_hidden_0' in params:
+            n_hidden.append(params['n_hidden_0'])
+            del params['n_hidden_0']
+        if 'n_hidden_1' in params:
+            n_hidden.append(params['n_hidden_1'])
+            del params['n_hidden_1']
+        if 'n_hidden_2' in params:
+            n_hidden.append(params['n_hidden_2'])
+            del params['n_hidden_2']
+    
+        params['n_hidden'] = n_hidden
     
     return params
     
 
 
 
-def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=100):
+def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=100, debug=True):
     
     if weight is None:
         raise ValueError('argument `weight` cannot be None.')
@@ -32,14 +51,23 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
     # hyper-parameters of network architecture
     if model == 'L1':
         dropouts = [0, 0.2, 0.4, 0.5, 0.6, 0.7]
-        n_hiddens = [[i] for i in [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
+        n_hiddens = [[i] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
         activate_funcs = ['relu', 'sigmoid']
+        if debug:
+            dropouts = [0, 0.5]
+            n_hiddens = [[i] for i in [8, 22]]
+            activate_funcs = ['relu', 'sigmoid']
         
     elif model == 'L2':
         dropouts = [0.5]
-        n_hiddens = [[i, j] for i in [ 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
-                            for j in [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]]
+        n_hiddens = [[i, j] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+                            for j in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
         activate_funcs = ['relu', 'sigmoid']
+        if debug:
+            dropouts = [0, 0.5]
+            n_hiddens = [[i, j] for i in [ 8, 22]
+                                for j in [18, 24]]
+            activate_funcs = ['relu', 'sigmoid']
         
     elif model == 'L3':
         dropouts = [0.5]
@@ -49,11 +77,11 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
         activate_funcs = ['relu']
     
     
-    eval_stats = {'activate_fun': [], 'dropout': [], 'train_mse': [], 'valid_mse': []}
+    eval_stats = {'activate_func': [], 'dropout': [], 'train_mse': [], 'valid_mse': []}
     for i in range(len(n_hiddens[0])):
         eval_stats['n_hidden_' + str(i)] = []
     
-    
+    n_tries = 1
     for activate_func in activate_funcs:
         for n_hidden in n_hiddens:
             for dropout in dropouts:
@@ -64,11 +92,9 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
                 
                 weight_ = '{}_{}_{}_{}'.format(weight, activate_func, '-'.join([str(i) for i in n_hidden]), dropout)
                 param_ = {'dropout': dropout, 'n_hidden': n_hidden, 'activate_func': activate_func}
-                loss_hist = train(weight_, train_dataset, valid_dataset, batch_size, epochs, param_, False)
+                loss_hist = train(weight_, train_dataset, valid_dataset, batch_size, epochs, param_, False, n_tries)
                 
-                n_tries = len(loss_hist['train'])
-                
-                eval_stats['activate_fun'].extend([activate_func] * n_tries)
+                eval_stats['activate_func'].extend([activate_func] * n_tries)
                 eval_stats['dropout'].extend([dropout] * n_tries)
                 eval_stats['train_mse'].extend(loss_hist['train'])
                 eval_stats['valid_mse'].extend(loss_hist['valid'])
@@ -81,7 +107,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
 
 
     
-def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = None, save_weight=True):
+def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = None, save_weight=True, n_try=10):
     
     if params is None:
         params = get_params()
@@ -93,16 +119,11 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
         raise ValueError('argument `weight` cannot be None.')
     
     
-    # validate 10 times (dropout the initialization effects)
-    print('-------------')
-    print('n_hidden: {}  dropout: {}  activate_func: {}'.format('-'.join([str(i) for i in params['n_hidden']]),
-                                                                params['dropout'], params['activate_func']))
-    
     best_loss_ = 1e5
     best_model_ = None
     min_loss = {'train': [], 'valid': []}
     
-    for i in range(10):
+    for i in range(n_try):
         jppnet = Jppnet(n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
         train_history = jppnet.train(train_dataset, valid_dataset, batch_size, epochs)
         
@@ -156,11 +177,12 @@ if __name__ == '__main__':
     parser.add_argument('--model', default='L1')
     parser.add_argument('--weight', default='./weights/test.pth')
     parser.add_argument('--output', default='./weights/test.txt')
-    parser.add_argument('--train-dataset', default='../formatted_data/kyuuri_honpo_percent.train.tsv')
-    parser.add_argument('--valid-dataset', default='../formatted_data/kyuuri_honpo_percent.valid.tsv')
-    parser.add_argument('--epochs', default=100, type=int)
+    parser.add_argument('--train-dataset', default='../formatted_data/test/train_std.tsv')
+    parser.add_argument('--valid-dataset', default='../formatted_data/test/valid_std.tsv')
+    parser.add_argument('--epochs', default=1000, type=int)
     parser.add_argument('--batch-size', default=1024, type=int)
     parser.add_argument('--mode', default='train')
+    parser.add_argument('--params', default=None)
     
     args = parser.parse_args()
     
@@ -168,11 +190,11 @@ if __name__ == '__main__':
         train_cv(args.model, args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs)
         
     elif args.mode == 'train':
-        params = get_params()
+        params = get_params(args.params)
         train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True)
     
     elif args.mode == 'valid':
-        params = get_params()
+        params = get_params(args.params)
         validate(args.weight, params, args.valid_dataset, args.output)
     
     elif args.mode == 'inference':

@@ -211,7 +211,8 @@ class Jppnet():
         
         self.model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
         self.__best_model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
-        self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        #self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device('cpu')
         self.model.to(self.device)
         
         
