@@ -1,0 +1,850 @@
+STAR svn revision compiled=STAR_2.3.0e_r291
+STAR compilation time,server,dir=Mon Feb 11 00:33:16 EST 2013 modena.cshl.edu:/data/gingeras/user/dobin/STAR/SandBox/STAR/STAR_2.3.0e
+##### DEFAULT parameters:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+runMode                           alignReads
+runThreadN                        1
+genomeDir                         ./GenomeDir/
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  -   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+readFilesIn                       Read1   Read2   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+limitGenomeGenerateRAM            31000000000
+limitIObufferSize                 150000000
+outFileNamePrefix                 ./
+outStd                            Log
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard
+outSAMunmapped                    None
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0.66
+outFilterMatchNmin                0
+outFilterMatchNminOverLread       0.66
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.3
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    0
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimJunctionOverhangMin           20
+sjdbFileChrStartEnd               -
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbOverhang                      0
+sjdbScore                         2
+swMode                            0
+swWinCoverageMinP                 50
+##### Command Line:
+/home/jqsun/research/cinsueta/local/bin/STAR   --runMode genomeGenerate --genomeDir ./star_index --genomeFastaFiles genome.fa --runThreadN 8 --limitGenomeGenerateRAM 10000000000 
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runMode                       genomeGenerate     " RE-DEFINED
+genomeDir                     ./star_index     " RE-DEFINED
+genomeFastaFiles              genome.fa        " RE-DEFINED
+runThreadN                    8     " RE-DEFINED
+limitGenomeGenerateRAM        10000000000     " RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate
+runThreadN                        8
+genomeDir                         ./star_index
+genomeFastaFiles                  genome.fa   
+limitGenomeGenerateRAM            10000000000
+
+-------------------------------
+##### Final effective command line:
+/home/jqsun/research/cinsueta/local/bin/STAR   --runMode genomeGenerate   --runThreadN 8   --genomeDir ./star_index   --genomeFastaFiles genome.fa      --limitGenomeGenerateRAM 10000000000
+
+##### Final parameters after user input--------------------------------:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+runMode                           genomeGenerate
+runThreadN                        8
+genomeDir                         ./star_index
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  genome.fa   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+readFilesIn                       Read1   Read2   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+limitGenomeGenerateRAM            10000000000
+limitIObufferSize                 150000000
+outFileNamePrefix                 ./
+outStd                            Log
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard
+outSAMunmapped                    None
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0.66
+outFilterMatchNmin                0
+outFilterMatchNminOverLread       0.66
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.3
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    0
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimJunctionOverhangMin           20
+sjdbFileChrStartEnd               -
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbOverhang                      0
+sjdbScore                         2
+swMode                            0
+swWinCoverageMinP                 50
+----------------------------------------
+
+Finished loading and checking parameters
+Apr 19 16:51:21 ... Starting to generate Genome files
+genome.fa : chr # 0  "NSCAFA.943" chrStart: 0
+genome.fa : chr # 1  "NSCAFA.766" chrStart: 262144
+genome.fa : chr # 2  "NSCAFA.765" chrStart: 524288
+genome.fa : chr # 3  "NSCAFA.764" chrStart: 786432
+genome.fa : chr # 4  "NSCAFA.480II" chrStart: 1048576
+genome.fa : chr # 5  "NSCAFA.760" chrStart: 1310720
+genome.fa : chr # 6  "scaffold838" chrStart: 1572864
+genome.fa : chr # 7  "NSCAFA.941" chrStart: 1835008
+genome.fa : chr # 8  "C760948" chrStart: 2097152
+genome.fa : chr # 9  "NSCAFA.768" chrStart: 2359296
+genome.fa : chr # 10  "NSCAFA.1030" chrStart: 2621440
+genome.fa : chr # 11  "NSCAFA.1032" chrStart: 2883584
+genome.fa : chr # 12  "NSCAFB.1377" chrStart: 3145728
+genome.fa : chr # 13  "NSCAFA.1034" chrStart: 3407872
+genome.fa : chr # 14  "NSCAFB.1374" chrStart: 3670016
+genome.fa : chr # 15  "scaffold273" chrStart: 3932160
+genome.fa : chr # 16  "NSCAFA.423" chrStart: 4194304
+genome.fa : chr # 17  "NSCAFB.655" chrStart: 4456448
+genome.fa : chr # 18  "NSCAFB.652" chrStart: 4718592
+genome.fa : chr # 19  "NSCAFB.1664" chrStart: 4980736
+genome.fa : chr # 20  "C758018" chrStart: 5242880
+genome.fa : chr # 21  "NSCAFA.893" chrStart: 5505024
+genome.fa : chr # 22  "NSCAFA.892" chrStart: 5767168
+genome.fa : chr # 23  "NSCAFA.1050" chrStart: 6029312
+genome.fa : chr # 24  "NSCAFB.1050" chrStart: 6291456
+genome.fa : chr # 25  "NSCAFB.1117" chrStart: 6553600
+genome.fa : chr # 26  "NSCAFA.304" chrStart: 6815744
+genome.fa : chr # 27  "NSCAFA.710" chrStart: 7077888
+genome.fa : chr # 28  "NSCAFA.717" chrStart: 7340032
+genome.fa : chr # 29  "NSCAFA.714" chrStart: 7602176
+genome.fa : chr # 30  "NSCAFB.998" chrStart: 7864320
+genome.fa : chr # 31  "NSCAFB.997" chrStart: 8126464
+genome.fa : chr # 32  "scaffold887" chrStart: 8388608
+genome.fa : chr # 33  "NSCAFA.719" chrStart: 8650752
+genome.fa : chr # 34  "NSCAFA.309" chrStart: 8912896
+genome.fa : chr # 35  "NSCAFA.447II" chrStart: 9175040
+genome.fa : chr # 36  "NSCAFB.1119" chrStart: 9437184
+genome.fa : chr # 37  "NSCAFB.1118" chrStart: 9699328
+genome.fa : chr # 38  "NSCAFA.516I" chrStart: 9961472
+genome.fa : chr # 39  "NSCAFA.386" chrStart: 10223616
+genome.fa : chr # 40  "NSCAFA.1100" chrStart: 10485760
+genome.fa : chr # 41  "NSCAFA.1561I" chrStart: 10747904
+genome.fa : chr # 42  "NSCAFA.480" chrStart: 11010048
+genome.fa : chr # 43  "NSCAFA.828" chrStart: 11272192
+genome.fa : chr # 44  "NSCAFA.829" chrStart: 11534336
+genome.fa : chr # 45  "scaffold572" chrStart: 11796480
+genome.fa : chr # 46  "NSCAFA.821" chrStart: 12058624
+genome.fa : chr # 47  "NSCAFA.822" chrStart: 12320768
+genome.fa : chr # 48  "NSCAFA.395" chrStart: 12582912
+genome.fa : chr # 49  "NSCAFA.392" chrStart: 12845056
+genome.fa : chr # 50  "NSCAFA.393" chrStart: 13107200
+genome.fa : chr # 51  "NSCAFA.1720I" chrStart: 13369344
+genome.fa : chr # 52  "NSCAFA.356I" chrStart: 13631488
+genome.fa : chr # 53  "NSCAFA.459" chrStart: 13893632
+genome.fa : chr # 54  "NSCAFA.485" chrStart: 14155776
+genome.fa : chr # 55  "NSCAFA.1692" chrStart: 14417920
+genome.fa : chr # 56  "NSCAFB.2007" chrStart: 14680064
+genome.fa : chr # 57  "NSCAFA.230" chrStart: 14942208
+genome.fa : chr # 58  "NSCAFA.545" chrStart: 15204352
+genome.fa : chr # 59  "NSCAFA.543" chrStart: 15466496
+genome.fa : chr # 60  "NSCAFA.542" chrStart: 15728640
+genome.fa : chr # 61  "NSCAFA.541" chrStart: 15990784
+genome.fa : chr # 62  "NSCAFA.540" chrStart: 16252928
+genome.fa : chr # 63  "NSCAFA.626" chrStart: 16515072
+genome.fa : chr # 64  "NSCAFA.622" chrStart: 16777216
+genome.fa : chr # 65  "NSCAFA.620" chrStart: 17039360
+genome.fa : chr # 66  "NSCAFA.621" chrStart: 17301504
+genome.fa : chr # 67  "NSCAFA.781" chrStart: 17563648
+genome.fa : chr # 68  "NSCAFA.780" chrStart: 17825792
+genome.fa : chr # 69  "NSCAFA.783" chrStart: 18087936
+genome.fa : chr # 70  "NSCAFA.872" chrStart: 18350080
+genome.fa : chr # 71  "NSCAFA.1192" chrStart: 18612224
+genome.fa : chr # 72  "NSCAFA.1190" chrStart: 18874368
+genome.fa : chr # 73  "NSCAFA.1966" chrStart: 19136512
+genome.fa : chr # 74  "NSCAFA.695" chrStart: 19398656
+genome.fa : chr # 75  "C762652" chrStart: 19660800
+genome.fa : chr # 76  "NSCAFA.214I" chrStart: 19922944
+genome.fa : chr # 77  "NSCAFA.174I" chrStart: 20185088
+genome.fa : chr # 78  "NSCAFA.2204" chrStart: 20709376
+genome.fa : chr # 79  "NSCAFA.560" chrStart: 20971520
+genome.fa : chr # 80  "NSCAFA.433" chrStart: 21233664
+genome.fa : chr # 81  "NSCAFA.538" chrStart: 21495808
+genome.fa : chr # 82  "NSCAFA.539" chrStart: 21757952
+genome.fa : chr # 83  "NSCAFB.478" chrStart: 22020096
+genome.fa : chr # 84  "NSCAFA.435" chrStart: 22282240
+genome.fa : chr # 85  "NSCAFA.1250I" chrStart: 22544384
+genome.fa : chr # 86  "NSCAFB.475" chrStart: 22806528
+genome.fa : chr # 87  "NSCAFA.439" chrStart: 23068672
+genome.fa : chr # 88  "NSCAFA.537" chrStart: 23330816
+genome.fa : chr # 89  "NSCAFB.473" chrStart: 23592960
+genome.fa : chr # 90  "NSCAFA.1444" chrStart: 23855104
+genome.fa : chr # 91  "NSCAFA.644" chrStart: 24117248
+genome.fa : chr # 92  "NSCAFA.1446" chrStart: 24379392
+genome.fa : chr # 93  "NSCAFA.1360" chrStart: 24641536
+genome.fa : chr # 94  "NSCAFA.896" chrStart: 24903680
+genome.fa : chr # 95  "NSCAFB.1233" chrStart: 25165824
+genome.fa : chr # 96  "NSCAFA.569" chrStart: 25427968
+genome.fa : chr # 97  "NSCAFB.1334" chrStart: 25690112
+genome.fa : chr # 98  "NSCAFA.2214" chrStart: 25952256
+genome.fa : chr # 99  "NSCAFB.1332" chrStart: 26214400
+genome.fa : chr # 100  "NSCAFB.1331" chrStart: 26476544
+genome.fa : chr # 101  "NSCAFB.255" chrStart: 26738688
+genome.fa : chr # 102  "NSCAFA.992" chrStart: 27000832
+genome.fa : chr # 103  "NSCAFA.994" chrStart: 27262976
+genome.fa : chr # 104  "NSCAFA.998" chrStart: 27525120
+genome.fa : chr # 105  "NSCAFA.999" chrStart: 27787264
+genome.fa : chr # 106  "C761200" chrStart: 28049408
+genome.fa : chr # 107  "NSCAFA.697" chrStart: 28311552
+genome.fa : chr # 108  "NSCAFA.635" chrStart: 28573696
+genome.fa : chr # 109  "NSCAFA.871" chrStart: 28835840
+genome.fa : chr # 110  "NSCAFA.979" chrStart: 29097984
+genome.fa : chr # 111  "NSCAFA.877" chrStart: 29360128
+genome.fa : chr # 112  "NSCAFA.692" chrStart: 29622272
+genome.fa : chr # 113  "NSCAFA.875" chrStart: 29884416
+genome.fa : chr # 114  "NSCAFA.690" chrStart: 30146560
+genome.fa : chr # 115  "NSCAFA.757" chrStart: 30408704
+genome.fa : chr # 116  "NSCAFA.493I" chrStart: 30670848
+genome.fa : chr # 117  "NSCAFA.971" chrStart: 30932992
+genome.fa : chr # 118  "NSCAFA.1017" chrStart: 31195136
+genome.fa : chr # 119  "NSCAFA.1146" chrStart: 31457280
+genome.fa : chr # 120  "NSCAFA.1062" chrStart: 31719424
+genome.fa : chr # 121  "NSCAFA.1063" chrStart: 31981568
+genome.fa : chr # 122  "NSCAFA.193" chrStart: 32243712
+genome.fa : chr # 123  "NSCAFA.1066" chrStart: 32768000
+genome.fa : chr # 124  "scaffold524" chrStart: 33030144
+genome.fa : chr # 125  "NSCAFB.765" chrStart: 33292288
+genome.fa : chr # 126  "C758160" chrStart: 33554432
+genome.fa : chr # 127  "NSCAFB.687" chrStart: 33816576
+genome.fa : chr # 128  "NSCAFA.1388" chrStart: 34078720
+genome.fa : chr # 129  "NSCAFA.908" chrStart: 34340864
+genome.fa : chr # 130  "C765488" chrStart: 34603008
+genome.fa : chr # 131  "NSCAFA.905" chrStart: 34865152
+genome.fa : chr # 132  "NSCAFA.903" chrStart: 35127296
+genome.fa : chr # 133  "NSCAFA.902" chrStart: 35389440
+genome.fa : chr # 134  "NSCAFA.589" chrStart: 35651584
+genome.fa : chr # 135  "NSCAFB.488" chrStart: 35913728
+genome.fa : chr # 136  "NSCAFB.484" chrStart: 36175872
+genome.fa : chr # 137  "NSCAFA.580" chrStart: 36438016
+genome.fa : chr # 138  "NSCAFA.2210I" chrStart: 36700160
+genome.fa : chr # 139  "NSCAFB.483" chrStart: 36962304
+genome.fa : chr # 140  "NSCAFB.482" chrStart: 37224448
+genome.fa : chr # 141  "NSCAFB.2761" chrStart: 37486592
+genome.fa : chr # 142  "NSCAFB.1429" chrStart: 37748736
+genome.fa : chr # 143  "NSCAFB.1061" chrStart: 38010880
+genome.fa : chr # 144  "NSCAFB.1060" chrStart: 38273024
+genome.fa : chr # 145  "NSCAFB.1140" chrStart: 38535168
+genome.fa : chr # 146  "NSCAFA.1201" chrStart: 38797312
+genome.fa : chr # 147  "NSCAFA.373" chrStart: 39059456
+genome.fa : chr # 148  "NSCAFB.1415" chrStart: 39321600
+genome.fa : chr # 149  "NSCAFA.1667" chrStart: 39583744
+genome.fa : chr # 150  "NSCAFA.569I" chrStart: 39845888
+genome.fa : chr # 151  "NSCAFA.1544" chrStart: 40108032
+genome.fa : chr # 152  "NSCAFB.1091" chrStart: 40370176
+genome.fa : chr # 153  "NSCAFA.1098" chrStart: 40632320
+genome.fa : chr # 154  "C758946" chrStart: 40894464
+genome.fa : chr # 155  "scaffold1152" chrStart: 41156608
+genome.fa : chr # 156  "NSCAFA.361I" chrStart: 41418752
+genome.fa : chr # 157  "NSCAFB.823" chrStart: 41680896
+genome.fa : chr # 158  "NSCAFA.494II" chrStart: 41943040
+genome.fa : chr # 159  "NSCAFA.476" chrStart: 42205184
+genome.fa : chr # 160  "NSCAFA.474" chrStart: 42467328
+genome.fa : chr # 161  "NSCAFB.434" chrStart: 42729472
+genome.fa : chr # 162  "NSCAFA.472" chrStart: 42991616
+genome.fa : chr # 163  "NSCAFA.470" chrStart: 43253760
+genome.fa : chr # 164  "NSCAFA.577" chrStart: 43515904
+genome.fa : chr # 165  "NSCAFA.574" chrStart: 43778048
+genome.fa : chr # 166  "NSCAFA.575" chrStart: 44040192
+genome.fa : chr # 167  "NSCAFA.572" chrStart: 44302336
+genome.fa : chr # 168  "NSCAFA.573" chrStart: 44564480
+genome.fa : chr # 169  "NSCAFA.1320" chrStart: 44826624
+genome.fa : chr # 170  "NSCAFB.1709" chrStart: 45088768
+genome.fa : chr # 171  "NSCAFC.98" chrStart: 45350912
+genome.fa : chr # 172  "NSCAFA.674" chrStart: 45875200
+genome.fa : chr # 173  "NSCAFA.578" chrStart: 46137344
+genome.fa : chr # 174  "NSCAFA.1326" chrStart: 46399488
+genome.fa : chr # 175  "scaffold704" chrStart: 46661632
+genome.fa : chr # 176  "NSCAFA.1245" chrStart: 46923776
+genome.fa : chr # 177  "scaffold1027" chrStart: 47185920
+genome.fa : chr # 178  "NSCAFA.300" chrStart: 47448064
+genome.fa : chr # 179  "NSCAFB.1994" chrStart: 47710208
+genome.fa : chr # 180  "NSCAFA.480I" chrStart: 47972352
+genome.fa : chr # 181  "scaffold1271" chrStart: 48234496
+genome.fa : chr # 182  "NSCAFC.76" chrStart: 48496640
+genome.fa : chr # 183  "NSCAFA.1936" chrStart: 49020928
+genome.fa : chr # 184  "C761726" chrStart: 49283072
+genome.fa : chr # 185  "NSCAFB.525" chrStart: 49545216
+genome.fa : chr # 186  "NSCAFA.408" chrStart: 49807360
+genome.fa : chr # 187  "NSCAFA.406" chrStart: 50069504
+genome.fa : chr # 188  "NSCAFA.407" chrStart: 50331648
+genome.fa : chr # 189  "NSCAFA.405" chrStart: 50593792
+genome.fa : chr # 190  "NSCAFA.537I" chrStart: 50855936
+genome.fa : chr # 191  "NSCAFB.315" chrStart: 51118080
+genome.fa : chr # 192  "NSCAFA.937" chrStart: 51380224
+genome.fa : chr # 193  "NSCAFA.255I" chrStart: 51642368
+genome.fa : chr # 194  "NSCAFA.932" chrStart: 51904512
+genome.fa : chr # 195  "NSCAFB.1209" chrStart: 52166656
+genome.fa : chr # 196  "NSCAFB.1561" chrStart: 52428800
+genome.fa : chr # 197  "NSCAFB.1201" chrStart: 52690944
+genome.fa : chr # 198  "NSCAFA.519I" chrStart: 52953088
+genome.fa : chr # 199  "NSCAFB.1360" chrStart: 53215232
+genome.fa : chr # 200  "NSCAFA.157" chrStart: 53477376
+genome.fa : chr # 201  "NSCAFA.497I" chrStart: 54001664
+genome.fa : chr # 202  "NSCAFA.1021" chrStart: 54263808
+genome.fa : chr # 203  "NSCAFA.724" chrStart: 54525952
+genome.fa : chr # 204  "NSCAFB.647" chrStart: 54788096
+genome.fa : chr # 205  "NSCAFB.644" chrStart: 55050240
+genome.fa : chr # 206  "C761888" chrStart: 55312384
+genome.fa : chr # 207  "NSCAFA.1178" chrStart: 55574528
+genome.fa : chr # 208  "NSCAFA.771" chrStart: 55836672
+genome.fa : chr # 209  "NSCAFA.330" chrStart: 56098816
+genome.fa : chr # 210  "NSCAFA.846" chrStart: 56360960
+genome.fa : chr # 211  "NSCAFA.335" chrStart: 56623104
+genome.fa : chr # 212  "NSCAFA.414" chrStart: 56885248
+genome.fa : chr # 213  "NSCAFB.963" chrStart: 57147392
+genome.fa : chr # 214  "NSCAFA.595I" chrStart: 57409536
+genome.fa : chr # 215  "NSCAFB.1100" chrStart: 57671680
+genome.fa : chr # 216  "NSCAFA.704" chrStart: 57933824
+genome.fa : chr # 217  "NSCAFA.707" chrStart: 58195968
+genome.fa : chr # 218  "NSCAFA.958" chrStart: 58458112
+genome.fa : chr # 219  "NSCAFB.969" chrStart: 58720256
+genome.fa : chr # 220  "NSCAFA.1116" chrStart: 58982400
+genome.fa : chr # 221  "NSCAFA.810" chrStart: 59244544
+genome.fa : chr # 222  "NSCAFA.1052" chrStart: 59506688
+genome.fa : chr # 223  "NSCAFB.1297" chrStart: 59768832
+genome.fa : chr # 224  "NSCAFA.1057" chrStart: 60030976
+genome.fa : chr # 225  "NSCAFA.1504" chrStart: 60293120
+genome.fa : chr # 226  "NSCAFA.839" chrStart: 60555264
+genome.fa : chr # 227  "NSCAFA.779" chrStart: 60817408
+genome.fa : chr # 228  "NSCAFA.837" chrStart: 61079552
+genome.fa : chr # 229  "NSCAFA.384" chrStart: 61341696
+genome.fa : chr # 230  "NSCAFA.834" chrStart: 61603840
+genome.fa : chr # 231  "NSCAFA.833" chrStart: 61865984
+genome.fa : chr # 232  "NSCAFA.380" chrStart: 62128128
+genome.fa : chr # 233  "NSCAFA.1682" chrStart: 62390272
+genome.fa : chr # 234  "NSCAFA.1686" chrStart: 62652416
+genome.fa : chr # 235  "NSCAFA.427" chrStart: 62914560
+genome.fa : chr # 236  "NSCAFA.818" chrStart: 63176704
+genome.fa : chr # 237  "NSCAFB.1031" chrStart: 63438848
+genome.fa : chr # 238  "NSCAFA.953" chrStart: 63700992
+genome.fa : chr # 239  "NSCAFB.1427" chrStart: 63963136
+genome.fa : chr # 240  "NSCAFB.1669" chrStart: 64225280
+genome.fa : chr # 241  "NSCAFA.636" chrStart: 64487424
+genome.fa : chr # 242  "NSCAFA.1759" chrStart: 64749568
+genome.fa : chr # 243  "scaffold748" chrStart: 65011712
+genome.fa : chr # 244  "NSCAFA.632" chrStart: 65273856
+genome.fa : chr # 245  "NSCAFA.638" chrStart: 65536000
+genome.fa : chr # 246  "NSCAFB.1586" chrStart: 65798144
+genome.fa : chr # 247  "NSCAFB.1587" chrStart: 66060288
+genome.fa : chr # 248  "NSCAFB.271" chrStart: 66322432
+genome.fa : chr # 249  "NSCAFA.1594" chrStart: 66584576
+genome.fa : chr # 250  "scaffold288" chrStart: 66846720
+genome.fa : chr # 251  "NSCAFB.1638" chrStart: 67108864
+genome.fa : chr # 252  "NSCAFA.543I" chrStart: 67371008
+genome.fa : chr # 253  "NSCAFA.1879" chrStart: 67633152
+genome.fa : chr # 254  "NSCAFB.1389" chrStart: 67895296
+genome.fa : chr # 255  "NSCAFA.449" chrStart: 68157440
+genome.fa : chr # 256  "NSCAFA.447" chrStart: 68419584
+genome.fa : chr # 257  "NSCAFA.444" chrStart: 68681728
+genome.fa : chr # 258  "NSCAFA.445" chrStart: 68943872
+genome.fa : chr # 259  "NSCAFA.442" chrStart: 69206016
+genome.fa : chr # 260  "NSCAFA.443" chrStart: 69468160
+genome.fa : chr # 261  "NSCAFB.1732" chrStart: 69730304
+genome.fa : chr # 262  "NSCAFA.523" chrStart: 69992448
+genome.fa : chr # 263  "NSCAFA.524" chrStart: 70254592
+genome.fa : chr # 264  "NSCAFA.527" chrStart: 70516736
+genome.fa : chr # 265  "NSCAFA.526" chrStart: 70778880
+genome.fa : chr # 266  "NSCAFA.1374" chrStart: 71041024
+genome.fa : chr # 267  "NSCAFA.1375" chrStart: 71303168
+genome.fa : chr # 268  "NSCAFA.444I" chrStart: 71565312
+genome.fa : chr # 269  "NSCAFA.1277" chrStart: 71827456
+genome.fa : chr # 270  "C762566" chrStart: 72089600
+genome.fa : chr # 271  "C760640" chrStart: 72351744
+genome.fa : chr # 272  "NSCAFB.1327" chrStart: 72613888
+genome.fa : chr # 273  "NSCAFB.877" chrStart: 72876032
+genome.fa : chr # 274  "C763400" chrStart: 73138176
+genome.fa : chr # 275  "NSCAFA.986" chrStart: 73400320
+genome.fa : chr # 276  "NSCAFA.985" chrStart: 73662464
+genome.fa : chr # 277  "NSCAFA.983" chrStart: 73924608
+genome.fa : chr # 278  "NSCAFA.982" chrStart: 74186752
+genome.fa : chr # 279  "NSCAFA.981" chrStart: 74448896
+genome.fa : chr # 280  "scaffold1239" chrStart: 74711040
+genome.fa : chr # 281  "NSCAFA.2354" chrStart: 74973184
+genome.fa : chr # 282  "NSCAFA.969" chrStart: 75235328
+genome.fa : chr # 283  "NSCAFA.804" chrStart: 75497472
+genome.fa : chr # 284  "C774870" chrStart: 75759616
+genome.fa : chr # 285  "NSCAFA.865I" chrStart: 76021760
+genome.fa : chr # 286  "NSCAFA.740" chrStart: 76283904
+genome.fa : chr # 287  "NSCAFB.920" chrStart: 76546048
+genome.fa : chr # 288  "NSCAFA.742" chrStart: 76808192
+genome.fa : chr # 289  "NSCAFA.1157" chrStart: 77070336
+genome.fa : chr # 290  "NSCAFB.1252" chrStart: 77332480
+genome.fa : chr # 291  "NSCAFB.1254" chrStart: 77594624
+genome.fa : chr # 292  "NSCAFA.1153" chrStart: 77856768
+genome.fa : chr # 293  "NSCAFA.188" chrStart: 78118912
+genome.fa : chr # 294  "NSCAFA.187" chrStart: 78643200
+genome.fa : chr # 295  "NSCAFA.185" chrStart: 79167488
+genome.fa : chr # 296  "NSCAFC.123" chrStart: 79691776
+genome.fa : chr # 297  "NSCAFA.1012" chrStart: 79953920
+genome.fa : chr # 298  "scaffold551" chrStart: 80216064
+genome.fa : chr # 299  "NSCAFB.674" chrStart: 80478208
+genome.fa : chr # 300  "NSCAFB.675" chrStart: 80740352
+genome.fa : chr # 301  "C780470" chrStart: 81002496
+genome.fa : chr # 302  "NSCAFB.1027" chrStart: 81264640
+genome.fa : chr # 303  "NSCAFA.410I" chrStart: 81526784
+genome.fa : chr # 304  "NSCAFB.1026" chrStart: 81788928
+genome.fa : chr # 305  "NSCAFA.432I" chrStart: 82051072
+genome.fa : chr # 306  "NSCAFB.1074" chrStart: 82313216
+genome.fa : chr # 307  "NSCAFB.1077" chrStart: 82575360
+genome.fa : chr # 308  "NSCAFA.367" chrStart: 82837504
+genome.fa : chr # 309  "NSCAFB.1456" chrStart: 83099648
+genome.fa : chr # 310  "NSCAFA.900I" chrStart: 83361792
+genome.fa : chr # 311  "NSCAFA.1656" chrStart: 83623936
+genome.fa : chr # 312  "NSCAFB.269" chrStart: 83886080
+genome.fa : chr # 313  "NSCAFA.1080" chrStart: 84148224
+genome.fa : chr # 314  "NSCAFB.783" chrStart: 84410368
+genome.fa : chr # 315  "NSCAFA.1083" chrStart: 84672512
+genome.fa : chr # 316  "NSCAFB.788" chrStart: 84934656
+genome.fa : chr # 317  "NSCAFB.789" chrStart: 85196800
+genome.fa : chr # 318  "NSCAFA.1873I" chrStart: 85458944
+genome.fa : chr # 319  "NSCAFA.618" chrStart: 85721088
+genome.fa : chr # 320  "NSCAFA.689" chrStart: 85983232
+genome.fa : chr # 321  "NSCAFA.617" chrStart: 86245376
+genome.fa : chr # 322  "NSCAFB.586" chrStart: 86507520
+genome.fa : chr # 323  "NSCAFA.447I" chrStart: 86769664
+genome.fa : chr # 324  "NSCAFB.428" chrStart: 87031808
+genome.fa : chr # 325  "NSCAFA.489" chrStart: 87293952
+genome.fa : chr # 326  "NSCAFB.1403" chrStart: 87556096
+genome.fa : chr # 327  "NSCAFA.564" chrStart: 87818240
+genome.fa : chr # 328  "NSCAFB.1774" chrStart: 88080384
+genome.fa : chr # 329  "NSCAFA.648" chrStart: 88342528
+genome.fa : chr # 330  "NSCAFA.649" chrStart: 88604672
+genome.fa : chr # 331  "NSCAFA.562" chrStart: 88866816
+genome.fa : chr # 332  "NSCAFB.1470" chrStart: 89128960
+genome.fa : chr # 333  "NSCAFA.645" chrStart: 89391104
+genome.fa : chr # 334  "NSCAFA.647" chrStart: 89653248
+genome.fa : chr # 335  "NSCAFA.640" chrStart: 89915392
+genome.fa : chr # 336  "scaffold109" chrStart: 90177536
+genome.fa : chr # 337  "NSCAFA.642" chrStart: 90701824
+genome.fa : chr # 338  "NSCAFB.1778" chrStart: 90963968
+genome.fa : chr # 339  "scaffold1016" chrStart: 91226112
+genome.fa : chr # 340  "NSCAFA.2019I" chrStart: 91488256
+genome.fa : chr # 341  "NSCAFA.1727" chrStart: 91750400
+genome.fa : chr # 342  "NSCAFA.1234" chrStart: 92012544
+genome.fa : chr # 343  "ChrC" chrStart: 92274688
+genome.fa : chr # 344  "NSCAFA.1230" chrStart: 92536832
+genome.fa : chr # 345  "ChrM" chrStart: 92798976
+genome.fa : chr # 346  "NSCAFA.1239" chrStart: 93323264
+genome.fa : chr # 347  "Chr7" chrStart: 93585408
+genome.fa : chr # 348  "Chr6" chrStart: 117178368
+genome.fa : chr # 349  "Chr5" chrStart: 141557760
+genome.fa : chr # 350  "Chr4" chrStart: 163315712
+genome.fa : chr # 351  "Chr3" chrStart: 186384384
+genome.fa : chr # 352  "Chr2" chrStart: 209977344
+genome.fa : chr # 353  "Chr1" chrStart: 230424576
+genome.fa : chr # 354  "NSCAFA.596I" chrStart: 256638976
+genome.fa : chr # 355  "Chr8" chrStart: 256901120
+genome.fa : chr # 356  "NSCAFA.397I" chrStart: 277610496
+genome.fa : chr # 357  "NSCAFB.513" chrStart: 277872640
+genome.fa : chr # 358  "NSCAFB.458" chrStart: 278134784
+genome.fa : chr # 359  "NSCAFB.510" chrStart: 278396928
+genome.fa : chr # 360  "NSCAFA.410" chrStart: 278659072
+genome.fa : chr # 361  "NSCAFA.413" chrStart: 278921216
+genome.fa : chr # 362  "NSCAFB.1197" chrStart: 279183360
+genome.fa : chr # 363  "NSCAFB.457" chrStart: 279445504
+genome.fa : chr # 364  "NSCAFA.416" chrStart: 279707648
+genome.fa : chr # 365  "NSCAFA.1838" chrStart: 279969792
+genome.fa : chr # 366  "NSCAFA.1427" chrStart: 280231936
+genome.fa : chr # 367  "NSCAFA.1341" chrStart: 280494080
+genome.fa : chr # 368  "NSCAFA.925" chrStart: 280756224
+genome.fa : chr # 369  "NSCAFA.924" chrStart: 281018368
+genome.fa : chr # 370  "NSCAFA.927" chrStart: 281280512
+genome.fa : chr # 371  "NSCAFA.921" chrStart: 281542656
+genome.fa : chr # 372  "NSCAFB.1138" chrStart: 281804800
+genome.fa : chr # 373  "NSCAFB.1210" chrStart: 282066944
+genome.fa : chr # 374  "NSCAFA.928" chrStart: 282329088
+genome.fa : chr # 375  "NSCAFB.737" chrStart: 282591232
+genome.fa : chr # 376  "NSCAFB.639" chrStart: 282853376
+genome.fa : chr # 377  "NSCAFB.635" chrStart: 283115520
+genome.fa : chr # 378  "scaffold212" chrStart: 283377664
+genome.fa : chr # 379  "scaffold356" chrStart: 283639808
+genome.fa : chr # 380  "NSCAFA.326" chrStart: 283901952
+genome.fa : chr # 381  "NSCAFA.859" chrStart: 284164096
+genome.fa : chr # 382  "NSCAFB.2737" chrStart: 284426240
+genome.fa : chr # 383  "NSCAFA.851" chrStart: 284688384
+genome.fa : chr # 384  "NSCAFA.850" chrStart: 284950528
+genome.fa : chr # 385  "NSCAFA.852" chrStart: 285212672
+genome.fa : chr # 386  "NSCAFA.854" chrStart: 285474816
+genome.fa : chr # 387  "NSCAFB.1137" chrStart: 285736960
+genome.fa : chr # 388  "NSCAFB.1136" chrStart: 285999104
+genome.fa : chr # 389  "NSCAFA.1287" chrStart: 286261248
+genome.fa : chr # 390  "NSCAFA.736" chrStart: 286523392
+genome.fa : chr # 391  "NSCAFA.737" chrStart: 286785536
+genome.fa : chr # 392  "NSCAFA.1280" chrStart: 287047680
+genome.fa : chr # 393  "NSCAFA.733" chrStart: 287309824
+genome.fa : chr # 394  "NSCAFA.1162" chrStart: 287571968
+genome.fa : chr # 395  "NSCAFA.1517" chrStart: 287834112
+genome.fa : chr # 396  "NSCAFB.740" chrStart: 288096256
+genome.fa : chr # 397  "NSCAFB.741" chrStart: 288358400
+genome.fa : chr # 398  "NSCAFA.1512" chrStart: 288620544
+genome.fa : chr # 399  "NSCAFA.1045" chrStart: 288882688
+genome.fa : chr # 400  "NSCAFB.744" chrStart: 289144832
+genome.fa : chr # 401  "NSCAFA.1139" chrStart: 289406976
+genome.fa : chr # 402  "NSCAFB.2028" chrStart: 289669120
+genome.fa : chr # 403  "NSCAFA.836" chrStart: 289931264
+genome.fa : chr # 404  "NSCAFB.2021" chrStart: 290193408
+genome.fa : chr # 405  "NSCAFA.609" chrStart: 290455552
+genome.fa : chr # 406  "NSCAFA.359" chrStart: 290717696
+genome.fa : chr # 407  "NSCAFB.1005" chrStart: 290979840
+genome.fa : chr # 408  "NSCAFA.603" chrStart: 291241984
+genome.fa : chr # 409  "NSCAFA.356" chrStart: 291504128
+genome.fa : chr # 410  "NSCAFA.606" chrStart: 291766272
+genome.fa : chr # 411  "C785722" chrStart: 292028416
+genome.fa : chr # 412  "NSCAFA.1562" chrStart: 292290560
+genome.fa : chr # 413  "scaffold436" chrStart: 292552704
+genome.fa : chr # 414  "C760778" chrStart: 292814848
+genome.fa : chr # 415  "NSCAFA.962" chrStart: 293076992
+genome.fa : chr # 416  "NSCAFA.1783" chrStart: 293339136
+genome.fa : chr # 417  "NSCAFA.964" chrStart: 293601280
+genome.fa : chr # 418  "NSCAFB.809" chrStart: 293863424
+genome.fa : chr # 419  "NSCAFC.115" chrStart: 294125568
+genome.fa : chr # 420  "NSCAFA.1031I" chrStart: 294649856
+genome.fa : chr # 421  "NSCAFC.112" chrStart: 294912000
+genome.fa : chr # 422  "NSCAFA.623I" chrStart: 295174144
+genome.fa : chr # 423  "NSCAFB.805" chrStart: 295436288
+genome.fa : chr # 424  "NSCAFB.804" chrStart: 295698432
+genome.fa : chr # 425  "NSCAFA.383I" chrStart: 295960576
+genome.fa : chr # 426  "NSCAFA.451" chrStart: 296222720
+genome.fa : chr # 427  "NSCAFA.519" chrStart: 296484864
+genome.fa : chr # 428  "NSCAFA.453" chrStart: 296747008
+genome.fa : chr # 429  "NSCAFA.452" chrStart: 297009152
+genome.fa : chr # 430  "NSCAFA.516" chrStart: 297271296
+genome.fa : chr # 431  "NSCAFA.517" chrStart: 297533440
+genome.fa : chr # 432  "NSCAFB.364" chrStart: 297795584
+genome.fa : chr # 433  "NSCAFA.458" chrStart: 298057728
+genome.fa : chr # 434  "NSCAFA.2502" chrStart: 298319872
+genome.fa : chr # 435  "NSCAFA.1300" chrStart: 298582016
+genome.fa : chr # 436  "NSCAFB.163" chrStart: 298844160
+genome.fa : chr # 437  "NSCAFA.715" chrStart: 299368448
+genome.fa : chr # 438  "NSCAFA.530" chrStart: 299630592
+genome.fa : chr # 439  "NSCAFA.1266" chrStart: 299892736
+genome.fa : chr # 440  "NSCAFA.4987" chrStart: 300154880
+genome.fa : chr # 441  "scaffold1251" chrStart: 300417024
+genome.fa : chr # 442  "scaffold1252" chrStart: 300679168
+genome.fa : chr # 443  "NSCAFB.773" chrStart: 300941312
+genome.fa : chr # 444  "NSCAFB.1562" chrStart: 301203456
+genome.fa : chr # 445  "scaffold154" chrStart: 301465600
+genome.fa : chr # 446  "NSCAFB.1560" chrStart: 301727744
+genome.fa : chr # 447  "NSCAFB.522" chrStart: 301989888
+genome.fa : chr # 448  "NSCAFA.226I" chrStart: 302252032
+genome.fa : chr # 449  "NSCAFB.776" chrStart: 302514176
+genome.fa : chr # 450  "NSCAFA.1417" chrStart: 302776320
+genome.fa : chr # 451  "NSCAFA.467I" chrStart: 303038464
+genome.fa : chr # 452  "NSCAFA.1137I" chrStart: 303300608
+genome.fa : chr # 453  "NSCAFA.816" chrStart: 303562752
+genome.fa : chr # 454  "NSCAFA.774" chrStart: 303824896
+genome.fa : chr # 455  "NSCAFB.938" chrStart: 304087040
+genome.fa : chr # 456  "NSCAFA.542I" chrStart: 304349184
+genome.fa : chr # 457  "C757798" chrStart: 304611328
+genome.fa : chr # 458  "NSCAFA.956" chrStart: 304873472
+genome.fa : chr # 459  "NSCAFB.931" chrStart: 305135616
+genome.fa : chr # 460  "NSCAFA.951" chrStart: 305397760
+genome.fa : chr # 461  "NSCAFB.933" chrStart: 305659904
+genome.fa : chr # 462  "NSCAFB.1543" chrStart: 305922048
+genome.fa : chr # 463  "NSCAFA.669" chrStart: 306184192
+genome.fa : chr # 464  "NSCAFA.811" chrStart: 306446336
+genome.fa : chr # 465  "NSCAFB.709" chrStart: 306708480
+genome.fa : chr # 466  "NSCAFA.1004" chrStart: 306970624
+genome.fa : chr # 467  "NSCAFB.707" chrStart: 307232768
+genome.fa : chr # 468  "NSCAFB.1385" chrStart: 307494912
+genome.fa : chr # 469  "NSCAFA.1002" chrStart: 307757056
+genome.fa : chr # 470  "NSCAFB.663" chrStart: 308019200
+genome.fa : chr # 471  "NSCAFA.889" chrStart: 308281344
+genome.fa : chr # 472  "C785012" chrStart: 308543488
+genome.fa : chr # 473  "NSCAFA.882" chrStart: 308805632
+genome.fa : chr # 474  "NSCAFA.493" chrStart: 309067776
+genome.fa : chr # 475  "NSCAFA.880" chrStart: 309329920
+genome.fa : chr # 476  "C758122" chrStart: 309592064
+genome.fa : chr # 477  "NSCAFA.545I" chrStart: 309854208
+genome.fa : chr # 478  "NSCAFB.723" chrStart: 310116352
+genome.fa : chr # 479  "scaffold918" chrStart: 310378496
+genome.fa : chr # 480  "NSCAFB.1725" chrStart: 310640640
+genome.fa : chr # 481  "scaffold911" chrStart: 310902784
+genome.fa : chr # 482  "NSCAFB.1278" chrStart: 311164928
+genome.fa : chr # 483  "NSCAFB.726" chrStart: 311427072
+genome.fa : chr # 484  "NSCAFB.1041" chrStart: 311689216
+genome.fa : chr # 485  "NSCAFB.1162" chrStart: 311951360
+genome.fa : chr # 486  "NSCAFB.989" chrStart: 312213504
+genome.fa : chr # 487  "NSCAFB.1160" chrStart: 312475648
+genome.fa : chr # 488  "NSCAFB.1166" chrStart: 312737792
+genome.fa : chr # 489  "NSCAFB.1167" chrStart: 312999936
+genome.fa : chr # 490  "NSCAFA.551" chrStart: 313262080
+genome.fa : chr # 491  "NSCAFB.981" chrStart: 313524224
+genome.fa : chr # 492  "C766642" chrStart: 313786368
+genome.fa : chr # 493  "NSCAFC.147" chrStart: 314048512
+genome.fa : chr # 494  "NSCAFA.1313" chrStart: 314310656
+genome.fa : chr # 495  "C764644" chrStart: 314572800
+genome.fa : chr # 496  "NSCAFA.3550" chrStart: 314834944
+genome.fa : chr # 497  "NSCAFB.1333" chrStart: 315097088
+genome.fa : chr # 498  "scaffold653" chrStart: 315359232
+genome.fa : chr # 499  "NSCAFA.929" chrStart: 315621376
+genome.fa : chr # 500  "NSCAFB.1680" chrStart: 315883520
+genome.fa : chr # 501  "NSCAFB.2015" chrStart: 316145664
+genome.fa : chr # 502  "NSCAFA.550" chrStart: 316407808
+genome.fa : chr # 503  "NSCAFA.498" chrStart: 316669952
+genome.fa : chr # 504  "NSCAFB.1688" chrStart: 316932096
+genome.fa : chr # 505  "NSCAFA.554" chrStart: 317194240
+genome.fa : chr # 506  "NSCAFA.555" chrStart: 317456384
+genome.fa : chr # 507  "scaffold1" chrStart: 317718528
+genome.fa : chr # 508  "NSCAFA.798" chrStart: 317980672
+genome.fa : chr # 509  "NSCAFA.799" chrStart: 318242816
+genome.fa : chr # 510  "NSCAFA.657" chrStart: 318504960
+genome.fa : chr # 511  "NSCAFA.656" chrStart: 318767104
+genome.fa : chr # 512  "NSCAFA.655" chrStart: 319029248
+genome.fa : chr # 513  "NSCAFA.654" chrStart: 319291392
+genome.fa : chr # 514  "NSCAFA.792" chrStart: 319553536
+genome.fa : chr # 515  "NSCAFA.793" chrStart: 319815680
+genome.fa : chr # 516  "NSCAFA.658" chrStart: 320077824
+genome.fa : chr # 517  "NSCAFA.1735" chrStart: 320339968
+genome.fa : chr # 518  "scaffold449" chrStart: 320602112
+genome.fa : chr # 519  "scaffold1004" chrStart: 320864256
+genome.fa : chr # 520  "NSCAFA.1635" chrStart: 321126400
+genome.fa : chr # 521  "NSCAFA.1185" chrStart: 321388544
+genome.fa : chr # 522  "NSCAFB.128" chrStart: 321650688
+genome.fa : chr # 523  "NSCAFA.1912" chrStart: 322174976
+genome.fa : chr # 524  "NSCAFB.1446" chrStart: 322437120
+genome.fa : chr # 525  "NSCAFA.340II" chrStart: 322699264
+genome.fa : chr # 526  "NSCAFA.795" chrStart: 322961408
+genome.fa : chr # 527  "scaffold83" chrStart: 323223552
+genome.fa : chr # 528  "NSCAFA.424" chrStart: 323485696
+genome.fa : chr # 529  "NSCAFB.1001" chrStart: 323747840
+genome.fa : chr # 530  "NSCAFB.443" chrStart: 324009984
+genome.fa : chr # 531  "NSCAFA.515I" chrStart: 324272128
+genome.fa : chr # 532  "NSCAFA.420" chrStart: 324534272
+genome.fa : chr # 533  "NSCAFA.685I" chrStart: 324796416
+genome.fa : chr # 534  "NSCAFA.691" chrStart: 325058560
+genome.fa : chr # 535  "scaffold617" chrStart: 325320704
+genome.fa : chr # 536  "NSCAFB.1220" chrStart: 325582848
+genome.fa : chr # 537  "NSCAFB.1345" chrStart: 325844992
+genome.fa : chr # 538  "NSCAFA.615" chrStart: 326107136
+genome.fa : chr # 539  "NSCAFB.624" chrStart: 326369280
+genome.fa : chr # 540  "NSCAFA.677I" chrStart: 326631424
+genome.fa : chr # 541  "NSCAFA.492" chrStart: 326893568
+genome.fa : chr # 542  "C757198" chrStart: 327155712
+genome.fa : chr # 543  "NSCAFB.1179" chrStart: 327417856
+genome.fa : chr # 544  "NSCAFA.455I" chrStart: 327680000
+genome.fa : chr # 545  "NSCAFA.682" chrStart: 327942144
+genome.fa : chr # 546  "NSCAFB.442" chrStart: 328204288
+genome.fa : chr # 547  "NSCAFB.1128" chrStart: 328466432
+genome.fa : chr # 548  "NSCAFA.687" chrStart: 328728576
+genome.fa : chr # 549  "NSCAFA.865" chrStart: 328990720
+genome.fa : chr # 550  "NSCAFA.727" chrStart: 329252864
+genome.fa : chr # 551  "NSCAFA.726" chrStart: 329515008
+genome.fa : chr # 552  "NSCAFA.863" chrStart: 329777152
+genome.fa : chr # 553  "NSCAFB.1534" chrStart: 330039296
+genome.fa : chr # 554  "NSCAFB.940" chrStart: 330301440
+genome.fa : chr # 555  "NSCAFA.1175" chrStart: 330563584
+genome.fa : chr # 556  "NSCAFA.1076" chrStart: 330825728
+genome.fa : chr # 557  "NSCAFC.101" chrStart: 331087872
+genome.fa : chr # 558  "NSCAFB.2605" chrStart: 331612160
+genome.fa : chr # 559  "NSCAFB.757" chrStart: 331874304
+genome.fa : chr # 560  "NSCAFB.690" chrStart: 332136448
+genome.fa : chr # 561  "NSCAFB.691" chrStart: 332398592
+genome.fa : chr # 562  "NSCAFA.614" chrStart: 332660736
+genome.fa : chr # 563  "NSCAFA.916" chrStart: 332922880
+genome.fa : chr # 564  "NSCAFA.917" chrStart: 333185024
+genome.fa : chr # 565  "NSCAFB.881" chrStart: 333447168
+genome.fa : chr # 566  "NSCAFB.499" chrStart: 333709312
+genome.fa : chr # 567  "NSCAFB.494" chrStart: 333971456
+genome.fa : chr # 568  "NSCAFA.497" chrStart: 334233600
+genome.fa : chr # 569  "NSCAFA.594" chrStart: 334495744
+genome.fa : chr # 570  "NSCAFB.1013" chrStart: 334757888
+genome.fa : chr # 571  "NSCAFA.590" chrStart: 335020032
+genome.fa : chr # 572  "NSCAFA.591" chrStart: 335282176
+genome.fa : chr # 573  "NSCAFA.592" chrStart: 335544320
+genome.fa : chr # 574  "NSCAFB.1015" chrStart: 335806464
+genome.fa : chr # 575  "NSCAFB.1401" chrStart: 336068608
+genome.fa : chr # 576  "NSCAFA.682I" chrStart: 336330752
+genome.fa : chr # 577  "NSCAFB.280" chrStart: 336592896
+genome.fa : chr # 578  "NSCAFA.598" chrStart: 336855040
+genome.fa : chr # 579  "NSCAFA.599" chrStart: 337117184
+genome.fa : chr # 580  "NSCAFA.610" chrStart: 337379328
+genome.fa : chr # 581  "NSCAFA.1772" chrStart: 337641472
+genome.fa : chr # 582  "scaffold405" chrStart: 337903616
+genome.fa : chr # 583  "NSCAFA.295" chrStart: 338165760
+genome.fa : chr # 584  "NSCAFA.294" chrStart: 338690048
+genome.fa : chr # 585  "scaffold1146" chrStart: 338952192
+genome.fa : chr # 586  "NSCAFA.696" chrStart: 339214336
+genome.fa : chr # 587  "NSCAFA.451I" chrStart: 339476480
+genome.fa : chr # 588  "NSCAFA.1794" chrStart: 339738624
+genome.fa : chr # 589  "NSCAFA.978" chrStart: 340000768
+genome.fa : chr # 590  "scaffold897" chrStart: 340262912
+genome.fa : chr # 591  "NSCAFB.958" chrStart: 340525056
+genome.fa : chr # 592  "NSCAFB.839" chrStart: 340787200
+genome.fa : chr # 593  "NSCAFA.461" chrStart: 341049344
+genome.fa : chr # 594  "NSCAFA.124I" chrStart: 341311488
+genome.fa : chr # 595  "NSCAFA.465" chrStart: 341835776
+genome.fa : chr # 596  "NSCAFA.466" chrStart: 342097920
+genome.fa : chr # 597  "NSCAFA.467" chrStart: 342360064
+genome.fa : chr # 598  "NSCAFA.503" chrStart: 342622208
+genome.fa : chr # 599  "NSCAFB.406" chrStart: 342884352
+genome.fa : chr # 600  "NSCAFA.507" chrStart: 343146496
+genome.fa : chr # 601  "NSCAFA.506" chrStart: 343408640
+genome.fa : chr # 602  "NSCAFB.376" chrStart: 343670784
+genome.fa : chr # 603  "NSCAFA.661" chrStart: 343932928
+genome.fa : chr # 604  "NSCAFA.667" chrStart: 344195072
+genome.fa : chr # 605  "C761068" chrStart: 344457216
+genome.fa : chr # 606  "NSCAFA.1701" chrStart: 344719360
+genome.fa : chr # 607  "NSCAFA.973" chrStart: 344981504
+genome.fa : chr # 608  "NSCAFA.1256" chrStart: 345243648
+genome.fa : chr # 609  "NSCAFA.1251" chrStart: 345505792
+genome.fa : chr # 610  "scaffold1035" chrStart: 345767936
+genome.fa : chr # 611  "NSCAFA.2328" chrStart: 346030080
+genome.fa : chr # 612  "NSCAFA.1929" chrStart: 346292224
+genome.fa : chr # 613  "NSCAFA.1618" chrStart: 346554368
+genome.fa : chr # 614  "NSCAFA.980I" chrStart: 346816512
+genome.fa : chr # 615  "NSCAFB.543" chrStart: 347078656
+genome.fa : chr # 616  "NSCAFB.1309" chrStart: 347340800
+genome.fa : chr # 617  "NSCAFA.1956" chrStart: 347602944
+genome.fa : chr # 618  "NSCAFA.1139I" chrStart: 347865088
+genome.fa : chr # 619  "NSCAFB.538" chrStart: 348127232
+genome.fa : chr # 620  "NSCAFB.534" chrStart: 348389376
+genome.fa : chr # 621  "NSCAFA.825" chrStart: 348651520
+genome.fa : chr # 622  "NSCAFA.1408" chrStart: 348913664
+genome.fa : chr # 623  "NSCAFA.1400" chrStart: 349175808
+Writing genome to disk... done.
+Number of SA indices: 382291140
+SA size in bytes: 1576950953
+Apr 19 16:51:25 ... starting to sort  Suffix Array. This may take a long time...
+Number of chunks: 8;   chunks size limit: 436904160 bytes
+Apr 19 16:51:26 ... sorting Suffix Array chunks and saving them to disk...
+Apr 19 16:52:16 ... loading chunks from disk, packing SA...
+Apr 19 16:52:19 ... writing Suffix Array to disk ...
+Apr 19 16:52:20 ... Finished generating suffix array
+Apr 19 16:52:20 ... starting to generate Suffix Array index...
+0% 26% 52% 78%  done
+Apr 19 16:53:28 ... writing SAindex to disk
+Apr 19 16:53:29 ..... Finished successfully
+DONE: Genome generation, EXITING
