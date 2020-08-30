@@ -1,0 +1,1620 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1383632 (29.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 715609 (30.1%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1120793 (32.7%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 761011 (28.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1283812 (31.0%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1306794 (26.1%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.iwgsc.tsv.summary"           ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 649877 (31.4%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1675917 (32.1%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1576658 (30.0%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 960385 (29.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 598358 (30.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1333602 (28.3%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.iwgsc.tsv.summary"            ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1470491 (31.5%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 773768 (32.6%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1205812 (35.1%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 829869 (31.3%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1374426 (33.2%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1419172 (28.3%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_0.5k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 720159 (34.8%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1846425 (35.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1738343 (33.1%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1062368 (32.9%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 659031 (33.8%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1462386 (31.0%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_0.5k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1476179 (31.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 777086 (32.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1213621 (35.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 834683 (31.5%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1381257 (33.3%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1428236 (28.5%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_1.0k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 723886 (35.0%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1854840 (35.6%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1746246 (33.2%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1068546 (33.1%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 662033 (33.9%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1467720 (31.2%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_1.0k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1477951 (31.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 778529 (32.8%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1215274 (35.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 836328 (31.5%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1383109 (33.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1431126 (28.6%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_1.5k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 726171 (35.1%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1859170 (35.6%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1750309 (33.3%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1072148 (33.2%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 663492 (34.0%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1470655 (31.2%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_1.5k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1479344 (31.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 779951 (32.9%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1216410 (35.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 837762 (31.6%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1384459 (33.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1433751 (28.6%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_2.0k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 727959 (35.2%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1863454 (35.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1754101 (33.4%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1075365 (33.3%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 664942 (34.1%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1473493 (31.3%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_2.0k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1480231 (31.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 780494 (32.9%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1217307 (35.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 838431 (31.6%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1385559 (33.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1434776 (28.6%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_2.5k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 729188 (35.3%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1866063 (35.8%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1756408 (33.4%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1077284 (33.3%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 665764 (34.1%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1474809 (31.3%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_2.5k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1481481 (31.8%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 781189 (32.9%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1218265 (35.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 839178 (31.6%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1386595 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1436006 (28.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_3.0k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 730212 (35.3%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1868880 (35.8%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1759039 (33.4%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1080716 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 667012 (34.2%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1477183 (31.4%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_3.0k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1482263 (31.8%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 781785 (32.9%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1218920 (35.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 839808 (31.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1387345 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1436988 (28.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_3.5k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 731279 (35.4%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1871155 (35.9%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1761137 (33.5%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1082141 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 667926 (34.2%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1478893 (31.4%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_3.5k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S TaeRS2728_g086.bam                             ||
+||                           S TaeRS2728_g091.bam                             ||
+||                           S TaeRS2728_g160.bam                             ||
+||                           S TaeRS2728_g165.bam                             ||
+||                           S TaeRS2728_g167.bam                             ||
+||                           S TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4662290                                                   ||
+||    Successfully assigned reads : 1483074 (31.8%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2373826                                                   ||
+||    Successfully assigned reads : 782277 (33.0%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3432047                                                   ||
+||    Successfully assigned reads : 1219771 (35.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2651434                                                   ||
+||    Successfully assigned reads : 840390 (31.7%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4143024                                                   ||
+||    Successfully assigned reads : 1388388 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5008271                                                   ||
+||    Successfully assigned reads : 1438001 (28.7%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/tcs.counts.gene.ext_4.0k.tsv.summary"        ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           S 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                 Summary : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : /home/jqsun/projects/HuoberBrezel/data/tagse ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : stranded                                         ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 107891                                                       ||
+||    Meta-features : 107891                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 2068066                                                   ||
+||    Successfully assigned reads : 732230 (35.4%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5215489                                                   ||
+||    Successfully assigned reads : 1873368 (35.9%)                           ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 5259560                                                   ||
+||    Successfully assigned reads : 1763325 (33.5%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 3230578                                                   ||
+||    Successfully assigned reads : 1083870 (33.6%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1951851                                                   ||
+||    Successfully assigned reads : 668848 (34.3%)                            ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 4710188                                                   ||
+||    Successfully assigned reads : 1480816 (31.4%)                           ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/jqsun/projects/Hu  ||
+|| oberBrezel/data/tagseq/counts/cs.counts.gene.ext_4.0k.tsv.summary"         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+

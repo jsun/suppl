@@ -3,12 +3,12 @@
 #PBS -q cq
 #PBS -l gpunum_job=0
 #PBS -l cpunum_job=16
-#PBS -l memsz_job=64gb
+#PBS -l memsz_job=256gb
 #PBS -l elapstim_req=72:00:00
-#PBS -N HB_TAG_QUANT_COUNT
+#PBS -N HB_TAG_QUANT_STAR
 
 
-pHISAT=0
+pSTAR=1
 pQuant=1
 nCPU=16
 
@@ -20,42 +20,47 @@ BIN=/home/jqsun/local/bin
 UTILS=/home/jqsun/local/utilfunc
 DATA_DIR=${PROJECT_DIR}/data/tagseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
-BAM_DIR=${DATA_DIR}/bam
+BAM_DIR=${DATA_DIR}/bamstar
 GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
-GENOME_INDEX=${GENOME_DIR}/index/dna_hisat2
+GENOME_INDEX=${GENOME_DIR}/index/dnapart_star
 
 
 GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706
-COUNTS_DIR=${DATA_DIR}/counts
+COUNTS_DIR=${DATA_DIR}/countsstar
 
 
 
 cd ${PROJECT_DIR}
 
 
-if [ ${pHISAT} -eq 1 ]; then
+if [ ${pSTAR} -eq 1 ]; then
 # 
-# mapping reads with HISAT2
+# mapping reads with STAR
 # 
 mkdir -p ${BAM_DIR}
-cd ${CLEAN_FASTQ_DIR}
-for fastq_filepath in `ls *.clean.fastq.gz`; do
+cd ${BAM_DIR}
+for fastq_filepath in `ls ${CLEAN_FASTQ_DIR}/*.clean.fastq.gz`; do
     echo ${fastq_filepath}
     fastq_filename=`basename ${fastq_filepath} .clean.fastq.gz`
 
     echo 'start mapping ...'
     echo `date`
-    time ${BIN}/hisat2 -p ${nCPU} --no-spliced-alignment -x ${GENOME_INDEX} \
-                       -U ${fastq_filepath} -S ${BAM_DIR}/${fastq_filename}.sam
+
+    time ${BIN}/STAR --runThreadN ${nCPU} \
+                     --genomeDir ${GENOME_INDEX} \
+                     --readFilesCommand zcat \
+                     --readFilesIn ${fastq_filepath} \
+                     --genomeLoad NoSharedMemory \
+                     --alignIntronMax 1 \
+                     --outMultimapperOrder Random \
+                     --outFileNamePrefix ${BAM_DIR}/${fastq_filename}_
+    
     echo `date`
     echo 'finished.'
-
-    cd ${BAM_DIR}
-    ${BIN}/samtools sort -@ ${nCPU} -O bam -o ${fastq_filename}.bam ${fastq_filename}.sam
+    
+    ${BIN}/samtools sort -@ ${nCPU} -O bam -o ${fastq_filename}.bam ${fastq_filename}_Aligned.out.sam
     ${BIN}/samtools index -c ${fastq_filename}.bam
-        
-    rm ${fastq_filename}.sam
-    cd -
+    rm ${fastq_filename}_Aligned.out.sam
 done
 fi
 

@@ -6,7 +6,7 @@
 #PBS -l elapstim_req=72:00:00
 #PBS -b 1
 #PBS -m be
-#PBS -N HB_TAG_QC
+#PBS -N WGENOME_QC
 
 
 pQC1=0
@@ -16,7 +16,7 @@ pQC2=0
 
 
 
-PROJECT_DIR=~/projects/HuoberBrezel
+PROJECT_DIR=/home/jqsun/research/wheat_genome
 cd ${PROJECT_DIR}
 
 
@@ -24,9 +24,13 @@ nCPU=8
 BIN=/home/jqsun/local/bin
 UTILS=/home/jqsun/local/utilfunc
 
+
 DATA_DIR=${PROJECT_DIR}/data
-FASTQ_DIR=${PROJECT_DIR}/data/tagseq/fastq
-CLEAN_FASTQ_DIR=${PROJECT_DIR}/data/tagseq/clean_fastq
+FASTQ_DIR=${PROJECT_DIR}/data/fastq
+CLEAN_FASTQ_DIR=${PROJECT_DIR}/data/clean_fastq
+
+
+
 
 
 
@@ -66,6 +70,7 @@ fi
 # poly-A trimming
 if [ ${pTrimAA} -eq 1 ]; then
     cd ${CLEAN_FASTQ_DIR}
+    
     python ${UTILS}/trim_polyA.py . . clean.trimmomatic.fastq.gz clean.fastq.gz ${nCPU}
     # rm *.clean.trimmomatic.fastq.gz
 fi

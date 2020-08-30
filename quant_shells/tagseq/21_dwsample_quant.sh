@@ -4,39 +4,33 @@
 #PBS -l gpunum_job=0
 #PBS -l cpunum_job=16
 #PBS -l memsz_job=64gb
-#PBS -l elapstim_req=72:00:00
-#PBS -N HB_TAG_QUANT_COUNT
+#PBS -l elapstim_req=24:00:00
+#PBS -N HB_TAG_DWSAMPL_QUANT
+#PBS -t 2-8:2
 
 
-pHISAT=0
-pQuant=1
 nCPU=16
-
-
-
 PROJECT_DIR=~/projects/HuoberBrezel
-
 BIN=/home/jqsun/local/bin
 UTILS=/home/jqsun/local/utilfunc
-DATA_DIR=${PROJECT_DIR}/data/tagseq
-CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
-BAM_DIR=${DATA_DIR}/bam
+
+
+# 0.20, 0.40, 0.60, 0.80
+dw=0.${PBS_SUBREQNO}0
+BATCH_DIR=${PROJECT_DIR}/data/tagseq_${dw}
+
+CLEAN_FASTQ_DIR=${BATCH_DIR}/clean_fastq
+BAM_DIR=${BATCH_DIR}/bam
 GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
 GENOME_INDEX=${GENOME_DIR}/index/dna_hisat2
 
 
-GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706
-COUNTS_DIR=${DATA_DIR}/counts
+GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.ext_1.0k.gff3
+COUNTS_DIR=${BATCH_DIR}/counts
 
 
 
 cd ${PROJECT_DIR}
-
-
-if [ ${pHISAT} -eq 1 ]; then
-# 
-# mapping reads with HISAT2
-# 
 mkdir -p ${BAM_DIR}
 cd ${CLEAN_FASTQ_DIR}
 for fastq_filepath in `ls *.clean.fastq.gz`; do
@@ -53,29 +47,17 @@ for fastq_filepath in `ls *.clean.fastq.gz`; do
     cd ${BAM_DIR}
     ${BIN}/samtools sort -@ ${nCPU} -O bam -o ${fastq_filename}.bam ${fastq_filename}.sam
     ${BIN}/samtools index -c ${fastq_filename}.bam
-        
+
     rm ${fastq_filename}.sam
     cd -
 done
-fi
 
 
-
-
-
-if [ ${pQuant} -eq 1 ]; then
-#
-# count mapped reads
-#
 mkdir -p ${COUNTS_DIR}
 cd ${BAM_DIR}
-gff_versions=("iwgsc" "ext_0.5k" "ext_1.0k" "ext_1.5k" "ext_2.0k" "ext_2.5k" "ext_3.0k" "ext_3.5k" "ext_4.0k")
-for gff in ${gff_versions[@]}; do
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
-                         -o ${COUNTS_DIR}/tcs.counts.gene.${gff}.tsv TaeRS2728_*.bam
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
-                         -o ${COUNTS_DIR}/cs.counts.gene.${gff}.tsv 20181109*.bam
-done
-fi
+${BIN}/featureCounts -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+                     -o ${COUNTS_DIR}/cs.counts.gene.ext_1.0k.tsv 20181109*.bam
+
+
 
 

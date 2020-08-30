@@ -1,0 +1,347 @@
+shell: 02_tagseq.eaglerc.sh
+pSTAR: 0
+pEAGLE: 0
+pEAGLERC: 1
+pCountHomeolog: 0
+pCountUnique: 0
+nCPU: 16
+----- start -----
+Sun Aug 30 09:33:51 JST 2020
+20181109.A-TaeRS_1_Tae_RS1_1
+A
+start eaglerc
+Sun Aug 30 09:33:51 JST 2020
+Sun Aug 30 09:34:02 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:34:02 JST 2020
+Sun Aug 30 09:34:11 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:34:11 JST 2020
+Sun Aug 30 09:34:23 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:34:23 JST 2020
+Sun Aug 30 09:34:32 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:34:32 JST 2020
+Sun Aug 30 09:34:42 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:34:42 JST 2020
+Sun Aug 30 09:34:52 JST 2020
+finished eaglerc
+20181109.A-TaeRS_1_Tae_RS1_16
+A
+start eaglerc
+Sun Aug 30 09:34:52 JST 2020
+Sun Aug 30 09:34:59 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:34:59 JST 2020
+Sun Aug 30 09:35:05 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:35:05 JST 2020
+Sun Aug 30 09:35:12 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:35:12 JST 2020
+Sun Aug 30 09:35:18 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:35:18 JST 2020
+Sun Aug 30 09:35:25 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:35:25 JST 2020
+Sun Aug 30 09:35:32 JST 2020
+finished eaglerc
+20181109.A-TaeRS_1_Tae_RS1_17
+A
+start eaglerc
+Sun Aug 30 09:35:32 JST 2020
+Sun Aug 30 09:35:49 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:35:49 JST 2020
+Sun Aug 30 09:36:06 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:36:06 JST 2020
+Sun Aug 30 09:36:24 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:36:24 JST 2020
+Sun Aug 30 09:36:41 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:36:41 JST 2020
+Sun Aug 30 09:37:00 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:37:00 JST 2020
+Sun Aug 30 09:37:18 JST 2020
+finished eaglerc
+20181109.A-TaeRS_1_Tae_RS1_18
+A
+start eaglerc
+Sun Aug 30 09:37:18 JST 2020
+Sun Aug 30 09:37:36 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:37:36 JST 2020
+Sun Aug 30 09:37:52 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:37:52 JST 2020
+Sun Aug 30 09:38:09 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:38:09 JST 2020
+Sun Aug 30 09:38:25 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:38:25 JST 2020
+Sun Aug 30 09:38:42 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:38:42 JST 2020
+Sun Aug 30 09:39:00 JST 2020
+finished eaglerc
+20181109.A-TaeRS_1_Tae_RS1_2
+A
+start eaglerc
+Sun Aug 30 09:39:00 JST 2020
+Sun Aug 30 09:39:06 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:39:06 JST 2020
+Sun Aug 30 09:39:13 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:39:13 JST 2020
+Sun Aug 30 09:39:20 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:39:20 JST 2020
+Sun Aug 30 09:39:25 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:39:25 JST 2020
+Sun Aug 30 09:39:32 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:39:32 JST 2020
+Sun Aug 30 09:39:38 JST 2020
+finished eaglerc
+20181109.A-TaeRS_1_Tae_RS1_3
+A
+start eaglerc
+Sun Aug 30 09:39:38 JST 2020
+Sun Aug 30 09:39:54 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:39:54 JST 2020
+Sun Aug 30 09:40:09 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:40:09 JST 2020
+Sun Aug 30 09:40:26 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:40:26 JST 2020
+Sun Aug 30 09:40:39 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:40:39 JST 2020
+Sun Aug 30 09:40:54 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:40:54 JST 2020
+Sun Aug 30 09:41:10 JST 2020
+finished eaglerc
+TaeRS2728_g086
+A
+start eaglerc
+Sun Aug 30 09:41:10 JST 2020
+Sun Aug 30 09:41:33 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:41:33 JST 2020
+Sun Aug 30 09:41:53 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:41:53 JST 2020
+Sun Aug 30 09:42:16 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:42:16 JST 2020
+Sun Aug 30 09:42:36 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:42:36 JST 2020
+Sun Aug 30 09:42:54 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:42:54 JST 2020
+Sun Aug 30 09:43:13 JST 2020
+finished eaglerc
+TaeRS2728_g091
+A
+start eaglerc
+Sun Aug 30 09:43:13 JST 2020
+Sun Aug 30 09:43:24 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:43:24 JST 2020
+Sun Aug 30 09:43:33 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:43:33 JST 2020
+Sun Aug 30 09:43:44 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:43:44 JST 2020
+Sun Aug 30 09:43:54 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:43:54 JST 2020
+Sun Aug 30 09:44:03 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:44:03 JST 2020
+Sun Aug 30 09:44:12 JST 2020
+finished eaglerc
+TaeRS2728_g160
+A
+start eaglerc
+Sun Aug 30 09:44:12 JST 2020
+Sun Aug 30 09:44:29 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:44:29 JST 2020
+Sun Aug 30 09:44:43 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:44:43 JST 2020
+Sun Aug 30 09:45:01 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:45:01 JST 2020
+Sun Aug 30 09:45:15 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:45:15 JST 2020
+Sun Aug 30 09:45:27 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:45:27 JST 2020
+Sun Aug 30 09:45:39 JST 2020
+finished eaglerc
+TaeRS2728_g165
+A
+start eaglerc
+Sun Aug 30 09:45:39 JST 2020
+Sun Aug 30 09:45:49 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:45:49 JST 2020
+Sun Aug 30 09:45:58 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:45:58 JST 2020
+Sun Aug 30 09:46:09 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:46:09 JST 2020
+Sun Aug 30 09:46:19 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:46:19 JST 2020
+Sun Aug 30 09:46:29 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:46:29 JST 2020
+Sun Aug 30 09:46:39 JST 2020
+finished eaglerc
+TaeRS2728_g167
+A
+start eaglerc
+Sun Aug 30 09:46:39 JST 2020
+Sun Aug 30 09:46:57 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:46:57 JST 2020
+Sun Aug 30 09:47:13 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:47:13 JST 2020
+Sun Aug 30 09:47:33 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:47:33 JST 2020
+Sun Aug 30 09:47:50 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:47:50 JST 2020
+Sun Aug 30 09:48:05 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:48:05 JST 2020
+Sun Aug 30 09:48:21 JST 2020
+finished eaglerc
+TaeRS2728_g172
+A
+start eaglerc
+Sun Aug 30 09:48:21 JST 2020
+Sun Aug 30 09:48:41 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:48:41 JST 2020
+Sun Aug 30 09:48:57 JST 2020
+finished eaglerc
+B
+start eaglerc
+Sun Aug 30 09:48:57 JST 2020
+Sun Aug 30 09:49:16 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:49:16 JST 2020
+Sun Aug 30 09:49:35 JST 2020
+finished eaglerc
+D
+start eaglerc
+Sun Aug 30 09:49:35 JST 2020
+Sun Aug 30 09:49:52 JST 2020
+finished eaglerc
+start eaglerc
+Sun Aug 30 09:49:52 JST 2020
+Sun Aug 30 09:50:09 JST 2020
+finished eaglerc
+Sun Aug 30 09:50:09 JST 2020
+----- finish -----
