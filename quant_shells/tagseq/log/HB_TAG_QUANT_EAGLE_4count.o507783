@@ -1,0 +1,22 @@
+shell: 02_tagseq.eaglerc.sh
+pSTAR: 0
+pEAGLE: 0
+pEAGLERC: 0
+pCount: 1
+nCPU: 16
+----- start -----
+Mon Aug 31 09:26:27 JST 2020
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglerc
+Mon Aug 31 09:27:38 JST 2020
+----- finish -----

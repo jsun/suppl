@@ -1,0 +1,174 @@
+31348950 reads; of these:
+  31348950 (100.00%) were paired; of these:
+    16470654 (52.54%) aligned concordantly 0 times
+    12185796 (38.87%) aligned concordantly exactly 1 time
+    2692500 (8.59%) aligned concordantly >1 times
+    ----
+    16470654 pairs aligned concordantly 0 times; of these:
+      3729466 (22.64%) aligned discordantly 1 time
+    ----
+    12741188 pairs aligned 0 times concordantly or discordantly; of these:
+      25482376 mates make up the pairs; of these:
+        15750467 (61.81%) aligned 0 times
+        6308668 (24.76%) aligned exactly 1 time
+        3423241 (13.43%) aligned >1 times
+74.88% overall alignment rate
+
+real	13m17.729s
+user	184m7.385s
+sys	19m56.654s
+[bam_sort_core] merging from 32 files and 16 in-memory blocks...
+28108389 reads; of these:
+  28108389 (100.00%) were paired; of these:
+    15273806 (54.34%) aligned concordantly 0 times
+    10871637 (38.68%) aligned concordantly exactly 1 time
+    1962946 (6.98%) aligned concordantly >1 times
+    ----
+    15273806 pairs aligned concordantly 0 times; of these:
+      3475674 (22.76%) aligned discordantly 1 time
+    ----
+    11798132 pairs aligned 0 times concordantly or discordantly; of these:
+      23596264 mates make up the pairs; of these:
+        14169843 (60.05%) aligned 0 times
+        6331516 (26.83%) aligned exactly 1 time
+        3094905 (13.12%) aligned >1 times
+74.79% overall alignment rate
+
+real	10m53.657s
+user	150m25.980s
+sys	16m39.286s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+19835132 reads; of these:
+  19835132 (100.00%) were paired; of these:
+    10346537 (52.16%) aligned concordantly 0 times
+    8012631 (40.40%) aligned concordantly exactly 1 time
+    1475964 (7.44%) aligned concordantly >1 times
+    ----
+    10346537 pairs aligned concordantly 0 times; of these:
+      2473873 (23.91%) aligned discordantly 1 time
+    ----
+    7872664 pairs aligned 0 times concordantly or discordantly; of these:
+      15745328 mates make up the pairs; of these:
+        9094526 (57.76%) aligned 0 times
+        4413534 (28.03%) aligned exactly 1 time
+        2237268 (14.21%) aligned >1 times
+77.07% overall alignment rate
+
+real	7m51.604s
+user	106m44.281s
+sys	11m40.410s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+28524364 reads; of these:
+  28524364 (100.00%) were paired; of these:
+    15588972 (54.65%) aligned concordantly 0 times
+    11306634 (39.64%) aligned concordantly exactly 1 time
+    1628758 (5.71%) aligned concordantly >1 times
+    ----
+    15588972 pairs aligned concordantly 0 times; of these:
+      3831402 (24.58%) aligned discordantly 1 time
+    ----
+    11757570 pairs aligned 0 times concordantly or discordantly; of these:
+      23515140 mates make up the pairs; of these:
+        15193057 (64.61%) aligned 0 times
+        5826786 (24.78%) aligned exactly 1 time
+        2495297 (10.61%) aligned >1 times
+73.37% overall alignment rate
+
+real	10m59.370s
+user	151m42.892s
+sys	16m47.958s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+37488386 reads; of these:
+  37488386 (100.00%) were paired; of these:
+    20841930 (55.60%) aligned concordantly 0 times
+    14647591 (39.07%) aligned concordantly exactly 1 time
+    1998865 (5.33%) aligned concordantly >1 times
+    ----
+    20841930 pairs aligned concordantly 0 times; of these:
+      5312588 (25.49%) aligned discordantly 1 time
+    ----
+    15529342 pairs aligned 0 times concordantly or discordantly; of these:
+      31058684 mates make up the pairs; of these:
+        19073064 (61.41%) aligned 0 times
+        8350552 (26.89%) aligned exactly 1 time
+        3635068 (11.70%) aligned >1 times
+74.56% overall alignment rate
+
+real	14m11.037s
+user	199m33.957s
+sys	20m0.937s
+[bam_sort_core] merging from 32 files and 16 in-memory blocks...
+34464937 reads; of these:
+  34464937 (100.00%) were paired; of these:
+    17460985 (50.66%) aligned concordantly 0 times
+    14570236 (42.28%) aligned concordantly exactly 1 time
+    2433716 (7.06%) aligned concordantly >1 times
+    ----
+    17460985 pairs aligned concordantly 0 times; of these:
+      4698910 (26.91%) aligned discordantly 1 time
+    ----
+    12762075 pairs aligned 0 times concordantly or discordantly; of these:
+      25524150 mates make up the pairs; of these:
+        15081948 (59.09%) aligned 0 times
+        7019213 (27.50%) aligned exactly 1 time
+        3422989 (13.41%) aligned >1 times
+78.12% overall alignment rate
+
+real	13m23.594s
+user	187m3.643s
+sys	19m39.397s
+[bam_sort_core] merging from 32 files and 16 in-memory blocks...
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+
+
+ERROR: invalid parameter: 'TaeRS2728_*.bam'
+
+
+ERROR: invalid parameter: '20181109*.bam'
+

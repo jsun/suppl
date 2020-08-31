@@ -1,0 +1,6 @@
+TrimmomaticPE: Started with arguments:
+ -phred33 -threads 8 /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R1.fastq.gz /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R2.fastq.gz /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R1.cleaned.fastq.gz /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R1.unpaired.fastq.gz /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R2.cleaned.fastq.gz /home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/20181221.A-ZH_W2017_1_CS-4_R2.unpaired.fastq.gz ILLUMINACLIP:/home/jqsun/local/meta/trimmomatic_adapters.txt:2:30:10 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:20 MINLEN:40
+ILLUMINACLIP: Using 0 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Read Pairs: 21491803 Both Surviving: 19835132 (92.29%) Forward Only Surviving: 1470540 (6.84%) Reverse Only Surviving: 92746 (0.43%) Dropped: 93385 (0.43%)
+TrimmomaticPE: Completed successfully
+mv: cannot stat ‘/home/jqsun/projects/HuoberBrezel/data/fullseq/fastq/*_cleaned.fastq.gz’: No such file or directory

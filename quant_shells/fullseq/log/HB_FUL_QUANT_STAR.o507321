@@ -1,0 +1,54 @@
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 15:47:12 JST 2020
+Aug 29 15:47:12 ..... started STAR run
+Aug 29 15:47:12 ..... loading genome
+Aug 29 15:50:07 ..... started mapping
+Aug 29 16:01:29 ..... finished successfully
+Sat Aug 29 16:01:29 JST 2020
+finished.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 16:05:32 JST 2020
+Aug 29 16:05:32 ..... started STAR run
+Aug 29 16:05:32 ..... loading genome
+Aug 29 16:06:39 ..... started mapping
+Aug 29 16:15:13 ..... finished successfully
+Sat Aug 29 16:15:13 JST 2020
+finished.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS-4_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 16:18:38 JST 2020
+Aug 29 16:18:38 ..... started STAR run
+Aug 29 16:18:39 ..... loading genome
+Aug 29 16:19:43 ..... started mapping
+Aug 29 16:25:50 ..... finished successfully
+Sat Aug 29 16:25:50 JST 2020
+finished.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 16:27:52 JST 2020
+Aug 29 16:27:52 ..... started STAR run
+Aug 29 16:27:53 ..... loading genome
+Aug 29 16:30:57 ..... started mapping
+Aug 29 16:39:44 ..... finished successfully
+Sat Aug 29 16:39:44 JST 2020
+finished.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 16:42:13 JST 2020
+Aug 29 16:42:13 ..... started STAR run
+Aug 29 16:42:13 ..... loading genome
+Aug 29 16:43:19 ..... started mapping
+Aug 29 16:53:31 ..... finished successfully
+Sat Aug 29 16:53:32 JST 2020
+finished.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz
+start mapping ...
+Sat Aug 29 16:57:16 JST 2020
+Aug 29 16:57:16 ..... started STAR run
+Aug 29 16:57:16 ..... loading genome
+Aug 29 16:58:22 ..... started mapping
+Aug 29 17:08:56 ..... finished successfully
+Sat Aug 29 17:08:56 JST 2020
+finished.

@@ -6,19 +6,21 @@
 #PBS -l elapstim_req=24:00:00
 #PBS -b 1
 #PBS -m be
-#PBS -N SHORTAGE_FULSEQ2
+#PBS -N HB_FUL_SHORTFQ
 
 
-PROJECT_DIR=/home/jqsun/research/wheat_cold_treatment
-/home/jqsun/research/wheat_cold_treatment/data/clean_fullseq
+PROJECT_DIR=~/projects/HuoberBrezel
+
 
 cd ${PROJECT_DIR}
-cd data/clean_fullseq
+cd data/fullseq/clean_fastq
 
 
-for fpath in `ls *_CS_*.fastq.gz | grep R1 | grep -v cold`
+for fpath in `ls *.fastq.gz | grep R1`
 do
-     ~/.pyenv/versions/ngs/bin/python ${PROJECT_DIR}/scripts/shortage_fastq.py ${fpath}
+     ~/.pyenv/versions/ngs/bin/python ${PROJECT_DIR}/quant_shells/scripts/shortage_fastq.py ${fpath}
 done
+
+
 
 

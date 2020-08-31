@@ -1,0 +1,18 @@
+shell: 02_fullseq.eaglerc.sh
+LIBPTN: 
+pSTAR: 0
+pEAGLE: 0
+pEAGLERC: 0
+pCountHomeolog: 1
+pCountUnique: 
+nCPU: 16
+----- start -----
+Mon Aug 31 15:00:11 JST 2020
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/eaglerc
+Mon Aug 31 23:25:55 JST 2020
+----- finish -----

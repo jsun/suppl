@@ -23,7 +23,7 @@ def shortage_fq(fq_fpath, fq_out):
     random.seed(random_seed)
     
     
-    with gzip.open(fq_fpath, 'rt') as infh, open(fq_out, 'w') as outfh:
+    with gzip.open(fq_fpath, 'rt') as infh, gzip.open(fq_out, 'wt') as outfh:
         i = 0
         fq_dat = []
         for fqbuff in infh:
@@ -38,6 +38,7 @@ def shortage_fq(fq_fpath, fq_out):
                 
                 outfh.write('\n'.join(fq_dat) + '\n')
                 i = 0
+                fq_dat = []
     
 
 
@@ -45,7 +46,7 @@ def shortage_fq(fq_fpath, fq_out):
 
 if __name__ == '__main__':
     fq_fpath = sys.argv[1]
-    fq_out = fq_fpath.replace('fastq.gz', '') + 'short.fastq'
+    fq_out = fq_fpath.replace('fastq.gz', '') + 'short.fastq.gz'
     
     shortage_fq(fq_fpath, fq_out)
 

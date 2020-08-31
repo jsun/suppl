@@ -1,0 +1,2640 @@
+Start:	2020-08-31 15:00:12.295197
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 15:01:28.662607
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 15:03:05.583781
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 15:04:34.783275
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 15:06:16.337602
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 15:07:36.795830
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 15:09:24.887175
+Done:	2020-08-31 15:27:47.658693
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 15:29:51 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrA.list	4623413 reads	Mon Aug 31 15:30:05 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 15:30:54 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 15:35:56 2020
+# CPU time (hr):	0.103078
+
+real	6m11.350s
+user	6m2.630s
+sys	0m8.457s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 15:36:02 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrB.list	4495335 reads	Mon Aug 31 15:36:16 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 15:36:57 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 15:42:45 2020
+# CPU time (hr):	0.113431
+
+real	6m48.449s
+user	6m42.354s
+sys	0m6.003s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 15:42:50 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrD.list	4370101 reads	Mon Aug 31 15:43:04 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 15:43:40 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 15:49:59 2020
+# CPU time (hr):	0.120825
+
+real	7m15.135s
+user	6m56.456s
+sys	0m18.523s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4888996                                               ||
+||    Successfully assigned fragments : 4308119 (88.1%)                       ||
+||    Running time : 0.31 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4840831                                               ||
+||    Successfully assigned fragments : 4166838 (86.1%)                       ||
+||    Running time : 0.30 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4827879                                               ||
+||    Successfully assigned fragments : 3966969 (82.2%)                       ||
+||    Running time : 0.30 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 15:51:02 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 15:51:02 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 15:54:24 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 15:57:38 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 15:57:38 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 16:02:44 2020
+# CPU time (hr):	0.190464
+
+real	11m41.653s
+user	10m36.005s
+sys	0m49.673s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 16:02:44 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 16:02:44 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 16:05:18 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 16:08:35 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 16:08:35 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 16:12:55 2020
+# CPU time (hr):	0.169842
+
+real	10m11.597s
+user	9m46.280s
+sys	0m25.168s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 16:12:56 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 16:12:56 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 16:15:33 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 16:18:50 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 16:18:50 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 16:24:11 2020
+# CPU time (hr):	0.187583
+
+real	11m15.536s
+user	10m32.033s
+sys	0m43.280s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1032575                                               ||
+||    Successfully assigned fragments : 689174 (66.7%)                        ||
+||    Running time : 0.09 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1315654                                               ||
+||    Successfully assigned fragments : 689368 (52.4%)                        ||
+||    Running time : 0.11 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_2.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 2662453                                               ||
+||    Successfully assigned fragments : 627465 (23.6%)                        ||
+||    Running time : 0.28 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+Start:	2020-08-31 16:24:43.460334
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 16:26:05.323273
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 16:28:00.432169
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 16:29:32.979020
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 16:31:25.856783
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 16:32:42.902890
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 16:34:20.903251
+Done:	2020-08-31 16:54:12.322016
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 16:56:03 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrA.list	4267621 reads	Mon Aug 31 16:56:21 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 16:56:53 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 17:01:48 2020
+# CPU time (hr):	0.097256
+
+real	5m50.335s
+user	5m32.289s
+sys	0m17.845s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 17:01:53 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrB.list	4132550 reads	Mon Aug 31 17:02:08 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:02:19 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:07:51 2020
+# CPU time (hr):	0.100958
+
+real	6m3.603s
+user	5m43.215s
+sys	0m20.245s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 17:07:57 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrD.list	3949633 reads	Mon Aug 31 17:08:13 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:08:23 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:13:26 2020
+# CPU time (hr):	0.093194
+
+real	5m35.663s
+user	5m22.997s
+sys	0m12.519s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4435069                                               ||
+||    Successfully assigned fragments : 3991077 (90.0%)                       ||
+||    Running time : 0.30 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4332520                                               ||
+||    Successfully assigned fragments : 3827554 (88.3%)                       ||
+||    Running time : 0.31 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4220092                                               ||
+||    Successfully assigned fragments : 3606485 (85.5%)                       ||
+||    Running time : 0.29 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 17:14:28 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 17:14:28 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:17:17 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:20:00 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 17:20:00 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 17:23:18 2020
+# CPU time (hr):	0.146933
+
+real	8m49.180s
+user	8m17.235s
+sys	0m31.738s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 17:23:18 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 17:23:18 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 17:25:36 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:28:40 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:28:40 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:33:15 2020
+# CPU time (hr):	0.165775
+
+real	9m57.070s
+user	9m16.971s
+sys	0m39.824s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 17:33:15 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 17:33:15 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 17:35:29 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 17:38:11 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:38:11 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 17:42:27 2020
+# CPU time (hr):	0.153461
+
+real	9m12.741s
+user	8m40.889s
+sys	0m31.583s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 948366                                                ||
+||    Successfully assigned fragments : 630100 (66.4%)                        ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1181843                                               ||
+||    Successfully assigned fragments : 636908 (53.9%)                        ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_3.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1794629                                               ||
+||    Successfully assigned fragments : 564422 (31.5%)                        ||
+||    Running time : 0.13 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+Start:	2020-08-31 17:42:46.745795
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 17:43:39.429811
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 17:44:57.408244
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 17:45:52.074662
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 17:47:11.233094
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 17:48:26.587713
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 17:49:51.913738
+Done:	2020-08-31 18:04:47.205000
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:05:51 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS-4.ref.chrA.list	3204398 reads	Mon Aug 31 18:06:03 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:06:10 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:10:02 2020
+# CPU time (hr):	0.071428
+
+real	4m17.294s
+user	3m58.657s
+sys	0m18.494s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:10:08 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS-4.ref.chrB.list	3071188 reads	Mon Aug 31 18:10:19 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:10:28 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:14:04 2020
+# CPU time (hr):	0.066744
+
+real	4m0.401s
+user	3m47.817s
+sys	0m12.476s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:14:08 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS-4.ref.chrD.list	2921214 reads	Mon Aug 31 18:14:17 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:14:27 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:17:53 2020
+# CPU time (hr):	0.063361
+
+real	3m48.207s
+user	3m41.691s
+sys	0m6.424s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrA.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 3327592                                               ||
+||    Successfully assigned fragments : 2998899 (90.1%)                       ||
+||    Running time : 0.23 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrB.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 3222620                                               ||
+||    Successfully assigned fragments : 2834873 (88.0%)                       ||
+||    Running time : 0.23 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrD.counts.homeo ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 3127498                                               ||
+||    Successfully assigned fragments : 2663674 (85.2%)                       ||
+||    Running time : 0.24 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:18:41 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 18:18:41 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:20:47 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:23:07 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:23:07 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:26:03 2020
+# CPU time (hr):	0.122772
+
+real	7m22.566s
+user	6m34.245s
+sys	0m48.109s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:26:03 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 18:26:03 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:27:52 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:30:09 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:30:09 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:33:43 2020
+# CPU time (hr):	0.127528
+
+real	7m39.731s
+user	6m41.211s
+sys	0m58.371s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 18:33:43 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 18:33:43 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 18:35:24 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 18:37:28 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:37:28 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS-4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 18:41:05 2020
+# CPU time (hr):	0.122606
+
+real	7m21.570s
+user	6m39.672s
+sys	0m41.719s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrA.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 654088                                                ||
+||    Successfully assigned fragments : 437592 (66.9%)                        ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrB.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 811086                                                ||
+||    Successfully assigned fragments : 445072 (54.9%)                        ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS-4.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS-4.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS-4.chrD.counts.speci ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS-4.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1240435                                               ||
+||    Successfully assigned fragments : 393191 (31.7%)                        ||
+||    Running time : 0.08 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S-4.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+Start:	2020-08-31 18:41:18.735782
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 18:42:26.320669
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 18:44:00.295298
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 18:45:35.234174
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 18:47:15.888057
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 18:48:31.587066
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 18:50:33.772486
+Done:	2020-08-31 19:09:04.991543
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:11:03 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrA.list	4136444 reads	Mon Aug 31 19:11:19 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:11:29 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:15:46 2020
+# CPU time (hr):	0.080750
+
+real	4m50.889s
+user	4m32.057s
+sys	0m18.658s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:15:54 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrB.list	4082481 reads	Mon Aug 31 19:16:07 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:16:15 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:21:37 2020
+# CPU time (hr):	0.097667
+
+real	5m51.757s
+user	5m19.360s
+sys	0m32.252s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:21:46 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrD.list	3947796 reads	Mon Aug 31 19:22:01 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:22:11 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:28:04 2020
+# CPU time (hr):	0.105114
+
+real	6m26.277s
+user	5m49.086s
+sys	0m29.335s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4290918                                               ||
+||    Successfully assigned fragments : 3877761 (90.4%)                       ||
+||    Running time : 0.32 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4285603                                               ||
+||    Successfully assigned fragments : 3793166 (88.5%)                       ||
+||    Running time : 0.31 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4153481                                               ||
+||    Successfully assigned fragments : 3639850 (87.6%)                       ||
+||    Running time : 0.30 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:29:09 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 19:29:09 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:31:51 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:34:32 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:34:32 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:38:21 2020
+# CPU time (hr):	0.153286
+
+real	9m12.153s
+user	8m2.373s
+sys	1m9.466s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:38:21 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 19:38:21 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:41:03 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:43:47 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:43:47 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:47:45 2020
+# CPU time (hr):	0.155133
+
+real	9m23.703s
+user	8m53.947s
+sys	0m24.545s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 19:47:45 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 19:47:45 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 19:50:02 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 19:52:41 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:52:41 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 19:56:33 2020
+# CPU time (hr):	0.146378
+
+real	8m47.387s
+user	8m22.961s
+sys	0m24.003s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1017312                                               ||
+||    Successfully assigned fragments : 666266 (65.5%)                        ||
+||    Running time : 0.08 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1263854                                               ||
+||    Successfully assigned fragments : 667617 (52.8%)                        ||
+||    Running time : 0.09 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_2.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1652434                                               ||
+||    Successfully assigned fragments : 599562 (36.3%)                        ||
+||    Running time : 0.15 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+Start:	2020-08-31 19:56:55.634908
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 19:58:41.956230
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 20:01:01.786758
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 20:03:06.340264
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 20:05:21.397681
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 20:07:23.204301
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 20:09:48.762282
+Done:	2020-08-31 20:30:46.404104
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 20:33:26 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrA.list	5782902 reads	Mon Aug 31 20:33:48 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 20:34:41 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 20:41:09 2020
+# CPU time (hr):	0.130981
+
+real	7m51.904s
+user	7m27.554s
+sys	0m23.983s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 20:41:18 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrB.list	5645306 reads	Mon Aug 31 20:41:40 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 20:42:57 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 20:50:00 2020
+# CPU time (hr):	0.146969
+
+real	8m49.838s
+user	8m19.106s
+sys	0m29.998s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 20:50:08 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrD.list	5382970 reads	Mon Aug 31 20:50:31 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 20:51:54 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 20:58:49 2020
+# CPU time (hr):	0.146558
+
+real	8m48.173s
+user	8m25.875s
+sys	0m21.750s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5953743                                               ||
+||    Successfully assigned fragments : 5418042 (91.0%)                       ||
+||    Running time : 0.40 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5845493                                               ||
+||    Successfully assigned fragments : 5235226 (89.6%)                       ||
+||    Running time : 0.38 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5588781                                               ||
+||    Successfully assigned fragments : 4946068 (88.5%)                       ||
+||    Running time : 0.34 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 21:00:05 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 21:00:05 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 21:02:54 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 21:05:41 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 21:05:41 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 21:10:51 2020
+# CPU time (hr):	0.179128
+
+real	10m46.419s
+user	10m25.468s
+sys	0m19.404s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 21:10:51 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 21:10:51 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 21:14:15 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 21:17:40 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 21:17:40 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 21:22:26 2020
+# CPU time (hr):	0.192653
+
+real	11m34.146s
+user	11m8.435s
+sys	0m25.123s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 21:22:26 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 21:22:26 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 21:25:36 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 21:29:14 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 21:29:14 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 21:34:13 2020
+# CPU time (hr):	0.196292
+
+real	11m47.414s
+user	11m17.587s
+sys	0m29.073s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1294295                                               ||
+||    Successfully assigned fragments : 878321 (67.9%)                        ||
+||    Running time : 0.10 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1529281                                               ||
+||    Successfully assigned fragments : 861566 (56.3%)                        ||
+||    Running time : 0.33 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_3.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1764102                                               ||
+||    Successfully assigned fragments : 775787 (44.0%)                        ||
+||    Running time : 0.15 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+Start:	2020-08-31 21:34:51.318243
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/eaglerc.out.A.vs.B.list	2020-08-31 21:36:49.424891
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/eaglerc.out.A.vs.D.list	2020-08-31 21:39:53.097306
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/eaglerc.out.B.vs.A.list	2020-08-31 21:42:21.553393
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/eaglerc.out.B.vs.D.list	2020-08-31 21:45:07.448356
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/eaglerc.out.D.vs.A.list	2020-08-31 21:47:30.183521
+Read:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/eaglerc.out.D.vs.B.list	2020-08-31 21:50:18.662267
+Done:	2020-08-31 22:13:34.733358
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 22:16:25 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrA.list	5502420 reads	Mon Aug 31 22:16:47 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 22:18:06 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 22:26:20 2020
+# CPU time (hr):	0.166781
+
+real	10m2.537s
+user	9m38.088s
+sys	0m22.336s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 22:26:27 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrB.list	5379635 reads	Mon Aug 31 22:26:48 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 22:27:57 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 22:35:07 2020
+# CPU time (hr):	0.146025
+
+real	8m46.149s
+user	8m33.813s
+sys	0m11.890s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 22:35:14 2020
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrD.list	5221388 reads	Mon Aug 31 22:35:34 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 22:36:36 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 22:43:13 2020
+# CPU time (hr):	0.134708
+
+real	8m5.399s
+user	7m52.204s
+sys	0m12.756s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5701869                                               ||
+||    Successfully assigned fragments : 5150616 (90.3%)                       ||
+||    Running time : 0.39 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5626738                                               ||
+||    Successfully assigned fragments : 5003845 (88.9%)                       ||
+||    Running time : 0.39 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5541641                                               ||
+||    Successfully assigned fragments : 4792281 (86.5%)                       ||
+||    Running time : 0.38 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 22:44:30 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 22:44:30 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 22:48:01 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 22:51:45 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 22:51:45 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 22:56:29 2020
+# CPU time (hr):	0.199436
+
+real	11m58.730s
+user	11m43.092s
+sys	0m14.889s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 22:56:29 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 22:56:29 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 22:59:46 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 23:05:12 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 23:05:12 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 23:12:18 2020
+# CPU time (hr):	0.263161
+
+real	15m49.755s
+user	15m3.899s
+sys	0m43.494s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Mon Aug 31 23:12:18 2020
+# Classified list: dummy.txt	0 reads	Mon Aug 31 23:12:18 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Mon Aug 31 23:16:28 2020
+# Read other bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Mon Aug 31 23:19:53 2020
+# Open input bam:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 23:19:53 2020
+# BAM Processed:	/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Mon Aug 31 23:25:29 2020
+# CPU time (hr):	0.219392
+
+real	13m10.825s
+user	12m19.803s
+sys	0m50.013s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35345                                                        ||
+||    Meta-features : 35345                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1162547                                               ||
+||    Successfully assigned fragments : 796561 (68.5%)                        ||
+||    Running time : 0.09 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 35643                                                        ||
+||    Meta-features : 35643                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 1454109                                               ||
+||    Successfully assigned fragments : 833472 (57.3%)                        ||
+||    Running time : 0.12 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.6.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P 20181221.A-ZH_W2017_1_CS_cold_4.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||              Annotation : /home/jqsun/research/data/genome/IWGSC_RefSe ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/jqsun/research/data/genome/IWGSC_RefSeq_v1. ... ||
+||    Features : 34212                                                        ||
+||    Meta-features : 34212                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 2068272                                               ||
+||    Successfully assigned fragments : 728038 (35.2%)                        ||
+||    Running time : 0.18 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+

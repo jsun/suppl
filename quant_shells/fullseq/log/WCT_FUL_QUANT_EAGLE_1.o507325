@@ -1,0 +1,180 @@
+shell: 02_fullseq.eaglerc.sh
+LIBPTN: 
+pSTAR: 1
+pEAGLE: 0
+pEAGLERC: 0
+pCountHomeolog: 0
+pCountUnique: 0
+nCPU: 16
+----- start -----
+Sat Aug 29 18:46:51 JST 2020
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_2 on chrA chromosome.
+Aug 29 18:46:51 ..... started STAR run
+Aug 29 18:46:51 ..... loading genome
+Aug 29 18:47:35 ..... started mapping
+Aug 29 18:57:26 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_2 on chrB chromosome.
+Aug 29 19:00:21 ..... started STAR run
+Aug 29 19:00:21 ..... loading genome
+Aug 29 19:00:42 ..... started mapping
+Aug 29 19:09:49 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_2 on chrD chromosome.
+Aug 29 19:14:14 ..... started STAR run
+Aug 29 19:14:14 ..... loading genome
+Aug 29 19:14:51 ..... started mapping
+Aug 29 19:22:29 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_3 on chrA chromosome.
+Aug 29 19:26:55 ..... started STAR run
+Aug 29 19:26:55 ..... loading genome
+Aug 29 19:27:14 ..... started mapping
+Aug 29 19:35:13 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_3 on chrB chromosome.
+Aug 29 19:37:35 ..... started STAR run
+Aug 29 19:37:35 ..... loading genome
+Aug 29 19:38:23 ..... started mapping
+Aug 29 19:46:02 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_3 on chrD chromosome.
+Aug 29 19:48:51 ..... started STAR run
+Aug 29 19:48:51 ..... loading genome
+Aug 29 19:49:08 ..... started mapping
+Aug 29 19:55:51 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS-4_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS-4 on chrA chromosome.
+Aug 29 19:58:45 ..... started STAR run
+Aug 29 19:58:45 ..... loading genome
+Aug 29 19:59:37 ..... started mapping
+Aug 29 20:05:16 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS-4 on chrB chromosome.
+Aug 29 20:07:01 ..... started STAR run
+Aug 29 20:07:01 ..... loading genome
+Aug 29 20:07:37 ..... started mapping
+Aug 29 20:13:03 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS-4 on chrD chromosome.
+Aug 29 20:15:11 ..... started STAR run
+Aug 29 20:15:11 ..... loading genome
+Aug 29 20:15:53 ..... started mapping
+Aug 29 20:20:42 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrA chromosome.
+Aug 29 20:22:52 ..... started STAR run
+Aug 29 20:22:52 ..... loading genome
+Aug 29 20:23:22 ..... started mapping
+Aug 29 20:32:05 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrB chromosome.
+Aug 29 20:34:17 ..... started STAR run
+Aug 29 20:34:17 ..... loading genome
+Aug 29 20:35:10 ..... started mapping
+Aug 29 20:43:26 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrD chromosome.
+Aug 29 20:46:06 ..... started STAR run
+Aug 29 20:46:06 ..... loading genome
+Aug 29 20:46:45 ..... started mapping
+Aug 29 20:54:08 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrA chromosome.
+Aug 29 20:56:41 ..... started STAR run
+Aug 29 20:56:41 ..... loading genome
+Aug 29 20:57:24 ..... started mapping
+Aug 29 21:08:02 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrB chromosome.
+Aug 29 21:10:51 ..... started STAR run
+Aug 29 21:10:51 ..... loading genome
+Aug 29 21:11:38 ..... started mapping
+Aug 29 21:22:07 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrD chromosome.
+Aug 29 21:25:54 ..... started STAR run
+Aug 29 21:25:54 ..... loading genome
+Aug 29 21:26:34 ..... started mapping
+Aug 29 21:35:59 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/jqsun/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrA chromosome.
+Aug 29 21:39:51 ..... started STAR run
+Aug 29 21:39:51 ..... loading genome
+Aug 29 21:40:12 ..... started mapping
+Aug 29 21:52:59 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrB chromosome.
+Aug 29 21:56:52 ..... started STAR run
+Aug 29 21:56:52 ..... loading genome
+Aug 29 21:57:14 ..... started mapping
+Aug 29 22:09:59 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrD chromosome.
+Aug 29 22:15:16 ..... started STAR run
+Aug 29 22:15:16 ..... loading genome
+Aug 29 22:15:33 ..... started mapping
+Aug 29 22:26:56 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+Sat Aug 29 22:32:23 JST 2020
+----- finish -----

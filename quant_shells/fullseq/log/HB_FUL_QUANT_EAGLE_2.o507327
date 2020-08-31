@@ -1,0 +1,118 @@
+shell: 02_fullseq.eaglerc.sh
+LIBPTN: 
+pSTAR: 0
+pEAGLE: 1
+pEAGLERC: 0
+pCountHomeolog: 0
+pCountUnique: 0
+nCPU: 16
+----- start -----
+Sat Aug 29 21:42:06 JST 2020
+20181221.A-ZH_W2017_1_CS_2
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_3
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS-4
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+shell: 02_fullseq.eaglerc.sh
+LIBPTN: 
+pSTAR: 0
+pEAGLE: 1
+pEAGLERC: 0
+pCountHomeolog: 0
+pCountUnique: 0
+nCPU: 16
+----- start -----
+Sun Aug 30 16:31:21 JST 2020
+20181221.A-ZH_W2017_1_CS_cold_2
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_cold_3
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_cold_4
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eagle
+finished eagle
+/home/jqsun/projects/HuoberBrezel/data/fullseq/bameaglerc
+Mon Aug 31 10:56:24 JST 2020
+----- finish -----
