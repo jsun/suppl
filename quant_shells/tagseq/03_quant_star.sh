@@ -2,15 +2,15 @@
 #PBS --group=g-mlbi
 #PBS -q cq
 #PBS -l gpunum_job=0
-#PBS -l cpunum_job=16
+#PBS -l cpunum_job=1
 #PBS -l memsz_job=256gb
 #PBS -l elapstim_req=72:00:00
-#PBS -N HB_TAG_QUANT_STAR
+#PBS -N HB_TAG_QUANT_STARCOUNT
 
 
-pSTAR=1
+pSTAR=0
 pQuant=1
-nCPU=16
+nCPU=1
 
 
 
@@ -25,7 +25,7 @@ GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
 GENOME_INDEX=${GENOME_DIR}/index/dnapart_star
 
 
-GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706
+GTF_FILEPATH=${GENOME_DIR}/refseqv1.0_part/IWGSC_v1.1_HC_20170706.ext_1.0k.part.gff3
 COUNTS_DIR=${DATA_DIR}/countsstar
 
 
@@ -74,13 +74,10 @@ if [ ${pQuant} -eq 1 ]; then
 #
 mkdir -p ${COUNTS_DIR}
 cd ${BAM_DIR}
-gff_versions=("iwgsc" "ext_0.5k" "ext_1.0k" "ext_1.5k" "ext_2.0k" "ext_2.5k" "ext_3.0k" "ext_3.5k" "ext_4.0k")
-for gff in ${gff_versions[@]}; do
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
-                         -o ${COUNTS_DIR}/tcs.counts.gene.${gff}.tsv TaeRS2728_*.bam
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
-                         -o ${COUNTS_DIR}/cs.counts.gene.${gff}.tsv 20181109*.bam
-done
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+                     -o ${COUNTS_DIR}/tcs.counts.gene.ext_1.0k.tsv TaeRS2728_*.bam
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+                     -o ${COUNTS_DIR}/cs.counts.gene.ext_1.0k.tsv 20181109*.bam
 fi
 
 
