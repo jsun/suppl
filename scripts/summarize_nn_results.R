@@ -1,157 +1,157 @@
 library(tidyverse)
+library(ggExtra)
 
-
-
-nn_result_prefix <- 'model/weights'
-nn_result_permu <- 'model/permutest'
-
-cv_L1 <- read_tsv(paste0(nn_result_prefix, '/L1.pth_cv_stats.tsv'), col_names = TRUE)
-
-L1p1 <- cv_L1 %>%
-    filter(activate_fun == 'relu') %>%
-    select(- valid_mse) %>%
-    group_by(n_hidden_0, dropout) %>%
-    summarize(mse = mean(train_mse)) %>%
-    ungroup() %>%
-    ggplot(aes(y = n_hidden_0, x = dropout)) +
-        geom_tile(aes(fill = mse)) +
-        geom_text(aes(label = round(mse, 2))) +
-        scale_fill_gradient(low = 'white', high = 'steelblue')
-
-png('~/Desktop/L1p1.png', 1300, 1300, res=250)
-print(L1p1)
-dev.off()
-
-
-   
-
-L1p2 <- cv_L1 %>%
-    filter(activate_fun == 'relu') %>%
-    select(- train_mse) %>%
-    group_by(n_hidden_0, dropout) %>%
-    summarize(mse = mean(valid_mse)) %>%
-    ungroup() %>%
-    ggplot(aes(y = n_hidden_0, x = dropout)) +
-        geom_tile(aes(fill = mse)) +
-        geom_text(aes(label = round(mse, 2))) +
-        scale_fill_gradient(low = 'white', high = 'steelblue')
-
-png('~/Desktop/L1p2.png', 1300, 1300, res=250)
-print(L1p2)
-dev.off()
-
-
-
-
-
-
-
-cv_L2 <- read_tsv(paste0(nn_result_prefix, '/L2.pth_cv_stats.tsv'), col_names = TRUE)
-
-
-L2p1 <- cv_L2 %>%
-    filter(activate_fun == 'relu') %>%
-    select(- valid_mse) %>%
-    group_by(n_hidden_0, n_hidden_1, dropout) %>%
-    summarize(mse = mean(train_mse)) %>%
-    ungroup() %>%
-    ggplot(aes(x = n_hidden_0, y = n_hidden_1)) +
-        geom_tile(aes(fill = mse)) +
-        geom_text(aes(label = round(mse, 2))) +
-        scale_fill_gradient(low = 'white', high = 'steelblue') +
-        facet_grid(. ~ dropout) 
-png('~/Desktop/L2p1.png', 2400, 1300, res=250)
-print(L2p1)
-dev.off()
-
-L2p2 <- cv_L2 %>%
-    filter(activate_fun == 'relu') %>%
-    select(- train_mse) %>%
-    group_by(n_hidden_0, n_hidden_1, dropout) %>%
-    summarize(mse = mean(valid_mse)) %>% #min, mean
-    ungroup() %>%
-    ggplot(aes(x = n_hidden_0, y = n_hidden_1)) +
-        geom_tile(aes(fill = mse)) +
-        geom_text(aes(label = round(mse, 2))) +
-        scale_fill_gradient(low = 'white', high = 'steelblue') +
-        facet_grid(. ~ dropout) 
-png('~/Desktop/L2p2.png', 2400, 1300, res=250)
-print(L2p2)
-dev.off()
-
-
-
-
-
-
-cv_L3 <- read_tsv(paste0(nn_result_prefix, '/L3.pth_cv_stats.tsv'), col_names = TRUE)
-
-L3p2 <- cv_L3 %>%
-    mutate(n_hidden = str_c(n_hidden_0, n_hidden_1, n_hidden_2, sep='_')) %>%
-    filter(activate_fun == 'relu') %>%
-    select(- train_mse) %>%
-    group_by(n_hidden_0, n_hidden_1, n_hidden_2, dropout) %>%
-    summarize(mse = mean(valid_mse)) %>% #min, mean
-    ungroup() %>%
-    ggplot(aes(x = n_hidden_0, y = n_hidden_1)) +
-        geom_tile(aes(fill = mse)) +
-        geom_text(aes(label = round(mse, 2))) +
-        scale_fill_gradient(low = 'white', high = 'steelblue') +
-        facet_wrap(. ~ n_hidden_2, ncol = 3) 
-
-
-png('~/Desktop/L3p2.png', 4600, 2600, res=250)
-print(L3p2)
-dev.off()
-
-
-
-
-
-calc_permutation_stats <- function(dpath) {
-    .mse <- function(x, y) sum((x - y) ^ 2) / length(x)
+summarise_category <- function(dpath) {
+    cate <- list.dirs(dpath, full.names = FALSE, recursive = FALSE)
+    cate_design <- data.frame(
+        dpath = paste0(dpath, '/', cate),
+        crop = str_split(cate, pattern = '__', simplify = TRUE)[, 1],
+        disease = str_split(cate, pattern = '__', simplify = TRUE)[, 2],
+        datatype = str_split(cate, pattern = '__', simplify = TRUE)[, 3]
+    )
     
-    mse <- NULL
-    for (fpath in list.files(dpath, pattern = '.tsv', full.names = TRUE)) {
-        x <- read.table(fpath, header = TRUE, sep = '\t')
-        mse <- c(mse, .mse(x[, 1], x[, 2]))
-    }
-    
-    fig <- ggplot(data.frame(mse = mse), aes(x = mse)) +
-                geom_histogram(binwidth = 0.2)
-    fig
+    cate_design
 }
 
 
-fig1 <- calc_permutation_stats(paste0(nn_result_permu, '/Type1'))
-fig2 <- calc_permutation_stats(paste0(nn_result_permu, '/Type2'))
+summarise_permutation_test <- function(dpath) {
+    
+    .get_best <- function(fpath) {
+        x <- read.table(fpath, header = TRUE)
+        mean(x$valid)
+    }
+    
+    .sum_p <- function(p) {
+        model_archs <- c('L1', 'L2')
+        mse <- matrix(NA, nrow = 100, ncol = length(model_archs))
+        colnames(mse) <- model_archs
+    
+        for (fpath in sort(list.files(p, pattern = 'tsv', full.names = TRUE))) {
+            model_arch <- str_split(basename(fpath), pattern = '_', simplify = TRUE)[,1]
+            i <- as.integer(gsub('.pth', '', str_split(basename(fpath), pattern = '_', simplify = TRUE)[,2]))
+            mse[i, model_arch] <- .get_best(fpath)
+        }
+        
+        mse
+    }
+    
+    mse_p1 <- .sum_p(paste0(dpath, '/weights_permutest_1'))
+    mse_p2 <- .sum_p(paste0(dpath, '/weights_permutest_2'))
+    
+    mse_L1 <- data.frame(row_shuffle = mse_p1[, 'L1'], random = mse_p2[, 'L1'])
+    mse_L2 <- data.frame(row_shuffle = mse_p1[, 'L2'], random = mse_p2[, 'L2'])
+    
+    list(L1 = mse_L1, L2 = mse_L2)
+}
+
+summarise_valid <- function(dpath) {
+    .get_best <- function(fpath) {
+        x <- read.table(fpath, header = TRUE)
+        mean(x$valid)
+    }
+    
+    mse_L1 <- .get_best(paste0(dpath, '/weights/L1_best.pth_stats.tsv'))
+    mse_L2 <- .get_best(paste0(dpath, '/weights/L2_best.pth_stats.tsv'))
+    
+    list(L1 = mse_L1, L2 = mse_L2)
+}
 
 
-png('~/Desktop/permu1.png', 800, 600, res=250)
-print(fig1)
-dev.off()
-png('~/Desktop/permu2.png', 800, 600, res=250)
-print(fig2)
-dev.off()
 
 
+if (TRUE) {
+    
+cate_design <- summarise_category('formatted_data_dw')
+cate_design$model <- NA
+cate_design$rmse <- NA
+cate_design$pvalue <- NA
 
-df <- read.table('formatted_data/kyuuri_honpo_percent.test.tsv', header = TRUE, sep = '\t')
-df$incidence <- read.table('model/valid_outputs/testresult.tsv', header = TRUE, sep = '\t')$predicted
+for (cate in 1:nrow(cate_design)) {
+    
+    # whole dataset
+    x <- read.table(paste0(cate_design$dpath[cate], '/data.tsv'), header = TRUE)
+    x <- x[!is.na(x$incidence), ]
+    x$date <- as.Date(paste(x$year, x$month, '01', sep = '-'))
+    hist_0 <- ggplot(x, aes(x = incidence)) +
+                geom_histogram(bins = 20) +
+                ggtitle(paste0('n = ', nrow(x)))
+    png(paste0(cate_design$dpath[cate], '/data.hist.png'), 800, 500, res = 250)
+    print(hist_0)
+    dev.off()
+    scat_0 <- ggplot(x, aes(x = date, y = incidence)) +
+                geom_point() +
+                ggtitle(paste0(paste(cate_design[cate, 2:4], collapse = ' '), '\n(n = ', nrow(x), ')')) +
+                theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
-h1 <- df %>% select(prefecture, month, incidence) %>%
-        ggplot(aes(x = month, y = prefecture, fill = incidence)) +
-        geom_tile() + 
-        scale_fill_gradientn('value', colours = brewer.pal(9, 'YlOrRd'), na.value = 'white')
-
-png('~/Desktop/heatmap.png', 1500, 1600, res=250)
-print(h1)
-dev.off()
+    png(paste0(cate_design$dpath[cate], '/data.scatter.png'), round(100 * length(unique(x$year))), 700, res = 250)
+    print(scat_0)
+    dev.off()
 
 
+    # permutation results
+    mse <- try(summarise_permutation_test(cate_design$dpath[cate]), silent = TRUE)
+    if (class(mse) != 'try-error') {
+        mse_df <- rbind(
+            pivot_longer(mse$L1, everything(), names_to = 'test', values_to = 'mse') %>% mutate(model = 'L1'),
+            pivot_longer(mse$L2, everything(), names_to = 'test', values_to = 'mse') %>% mutate(model = 'L2')
+        )
+        mse_df$rmse <- sqrt(mse_df$mse)
+    } else {
+        mse <- NULL
+        mse_df <- NULL
+    }
+    
+    # best result
+    mse_best <- try(summarise_valid(cate_design$dpath[cate]), silent = TRUE)
+    if (class(mse_best) != 'try-error') {
+        rmse_best <- lapply(mse_best, sqrt)
+    } else {
+        rmse_best <- NULL
+    }
+    
+    if (!is.null(mse) && !is.null(rmse_best)) {
+        hist_L1 <- mse_df %>% filter(model == 'L1') %>%
+                ggplot(aes(x = rmse)) +
+                geom_histogram(bins = 20) +
+                geom_vline(xintercept = rmse_best$L1, linetype = 'dashed', color = '#C71000') +
+                facet_grid(test ~ .) +
+                ggtitle(paste(cate_design[cate, 2:5], collapse = ' '))
+    
+        hist_L2 <- mse_df %>% filter(model == 'L2') %>%
+                ggplot(aes(x = rmse)) +
+                geom_histogram(bins = 20) +
+                geom_vline(xintercept = rmse_best$L2, linetype = 'dashed', color = '#C71000') +
+                facet_grid(test ~ .) +
+                ggtitle(paste(cate_design[cate, 2:5], collapse = ' '))
+    
+        png(paste0(cate_design$dpath[cate], '/permutation_test.L1.png'), 800, 1000, res = 250)
+        print(hist_L1)
+        dev.off()
+    
+        png(paste0(cate_design$dpath[cate], '/permutation_test.L2.png'), 800, 1000, res = 250)
+        print(hist_L2)
+        dev.off()
+    
+        if (rmse_best$L1 > rmse_best$L2) {
+            cate_design$model[cate] <- 'L2'
+            cate_design$rmse[cate] <- rmse_best$L2
+            cate_design$pvalue[cate] <- t.test(sqrt(mse$L2$row_shuffle), sqrt(mse$L2$random))$p.value
+        } else {
+            cate_design$model[cate] <- 'L1'
+            cate_design$rmse[cate] <- rmse_best$L1
+            cate_design$pvalue[cate] <- t.test(sqrt(mse$L1$row_shuffle), sqrt(mse$L1$random))$p.value
+        }
+    }
+    
+    
+}
 
 
+write.table(cate_design, file = 'formatted_data_dw/summary.xls',
+            sep = '\t', col.names = TRUE, row.names = FALSE, quote = FALSE)
 
+
+}
 
 
 

@@ -2,15 +2,15 @@
 #$ -S /bin/bash
 #$ -jc hostos_g1
 #$ -cwd
-#$ -N qs_tiramisu_cv
-#$ -mods l_hard h_rt 144:00:00
-#$ -t 1:30
+#$ -N qs_tiramisu_model
+#$ -mods l_hard h_rt 240:00:00
+#$ -t 1:50
 
 # run mode
 #   1: cross-validation to search best combination of parameters
 #   2: train and test with the best combination of parameters
 #   3: permutation test with the best combination of parameters
-RUN_MODE=1
+RUN_MODE=2
 
 # crop name for analyses
 CROP_NAME=Cucumber
@@ -22,8 +22,6 @@ PROJECT_PATH=~/projects/tiramisu
 
 
 # load shell config data
-# source /etc/profile.d/modules.sh
-# module load cuda/10.0/10.0.130.1 cudnn/7.6.5
 source ~/.profile
 
 
@@ -67,6 +65,9 @@ then
         
         # check the cv results and save best params into config file
         python summarise_cv.py ${model_arch} ${disease_path}/weights_cv ${best_param_fpath}.${model_arch}
+        
+        python summarize_hyperparams.py ../formatted_data L1 > ../formatted_data/best_params_summary.L1.tsv
+        python summarize_hyperparams.py ../formatted_data L2 > ../formatted_data/best_params_summary.L2.tsv
     done
 fi
 
@@ -129,15 +130,15 @@ then
             do
                 python bake.py --mode train --model ${model_arch} \
                                --params ${best_param_fpath}.${model_arch}                                  \
-                               --weight ${disease_path}//weights_permutest_${dtype}/${model_arch}_${i}.pth \
+                               --weight ${disease_path}/weights_permutest_${dtype}/${model_arch}_${i}.pth  \
                                --train-dataset ${disease_path}/randomize_${dtype}/train_${i}.tsv           \
                                --valid-dataset ${disease_path}/randomize_${dtype}/valid_${i}.tsv
         
                 python bake.py --mode valid --model ${model_arch} \
                                --params ${best_param_fpath}.${model_arch}                                  \
                                --weight ${disease_path}/weights_permutest_${dtype}/${model_arch}_${i}.pth  \
-                               --valid-dataset ${disease_path}//weights_permutest_${dtype}/valid_${i}.tsv  \
-                               --output ${disease_path}//weights_permutest__${dtype}/${model_arch}_${i}.pth_valid
+                               --valid-dataset ${disease_path}/weights_permutest_${dtype}/valid_${i}.tsv   \
+                               --output ${disease_path}/weights_permutest_${dtype}/${model_arch}_${i}.pth_valid
             done
         done
     done

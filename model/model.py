@@ -320,12 +320,33 @@ class Jppnet():
                 inputs = inputs.to(self.device)
                 pred['predicted'].extend(self.model(inputs).data.cpu().numpy().flatten())
                 pred['label'].extend(labels.data.cpu().numpy().flatten())
-
-
+        
         pred = pd.DataFrame(pred)
-        #pred.iloc[:, 0] = 10 ** pred.iloc[:, 0] - 1
-        #pred.iloc[:, 1] = 10 ** pred.iloc[:, 1] - 1
         
         return pred
-
+    
+    
+    
+     def inference(self, test_data, batch_size=None):
+        
+        self.model.eval()
+        
+        dataset = textDataset(test_data, is_test)
+        dataloader = torch.utils.data.DataLoader(dataset, batch_size=1024, shuffle=False)
+        
+        pred = {'label': [], 'predicted': []}
+        
+        with torch.set_grad_enabled(False):
+            for inputs, labels in dataloader:
+                inputs = inputs.to(self.device)
+                pred['predicted'].extend(self.model(inputs).data.cpu().numpy().flatten())
+                pred['label'].extend(labels.data.cpu().numpy().flatten())
+        
+        pred = pd.DataFrame(pred)
+        
+        return pred
+    
+    
+    
+    
 

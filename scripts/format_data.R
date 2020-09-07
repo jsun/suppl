@@ -3,7 +3,7 @@ library(ggsci)
 
 
 GENERATE_DATASET   <- FALSE
-NORM_SPLIT_DATASET <- TRUE
+NORM_SPLIT_DATASET <- FALSE
 
 
 
@@ -375,7 +375,7 @@ randomize_dataset <- function(data_dpath) {
                     delim = '\t', na = 'NA')
     }
     
-    # randomize rows and  columns (pref, month, incidence)
+    # randomize rows and columns (pref, month, incidence)
     dir.create(paste0(data_dpath, '/randomize_2'), showWarnings = FALSE)
     for (i in 1:100) {
         set.seed(2020 - i)
@@ -401,7 +401,7 @@ randomize_dataset <- function(data_dpath) {
 
 
 if (GENERATE_DATASET) {
-
+    # exmaple code for generating 'Cucumber__udonkobyo__hompohatsubyoyoritsu/data.tsv'
     jppnet_dat <- read_jppnet_csv()
     dat <- jppnet_dat %>%
                 filter(str_detect(crop, 'キュウリ')) %>%
@@ -411,8 +411,8 @@ if (GENERATE_DATASET) {
     incidence_matrices <- make_incidence_matrix(dat, replace.na = NA)
     dat_records <- generate_dataset(incidence_matrices)
     
-    # file name should be `data.tsv`
-    write_delim(dat_records, path = paste0('formatted/test/data.tsv'))
+    # folder name should be `crop__disease__datatype`, file name should be `data.tsv`
+    write_delim(dat_records, path = 'formatted_data/Cucumber__udonkobyo__hompohatsubyoyoritsu/data.tsv')
 }
  
 
@@ -425,7 +425,6 @@ if (NORM_SPLIT_DATASET) {
         arrange_dataset(dpath)
         randomize_dataset(dpath)
     }
-   
 }
 
 

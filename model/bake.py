@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import sklearn.metrics
 
 
+TIRAMISU_DEBUG = True
+
+
 def get_params(params_fpath):
     
     if params_fpath is None:
@@ -42,18 +45,17 @@ def get_params(params_fpath):
 
 
 
-def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=100, debug=True):
+def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=100):
     
     if weight is None:
         raise ValueError('argument `weight` cannot be None.')
-    
     
     # hyper-parameters of network architecture
     if model == 'L1':
         dropouts = [0, 0.2, 0.4, 0.5, 0.6, 0.7]
         n_hiddens = [[i] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
         activate_funcs = ['relu', 'sigmoid']
-        if debug:
+        if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
             n_hiddens = [[i] for i in [8, 22]]
             activate_funcs = ['relu', 'sigmoid']
@@ -63,7 +65,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
         n_hiddens = [[i, j] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
                             for j in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
         activate_funcs = ['relu', 'sigmoid']
-        if debug:
+        if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
             n_hiddens = [[i, j] for i in [ 8, 22]
                                 for j in [18, 24]]
@@ -81,7 +83,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
     for i in range(len(n_hiddens[0])):
         eval_stats['n_hidden_' + str(i)] = []
     
-    n_tries = 1
+    n_tries = 5
     for activate_func in activate_funcs:
         for n_hidden in n_hiddens:
             for dropout in dropouts:
@@ -108,6 +110,8 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
 
     
 def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = None, save_weight=True, n_try=10):
+    if TIRAMISU_DEBUG:
+        epochs = 2
     
     if params is None:
         params = get_params()
@@ -191,7 +195,7 @@ if __name__ == '__main__':
         
     elif args.mode == 'train':
         params = get_params(args.params)
-        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True)
+        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 100)
     
     elif args.mode == 'valid':
         params = get_params(args.params)
