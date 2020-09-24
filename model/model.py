@@ -327,7 +327,7 @@ class Jppnet():
     
     
     
-     def inference(self, test_data, batch_size=None):
+    def inference(self, test_data, batch_size=None):
         
         self.model.eval()
         

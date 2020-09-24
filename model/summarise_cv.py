@@ -10,7 +10,7 @@ def save_best_params(model_arch, cv_dpath, output_fpath):
     
     stats_df = None
     
-    for fpath in glob.glob(os.path.join(cv_dpath, model_arch + '.cv_*.tsv')):
+    for fpath in glob.glob(os.path.join(cv_dpath, 'weight_' + model_arch + '.cv_*.tsv')):
         stats_df_ = pd.read_csv(fpath, sep='\t', header=0)
         if stats_df is None:
             stats_df = stats_df_
@@ -24,7 +24,6 @@ def save_best_params(model_arch, cv_dpath, output_fpath):
     
     min_mse_idx = int(stats_df[['valid_mse']].idxmin())
     stats_df.iloc[min_mse_idx, :].drop(labels = ['train_mse', 'valid_mse']).to_json(output_fpath)
-    
 
 
 

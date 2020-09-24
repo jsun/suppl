@@ -52,24 +52,24 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
     
     # hyper-parameters of network architecture
     if model == 'L1':
-        dropouts = [0, 0.2, 0.4, 0.5, 0.6, 0.7]
-        n_hiddens = [[i] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
-        activate_funcs = ['relu', 'sigmoid']
+        dropouts = [0, 0.5]
+        n_hiddens = [[i] for i in [4, 8, 12, 16, 20, 24, 28]]
+        activate_funcs = ['relu']
         if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
             n_hiddens = [[i] for i in [8, 22]]
-            activate_funcs = ['relu', 'sigmoid']
+            activate_funcs = ['relu']
         
     elif model == 'L2':
-        dropouts = [0.5]
-        n_hiddens = [[i, j] for i in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
-                            for j in [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]]
-        activate_funcs = ['relu', 'sigmoid']
+        dropouts = [0, 0.5]
+        n_hiddens = [[i, j] for i in [4, 8, 12, 16, 20, 24, 28, 32]
+                            for j in [4, 8, 12, 16, 20, 24, 28, 32]]
+        activate_funcs = ['relu']
         if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
             n_hiddens = [[i, j] for i in [ 8, 22]
                                 for j in [18, 24]]
-            activate_funcs = ['relu', 'sigmoid']
+            activate_funcs = ['relu']
         
     elif model == 'L3':
         dropouts = [0.5]
@@ -83,7 +83,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
     for i in range(len(n_hiddens[0])):
         eval_stats['n_hidden_' + str(i)] = []
     
-    n_tries = 5
+    n_tries = 10
     for activate_func in activate_funcs:
         for n_hidden in n_hiddens:
             for dropout in dropouts:
@@ -195,7 +195,7 @@ if __name__ == '__main__':
         
     elif args.mode == 'train':
         params = get_params(args.params)
-        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 100)
+        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 10)
     
     elif args.mode == 'valid':
         params = get_params(args.params)

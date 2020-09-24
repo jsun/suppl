@@ -328,8 +328,8 @@ arrange_dataset <- function(data_dpath, cutoff = 2013) {
         write_delim(dat_records_train_std, path = paste0(data_dpath, '/train_std.tsv'), delim = '\t', na = 'NA')
         write_delim(dat_records_valid_std, path = paste0(data_dpath, '/valid_std.tsv'), delim = '\t', na = 'NA')
     }
-
-
+    
+    
     # generate train (train) data and train (valid) for cross-validation
     dir.create(paste0(data_dpath, '/cv'), showWarnings = FALSE)
     set.seed(2020)
@@ -354,46 +354,65 @@ arrange_dataset <- function(data_dpath, cutoff = 2013) {
 
 
 
-randomize_dataset <- function(data_dpath) {
+
+
+
+randomize_dataset <- function(dat_records, dpath, method = 'norm') {
+    # shuffle datasets (rows) and generate 100 datasets.
     
-    dat_records <- read_tsv(paste0(data_dpath, '/data_std.tsv'))
-    n_records <- sum(!is.na(dat_records$incidence))
+    dir.create(dpath, showWarnings = FALSE)
     
-    if (n_records > 1) {
-    
-    # randomize rows
-    dir.create(paste0(data_dpath, '/randomize_1'), showWarnings = FALSE)
     for (i in 1:100) {
+        dpath_i <- paste0(dpath, '/', sprintf('%03d', i))
+        dir.create(dpath_i, showWarnings = FALSE)
+        
         set.seed(2020 + i)
-        dat_records_ <- dat_records[!is.na(dat_records$incidence), ]
-        dat_records_ <- dat_records_[sample(1:nrow(dat_records_)), ]
-        train_ <- dat_records_[1:round(nrow(dat_records_) * 0.8), ]
-        valid_ <- dat_records_[(round(nrow(dat_records_) * 0.8) + 1):nrow(dat_records_), ]
-        write_delim(train_, path = paste0(data_dpath, '/randomize_1/train_', i, '.tsv'),
+        dat_records_rand <- dat_records[sample(1:nrow(dat_records)), ]
+        
+        if (method == 'random') {
+            for (di in ncol(dat_records_rand)) {
+                dat_records_rand[[di]] <- sample(dat_records_rand[[di]])
+            }
+        }
+        
+        train_raw <- dat_records_rand[1:round(nrow(dat_records_rand) * 0.8), ]
+        valid_raw <- dat_records_rand[(round(nrow(dat_records_rand) * 0.8) + 1):nrow(dat_records_rand), ]
+        
+        nf_train <- calc_nf(train_raw)
+        train_std <- normalize_records(train_raw, nf_train)
+        valid_std <- normalize_records(valid_raw, nf_train)
+        
+        write_delim(train_std, path = paste0(dpath_i, '/train_std.tsv'),
                     delim = '\t', na = 'NA')
-        write_delim(valid_, path = paste0(data_dpath, '/randomize_1/valid_', i, '.tsv'),
+        write_delim(valid_std, path = paste0(dpath_i, '/valid_std.tsv'),
                     delim = '\t', na = 'NA')
+        
+        # generate cv
+        n_cv <- 10
+        
+        dpath_cv <- paste0(dpath_i, '/cv')
+        dir.create(dpath_cv, showWarnings = FALSE)
+        
+        if (nrow(train_std) > n_cv) {
+            n_ <- floor(nrow(train_std) / n_cv)
+            k_ <- nrow(train_std) %% n_cv
+            if (k_ == 0) {
+                idx_ <- sample(c(rep(1:n_cv, each = n_)))
+            } else {
+                idx_ <- sample(c(rep(1:n_cv, each = n_), 1:k_))
+            }
+            for (j in 1:n_cv) {
+                train_std_cv <- train_std[idx_ != j, ]
+                valid_std_cv <- train_std[idx_ == j, ]
+                write_delim(train_std_cv, path = paste0(dpath_cv, '/train_std_', j, '.tsv'), delim = '\t', na = 'NA')
+                write_delim(valid_std_cv, path = paste0(dpath_cv, '/valid_std_', j, '.tsv'), delim = '\t', na = 'NA')
+            }
+        }
+        
     }
-    
-    # randomize rows and columns (pref, month, incidence)
-    dir.create(paste0(data_dpath, '/randomize_2'), showWarnings = FALSE)
-    for (i in 1:100) {
-        set.seed(2020 - i)
-        dat_records_ <- dat_records[!is.na(dat_records$incidence), ]
-        dat_records_ <- dat_records_[sample(1:nrow(dat_records_)), ]
-        dat_records_$incidence <- sample(dat_records_$incidence)
-        dat_records_$month <- sample(dat_records_$month)
-        dat_records_$prefecture <- sample(dat_records_$prefecture)
-        train_ <- dat_records_[1:round(nrow(dat_records_) * 0.8), ]
-        valid_ <- dat_records_[(round(nrow(dat_records_) * 0.8) + 1):nrow(dat_records_), ]
-        write_delim(train_, path = paste0(data_dpath, '/randomize_2/train_', i, '.tsv'),
-                    delim = '\t', na = 'NA')
-        write_delim(valid_, path = paste0(data_dpath, '/randomize_2/valid_', i, '.tsv'),
-                    delim = '\t', na = 'NA')
-    }
-    
-    }
+
 }
+
 
 
 
@@ -421,9 +440,17 @@ if (GENERATE_DATASET) {
 if (NORM_SPLIT_DATASET) {
     project_data_dpath <- './formatted_data'
     
-    for (dpath in list.dirs(project_data_dpath, recursive = FALSE)) {
-        arrange_dataset(dpath)
-        randomize_dataset(dpath)
+    for (data_dpath in list.dirs(project_data_dpath, recursive = FALSE)) {
+        dat_records <- read_tsv(paste0(data_dpath, '/data.tsv')) %>% filter(!is.na(incidence))
+    
+        # data to generate observed data distribution
+        norm_dpath <- paste0(data_dpath, '/norm_datasets')
+        randomize_dataset(dat_records, norm_dpath, 'norm')
+        
+        # data to generate null distribution
+        null_dpath <- paste0(data_dpath, '/null_datasets')
+        randomize_dataset(dat_records, null_dpath, 'random')
+    
     }
 }
 
