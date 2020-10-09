@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import sklearn.metrics
 
 
-TIRAMISU_DEBUG = True
+TIRAMISU_DEBUG = False
 
 
 def get_params(params_fpath):
@@ -45,7 +45,7 @@ def get_params(params_fpath):
 
 
 
-def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=100):
+def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=50, n_tries=1):
     
     if weight is None:
         raise ValueError('argument `weight` cannot be None.')
@@ -61,9 +61,9 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
             activate_funcs = ['relu']
         
     elif model == 'L2':
-        dropouts = [0, 0.5]
-        n_hiddens = [[i, j] for i in [4, 8, 12, 16, 20, 24, 28, 32]
-                            for j in [4, 8, 12, 16, 20, 24, 28, 32]]
+        dropouts = [0.5]
+        n_hiddens = [[i, j] for i in [8, 16, 24, 32]
+                            for j in [8, 16, 24, 32]]
         activate_funcs = ['relu']
         if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
@@ -83,7 +83,6 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
     for i in range(len(n_hiddens[0])):
         eval_stats['n_hidden_' + str(i)] = []
     
-    n_tries = 10
     for activate_func in activate_funcs:
         for n_hidden in n_hiddens:
             for dropout in dropouts:
@@ -123,9 +122,10 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
         raise ValueError('argument `weight` cannot be None.')
     
     
-    best_loss_ = 1e5
+    best_loss_ = 1e10
     best_model_ = None
     min_loss = {'train': [], 'valid': []}
+    train_history_ = None
     
     for i in range(n_try):
         jppnet = Jppnet(n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
@@ -137,7 +137,7 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
         if train_history.loc[:, 'valid'].min() < best_loss_:
             best_loss_  = train_history.loc[:, 'valid'].min()
             best_model_ = jppnet
-    
+            train_history_ = train_history
     
     print('train loss: {};    valid loss: {}'.format(np.mean(min_loss['train']),
                                                      np.mean(min_loss['valid'])))
@@ -145,6 +145,7 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
     if save_weight:
         jppnet.save(weight)
         pd.DataFrame(min_loss).to_csv(weight + '_stats.tsv', index=False, header=True, sep='\t')
+        pd.DataFrame(train_history_).to_csv(weight + '_trainhistory.tsv', index=False, header=True, sep='\t')
     
     return min_loss
 
@@ -183,7 +184,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', default='./weights/test.txt')
     parser.add_argument('--train-dataset', default='../formatted_data/test/train_std.tsv')
     parser.add_argument('--valid-dataset', default='../formatted_data/test/valid_std.tsv')
-    parser.add_argument('--epochs', default=1000, type=int)
+    parser.add_argument('--epochs', default=50, type=int)
     parser.add_argument('--batch-size', default=1024, type=int)
     parser.add_argument('--mode', default='train')
     parser.add_argument('--params', default=None)
@@ -195,7 +196,7 @@ if __name__ == '__main__':
         
     elif args.mode == 'train':
         params = get_params(args.params)
-        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 10)
+        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 3)
     
     elif args.mode == 'valid':
         params = get_params(args.params)

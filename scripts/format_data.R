@@ -3,7 +3,7 @@ library(ggsci)
 
 
 GENERATE_DATASET   <- FALSE
-NORM_SPLIT_DATASET <- FALSE
+NORM_SPLIT_DATASET <- TRUE
 
 
 
@@ -359,6 +359,9 @@ arrange_dataset <- function(data_dpath, cutoff = 2013) {
 
 randomize_dataset <- function(dat_records, dpath, method = 'norm') {
     # shuffle datasets (rows) and generate 100 datasets.
+    if (nrow(dat_records) <= 10) {
+        return(FALSE)
+    }
     
     dir.create(dpath, showWarnings = FALSE)
     
@@ -370,7 +373,7 @@ randomize_dataset <- function(dat_records, dpath, method = 'norm') {
         dat_records_rand <- dat_records[sample(1:nrow(dat_records)), ]
         
         if (method == 'random') {
-            for (di in ncol(dat_records_rand)) {
+            for (di in 1:ncol(dat_records_rand)) {
                 dat_records_rand[[di]] <- sample(dat_records_rand[[di]])
             }
         }
@@ -441,16 +444,20 @@ if (NORM_SPLIT_DATASET) {
     project_data_dpath <- './formatted_data'
     
     for (data_dpath in list.dirs(project_data_dpath, recursive = FALSE)) {
+        print(data_dpath)
         dat_records <- read_tsv(paste0(data_dpath, '/data.tsv')) %>% filter(!is.na(incidence))
-    
+        
         # data to generate observed data distribution
         norm_dpath <- paste0(data_dpath, '/norm_datasets')
-        randomize_dataset(dat_records, norm_dpath, 'norm')
+     #   if (!file.exists(norm_dpath)) {
+            randomize_dataset(dat_records, norm_dpath, 'norm')
+     #   }
         
         # data to generate null distribution
         null_dpath <- paste0(data_dpath, '/null_datasets')
-        randomize_dataset(dat_records, null_dpath, 'random')
-    
+     #   if (!file.exists(null_dpath)) {
+            randomize_dataset(dat_records, null_dpath, 'random')
+     #   }
     }
 }
 

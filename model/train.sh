@@ -2,7 +2,7 @@
 #$ -S /bin/bash
 #$ -jc hostos_g1
 #$ -cwd
-#$ -N qs_tiramisu_model
+#$ -N qs_tiramisu_eggplant
 #$ -mods l_hard h_rt 240:00:00
 #$ -t 1:50
 
@@ -10,7 +10,8 @@
 RUN_MODE=1
 
 # crop name for analyses
-CROP_NAME=Cucumber
+# cucumber eggplant tomato strawberry
+CROP_NAME=eggplant
 
 # project path
 PROJECT_PATH=~/projects/tiramisu
@@ -49,8 +50,9 @@ then
     do
         for dataset in norm_datasets null_datasets
         do
-            cd ${dataset}
+            cd ${disease_path}/${dataset}
             
+            # from 001 to 100
             for i in `ls`
             do
                 cd ${disease_path}/${dataset}/${i}
@@ -73,7 +75,6 @@ then
                 # check the cv results and save best params into config file
                 python ${PROJECT_PATH}/model/summarise_cv.py ${model_arch} cv param.${model_arch}
                 
-                
                 # train and validation
                 # --------------------
                 python ${PROJECT_PATH}/model/bake.py --mode train --model ${model_arch} \
@@ -95,6 +96,19 @@ fi
 
 
 
+
+# summarise the results
+mkdir -p results/${CROP_NAME}
+mkdir -p results/${CROP_NAME}/fig
+
+rm results/${CROP_NAME}/valid_summary.tsv
+cd ${PROJECT_PATH}/model
+for disease_name in ${disease_names[@]}
+do
+    echo ${disease_name}
+    python summarise_valid.py ${PROJECT_PATH}/formatted_data/${disease_name} >> results/${CROP_NAME}/valid_summary.tsv
+    cp ${PROJECT_PATH}/formatted_data/${disease_name}/rmse_hist.png results/${CROP_NAME}/fig/${disease_name}.hist.png
+done
 
 
 
