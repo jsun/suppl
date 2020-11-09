@@ -62,8 +62,8 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
         
     elif model == 'L2':
         dropouts = [0.5]
-        n_hiddens = [[i, j] for i in [8, 16, 24, 32]
-                            for j in [8, 16, 24, 32]]
+        n_hiddens = [[i, j] for i in [8, 16, 24, 32, 40]
+                            for j in [8, 16, 24, 32, 40]]
         activate_funcs = ['relu']
         if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
@@ -93,6 +93,8 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
                 
                 weight_ = '{}_{}_{}_{}'.format(weight, activate_func, '-'.join([str(i) for i in n_hidden]), dropout)
                 param_ = {'dropout': dropout, 'n_hidden': n_hidden, 'activate_func': activate_func}
+                print('--------')
+                print(param_)
                 loss_hist = train(weight_, train_dataset, valid_dataset, batch_size, epochs, param_, False, n_tries)
                 
                 eval_stats['activate_func'].extend([activate_func] * n_tries)

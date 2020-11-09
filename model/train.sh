@@ -2,7 +2,7 @@
 #$ -S /bin/bash
 #$ -jc hostos_g1
 #$ -cwd
-#$ -N qs_tiramisu_eggplant
+#$ -N qs_tiramisu_strawberry
 #$ -mods l_hard h_rt 240:00:00
 #$ -t 1:50
 
@@ -11,23 +11,17 @@ RUN_MODE=1
 
 # crop name for analyses
 # cucumber eggplant tomato strawberry
-CROP_NAME=eggplant
+CROP_NAME=cucumber
 
 # project path
 PROJECT_PATH=~/projects/tiramisu
 
-
-
-
 # load shell config data
-source ~/.profile
-
-
-
+#source ~/.profile
 
 # move to project working space
 cd ${PROJECT_PATH}
-pyenv local tiramisu
+#pyenv local tiramisu
 
 
 # list up the target diseases
@@ -59,7 +53,7 @@ then
                 
                 # cross-validation for fixing hyper-parameters
                 # --------------------------------------------
-                cd cv
+                cd ${disease_path}/${dataset}/${i}/cv
                 for dtrain_cv in `ls train_*.tsv`
                 do
                     dvalid_cv=${dtrain_cv//train_/valid_}
@@ -71,7 +65,8 @@ then
                             --train-dataset ${dtrain_cv} \
                             --valid-dataset ${dvalid_cv} 
                 done
-                cd ..
+                
+                cd ${disease_path}/${dataset}/${i}
                 # check the cv results and save best params into config file
                 python ${PROJECT_PATH}/model/summarise_cv.py ${model_arch} cv param.${model_arch}
                 
@@ -98,17 +93,27 @@ fi
 
 
 # summarise the results
-mkdir -p results/${CROP_NAME}
-mkdir -p results/${CROP_NAME}/fig
+if [ ${RUN_MODE} -eq 2 ]
+then
 
-rm results/${CROP_NAME}/valid_summary.tsv
-cd ${PROJECT_PATH}/model
-for disease_name in ${disease_names[@]}
-do
-    echo ${disease_name}
-    python summarise_valid.py ${PROJECT_PATH}/formatted_data/${disease_name} >> results/${CROP_NAME}/valid_summary.tsv
-    cp ${PROJECT_PATH}/formatted_data/${disease_name}/rmse_hist.png results/${CROP_NAME}/fig/${disease_name}.hist.png
-done
+    cd ${PROJECT_PATH}/model
+    mkdir -p results/${CROP_NAME}
+    mkdir -p results/${CROP_NAME}/fig
+    
+    rm results/${CROP_NAME}/valid_summary.tsv
+    cd ${PROJECT_PATH}/model
+    for disease_name in ${disease_names[@]}
+    do
+        echo ${disease_name}
+        
+        python summarise_data.py ${PROJECT_PATH}/formatted_data/${disease_name}
+        cp ${PROJECT_PATH}/formatted_data/${disease_name}/data_distr_hist.png results/${CROP_NAME}/fig/${disease_name}.data_distr_hist.png
+        
+        python summarise_valid.py ${PROJECT_PATH}/formatted_data/${disease_name} >> results/${CROP_NAME}/valid_summary.tsv
+        cp ${PROJECT_PATH}/formatted_data/${disease_name}/rmse_hist.png results/${CROP_NAME}/fig/${disease_name}.hist.png
+    done
+
+fi
 
 
 

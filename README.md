@@ -74,7 +74,12 @@ qsub train.sh
 
 
 
+# Summarization
 
+```
+R
+source('scripts/eval_sunkishi_results.R')
+```
 
 
 
