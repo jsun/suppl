@@ -8,13 +8,11 @@ LIBNAME <- c('control_1', 'control_2', 'control_3', 'cold_1', 'cold_2', 'cold_3'
 NGFF <- 107903
 
 # down-sampling was sampled from cleaned FASTQ, so I will estimate the size of un-cleaned FASTQ with downsampling rate
-FQSIZE <- c(2604973 , 1596414, 3694206, 1764702, 4347049, 2604973)  # reads of the raw FASTQ
-
-
+FQSIZE <- c(2604973 , 1596414, 3694206, 1764702, 4347049, 4122508)  # reads of the raw FASTQ
 
 
 genemat2homeologmat <- function(mat) {
-    abd <- read.table('aaic_data/homeolog.ABD.list', sep = '\t', header = FALSE)
+    abd <- read.table('data/homeolog.ABD.list', sep = '\t', header = FALSE)
 
     in_a <- abd[, 1] %in% rownames(mat)
     in_b <- abd[, 2] %in% rownames(mat)
@@ -33,12 +31,17 @@ genemat2homeologmat <- function(mat) {
 
 
 
+#
+# library size and the number of detected genes
+#
+
 dfsz <- data.frame(n_read = NULL, n_gene = NULL, libname = NULL, dw_rate = NULL)
 for (dw_code in DW_CODE) {
-    fpath <- paste0('aaic_data/cs_cold_tagseq_dwsample/clean_tagseq_', dw_code, '/counts_1.0k/all.counts.gene.tsv.gz')
+    fpath <- paste0('data/tagseq_', dw_code, '/counts/cs.counts.gene.ext_1.0k.tsv.gz')
+    fpath <- gsub('_1.00', '', fpath)
     x <- read.table(fpath, sep = '\t', header = TRUE)
-    x <- x[, -1]
-    x <- x[, c(1, 5, 6, 2, 3, 4)]
+    x <- x[, -c(1:6)]
+    x <- x[, c(4, 5, 6, 1, 2, 3)]
     colnames(x) <- LIBNAME
     dfsz <- rbind(dfsz, data.frame(n_read = round(FQSIZE * as.numeric(dw_code)),
                                    n_gene = colSums(x > 0), libname = LIBNAME, dw_rate = dw_code))
@@ -71,14 +74,18 @@ dev.off()
 
 
 
+#
+# library size and the number of detected homeolog triads
+#
 
 dfsz <- data.frame(n_read = NULL, n_gene = NULL, libname = NULL, dw_rate = NULL)
 for (dw_code in DW_CODE) {
-    fpath <- paste0('aaic_data/cs_cold_tagseq_dwsample/clean_tagseq_', dw_code, '/counts_1.0k/all.counts.gene.tsv.gz')
-    .x <- read.table(fpath, sep = '\t', header = TRUE)
-    x <- .x[, -1]
-    x <- x[, c(1, 5, 6, 2, 3, 4)]
-    rownames(x) <- .x[, 1]
+    fpath <- paste0('data/tagseq_', dw_code, '/counts/cs.counts.gene.ext_1.0k.tsv.gz')
+    fpath <- gsub('_1.00', '', fpath)
+    x <- read.table(fpath, sep = '\t', header = TRUE)
+    rownames(x) <- x[, 1]
+    x <- x[, -c(1:6)]
+    x <- x[, c(4, 5, 6, 1, 2, 3)]
     colnames(x) <- LIBNAME
     y <- genemat2homeologmat(x)
     z <- y$A + y$B + y$D
@@ -116,17 +123,18 @@ dev.off()
 # 
 # number of genes/homeologs detected in paired-end RNA-Seq (EAGLE-RC, IWGSC+1k)
 #
+
 load_counts <- function() {
-    tags <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS_4',
+    tags <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
               '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
     cnt <- NULL
     for (tag in tags) {
         cg <- NULL
         for (chr in c('chrA', 'chrB', 'chrD')) {
-            hc <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/homeolog_counts_1.0k/', tag,
-                                '.', chr, '.gene.counts.txt'), header = TRUE, sep = '\t', stringsAsFactors = F)
-            uc <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/uniq_counts_1.0k/', tag,
-                                '.', chr, '.uniq.gene.counts.txt'), header = TRUE, sep = '\t', stringsAsFactors = F)
+            hc <- read.table(paste0('data/fullseq/countseaglrc/', tag, '.', chr, '.counts.homeolog.txt.gz'),
+                             header = TRUE, sep = '\t', stringsAsFactors = FALSE)
+            uc <- read.table(paste0('data/fullseq/countseaglrc/', tag, '.', chr, '.counts.specific.txt.gz'),
+                             header = TRUE, sep = '\t', stringsAsFactors = FALSE)
             cc <- rep(0, nrow(hc))
             names(cc) <- hc[, 1]
             cc <- hc[, 7] + uc[, 7]
@@ -149,7 +157,7 @@ mean(colSums(cnt > 0))
 
 
 genemat2homeologmat <- function(mat) {
-    abd <- read.table('aaic_data/homeolog.ABD.list', sep = '\t', header = FALSE)
+    abd <- read.table('data/homeolog.ABD.list', sep = '\t', header = FALSE)
 
     in_a <- abd[, 1] %in% rownames(mat)
     in_b <- abd[, 2] %in% rownames(mat)
@@ -165,20 +173,16 @@ genemat2homeologmat <- function(mat) {
     list(A = mat.a, B = mat.b, D = mat.d)
 }
 
-lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS_4',
+lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
            '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
 fullseq_eagle <- NULL
 for (lbnm in lbnms) {
-    xa <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/homeolog_counts_1.0k/', lbnm, '.chrA.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xb <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/homeolog_counts_1.0k/', lbnm, '.chrB.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xd <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/homeolog_counts_1.0k/', lbnm, '.chrD.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xa <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrA.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xb <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrB.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xd <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrD.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
     colnames(xa) <- colnames(xb) <- colnames(xd) <- c('gene', 'count')
     xabd <- rbind(xa, xb, xd)
-    if (is.null(fullseq_eagle)) {
-        fullseq_eagle <- as.matrix(xabd[, 2])
-    } else {
-        fullseq_eagle <- cbind(fullseq_eagle, as.matrix(xabd[, 2]))
-    }
+    fullseq_eagle <- cbind(fullseq_eagle, as.matrix(xabd[, 2]))
     rownames(fullseq_eagle) <- xabd[, 1]
 }
 colnames(fullseq_eagle) <- paste0('rep', 1:6)

@@ -3,16 +3,15 @@ library(ggsci)
 library(ggExtra)
 options(stringsAsFactors = FALSE)
 
-# set TRUE and FALSE to switch the counts data of paired-end RNA-Seq
+# set TRUE or FALSE to switch the counts data of paired-end RNA-Seq
 # TRUE: counts counted with IWGSC+1k; FLASE: with IWGSC
 FULLSEQ_IWGSC1k <- TRUE
 
 
-LIBNAME <- c('control_1', 'control_2', 'control_3', 'cold_1', 'cold_2', 'cold_3')
-LIBNAME <- c('replicate_1', 'replicate_2', 'replicate_3', 'replicate_4', 'replicate_5', 'replicate_6')
+LIBNAME <- c('#1', '#2', '#3', '#4', '#5', '#6')
 
 genemat2homeologmat <- function(mat) {
-    abd <- read.table('aaic_data/homeolog.ABD.list', sep = '\t', header = FALSE)
+    abd <- read.table('data/homeolog.ABD.list', sep = '\t', header = FALSE)
     
     in_a <- abd[, 1] %in% rownames(mat)
     in_b <- abd[, 2] %in% rownames(mat)
@@ -112,12 +111,12 @@ calc_corr <- function(matx, maty, labx = NULL, laby = NULL, cutx = 5, cuty = 10)
 
 
 ## load read counts data
-
+stop()
 
 
 ## CS 3'-end RNA-Seq / HISAT / IWGSC+1k
-x <- read.table('aaic_data/cs_cold_tagseq_iwgscgff/counts_1.0k/all.counts.gene.tsv.gz', sep = '\t', header = TRUE)
-tagseq_hisat <- as.matrix(x[, c(2, 6, 7, 3, 4, 5)])
+x <- read.table('data/tagseq/counts/cs.counts.gene.ext_1.0k.tsv.gz', sep = '\t', header = TRUE)
+tagseq_hisat <- as.matrix(x[, -c(1:6)][, c(4, 5, 6, 1, 2, 3)])
 colnames(tagseq_hisat) <- LIBNAME
 rownames(tagseq_hisat) <- x[, 1]
 tagseq_hisat <- calc_cpm(tagseq_hisat)
@@ -126,8 +125,8 @@ tagseq_hisat_h <- genemat2homeologmat(tagseq_hisat)
 
 
 ## CS 3'-end RNA-Seq / HISAT / IWGSC (original)
-x <- read.table('aaic_data/cs_cold_tagseq_iwgscgff/counts_iwgsc/all.counts.gene.tsv.gz', sep = '\t', header = TRUE)
-tagseq_hisat0 <- as.matrix(x[, c(2, 6, 7, 3, 4, 5)])
+x <- read.table('data/tagseq/counts/cs.counts.gene.iwgsc.tsv.gz', sep = '\t', header = TRUE)
+tagseq_hisat0 <- as.matrix(x[, -c(1:6)][, c(4, 5, 6, 1, 2, 3)])
 colnames(tagseq_hisat0) <- LIBNAME
 rownames(tagseq_hisat0) <- x[, 1]
 tagseq_hisat0 <- calc_cpm(tagseq_hisat0)
@@ -136,9 +135,9 @@ tagseq_hisat_h0 <- genemat2homeologmat(tagseq_hisat0)
 
 
 ## CS paired-end RNA-Seq / HISAT / IWGSC
-ftag <- ifelse (FULLSEQ_IWGSC1k, 'counts_1.0k', 'counts_iwgsc')
-x <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_hisat/', ftag, '/all.counts.gene.tsv.gz'), sep = '\t', header = TRUE)
-fullseq_hisat <- as.matrix(x[, -1])
+ftag <- ifelse (FULLSEQ_IWGSC1k, 'ext_1.0k', 'iwgsc')
+x <- read.table(paste0('data/fullseq/counts/counts.gene.', ftag, '.tsv.gz'), sep = '\t', header = TRUE)
+fullseq_hisat <- as.matrix(x[, -c(1:6)])
 colnames(fullseq_hisat) <- LIBNAME
 rownames(fullseq_hisat) <- x[, 1]
 fullseq_hisat <- calc_tpm(fullseq_hisat)
@@ -147,21 +146,17 @@ fullseq_hisat_h <- genemat2homeologmat(fullseq_hisat)
 
 
 ## CS paired-end RNA-Seq / EAGEL-RC / IWGSC
-ftag <- ifelse (FULLSEQ_IWGSC1k, 'homeolog_counts_1.0k', 'homeolog_counts')
-lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS_4',
+## ftag <- ifelse (FULLSEQ_IWGSC1k, 'homeolog_counts_1.0k', 'homeolog_counts')
+lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
            '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
 fullseq_eagle <- NULL
 for (lbnm in lbnms) {
-    xa <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/', ftag, '/', lbnm, '.chrA.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xb <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/', ftag, '/', lbnm, '.chrB.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xd <- read.table(paste0('aaic_data/cs_cold_fullseq/fullseq_eaglerc/', ftag, '/', lbnm, '.chrD.gene.counts.txt'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xa <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrA.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xb <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrB.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xd <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrD.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
     colnames(xa) <- colnames(xb) <- colnames(xd) <- c('gene', 'count')
     xabd <- rbind(xa, xb, xd)
-    if (is.null(fullseq_eagle)) {
-        fullseq_eagle <- as.matrix(xabd[, 2])
-    } else {
-        fullseq_eagle <- cbind(fullseq_eagle, as.matrix(xabd[, 2]))
-    }
+    fullseq_eagle <- cbind(fullseq_eagle, as.matrix(xabd[, 2]))
     rownames(fullseq_eagle) <- xabd[, 1]
 }
 colnames(fullseq_eagle) <- LIBNAME
@@ -192,18 +187,13 @@ if (!all(chk)) {stop('check gene orders!')}
 
 
 ## 3'-end RNA-Seq (IWGSC+1k) vs paired-end RNA-Seq
-cutoff_tagseq <- 10
-cutoff_fullseq <- 10
-tagseq_fullseqhisat <- calc_corr(tagseq_hisat_h, fullseq_hisat_h, "3'-end RNA-Seq (IWGSC+1k)", "paired-end RNA-Seq (HISAT)", cutoff_tagseq, cutoff_fullseq)
-tagseq_fullseqeagle <- calc_corr(tagseq_hisat_h, fullseq_eagle_h, "3'-end RNA-Seq (IWGSC+1k)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_tagseq, cutoff_fullseq)
-
-## 3'-end RNA-Seq (IWGSC) vs paired-end RNA-Seq
-tagseq0_fullseqhisat <- calc_corr(tagseq_hisat_h0, fullseq_hisat_h, "3'-end RNA-Seq (IWGSC)", "paired-end RNA-Seq (HISAT)", cutoff_tagseq, cutoff_fullseq)
-tagseq0_fullseqeagle <- calc_corr(tagseq_hisat_h0, fullseq_eagle_h, "3'-end RNA-Seq (IWGSC)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_tagseq, cutoff_fullseq)
+cutoff_tagseq <- 1
+cutoff_fullseq <- 4
+tagseq_fullseqhisat <- calc_corr(tagseq_hisat_h, fullseq_hisat_h, "3'-end RNA-Seq (HISAT2)", "paired-end RNA-Seq (HISAT2)", cutoff_tagseq, cutoff_fullseq)
+tagseq_fullseqeagle <- calc_corr(tagseq_hisat_h, fullseq_eagle_h, "3'-end RNA-Seq (HISAT2)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_tagseq, cutoff_fullseq)
 
 ## paired-end RNA-Seq HISAT vs paired-end RNA-Seq EAGLE-RC
 fullseqhisat_fullseqeagle <- calc_corr(fullseq_hisat_h, fullseq_eagle_h, "paired-end RNA-Seq (HISAT)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_fullseq, cutoff_fullseq)
-
 
 
 ## plot figures
@@ -219,16 +209,6 @@ print(tagseq_fullseqeagle$fig_replicate)
 dev.off()
 
 
-png(paste0('results/plots/tagseqHISATIWGSC_fullseqHISAT_correlation.png'), 1500, 2500, res = 220)
-print(tagseq0_fullseqhisat$fig)
-dev.off()
-png(paste0('results/plots/tagseqHISATIWGSC_fullseqEAGLERC_correlation.png'), 1500, 2500, res = 220)
-print(tagseq0_fullseqeagle$fig)
-dev.off()
-png(paste0('results/plots/tagseqHISATIWGSC_fullseqEAGLERC_correlation_rep1.png'), 1800, 800, res = 220)
-print(tagseq0_fullseqeagle$fig_replicate)
-dev.off()
-
 
 png(paste0('results/plots/fullseqHISAT_fullseqEAGLERC_correlation.png'), 1500, 2500, res = 220)
 print(fullseqhisat_fullseqeagle$fig)
@@ -238,8 +218,6 @@ dev.off()
 tagseq_fullseqhisat$cor
 tagseq_fullseqeagle$cor
 fullseqhisat_fullseqeagle$cor
-tagseq0_fullseqhisat$cor
-tagseq0_fullseqeagle$cor
 
 
 

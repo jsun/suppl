@@ -6,7 +6,7 @@ options(stringsAsFactors = FALSE)
 
 
 
-DWCODE <- c('iwgsc', '0.5k', '1.0k', '2.0k', '3.0k', '4.0k')
+DWCODE <- c('iwgsc', 'ext_0.5k', 'ext_1.0k', 'ext_2.0k', 'ext_3.0k', 'ext_4.0k')
 DWCODE_FMT <- c('IWGSC', '+0.5k', '+1k', '+2k', '+3k', '+4k')
 
 
@@ -14,8 +14,8 @@ DWCODE_FMT <- c('IWGSC', '+0.5k', '+1k', '+2k', '+3k', '+4k')
 # Obtained this numbers from calculating of cleaned FASTQ directly.
 # Since featureCounts double counts the multiple mapped reads,
 # we cannot just calculate the total reads from the log.
-#                 RS1_1    RS1_16   RS1_17   RS1_18   RS1_2    RS1_3
-INPUT_FQSIZE <- c(2078810, 1393116, 3385387, 3217619, 1241292, 2874064)
+#                 RS1_16   RS1_17   RS1_18   RS1_1    RS1_2    RS1_3
+INPUT_FQSIZE <- c(1393116, 3385387, 3217619, 2078810, 1241292, 2874064)
 
 
 
@@ -42,7 +42,7 @@ plot_log <- function() {
     assigned_df <-  nofeature_df <- ambig_df <- data.frame(annotation = NULL, sample = NULL, value = NULL)
 
     for (wi in 1:length(DWCODE)) {
-        x <- read.table(paste0('counts/counts_', DWCODE[wi], '/all.counts.gene.tsv.summary.gz'),
+        x <- read.table(paste0('data/tagseq/counts/cs.counts.gene.', DWCODE[wi], '.tsv.summary.gz'),
                         sep = '\t', header = TRUE)
         y <- x
         y[, -1] <- sweep(y[, -1], 2, 100 / INPUT_FQSIZE, '*')
@@ -60,12 +60,13 @@ plot_log <- function() {
               data.frame(annotation = DWCODE_FMT[wi], sample = colnames(y[, -1]), value = as.numeric(y[3, -1])))
     }
     
-    assigned_df %>% select(annotation, value) %>%
-            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value))
-    nofeature_df %>% select(annotation, value) %>%
-            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value))
-    ambig_df %>% select(annotation, value) %>%
-            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value))
+    print(assigned_df %>% select(annotation, value) %>%
+            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value)))
+    print(nofeature_df %>% select(annotation, value) %>%
+            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value)))
+    print(ambig_df %>% select(annotation, value) %>%
+            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value)))
+    
     
     png(paste0('results/plots/assigned_reads.png'), W, H, res = 220)
     print(plot_bar(assigned_df))
@@ -81,15 +82,16 @@ plot_log <- function() {
 }
 
 
+
+
 plot_gene <- function() {
  
-    tcode <- c('Assigned', 'Unassigned_NoFeatures', 'Unassigned_Ambiguity')
-    
     gene_df <- data.frame(annotation = NULL, sample = NULL, value = NULL)
     for (wi in 1:length(DWCODE)) {
-        x <- read.table(paste0('counts/counts_', DWCODE[wi], '/all.counts.gene.tsv.gz'),
+        x <- read.table(paste0('data/tagseq/counts/cs.counts.gene.', DWCODE[wi], '.tsv.gz'),
                         sep = '\t', header = TRUE)
-        x <- x[, -1]
+        
+        x <- x[, -c(1:6)]
         ngenes <- as.numeric(colSums(x > 0))
         gene_df <- rbind(gene_df,
               data.frame(annotation = DWCODE_FMT[wi], sample = colnames(x), value = ngenes))
@@ -104,19 +106,25 @@ plot_gene <- function() {
  
     
     # use CPM
+    if (FALSE) {
     gene_df <- data.frame(annotation = NULL, sample = NULL, value = NULL)
     for (wi in 1:length(DWCODE)) {
-        x <- read.table(paste0('counts/counts_', DWCODE[wi], '/all.counts.gene.tsv.gz'),
+        x <- read.table(paste0('data/tagseq/counts/cs.counts.gene.', DWCODE[wi], '.tsv.gz'),
                         sep = '\t', header = TRUE)
-        x <- x[, -1]
+        x <- x[, -c(1:6)]
         x <- sweep(x, 2, 1e6 / colSums(x), '*')
         ngenes <- as.numeric(colSums(x > 1))
         gene_df <- rbind(gene_df,
               data.frame(annotation = DWCODE_FMT[wi], sample = colnames(x), value = ngenes))
     }
     
- 
-   
+    gene_df %>% select(annotation, value) %>%
+            group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value))
+    png(paste0('results/plots/expressed_genes.cpm.png'), W, H, res = 220)
+    print(plot_bar(gene_df))
+    dev.off()
+    }
+
 }
 
 
@@ -124,26 +132,25 @@ plot_gene <- function() {
 
 find_gene <- function() {
     
-    
     for (wi in 1:length(DWCODE)) {
 
-        x0k <- read.table(paste0('counts/counts_iwgsc/all.counts.gene.tsv.gz'),
+        x0k <- read.table(paste0('data/tagseq/counts/cs.counts.gene.iwgsc.tsv.gz'),
                         sep = '\t', header = TRUE)
-        x1k <- read.table(paste0('counts/counts_', DWCODE[wi], '/all.counts.gene.tsv.gz'),
+        x1k <- read.table(paste0('data/tagseq/counts/cs.counts.gene.', DWCODE[wi], '.tsv.gz'),
                         sep = '\t', header = TRUE)
     
         rownames(x0k) <- rownames(x1k) <- x1k[, 1]
-        x0k <- as.matrix(x0k[, -1])[, c(1, 5, 6, 2, 3, 4)]
-        x1k <- as.matrix(x1k[, -1])[, c(1, 5, 6, 2, 3, 4)]
+        x0k <- as.matrix(x0k[, -c(1:6)])
+        x1k <- as.matrix(x1k[, -c(1:6)])
     
-        colnames(x0k) <- colnames(x1k) <- c('control #1', 'control #2', 'control #3',
-                                            'cold #1', 'cold #2', 'cold #3')
+        colnames(x0k) <- colnames(x1k) <- c('#4', '#5', '#6',
+                                            '#1', '#2', '#3')
         dfcnt <- data.frame(lib_name = NULL, x = NULL, y = NULL)
         for (i in 1:ncol(x0k)) {
             dfcnt <- rbind(dfcnt, data.frame(lib_name = colnames(x0k)[i],
                            x = log10(x0k[, i] + 1), y = log10(x1k[, i] + 1)))
         }
-        dfcnt$lib_name <- factor(dfcnt$lib_name, levels = colnames(x0k))
+        dfcnt$lib_name <- factor(dfcnt$lib_name, levels = sort(colnames(x0k)))
         gp <- ggplot(dfcnt, aes(x = x, y = y)) +
                 geom_point() + facet_wrap(~ lib_name, ncol = 3) +
                 coord_fixed() + 
@@ -155,8 +162,8 @@ find_gene <- function() {
         dev.off()
         
         if (wi == 3) {
-            gp <- dfcnt %>% filter(lib_name == 'control #1') %>%
-                        ggplot(aes(x = x, y = y)) +
+            df <- dfcnt %>% filter(lib_name == '#1')
+            gp <- ggplot(df, aes(x = x, y = y)) +
                         geom_point() +
                         coord_fixed() + 
                         xlab(paste0(DWCODE_FMT[1], ' log10(count)')) +
@@ -165,20 +172,23 @@ find_gene <- function() {
             print(gp)
             dev.off()
             
-            df <- data.frame(x = log10(1 + x0k[, 1]), y = log10(1 + x1k[, 1]),
-                             x2 = x0k[, 1], y2 = x1k[, 2])
-            df[df$x > 1 & df$x < 2 & df$y > 3, ]
+            print(df[df$x > 1.5 & df$x < 2 & df$y > 3, ])
             # TraesCS4D02G145400 chr4D:134546507-134549866
-            df[df$x == 0 & df$y > 2.5, ]
+            print(df[df$x == 0 & df$y > 2.5, ])
             # TraesCS2B02G330500 chr2B:474899493-474901687
-            df[df$y == 0 & df$x > 2, ]
+            print(df[df$y == 0 & df$x > 2.1, ])
             # TraesCS4D02G263300 chr4D:434272089-434277206
-            df[df$y < df$x, ]
+            print(df[df$y < df$x, ])
+            print(nrow(df[df$y < df$x, ]))
             
+            print('---- x != 0 && y != 0 ----')
             df <- df[!(df$x == 0 & df$y == 0), ]
-            nrow(df[df$y < df$x, ]) / nrow(df)
-            nrow(df[df$y > df$x, ]) / nrow(df)
-            nrow(df[df$y == df$x, ]) / nrow(df)
+            print(nrow(df[df$y < df$x, ]))
+            print(nrow(df[df$y < df$x, ]) / nrow(df))
+            print(nrow(df[df$y > df$x, ]))
+            print(nrow(df[df$y > df$x, ]) / nrow(df))
+            print(nrow(df[df$y == df$x, ]))
+            print(nrow(df[df$y == df$x, ]) / nrow(df))
         }
     }
     
