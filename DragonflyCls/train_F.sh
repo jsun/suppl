@@ -37,7 +37,6 @@ do
                 --traindata ${DATA_PATH}/dataset_F/augmentated_image \
                 --validdata ${DATA_PATH}/dataset_T/cropped_image     \
                 -e 100 -b 32 -l 0.001
-    
 done
 
 
