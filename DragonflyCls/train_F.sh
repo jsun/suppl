@@ -10,7 +10,7 @@ source /etc/profile.d/modules.sh
 module load cuda/10.0/10.0.130.1 cudnn/7.6.5
 
 PROJECT_PATH=${HOME}/projects/dragonfly
-PROJECTCLS_PATH=${PROJECT_PATH}/DragonflyPlus
+PROJECTCLS_PATH=${PROJECT_PATH}/DragonflyCls
 DATA_PATH=${PROJECT_PATH}/data
 SCRIPT_PATH=${PROJECT_PATH}/scripts
 
@@ -36,7 +36,7 @@ do
                 --model-outpath ./weights/F__${model_arch}__${i}.pth \
                 --traindata ${DATA_PATH}/dataset_F/augmentated_image \
                 --validdata ${DATA_PATH}/dataset_T/cropped_image     \
-                -e 100 -b 32 -l 0.001
+                -e 50 -b 32 -l 0.001
 done
 
 

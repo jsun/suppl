@@ -314,7 +314,7 @@ class DragonflyCls():
         """
         
         dataset = None
-        if load_mode == 'train':
+        if load_mode == 'train' or load_mode == 'valid':
             x = []
             y = []
             
@@ -324,11 +324,17 @@ class DragonflyCls():
                         x.append(fpath)
                         y.append(i)
             
-            dataset = nnTorchDataset(x, y=y, transforms=self.transforms)
+            if load_mode == 'train':
+                dataset = nnTorchDataset(x, y=y, transforms=self.transforms)
+            else:
+                dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
+                
             dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=6)
             logging.info('Loaded images from the directory {} for training.'.format(dataset_path))
         
-        elif load_mode == 'valid' or laod_mode == 'inference':
+        
+        
+        elif laod_mode == 'inference':
             if os.path.isfile(dataset_path):
                 x = cv2.imread(dataset_path, cv2.IMREAD_COLOR)
                 x = self.transforms_valid(x)
@@ -339,7 +345,7 @@ class DragonflyCls():
                 x = []
                 y = []
                 for fpath in os.listdir(dataset_path):
-                    if os.path.splitext(fpath)[1] in ['.jpg', '.jpeg', '.png', '.JPG', '.PNG', '.JPEG']:
+                    if os.path.splitext(fpath)[1].lower() in ['.jpg', '.jpeg', '.png']:
                         x.append(os.path.join(dataset_path, fpath))
                         y.append(os.path.join(dataset_path, fpath))
                 
