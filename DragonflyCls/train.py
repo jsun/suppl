@@ -8,7 +8,7 @@ def train(class_labels, model_arch, model_inpath, model_outpath,
           traindata, validdata,
           epochs, batch_size, lr):
     
-    dragonfly = DragonflyCls(model_arch = model_arch, input_size=(224, 224), model_path=model_inpath, class_labels=class_labels)
+    dragonfly = DragonflyCls(model_arch=model_arch, input_size=(224, 224), model_path=model_inpath, class_labels=class_labels)
     
     dragonfly.train(traindata, validdata,
                     batch_size=batch_size, num_epochs=epochs, learning_rate=lr, save_best=False)

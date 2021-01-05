@@ -210,7 +210,6 @@ class DragonflyCls():
         self.input_size = input_size
         self.class_labels = self.__generate_labels(class_labels)
         self.model = self.__initialize_model(model_arch, model_path)
-        print(self.model)
         self.model.to(self.device)
         
         # use multiple GPU if avaiable
@@ -241,6 +240,11 @@ class DragonflyCls():
                 torchvision.transforms.Normalize([0.485, 0.456, 0.406],
                                                  [0.229, 0.224, 0.225])])
         
+        self.transforms_valid = torchvision.transforms.Compose([
+                nnTorchResize(self.input_size),
+                torchvision.transforms.ToTensor(),
+                torchvision.transforms.Normalize([0.485, 0.456, 0.406],
+                                                 [0.229, 0.224, 0.225])])
     
     
     
@@ -291,10 +295,10 @@ class DragonflyCls():
         
         
         if model_path is not None:
-            #if self.device == 'cuda':
-            model.load_state_dict(torch.load(model_path))
-            #else:
-            #    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+            if self.device == 'cuda':
+                model.load_state_dict(torch.load(model_path))
+            else:
+                model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
                 
             logging.info('Loaded the pre-trained model ({}).'.format(model_path))
         
@@ -316,8 +320,6 @@ class DragonflyCls():
             
             for i, class_label in enumerate(self.class_labels):
                 for fpath in glob.glob(os.path.join(dataset_path, class_label, '*')):
-                    
-                    # only load image files
                     if os.path.splitext(os.path.basename(fpath))[1].lower() in ['.jpg', '.jpeg', '.png']:
                         x.append(fpath)
                         y.append(i)
@@ -325,17 +327,12 @@ class DragonflyCls():
             dataset = nnTorchDataset(x, y=y, transforms=self.transforms)
             dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=6)
             logging.info('Loaded images from the directory {} for training.'.format(dataset_path))
- 
-        elif load_mode == 'inference':
         
+        elif load_mode == 'valid' or laod_mode == 'inference':
             if os.path.isfile(dataset_path):
                 x = cv2.imread(dataset_path, cv2.IMREAD_COLOR)
-                x = PIL.Image.fromarray(x)
-            
-                if self.transforms is not None:
-                    x = self.transforms(x)
+                x = self.transforms_valid(x)
                 dataset = torch.unsqueeze(x, 0)
-            
                 logging.info('Loaded single image ({}) for inference.'.format(dataset_path))
                 
             else:
@@ -346,7 +343,7 @@ class DragonflyCls():
                         x.append(os.path.join(dataset_path, fpath))
                         y.append(os.path.join(dataset_path, fpath))
                 
-                dataset = nnTorchDataset(x, y=y, transforms=self.transforms)
+                dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
                 dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=6)
                 logging.info('Loaded images from the directory {} for inference.'.format(dataset_path))
         
@@ -449,7 +446,7 @@ class DragonflyCls():
     
         # load dataset
         train_dataset = self.__dataset_loader(train_data_dpath, load_mode='train', batch_size=batch_size)
-        valid_dataset = self.__dataset_loader(valid_data_dpath, load_mode='train', batch_size=batch_size)
+        valid_dataset = self.__dataset_loader(valid_data_dpath, load_mode='valid', batch_size=batch_size)
         
         dataloaders_dict = {'train': train_dataset, 'valid': valid_dataset}
     

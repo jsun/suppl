@@ -11,30 +11,26 @@ WEIGHTS_PATH = os.path.join(PROJECT_PATH, 'weights/dragonfly-cls-model.pth')
 CLASS_PATH = os.path.join(PROJECT_PATH, 'data/class_labels.txt')
 
 
-
-
-
-def predict(inference_dataset, model=WEIGHTS_PATH, class_label=CLASS_PATH):
+def predict(model_arch, model_path, class_labels, inference_dataset):
     
-    dragonfly = DragonflyCls(class_labels=class_label, model=model)
+    dragonfly = DragonflyCls(model_arch=model_arch, model_path=model_path, class_labels=class_labels)
     ret = dragonfly.inference(inference_dataset)
     
     return ret
     
 
-
-
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description='Let dragonfly fly!')
 
-    parser.add_argument('-m', '--model', default=WEIGHTS_PATH)
-    parser.add_argument('-c', '--class-label', default=CLASS_PATH)
+    parser.add_argument('--class-label', required=True)
+    parser.add_argument('--model-arch', required=True)
+    parser.add_argument('--model-weight', required=True)
     parser.add_argument('-i', '--inference-dataset', default=IMAGE_FOLDER)
     parser.add_argument('-o', '--output', default=None)
     args = parser.parse_args()
     
-    ret = predict(args.inference_dataset, args.model, args.class_label)
+    ret = predict(args.model_arch, args.model_weight, args.class_label, args.inference_dataset)
     if args.output is None:
         print(ret)
     else:
