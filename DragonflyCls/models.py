@@ -7,6 +7,7 @@ import glob
 import copy
 import torch
 import torchvision
+import numpy as np
 import pandas as pd
 import cv2
 import PIL
@@ -333,28 +334,25 @@ class DragonflyCls():
             logging.info('Loaded images from the directory {} for training.'.format(dataset_path))
         
         
-        
-        elif laod_mode == 'inference':
+        elif load_mode == 'inference':
+            x = []
+            y = []
             if os.path.isfile(dataset_path):
-                x = cv2.imread(dataset_path, cv2.IMREAD_COLOR)
-                x = self.transforms_valid(x)
-                dataset = torch.unsqueeze(x, 0)
-                logging.info('Loaded single image ({}) for inference.'.format(dataset_path))
-                
+                x.append(dataset_path)
+                y.append(dataset_path)
             else:
-                x = []
-                y = []
                 for fpath in os.listdir(dataset_path):
                     if os.path.splitext(fpath)[1].lower() in ['.jpg', '.jpeg', '.png']:
                         x.append(os.path.join(dataset_path, fpath))
                         y.append(os.path.join(dataset_path, fpath))
                 
-                dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
-                dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=6)
-                logging.info('Loaded images from the directory {} for inference.'.format(dataset_path))
+            dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
+            dataset = torch.utils.data.DataLoader(dataset, batch_size=2, shuffle=False, num_workers=6)
+            #dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=6)
+            logging.info('Loaded images from the directory {} for inference.'.format(dataset_path))
         
         else:
-            raise ValueError('Only `train` or `inference` can be specified.')
+            raise ValueError('Only `train`, `valid` or `inference` can be specified.')
        
         
         return dataset
@@ -399,7 +397,6 @@ class DragonflyCls():
                     # track history if only in train
                     with torch.set_grad_enabled(phase == 'train'):
                         outputs = self.model(inputs)
-                        outputs = torch.sigmoid(outputs)
                         loss = criterion(outputs, labels)
                         _, preds = torch.max(outputs, 1)
 
@@ -474,7 +471,7 @@ class DragonflyCls():
         train_history_path = os.path.splitext(model_path)[0] + '.train_hisotry.tsv'
         train_history_df = pd.DataFrame(self.train_history)
         train_history_df.to_csv(train_history_path, sep='\t', index=False)
-    
+        
     
     
     def __inference(self, x, image_id):
@@ -491,22 +488,56 @@ class DragonflyCls():
 
     
     def inference(self, data_path):
-
         self.model.eval()
+        dataloader = self.__dataset_loader(data_path, load_mode='inference')
         
-        x = self.__dataset_loader(data_path, load_mode='inference')
-        y = None
-        if os.path.isfile(data_path):
-            y = self.__inference(x, [data_path])
-        else:
-            for _x, _image_id in x:
-                _y = self.__inference(_x, _image_id)
-                if y is None:
-                    y = _y
+        file_names = []
+        pred_probs = None
+        
+        with torch.set_grad_enabled(False):
+            for inputs, labels in dataloader:
+                outputs = self.model(inputs)
+                outputs = torch.sigmoid(outputs).cpu().detach().numpy()
+                file_names.extend(labels)
+                if pred_probs is None:
+                    pred_probs = outputs
                 else:
-                    y = pd.concat([y, _y])
+                    pred_probs = np.concatenate([pred_probs, outputs], axis=0)
         
-        return y
+        pred_probs = pd.DataFrame(pred_probs, index=file_names, columns=self.class_labels)
+        return pred_probs
+        
+        
+
+class DragonflyMesh():
     
-
-
+    def __init__(self, mesh):
+        self.mesh = self.__load_meshdata(mesh)
+    
+    
+    def __load_meshdata(mesh):
+        pass
+    
+    
+    def __datast_loader(data_path):
+        x = []
+        y = []
+        if os.path.isfile(data_path):
+            x.append(data_path)
+            y.append(data_path)
+        else:
+            for fpath in os.listdir(dataset_path):
+                if os.path.splitext(fpath)[1].lower() in ['.jpg', '.jpeg', '.png']:
+                    x.append(os.path.join(dataset_path, fpath))
+                    y.append(os.path.join(dataset_path, fpath))
+        
+        
+        
+    def inference(data_path):
+        dataset = self.__dataset_loader(data_path)
+        for img in dataset:
+            mesh2d = get_mesh2d(img)
+            output = self.mesh[mesh2d, ]
+        
+        
+        
