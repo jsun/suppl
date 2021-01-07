@@ -11,6 +11,8 @@ import numpy as np
 import pandas as pd
 import cv2
 import PIL
+from PIL import Image
+from PIL import ExifTags
 
 
 logging.basicConfig(level = logging.INFO,
@@ -473,20 +475,6 @@ class DragonflyCls():
         train_history_df.to_csv(train_history_path, sep='\t', index=False)
         
     
-    
-    def __inference(self, x, image_id):
-        
-        x = x.to(self.device)
-        y = self.model(x)
-        y = torch.sigmoid(y)
-        y = y.cpu().detach().numpy()
-        y = pd.DataFrame(y)
-        y.index = image_id
-        y.columns = self.class_labels
-        
-        return y
-
-    
     def inference(self, data_path):
         self.model.eval()
         dataloader = self.__dataset_loader(data_path, load_mode='inference')
@@ -512,32 +500,144 @@ class DragonflyCls():
 class DragonflyMesh():
     
     def __init__(self, mesh):
-        self.mesh = self.__load_meshdata(mesh)
+        self.dragonflymesh = self.__load_meshdata(mesh)
     
     
-    def __load_meshdata(mesh):
-        pass
+    def __load_meshdata(self, mesh):
+        dmesh = pd.read_csv(mesh, header=0, sep='\t', index_col=0)
+        dmesh.index = dmesh.index.map(str)
+        return dmesh
     
-    
-    def __datast_loader(data_path):
-        x = []
-        y = []
+    def __dataset_loader(self, data_path):
+        img_fpath = []
         if os.path.isfile(data_path):
-            x.append(data_path)
-            y.append(data_path)
+            img_fpath.append(data_path)
         else:
-            for fpath in os.listdir(dataset_path):
+            for fpath in os.listdir(data_path):
                 if os.path.splitext(fpath)[1].lower() in ['.jpg', '.jpeg', '.png']:
-                    x.append(os.path.join(dataset_path, fpath))
-                    y.append(os.path.join(dataset_path, fpath))
+                    img_fpath.append(os.path.join(data_path, fpath))
         
+        return img_fpath
+    
+    
+    def gis2mesh(self, lat, lng, order = 3):
+        lat = float(lat)
+        lng = float(lng)
         
+        lat_in_min = lat * 60.0
+        code12 = int(lat_in_min / 40)
+        lat_rest_in_min = lat_in_min - code12 * 40
+        code5 = int(lat_rest_in_min / 5 )
+        lat_rest_in_min -= code5 * 5
+        code7 = int(lat_rest_in_min / (5/10))
+
+        code34 = int(lng) - 100
+        lng_rest_in_deg = lng - int(lng)
+        code6 = int(lng_rest_in_deg * 8)
+        lng_rest_in_deg -= code6 / 8;
+        code8 = int(lng_rest_in_deg / (1/80) )
         
-    def inference(data_path):
+        code = code12 * 100 + code34
+        if order >= 2:
+            code = code * 100 + code5 * 10 + code6
+        if order == 3:
+            code = code * 100 + code7 * 10 + code8
+        
+        return str(int(code))
+    
+     
+    def get_jpeg_info(self, img_fpath):
+        lat = None
+        lng = None
+        capture_date = None
+        im = Image.open(img_fpath)
+
+        exif = im._getexif()
+
+        if exif is not None:
+            exif = {ExifTags.TAGS[k]: v for k, v in exif.items() if k in ExifTags.TAGS}
+            if 'GPSInfo' in exif:
+                gps_tags = exif['GPSInfo']
+                gps = {ExifTags.GPSTAGS.get(t, t): gps_tags[t] for t in gps_tags}
+                is_lat = 'GPSLatitude' in gps
+                is_lat_ref = 'GPSLatitudeRef' in gps
+                is_lon = 'GPSLongitude' in gps
+                is_lon_ref = 'GPSLongitudeRef' in gps
+
+                if is_lat and is_lat_ref and is_lon and is_lon_ref:
+                    lat = gps['GPSLatitude']
+                    lat_ref = gps['GPSLatitudeRef']
+                    if lat_ref == 'N':
+                        lat_sign = 1.0
+                    elif lat_ref == 'S':
+                        lat_sign = -1.0
+                    lon = gps['GPSLongitude']
+                    lon_ref = gps['GPSLongitudeRef']
+                    if lon_ref == 'E':
+                        lon_sign = 1.0
+                    elif lon_ref == 'W':
+                        lon_sign = -1.0
+                    lat = lat_sign * lat[0] + lat[1] / 60 + lat[2] / 3600
+                    lng = lon_sign * lon[0] + lon[1] / 60 + lon[2] / 3600
+        
+            if 'DateTimeOriginal' in exif:
+                capture_date = exif['DateTimeOriginal']
+                capture_date = capture_date.split(' ')[0].replace(':', '-')
+        return (capture_date, lat, lng)
+    
+    
+        
+    def __predict(self, meshcode, k=1):
+        meshcodes = []
+        
+        if k == 1:
+            meshcodes.append(meshcode)
+        elif k > 1:
+            d12 = int(meshcode[0:2])
+            d34 = int(meshcode[2:4])
+            for i in range(d12 - k + 1, d12 + k):
+                for j in range(d34 - k + 1, d34 + k):
+                    meshcodes.append('{:02d}{:02d}'.format(i, j))
+        
+        is_neighbors = []
+        for m in self.dragonflymesh.index:
+            if m[0:4] in meshcodes:
+                is_neighbors.append(True)
+            else:
+                is_neighbors.append(False)
+        
+        output = self.dragonflymesh.loc[is_neighbors,]
+        output = output.sum(axis=0)
+        # output = (output - output.min()) / (output.max() - output.min())
+        output[output > 0] = 1
+        
+        if not all(is_neighbors):
+            output = output.fillna(1.0)
+        
+        return output
+    
+    
+    
+    def inference(self, data_path, k=1):
         dataset = self.__dataset_loader(data_path)
-        for img in dataset:
-            mesh2d = get_mesh2d(img)
-            output = self.mesh[mesh2d, ]
+        pred_scores = None
+        for img_fpath in dataset:
+            capture_date, lat, lng = self.get_jpeg_info(img_fpath)
+            
+            if lat is not None and lng is not None:
+                mesh = self.gis2mesh(lat, lng, 1)
+                pred_score = self.__predict(mesh, k)
+                pred_score = pd.DataFrame([pred_score.to_list()],
+                                           index=[img_fpath], columns=self.dragonflymesh.columns)
+            else:
+                pred_score = pd.DataFrame([[1.0 for i in range(self.dragonflymesh.shape[1])]],
+                                            index=[img_fpath], columns=self.dragonflymesh.columns)
+            if pred_scores is None:
+                pred_scores = pred_score
+            else:
+                pred_scores = pd.concat([pred_scores, pred_score], axis=0)
         
+        return pred_scores
         
-        
+
+

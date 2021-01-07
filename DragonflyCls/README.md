@@ -64,6 +64,7 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-weight weights/best.pth \
                   -i testimagedir/Sympetrum_darwinianum_1.png \
                   -o test_result.tmp
+
 ```
 
 
@@ -75,13 +76,44 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
                   --model-weight weights/best.pth \
                   --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
-                  -i testimagedir/Sympetrum_darwinianum___4.jpg \
+                  -i testimagedir/Sympetrum_darwinianum_2.jpg \
                   -o test_result.tmp
 
+
+python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                  --model-arch resnet152 \
+                  --model-weight weights/best.pth \
+                  --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
+                  -i testimagedir \
+                  -o test_result.tmp
 ```
 
 
 
+# Validation with field photo
+
+```bash
+cd ${PROJECTCLS_PATH}
+dpath=${DATA_PATH}/dataset_T/cropped_image
+for d in `ls ${dpath}`
+do
+    echo ${dpath}/${d}
+    
+    python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch resnet152 \
+                      --model-weight weights/best.pth \
+                      --overwrite \
+                      -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.image.tsv
+    
+    python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch resnet152 \
+                      --model-weight weights/best.pth \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
+                      --overwrite \
+                      -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.mesh.tsv
+    
+done
+```
 
 
 
