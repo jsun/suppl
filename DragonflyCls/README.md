@@ -25,7 +25,7 @@ The 6 archtectures x 5 types of dataset.
 ```bash
 python train.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                 --model-arch vgg \
-                --model-outpath ./weights/F__vgg__test.pth \
+                --model-outpath ./weights_species/F__vgg__test.pth \
                 --traindata ./test_datasets/W1 \
                 --validdata ./test_datasets/W1 \
                 -e 3 -b 32 -l 0.001
@@ -44,7 +44,7 @@ Then find the best model and rename to `best.pth`.
 
 
 ```bash
-mv weights/xxx.pth weights/best_resnet152.pth
+mv weights_species/xxx.pth weights_species/best_resnet152.pth
 ```
 
 
@@ -54,14 +54,14 @@ mv weights/xxx.pth weights/best_resnet152.pth
 # image foler
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights/best.pth \
+                  --model-weight weights_species/best.pth \
                   -i testimagedir \
                   -o test_result.tmp
 
 # single image
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights/best.pth \
+                  --model-weight weights_species/best.pth \
                   -i testimagedir/Sympetrum_darwinianum_1.png \
                   -o test_result.tmp
 
@@ -74,7 +74,7 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 ```bash
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights/best.pth \
+                  --model-weight weights_species/best.pth \
                   --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
                   -i testimagedir/Sympetrum_darwinianum_2.jpg \
                   -o test_result.tmp
@@ -82,7 +82,7 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights/best.pth \
+                  --model-weight weights_species/best.pth \
                   --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
                   -i testimagedir \
                   -o test_result.tmp
@@ -101,13 +101,13 @@ do
     
     python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch resnet152 \
-                      --model-weight weights/best.pth \
+                      --model-weight weights_species/best.pth \
                       --overwrite \
                       -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.image.tsv
     
     python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch resnet152 \
-                      --model-weight weights/best.pth \
+                      --model-weight weights_species/best.pth \
                       --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
                       --overwrite \
                       -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.mesh.tsv
