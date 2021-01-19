@@ -44,7 +44,7 @@ Then find the best model and rename to `best.pth`.
 
 
 ```bash
-mv weights_species/xxx.pth weights_species/best_resnet152.pth
+ln weights_species/xxx.pth weights_species/best_resnet152.pth
 ```
 
 
@@ -92,27 +92,76 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 
 # Validation with field photo
 
+for species level
+
 ```bash
 cd ${PROJECTCLS_PATH}
 dpath=${DATA_PATH}/dataset_T/cropped_image
-for d in `ls ${dpath}`
+
+for model in `ls weights_species/*.pth`
 do
-    echo ${dpath}/${d}
-    
-    python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
-                      --model-arch resnet152 \
-                      --model-weight weights_species/best.pth \
-                      --overwrite \
-                      -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.image.tsv
-    
-    python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
-                      --model-arch resnet152 \
-                      --model-weight weights_species/best.pth \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
-                      --overwrite \
-                      -i ${dpath}/${d} -o eval_results/fielddata_prediction_result.mesh.tsv
-    
+    for d in `ls ${dpath}`
+    do
+        echo "${model%.pth} -- ${dpath}/${d}"
+        model_arch=(${model//__/ })
+        model_arch=${model_arch[1]}
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.image.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 1           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk1.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 2           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk2.tsv  \
+                      --overwrite
+    done
 done
+
+```
+
+
+for genus level
+
+```bash
+cd ${PROJECTCLS_PATH}
+dpath=${DATA_PATH}/dataset_Tg/cropped_image
+
+for model in `ls weights_genus/*.pth`
+do
+    for d in `ls ${dpath}`
+    do
+        echo "${model%.pth} -- ${dpath}/${d}"
+        model_arch=(${model//__/ })
+        model_arch=${model_arch[1]}
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.image.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 1           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk1.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 2           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk2.tsv  \
+                      --overwrite
+    done
+done
+
+
 ```
 
 

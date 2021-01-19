@@ -484,6 +484,7 @@ class DragonflyCls():
         
         with torch.set_grad_enabled(False):
             for inputs, labels in dataloader:
+                inputs = inputs.to(self.device)
                 outputs = self.model(inputs)
                 outputs = torch.sigmoid(outputs).cpu().detach().numpy()
                 file_names.extend(labels)

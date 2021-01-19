@@ -5,14 +5,14 @@ from models import *
 
 
 
-def predict(model_arch, model_path, class_labels, inference_dataset, mesh=None):
+def predict(model_arch, model_path, class_labels, inference_dataset, mesh=None, k=1):
     
-    dragonfly = DragonflyCls(model_arch=model_arch, model_path=model_path, class_labels=class_labels)
+    dragonfly = DragonflyCls(model_arch=model_arch, model_path=model_path, class_labels=class_labels, device='cpu')
     probs = dragonfly.inference(inference_dataset)
     
     if mesh is not None:
         dragonflymesh = DragonflyMesh(mesh=mesh)
-        mesh_output = dragonflymesh.inference(inference_dataset, k=2)
+        mesh_output = dragonflymesh.inference(inference_dataset, k=k)
         probs = probs * mesh_output
     
     return probs
@@ -25,13 +25,14 @@ if __name__ == '__main__':
     parser.add_argument('--model-arch', required=True)
     parser.add_argument('--model-weight', required=True)
     parser.add_argument('--mesh', default=None)
+    parser.add_argument('-k', default=None, type=int)
     parser.add_argument('-i', '--inference-dataset', default=None)
     parser.add_argument('-o', '--output', default=None)
     parser.add_argument('--overwrite', action='store_true')
     
     args = parser.parse_args()
     
-    probs = predict(args.model_arch, args.model_weight, args.class_label, args.inference_dataset, args.mesh)
+    probs = predict(args.model_arch, args.model_weight, args.class_label, args.inference_dataset, args.mesh, args.k)
     
     if args.output is None:
         print(probs)
