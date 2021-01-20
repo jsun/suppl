@@ -26,7 +26,7 @@ for dpath in sorted(glob.glob(os.path.join(indpath, '*'))):
     
 
 for _species in species:
-    print('{}\t{}'.format(_species, n_images[_species]))
+    print('{}\t{}'.format(_species.replace('_', ' '), n_images[_species]))
 
 
 

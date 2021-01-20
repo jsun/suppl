@@ -87,6 +87,8 @@ def crop_images(img_fpath):
         
         if im.info.get('exif') is not None:
             im_cropped.save(output_fpath, quality=100, exif=im.info.get('exif'))
+        else:
+            print('omitted, no EXIF.')
 
 
 
