@@ -5,7 +5,50 @@ import glob
 import shutil
 from PIL import Image
 from PIL import ImageFile
+from PIL import ExifTags
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+
+
+def get_jpeg_info(img_fpath):
+    lat = None
+    lng = None
+    capture_date = None
+    im = Image.open(img_fpath)
+
+    exif = im._getexif()
+
+    if exif is not None:
+        exif = {ExifTags.TAGS[k]: v for k, v in exif.items() if k in ExifTags.TAGS}
+        if 'GPSInfo' in exif:
+            gps_tags = exif['GPSInfo']
+            gps = {ExifTags.GPSTAGS.get(t, t): gps_tags[t] for t in gps_tags}
+            is_lat = 'GPSLatitude' in gps
+            is_lat_ref = 'GPSLatitudeRef' in gps
+            is_lon = 'GPSLongitude' in gps
+            is_lon_ref = 'GPSLongitudeRef' in gps
+
+            if is_lat and is_lat_ref and is_lon and is_lon_ref:
+                lat = gps['GPSLatitude']
+                lat_ref = gps['GPSLatitudeRef']
+                if lat_ref == 'N':
+                    lat_sign = 1.0
+                elif lat_ref == 'S':
+                    lat_sign = -1.0
+                lon = gps['GPSLongitude']
+                lon_ref = gps['GPSLongitudeRef']
+                if lon_ref == 'E':
+                    lon_sign = 1.0
+                elif lon_ref == 'W':
+                    lon_sign = -1.0
+                lat = lat_sign * lat[0] + lat[1] / 60 + lat[2] / 3600
+                lng = lon_sign * lon[0] + lon[1] / 60 + lon[2] / 3600
+
+        if 'DateTimeOriginal' in exif:
+            capture_date = exif['DateTimeOriginal']
+            capture_date = capture_date.split(' ')[0].replace(':', '-')
+    return (capture_date, lat, lng)
+
 
 
 
@@ -77,29 +120,26 @@ def parse_xml(file_path):
 
 
 def crop_images(img_fpath):
-    
     objects = parse_xml(os.path.splitext(img_fpath)[0] + '.xml')
     im = Image.open(img_fpath)
     for obj in objects['objects']:
         obj = (obj['xmin'], obj['ymin'], obj['xmax'], obj['ymax'])
         im_cropped = im.crop(obj)
         output_fpath = os.path.splitext(img_fpath)[0] + '__cropped__' + '_'.join(map(str, obj)) + '.jpg'
-        
-        if im.info.get('exif') is not None:
-            im_cropped.save(output_fpath, quality=100, exif=im.info.get('exif'))
-        else:
-            print('omitted, no EXIF.')
-
-
-
+        im_cropped.save(output_fpath, quality=100, exif=im.info.get('exif'))
 
 
 def crop(input_dirpath):
-    
     for image_path in sorted(glob.glob(os.path.join(input_dirpath, '*', '*.jpg'))):
         if not os.path.exists(os.path.splitext(image_path)[0] + '.xml'):
             continue
-        
+
+        exif_info = get_jpeg_info(image_path)
+        print(image_path, exif_info)
+        if (exif_info[0] is None) or (exif_info[1] is None) or (exif_info[2] is None):
+            print('No EXIF: ' + image_path)
+            continue
+ 
         crop_images(image_path)
         
 

@@ -80,16 +80,15 @@ def main(target_path):
         n_images += 1
         datetime = get_captured_datetime(fpath)
         gps = get_gps(fpath)
-        if gps[0] is not None:
-            if datetime is not None:
+        if gps[0] is not None and datetime is not None:
                 datetimes.append(datetime)
-            print('{}\t{}\t{}\t{}'.format(fpath, datetime, gps[0], gps[1]))
+                print('{}\t{}\t{}\t{}'.format(fpath, datetime, gps[0], gps[1]))
         else:
             n_noexif += 1
         
         
     print('#{}-{}'.format(sorted(datetimes)[0], sorted(datetimes)[-1]))
-    print('#{}, {}, {}, {}'.format(n_images, n_noexif, n_images - n_noexif))
+    print('#{}, {}, {}'.format(n_images, n_noexif, n_images - n_noexif))
 
 
 
