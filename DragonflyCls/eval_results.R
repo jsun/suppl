@@ -184,7 +184,7 @@ write_tsv(valid_sum_table,
           path = 'eval_results/validacc.tsv', col_names = TRUE)
 write.table(spmodel_valid_stats_image$confmat, 
             file = 'eval_results/validconfmatrix_W2F_vgg19_1_image.tsv', sep = '\t')
-write.table(spmodel_valid_stats_mesh$confmat, 
+write.table(spmodel_valid_stats_mesh50$confmat, 
             file = 'eval_results/validconfmatrix_W2F_vgg19_1_mesh.tsv', sep = '\t')
 
 
@@ -209,22 +209,22 @@ dev.off()
 # genus identification
 gnmodel_train_stats <- summarise_train_stats('weights_genus')
 gnmodel_valid_stats_image <- summarise_valid_stats('weights_genus', 'image')
-gnmodel_valid_stats_d50   <- summarise_valid_stats('weights_genus', 'd50')
+gnmodel_valid_stats_mesh50 <- summarise_valid_stats('weights_genus', 'd50')
 
 valid_sum_table <- data.frame(dataset = gnmodel_valid_stats_image$accstats$dataset,
                               model   = gnmodel_valid_stats_image$accstats$model,
                               topacc  = gnmodel_valid_stats_image$accstats$topacc,
                               image_mean = gnmodel_valid_stats_image$accstats$mean,
                               image_sd   = gnmodel_valid_stats_image$accstats$sd,
-                              binded_mean = gnmodel_valid_stats_d50$accstats$mean,
-                              binded_sd   = gnmodel_valid_stats_d50$accstats$sd) %>%
+                              binded_mean = gnmodel_valid_stats_mesh50$accstats$mean,
+                              binded_sd   = gnmodel_valid_stats_mesh50$accstats$sd) %>%
                     arrange(topacc, dataset, model)
 
 write_tsv(valid_sum_table,
           path = 'eval_results/validaccg.tsv', col_names = TRUE)
 write.table(gnmodel_valid_stats_image$confmat, 
             file = 'eval_results/validconfmatrixg_W2F_vgg19_1_image.tsv', sep = '\t')
-write.table(spmodel_valid_stats_mesh$confmat, 
+write.table(gnmodel_valid_stats_mesh50$confmat, 
             file = 'eval_results/validconfmatrixg_W2F_vgg19_1_mesh.tsv', sep = '\t')
 
 
@@ -233,7 +233,7 @@ gnmodel_valid_stats_image$accfig
 dev.off()
 
 png('eval_results/validaccg_barplot_mesh.png', 4400, 1800, res = 460)
-gnmodel_valid_stats_d50$accfig
+gnmodel_valid_stats_mesh50$accfig
 dev.off()
 
 
