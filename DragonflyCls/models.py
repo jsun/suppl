@@ -5,6 +5,7 @@ import logging
 import coloredlogs
 import glob
 import copy
+import geopy.distance
 import torch
 import torchvision
 import numpy as np
@@ -505,9 +506,16 @@ class DragonflyMesh():
     
     
     def __load_meshdata(self, mesh):
-        dmesh = pd.read_csv(mesh, header=0, sep='\t', index_col=0)
-        dmesh.index = dmesh.index.map(str)
+        x = pd.read_csv(mesh, header=0, sep='\t', index_col=0)
+        x.index = x.index.map(str)
+        
+        dmesh = {
+            'grid': x.iloc[:, :2],
+            'mesh': x.iloc[:, 2:]
+        }
+        
         return dmesh
+    
     
     def __dataset_loader(self, data_path):
         img_fpath = []
@@ -601,13 +609,13 @@ class DragonflyMesh():
                     meshcodes.append('{:02d}{:02d}'.format(i, j))
         
         is_neighbors = []
-        for m in self.dragonflymesh.index:
+        for m in self.dragonflymesh['mesh'].index:
             if m[0:4] in meshcodes:
                 is_neighbors.append(True)
             else:
                 is_neighbors.append(False)
         
-        output = self.dragonflymesh.loc[is_neighbors,]
+        output = self.dragonflymesh['mesh'].loc[is_neighbors, ]
         output = output.sum(axis=0)
         # output = (output - output.min()) / (output.max() - output.min())
         output[output > 0] = 1
@@ -618,21 +626,40 @@ class DragonflyMesh():
         return output
     
     
+    def __calc_dist(self, x):
+        return geopy.distance.great_circle((x[0], x[1]), (x[2], x[3])).km
+        
     
-    def inference(self, data_path, k=1):
+    def __predict2(self, gis, d=100):
+        gisdf =pd.DataFrame([gis] * self.dragonflymesh['grid'].shape[0],
+                            index=self.dragonflymesh['grid'].index, columns=['lat0', 'lng0'])
+        meshmat = pd.concat([self.dragonflymesh['grid'], gisdf], axis=1)
+        in_range = (meshmat.apply(self.__calc_dist, axis=1) < d)
+        output = self.dragonflymesh['mesh'].loc[in_range, :]
+        output = output.sum(axis=0)
+        output[output > 0] = 1
+        if not all(in_range):
+            output = output.fillna(1.0)
+        
+        return output
+    
+    
+    
+    def inference(self, data_path, d=100):
         dataset = self.__dataset_loader(data_path)
         pred_scores = None
         for img_fpath in dataset:
             capture_date, lat, lng = self.get_jpeg_info(img_fpath)
-            
             if lat is not None and lng is not None:
                 mesh = self.gis2mesh(lat, lng, 1)
-                pred_score = self.__predict(mesh, k)
+                #pred_score = self.__predict(mesh, k)
+                pred_score = self.__predict2((lat, lng), d)
                 pred_score = pd.DataFrame([pred_score.to_list()],
-                                           index=[img_fpath], columns=self.dragonflymesh.columns)
+                                           index=[img_fpath], columns=self.dragonflymesh['mesh'].columns)
             else:
-                pred_score = pd.DataFrame([[1.0 for i in range(self.dragonflymesh.shape[1])]],
-                                            index=[img_fpath], columns=self.dragonflymesh.columns)
+                pred_score = pd.DataFrame([[1.0 for i in range(self.dragonflymesh['mesh'].shape[1])]],
+                                            index=[img_fpath], columns=self.dragonflymesh['mesh'].columns)
+            
             if pred_scores is None:
                 pred_scores = pred_score
             else:

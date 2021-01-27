@@ -113,14 +113,14 @@ do
         
         python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 1           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk1.tsv  \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 50         \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d50.tsv  \
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 2           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk2.tsv  \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 100           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d100.tsv  \
                       --overwrite
     done
 done
@@ -148,20 +148,18 @@ do
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
-                      --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 1           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk1.tsv  \
+                      --model-arch ${model_arch} --model-weight ${model}    \
+                      --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 50           \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d50.tsv     \
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
-                      --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -k 2           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.meshk2.tsv  \
+                      --model-arch ${model_arch} --model-weight ${model}    \
+                      --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 100          \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d100.tsv  \
                       --overwrite
     done
 done
-
-
 ```
 
 
