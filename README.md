@@ -14,6 +14,7 @@ To summarize RNA-Seq data anlysis results, use R scripts.
 - analyze_seqlendist.R
 - analyze_correlation.R
 - analyze_downsampling.R
+- bam_overlap.R
 
 
 ## Mapping coverage

@@ -59,6 +59,8 @@ calc_cpm <- function(mat) {
 
 
 calc_corr <- function(matx, maty, labx = NULL, laby = NULL, cutx = 5, cuty = 10) {
+    outlier_upper <- 'TraesCS4B02G159100'
+    outlier_lower <- 'TraesCS3B02G187700'
     
     cormat2 <- cormat <- rsqmat <- matrix(NA, nrow = 6, ncol = 3)
     rownames(cormat2) <- rownames(cormat) <- rownames(rsqmat) <- LIBNAME
@@ -189,8 +191,8 @@ if (!all(chk)) {stop('check gene orders!')}
 ## 3'-end RNA-Seq (IWGSC+1k) vs paired-end RNA-Seq
 cutoff_tagseq <- 1
 cutoff_fullseq <- 4
-tagseq_fullseqhisat <- calc_corr(tagseq_hisat_h, fullseq_hisat_h, "3'-end RNA-Seq (HISAT2)", "paired-end RNA-Seq (HISAT2)", cutoff_tagseq, cutoff_fullseq)
-tagseq_fullseqeagle <- calc_corr(tagseq_hisat_h, fullseq_eagle_h, "3'-end RNA-Seq (HISAT2)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_tagseq, cutoff_fullseq)
+tagseq_fullseqhisat <- calc_corr(tagseq_hisat_h, fullseq_hisat_h, "Lasy-Seq (HISAT2)", "paired-end RNA-Seq (HISAT2)", cutoff_tagseq, cutoff_fullseq)
+tagseq_fullseqeagle <- calc_corr(tagseq_hisat_h, fullseq_eagle_h, "Lasy-Seq (HISAT2)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_tagseq, cutoff_fullseq)
 
 ## paired-end RNA-Seq HISAT vs paired-end RNA-Seq EAGLE-RC
 fullseqhisat_fullseqeagle <- calc_corr(fullseq_hisat_h, fullseq_eagle_h, "paired-end RNA-Seq (HISAT)", "paired-end RNA-Seq (EAGLE-RC)", cutoff_fullseq, cutoff_fullseq)
@@ -250,7 +252,7 @@ for (i in LIBNAME) {
 gp <- ggplot(dfxy, aes(x = diff, y = gene_length)) +
             geom_point() + facet_wrap(~libname, ncol = 3) +
             scale_x_log10() + scale_y_log10() + 
-            xlab("paired-end RNA-Seq (EAGLE-RC) - 3'-end RNA-Seq (HISAT)") + ylab('gene length')
+            xlab("paired-end RNA-Seq (EAGLE-RC) - Lasy-Seq (HISAT)") + ylab('gene length')
     
 png(paste0('results/plots/countdifference_genelength.png'), 2300, 1500, res = 220)
 print(gp)

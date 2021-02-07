@@ -85,12 +85,38 @@ fi
 
 for list_dpath in `ls -d *`; do
     echo ${list_dpath} >> ${log_fpath}
-    grep -c REF ${list_dpath}/${list_dpath}.ref.chrA.list >> ${log_fpath}
-    grep -c REF ${list_dpath}/${list_dpath}.ref.chrB.list >> ${log_fpath}
-    grep -c REF ${list_dpath}/${list_dpath}.ref.chrD.list >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrA.list | grep -c REF >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrB.list | grep -c REF >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrD.list | grep -c REF >> ${log_fpath}
 done
 ```
 
 
+To investigate the overlaps between HISAT2 and EGALE-RC results, use the following commands.
+
+
+```bash
+cd ~/projects/HuoberBrezel/data/tagseq/bam
+
+for bam_fpath in `ls *.bam`
+do
+    samtools view -S ${bam_fpath} | grep "NH:i:1" | grep "chr.A" | cut -f1 > ${bam_fpath%.bam}.chrA.read_name.txt
+    samtools view -S ${bam_fpath} | grep "NH:i:1" | grep "chr.B" | cut -f1 > ${bam_fpath%.bam}.chrB.read_name.txt
+    samtools view -S ${bam_fpath} | grep "NH:i:1" | grep "chr.D" | cut -f1 > ${bam_fpath%.bam}.chrD.read_name.txt
+done
+
+
+
+cd ~/projects/HuoberBrezel/data/tagseq/eaglerc
+
+for bam_dpath in `ls | grep -v nreads`
+do
+    cd ${bam_dpath}
+    grep REF ${bam_dpath}.ref.chrA.list | grep -v REVERSE | cut -f1 > ${bam_dpath}.chrA.read_name.txt
+    grep REF ${bam_dpath}.ref.chrB.list | grep -v REVERSE | cut -f1 > ${bam_dpath}.chrB.read_name.txt
+    grep REF ${bam_dpath}.ref.chrD.list | grep -v REVERSE | cut -f1 > ${bam_dpath}.chrD.read_name.txt
+    cd ..
+done
+```
 
 
