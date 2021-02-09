@@ -89,7 +89,26 @@ for list_dpath in `ls -d *`; do
     grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrB.list | grep -c REF >> ${log_fpath}
     grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrD.list | grep -c REF >> ${log_fpath}
 done
+
+
+cd tagseq/eaglercngi
+
+log_fpath=nreads_mapped_stats.tsv
+if [ -f ${log_fpath} ]; then
+    rm ${log_fpath}
+fi
+
+for list_dpath in `ls -d *`; do
+    echo ${list_dpath} >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrA.list | grep -c REF >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrB.list | grep -c REF >> ${log_fpath}
+    grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrD.list | grep -c REF >> ${log_fpath}
+done
+
 ```
+
+
+
 
 
 To investigate the overlaps between HISAT2 and EGALE-RC results, use the following commands.
