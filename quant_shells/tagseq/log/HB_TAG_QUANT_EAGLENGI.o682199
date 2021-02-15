@@ -1,0 +1,490 @@
+shell: 02_tagseq.eaglerc.sh
+pSTAR: 1
+pEAGLE: 0
+pEAGLERC: 0
+pCount: 0
+nCPU: 16
+----- start -----
+Tue Feb 9 09:24:15 JST 2021
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_16.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrA chromosome.
+Tue Feb 9 09:24:15 JST 2021
+Feb 09 09:24:15 ..... started STAR run
+Feb 09 09:24:15 ..... loading genome
+Feb 09 09:24:37 ..... started mapping
+Feb 09 09:24:56 ..... finished successfully
+Tue Feb 9 09:24:56 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:24:56 JST 2021
+Tue Feb 9 09:25:05 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrB chromosome.
+Tue Feb 9 09:25:05 JST 2021
+Feb 09 09:25:05 ..... started STAR run
+Feb 09 09:25:05 ..... loading genome
+Feb 09 09:25:28 ..... started mapping
+Feb 09 09:25:46 ..... finished successfully
+Tue Feb 9 09:25:46 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:25:46 JST 2021
+Tue Feb 9 09:25:55 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrD chromosome.
+Tue Feb 9 09:25:55 JST 2021
+Feb 09 09:25:55 ..... started STAR run
+Feb 09 09:25:55 ..... loading genome
+Feb 09 09:26:15 ..... started mapping
+Feb 09 09:26:31 ..... finished successfully
+Tue Feb 9 09:26:32 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:26:32 JST 2021
+Tue Feb 9 09:26:40 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_17.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrA chromosome.
+Tue Feb 9 09:26:40 JST 2021
+Feb 09 09:26:40 ..... started STAR run
+Feb 09 09:26:40 ..... loading genome
+Feb 09 09:27:03 ..... started mapping
+Feb 09 09:27:37 ..... finished successfully
+Tue Feb 9 09:27:37 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:27:37 JST 2021
+Tue Feb 9 09:27:57 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrB chromosome.
+Tue Feb 9 09:27:57 JST 2021
+Feb 09 09:27:57 ..... started STAR run
+Feb 09 09:27:57 ..... loading genome
+Feb 09 09:28:21 ..... started mapping
+Feb 09 09:28:52 ..... finished successfully
+Tue Feb 9 09:28:52 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:28:52 JST 2021
+Tue Feb 9 09:29:11 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrD chromosome.
+Tue Feb 9 09:29:11 JST 2021
+Feb 09 09:29:11 ..... started STAR run
+Feb 09 09:29:11 ..... loading genome
+Feb 09 09:29:28 ..... started mapping
+Feb 09 09:29:56 ..... finished successfully
+Tue Feb 9 09:29:57 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:29:57 JST 2021
+Tue Feb 9 09:30:16 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_18.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrA chromosome.
+Tue Feb 9 09:30:16 JST 2021
+Feb 09 09:30:16 ..... started STAR run
+Feb 09 09:30:16 ..... loading genome
+Feb 09 09:30:39 ..... started mapping
+Feb 09 09:31:11 ..... finished successfully
+Tue Feb 9 09:31:11 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:31:11 JST 2021
+Tue Feb 9 09:31:31 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrB chromosome.
+Tue Feb 9 09:31:31 JST 2021
+Feb 09 09:31:31 ..... started STAR run
+Feb 09 09:31:31 ..... loading genome
+Feb 09 09:31:54 ..... started mapping
+Feb 09 09:32:24 ..... finished successfully
+Tue Feb 9 09:32:24 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:32:24 JST 2021
+Tue Feb 9 09:32:42 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrD chromosome.
+Tue Feb 9 09:32:42 JST 2021
+Feb 09 09:32:42 ..... started STAR run
+Feb 09 09:32:42 ..... loading genome
+Feb 09 09:33:04 ..... started mapping
+Feb 09 09:33:32 ..... finished successfully
+Tue Feb 9 09:33:32 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:33:32 JST 2021
+Tue Feb 9 09:33:51 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_1.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrA chromosome.
+Tue Feb 9 09:33:51 JST 2021
+Feb 09 09:33:51 ..... started STAR run
+Feb 09 09:33:51 ..... loading genome
+Feb 09 09:34:17 ..... started mapping
+Feb 09 09:34:38 ..... finished successfully
+Tue Feb 9 09:34:38 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:34:38 JST 2021
+Tue Feb 9 09:34:51 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrB chromosome.
+Tue Feb 9 09:34:51 JST 2021
+Feb 09 09:34:51 ..... started STAR run
+Feb 09 09:34:51 ..... loading genome
+Feb 09 09:35:18 ..... started mapping
+Feb 09 09:35:37 ..... finished successfully
+Tue Feb 9 09:35:37 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:35:37 JST 2021
+Tue Feb 9 09:35:51 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrD chromosome.
+Tue Feb 9 09:35:51 JST 2021
+Feb 09 09:35:51 ..... started STAR run
+Feb 09 09:35:51 ..... loading genome
+Feb 09 09:36:08 ..... started mapping
+Feb 09 09:36:26 ..... finished successfully
+Tue Feb 9 09:36:26 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:36:26 JST 2021
+Tue Feb 9 09:36:39 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_2.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrA chromosome.
+Tue Feb 9 09:36:39 JST 2021
+Feb 09 09:36:39 ..... started STAR run
+Feb 09 09:36:39 ..... loading genome
+Feb 09 09:37:02 ..... started mapping
+Feb 09 09:37:19 ..... finished successfully
+Tue Feb 9 09:37:19 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:37:19 JST 2021
+Tue Feb 9 09:37:27 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrB chromosome.
+Tue Feb 9 09:37:27 JST 2021
+Feb 09 09:37:27 ..... started STAR run
+Feb 09 09:37:27 ..... loading genome
+Feb 09 09:37:50 ..... started mapping
+Feb 09 09:38:06 ..... finished successfully
+Tue Feb 9 09:38:07 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:38:07 JST 2021
+Tue Feb 9 09:38:14 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrD chromosome.
+Tue Feb 9 09:38:14 JST 2021
+Feb 09 09:38:14 ..... started STAR run
+Feb 09 09:38:14 ..... loading genome
+Feb 09 09:38:32 ..... started mapping
+Feb 09 09:38:47 ..... finished successfully
+Tue Feb 9 09:38:47 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:38:47 JST 2021
+Tue Feb 9 09:38:55 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_3.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrA chromosome.
+Tue Feb 9 09:38:55 JST 2021
+Feb 09 09:38:55 ..... started STAR run
+Feb 09 09:38:55 ..... loading genome
+Feb 09 09:39:20 ..... started mapping
+Feb 09 09:39:51 ..... finished successfully
+Tue Feb 9 09:39:51 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:39:51 JST 2021
+Tue Feb 9 09:40:09 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrB chromosome.
+Tue Feb 9 09:40:10 JST 2021
+Feb 09 09:40:10 ..... started STAR run
+Feb 09 09:40:10 ..... loading genome
+Feb 09 09:40:36 ..... started mapping
+Feb 09 09:41:05 ..... finished successfully
+Tue Feb 9 09:41:06 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:41:06 JST 2021
+Tue Feb 9 09:41:22 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrD chromosome.
+Tue Feb 9 09:41:22 JST 2021
+Feb 09 09:41:22 ..... started STAR run
+Feb 09 09:41:22 ..... loading genome
+Feb 09 09:41:40 ..... started mapping
+Feb 09 09:42:07 ..... finished successfully
+Tue Feb 9 09:42:07 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:42:07 JST 2021
+Tue Feb 9 09:42:25 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g086.clean.fastq.gz
+map TaeRS2728_g086 on chrA chromosome.
+Tue Feb 9 09:42:25 JST 2021
+Feb 09 09:42:26 ..... started STAR run
+Feb 09 09:42:26 ..... loading genome
+Feb 09 09:42:48 ..... started mapping
+Feb 09 09:43:10 ..... finished successfully
+Tue Feb 9 09:43:10 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:43:11 JST 2021
+Tue Feb 9 09:43:26 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g086 on chrB chromosome.
+Tue Feb 9 09:43:26 JST 2021
+Feb 09 09:43:26 ..... started STAR run
+Feb 09 09:43:26 ..... loading genome
+Feb 09 09:43:51 ..... started mapping
+Feb 09 09:44:15 ..... finished successfully
+Tue Feb 9 09:44:15 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:44:15 JST 2021
+Tue Feb 9 09:44:30 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g086 on chrD chromosome.
+Tue Feb 9 09:44:30 JST 2021
+Feb 09 09:44:30 ..... started STAR run
+Feb 09 09:44:30 ..... loading genome
+Feb 09 09:44:47 ..... started mapping
+Feb 09 09:45:14 ..... finished successfully
+Tue Feb 9 09:45:14 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:45:14 JST 2021
+Tue Feb 9 09:45:32 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g091.clean.fastq.gz
+map TaeRS2728_g091 on chrA chromosome.
+Tue Feb 9 09:45:32 JST 2021
+Feb 09 09:45:32 ..... started STAR run
+Feb 09 09:45:32 ..... loading genome
+Feb 09 09:46:19 ..... started mapping
+Feb 09 09:46:33 ..... finished successfully
+Tue Feb 9 09:46:33 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:46:33 JST 2021
+Tue Feb 9 09:46:42 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g091 on chrB chromosome.
+Tue Feb 9 09:46:42 JST 2021
+Feb 09 09:46:42 ..... started STAR run
+Feb 09 09:46:42 ..... loading genome
+Feb 09 09:47:06 ..... started mapping
+Feb 09 09:47:21 ..... finished successfully
+Tue Feb 9 09:47:22 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:47:22 JST 2021
+Tue Feb 9 09:47:29 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g091 on chrD chromosome.
+Tue Feb 9 09:47:29 JST 2021
+Feb 09 09:47:29 ..... started STAR run
+Feb 09 09:47:29 ..... loading genome
+Feb 09 09:47:58 ..... started mapping
+Feb 09 09:48:15 ..... finished successfully
+Tue Feb 9 09:48:15 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:48:15 JST 2021
+Tue Feb 9 09:48:24 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g160.clean.fastq.gz
+map TaeRS2728_g160 on chrA chromosome.
+Tue Feb 9 09:48:24 JST 2021
+Feb 09 09:48:24 ..... started STAR run
+Feb 09 09:48:24 ..... loading genome
+Feb 09 09:48:47 ..... started mapping
+Feb 09 09:49:09 ..... finished successfully
+Tue Feb 9 09:49:09 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:49:09 JST 2021
+Tue Feb 9 09:49:21 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g160 on chrB chromosome.
+Tue Feb 9 09:49:21 JST 2021
+Feb 09 09:49:21 ..... started STAR run
+Feb 09 09:49:21 ..... loading genome
+Feb 09 09:49:44 ..... started mapping
+Feb 09 09:50:07 ..... finished successfully
+Tue Feb 9 09:50:07 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:50:07 JST 2021
+Tue Feb 9 09:50:19 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g160 on chrD chromosome.
+Tue Feb 9 09:50:19 JST 2021
+Feb 09 09:50:19 ..... started STAR run
+Feb 09 09:50:19 ..... loading genome
+Feb 09 09:50:37 ..... started mapping
+Feb 09 09:51:03 ..... finished successfully
+Tue Feb 9 09:51:04 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:51:04 JST 2021
+Tue Feb 9 09:51:17 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g165.clean.fastq.gz
+map TaeRS2728_g165 on chrA chromosome.
+Tue Feb 9 09:51:17 JST 2021
+Feb 09 09:51:17 ..... started STAR run
+Feb 09 09:51:17 ..... loading genome
+Feb 09 09:51:42 ..... started mapping
+Feb 09 09:51:59 ..... finished successfully
+Tue Feb 9 09:51:59 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:51:59 JST 2021
+Tue Feb 9 09:52:09 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g165 on chrB chromosome.
+Tue Feb 9 09:52:09 JST 2021
+Feb 09 09:52:09 ..... started STAR run
+Feb 09 09:52:09 ..... loading genome
+Feb 09 09:52:36 ..... started mapping
+Feb 09 09:52:52 ..... finished successfully
+Tue Feb 9 09:52:52 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:52:52 JST 2021
+Tue Feb 9 09:53:02 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g165 on chrD chromosome.
+Tue Feb 9 09:53:02 JST 2021
+Feb 09 09:53:02 ..... started STAR run
+Feb 09 09:53:02 ..... loading genome
+Feb 09 09:53:18 ..... started mapping
+Feb 09 09:53:36 ..... finished successfully
+Tue Feb 9 09:53:36 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:53:36 JST 2021
+Tue Feb 9 09:53:48 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g167.clean.fastq.gz
+map TaeRS2728_g167 on chrA chromosome.
+Tue Feb 9 09:53:48 JST 2021
+Feb 09 09:53:48 ..... started STAR run
+Feb 09 09:53:48 ..... loading genome
+Feb 09 09:54:09 ..... started mapping
+Feb 09 09:54:33 ..... finished successfully
+Tue Feb 9 09:54:33 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:54:33 JST 2021
+Tue Feb 9 09:54:48 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g167 on chrB chromosome.
+Tue Feb 9 09:54:48 JST 2021
+Feb 09 09:54:48 ..... started STAR run
+Feb 09 09:54:48 ..... loading genome
+Feb 09 09:55:10 ..... started mapping
+Feb 09 09:55:33 ..... finished successfully
+Tue Feb 9 09:55:33 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:55:33 JST 2021
+Tue Feb 9 09:55:47 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g167 on chrD chromosome.
+Tue Feb 9 09:55:47 JST 2021
+Feb 09 09:55:47 ..... started STAR run
+Feb 09 09:55:47 ..... loading genome
+Feb 09 09:56:04 ..... started mapping
+Feb 09 09:56:31 ..... finished successfully
+Tue Feb 9 09:56:31 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:56:31 JST 2021
+Tue Feb 9 09:56:47 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+/home/jqsun/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g172.clean.fastq.gz
+map TaeRS2728_g172 on chrA chromosome.
+Tue Feb 9 09:56:47 JST 2021
+Feb 09 09:56:47 ..... started STAR run
+Feb 09 09:56:47 ..... loading genome
+Feb 09 09:57:09 ..... started mapping
+Feb 09 09:57:34 ..... finished successfully
+Tue Feb 9 09:57:34 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:57:34 JST 2021
+Tue Feb 9 09:57:51 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g172 on chrB chromosome.
+Tue Feb 9 09:57:51 JST 2021
+Feb 09 09:57:51 ..... started STAR run
+Feb 09 09:57:51 ..... loading genome
+Feb 09 09:58:14 ..... started mapping
+Feb 09 09:58:40 ..... finished successfully
+Tue Feb 9 09:58:40 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:58:40 JST 2021
+Tue Feb 9 09:58:56 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+map TaeRS2728_g172 on chrD chromosome.
+Tue Feb 9 09:58:56 JST 2021
+Feb 09 09:58:56 ..... started STAR run
+Feb 09 09:58:56 ..... loading genome
+Feb 09 09:59:15 ..... started mapping
+Feb 09 09:59:45 ..... finished successfully
+Tue Feb 9 09:59:45 JST 2021
+finished.
+start samtools for sorting BAM.
+Tue Feb 9 09:59:45 JST 2021
+Tue Feb 9 10:00:04 JST 2021
+fnished.
+/home/jqsun/projects/HuoberBrezel/data/tagseq/bameaglercngi
+Tue Feb 9 10:00:05 JST 2021
+----- finish -----

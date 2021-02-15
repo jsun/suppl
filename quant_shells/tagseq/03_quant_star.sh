@@ -2,15 +2,15 @@
 #PBS --group=g-mlbi
 #PBS -q cq
 #PBS -l gpunum_job=0
-#PBS -l cpunum_job=1
+#PBS -l cpunum_job=16
 #PBS -l memsz_job=256gb
 #PBS -l elapstim_req=72:00:00
 #PBS -N HB_TAG_QUANT_STARCOUNT
 
 
-pSTAR=0
-pQuant=1
-nCPU=1
+pSTAR=1
+pQuant=0
+nCPU=16
 
 
 
@@ -69,14 +69,13 @@ fi
 
 
 if [ ${pQuant} -eq 1 ]; then
-#
-# count mapped reads
-#
-mkdir -p ${COUNTS_DIR}
-cd ${BAM_DIR}
-${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+
+    # count mapped reads
+    mkdir -p ${COUNTS_DIR}
+    cd ${BAM_DIR}
+    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
                      -o ${COUNTS_DIR}/tcs.counts.gene.ext_1.0k.tsv TaeRS2728_*.bam
-${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
                      -o ${COUNTS_DIR}/cs.counts.gene.ext_1.0k.tsv 20181109*.bam
 fi
 

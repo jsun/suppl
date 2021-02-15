@@ -1,0 +1,34 @@
+shell: 02_tagseq.eaglerc.sh
+pSTAR: 0
+pEAGLE: 
+pEAGLERC: 0
+pCount: 1
+nCPU: 16
+----- start -----
+Tue Feb 9 14:01:18 JST 2021
+20181109.A-TaeRS_1_Tae_RS1_1
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+20181109.A-TaeRS_1_Tae_RS1_16
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+20181109.A-TaeRS_1_Tae_RS1_17
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+20181109.A-TaeRS_1_Tae_RS1_18
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+20181109.A-TaeRS_1_Tae_RS1_2
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+20181109.A-TaeRS_1_Tae_RS1_3
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g086
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g091
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g160
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g165
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g167
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+TaeRS2728_g172
+/home/jqsun/projects/HuoberBrezel/data/tagseq/eaglercngi
+Tue Feb 9 14:36:48 JST 2021
+----- finish -----
