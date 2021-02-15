@@ -30,7 +30,7 @@ i=${SGE_TASK_ID}
 model_archs=(vgg resnet mobilenet vgg19 resnet152 densenet)
 
 
-if false
+if true
 then
     for model_arch in "${model_archs[@]}"
     do
