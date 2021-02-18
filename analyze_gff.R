@@ -130,7 +130,7 @@ plot_gene <- function() {
 
 
 
-find_gene <- function() {
+find_gene_cs <- function() {
     
     for (wi in 1:length(DWCODE)) {
 
@@ -192,16 +192,55 @@ find_gene <- function() {
         }
     }
     
+}
 
+
+
+
+find_gene_tcs <- function() {
+    
+    x0k <- read.table(paste0('data/tagseq/counts/tcs.counts.gene.iwgsc.tsv.gz'),
+                      sep = '\t', header = TRUE)
+    x1k <- read.table(paste0('data/tagseq/counts/tcs.counts.gene.ext_1.0k.tsv.gz'),
+                      sep = '\t', header = TRUE)
+    rownames(x0k) <- rownames(x1k) <- x1k[, 1]
+    x0k <- as.matrix(x0k[, -c(1:6)])
+    x1k <- as.matrix(x1k[, -c(1:6)])
+    
+    colnames(x0k) <- colnames(x1k) <- c('#1', '#4', '#2',
+                                        '#5', '#3', '#6')
+    dfcnt <- data.frame(gene = NULL, lib_name = NULL, x = NULL, y = NULL)
+    for (i in 1:ncol(x0k)) {
+        dfcnt <- rbind(dfcnt, data.frame(gene = rownames(x0k), lib_name = colnames(x0k)[i],
+                       x = log10(x0k[, i] + 1), y = log10(x1k[, i] + 1)))
+    }
+    dfcnt$lib_name <- factor(dfcnt$lib_name, levels = sort(colnames(x0k)))
+        
+    df <- dfcnt %>% filter(lib_name == '#6')
+    gp <- ggplot(df, aes(x = x, y = y)) +
+                        geom_point() +
+                        coord_fixed() + 
+                        xlab(paste0('IWGSC', ' log10(count)')) +
+                        ylab(paste0('IWGSC+1k',  ' log10(count)'))
+    png(paste0('results/plots/count_relations_iwgsc_vs_iwgsc1k_g172.png'), 600, 650, res = 220)
+    print(gp)
+    dev.off()
+    
+    dfcnt_targets <- df %>% filter(gene %in% c('TraesCS7A02G115400', 'TraesCS7B02G013100'))
+    gp + geom_point(aes(x = x, y = y), data = dfcnt_targets, color = 'red')
+    
 
 }
 
 
 
 
+
+
 plot_log()
 plot_gene()
-find_gene()
+find_gene_cs()
+find_gene_tcs()
 
 
 
