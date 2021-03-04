@@ -46,4 +46,11 @@ Rscript plot_coverage.R
 ```
 
 
+## Gene annotations
+
+```
+cd data
+# download iwgsc_refseqv1.0_FunctionalAnnotation_v1__HCgenes_v1.0.TAB.gz from IWGSC
+python parse_funcanno_v1.py
+```
 

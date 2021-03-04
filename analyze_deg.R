@@ -2,6 +2,7 @@ library(tidyverse)
 library(ggsci)
 library(ggExtra)
 library(edgeR)
+library(topGO)
 library(pROC)
 options(stringsAsFactors = FALSE)
 
@@ -32,6 +33,50 @@ load_eagle_counts <- function() {
     
     x
 }
+
+
+bind_gene_symbols <- function(x) {
+    d1 <- read.table('data/gene2symbol.tsv.gz', header = TRUE, sep = '\t')
+    d2 <- read.table('data/gene2desc.tsv.gz', header = TRUE, sep = '\t', quote = '')
+    d3 <- read.table('data/gene2go.tsv.gz', header = TRUE, sep = '\t', quote = '')
+    dict1 <- d1[, 2]
+    names(dict1) <- d1[, 1]
+    dict2 <- d2[, 2]
+    names(dict2) <- d2[, 1]
+    dict3 <- d3[, 2]
+    names(dict3) <- d3[, 1]
+    y <- data.frame(x,
+                    symbol = dict1[rownames(x)],
+                    desc = dict2[rownames(x)],
+                    GOBP = dict3[rownames(x)])
+    y
+}
+
+
+
+
+run_topgo <- function(allgene, siggene) {
+    geneID2GO <- readMappings('data/gene2go.tsv.gz')
+
+    allgene <- as.character(allgene)
+    siggene <- as.character(siggene)
+    allgene.f <- as.numeric(allgene %in% siggene)
+    names(allgene.f) <- allgene
+    topgo.obj <- new('topGOdata', ontology = 'BP', allGenes = allgene.f,
+                     geneSel = function(x) x > 0,
+                     annot = annFUN.gene2GO, gene2GO = geneID2GO)
+    elim_fisher    <- runTest(topgo.obj, algorithm = 'elim', statistic = 'fisher')
+    topgotable  <- GenTable(topgo.obj, numChar = 200,
+                            elimFisher = elim_fisher,
+                            orderBy = 'elimFisher', ranksOf = 'classicFisher', topNodes = 600)
+    #topgotable <- topgotable[topgotable[, 3] > 10, ]
+    #topgotable <- topgotable[topgotable[, 3] < 500, ]
+    topgotable <- data.frame(topgotable)
+    topgotable
+}
+
+
+
 
 
 
@@ -95,6 +140,8 @@ run_edger <- function(x, group) {
 
 
 
+
+
 # DEG ROC analysis (tagseq vs fullseq HISAT)
 
 group <- factor(rep(c('control', 'cold'), each = 3))
@@ -155,5 +202,20 @@ dev.off()
 
 
 
+
+
+# DEG analysis
+
+group <- factor(rep(c('control', 'cold'), each = 3))
+tagseq_deg <- run_edger(tagseq_hisat, group)
+tagseq_deg <- tagseq_deg[!is.na(tagseq_deg$F),]
+tagseq_deg <- tagseq_deg[order(tagseq_deg$PValue), ]
+tagseq_deg <- bind_gene_symbols(tagseq_deg)
+tagseq_deg_go <- run_topgo(rownames(tagseq_deg), rownames(tagseq_deg)[1:500])
+
+write.table(tagseq_deg, file = 'results/tagseq_cold_deg.txt', sep = '\t',
+            row.names = TRUE, col.names = TRUE)
+write.table(tagseq_deg_go, file = 'results/tagseq_cold_deg_go.txt', sep = '\t',
+            row.names = TRUE, col.names = TRUE)
 
 
