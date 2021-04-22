@@ -22,7 +22,31 @@ Rscript scripts/format_data.R
 
 # Modeling
 
-Check the scripts run well.
+## Standard machine learning models
+
+```bash
+cd ${PROJECT_PATH}/models
+mkdir test_results
+
+for alg in svm rf dc knn lasso elasticnet
+do
+    for ft in category decimal
+    do
+        printf "\e[31m# ALGORITHM: ${alg}   FEATURE_TYPE: ${ft}\e[m\n"
+
+        python model_classic.py  \
+        --algorithm ${alg} \
+        --dataset ../data/send210315/cucumber/cucumber__udonkobyo__hompohasseimenseki.csv \
+        --feature-type ${ft} \
+        --output test_results/test_${alg}_${ft}.tsv \
+        --test-run
+    done
+done
+
+bash run_classicmodel.sh
+```
+
+
 
 
 ```bash
