@@ -211,6 +211,7 @@ class DragonflyCls():
             self.device = device
         
         # set model
+        self.model_arch = model_arch
         self.input_size = input_size
         self.class_labels = self.__generate_labels(class_labels)
         self.model = self.__initialize_model(model_arch, model_path)
@@ -447,6 +448,72 @@ class DragonflyCls():
         }
     
     
+    def gradcam(self, img_fpath):
+        
+        net = copy.deepcopy(self.model)
+        net.eval()
+
+        img = cv2.imread(img_fpath, cv2.IMREAD_COLOR)
+        if self.transforms_valid is not None:
+            transforms = self.transforms_valid
+            img = transforms(img)
+        img = img.unsqueeze(0)
+        
+        def __extract_grad(grad):
+            global feature_grad
+            feature_grad = grad
+        
+        if self.model_arch == 'vgg19':
+            x = net.base.features[:36](img)
+            features = x
+            features.register_hook(__extract_grad)
+            x = net.base.features[36:](x)
+            x = net.base.avgpool(x)
+            x = x.view(x.size(0), -1)
+            output = net.base.classifier(x)
+            pred = torch.argmax(output).item()
+       
+        elif self.model_arch == 'resnet152':
+            x = net.base.conv1(img)
+            x = net.base.bn1(x)
+            x = net.base.relu(x)
+            x = net.base.maxpool(x)
+            x = net.base.layer1(x)
+            x = net.base.layer2(x)
+            x = net.base.layer3(x)
+            x = net.base.layer4(x)
+            features = x
+            features.register_hook(__extract_grad)
+            x = net.base.avgpool(x)
+            x = x.view(x.size(0), -1)
+            output = net.base.fc(x)
+            pred = torch.argmax(output).item()
+            
+        else:
+            raise ValueError('Grad-CAM only support VGG19 or ResNet 152 archtecture!')
+        
+       
+        # get the gradient of the output
+        output[:, pred].backward()
+        pooled_grad = torch.mean(feature_grad, dim=[0, 2, 3])
+        features = features.detach()
+        for i in range(features.shape[1]):
+            features[:, i, :, :] *= pooled_grad[i] 
+
+        heatmap = torch.mean(features, dim=1).squeeze()
+        heatmap = np.maximum(heatmap, 0)
+        heatmap = heatmap / torch.max(heatmap)
+        heatmap = heatmap.numpy()
+        
+        img = cv2.imread(img_fpath)
+        heatmap = cv2.resize(heatmap, (img.shape[1], img.shape[0]))
+        heatmap = np.uint8(255 * heatmap)
+        heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
+        superimposed_img = heatmap * 0.4 + img
+        superimposed_img = np.uint8(255 * superimposed_img / np.max(superimposed_img))
+        
+        return superimposed_img
+
     
     def train(self, train_data_dpath, valid_data_dpath, batch_size=32, num_epochs=50, learning_rate=0.0001, save_best=True):
     

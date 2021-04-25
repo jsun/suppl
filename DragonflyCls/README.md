@@ -6,8 +6,6 @@ PROJECT_PATH=${HOME}/projects/dragonfly
 PROJECTCLS_PATH=${PROJECT_PATH}/DragonflyCls
 DATA_PATH=${PROJECT_PATH}/data
 SCRIPT_PATH=${PROJECT_PATH}/scripts
-
-export OMP_NUM_THREADS=1 # avoid warnings in macOS
 ```
 
 

@@ -6,6 +6,8 @@ import shutil
 from PIL import Image
 from PIL import ImageFile
 from PIL import ExifTags
+import PIL.ImageOps
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -119,28 +121,33 @@ def parse_xml(file_path):
 
 
 
-def crop_images(img_fpath):
+def crop_images(img_fpath, mode):
     objects = parse_xml(os.path.splitext(img_fpath)[0] + '.xml')
     im = Image.open(img_fpath)
+    im = PIL.ImageOps.exif_transpose(im)
     for obj in objects['objects']:
         obj = (obj['xmin'], obj['ymin'], obj['xmax'], obj['ymax'])
         im_cropped = im.crop(obj)
         output_fpath = os.path.splitext(img_fpath)[0] + '__cropped__' + '_'.join(map(str, obj)) + '.jpg'
-        im_cropped.save(output_fpath, quality=100, exif=im.info.get('exif'))
+        if mode == 'exif':
+            im_cropped.save(output_fpath, quality=100, exif=im.info.get('exif'))
+        else:
+            im_cropped.save(output_fpath, quality=100)
 
 
-def crop(input_dirpath):
+def crop(mode, input_dirpath):
     for image_path in sorted(glob.glob(os.path.join(input_dirpath, '*', '*.jpg'))):
         if not os.path.exists(os.path.splitext(image_path)[0] + '.xml'):
             continue
-
-        exif_info = get_jpeg_info(image_path)
-        print(image_path, exif_info)
-        if (exif_info[0] is None) or (exif_info[1] is None) or (exif_info[2] is None):
-            print('No EXIF: ' + image_path)
-            continue
- 
-        crop_images(image_path)
+        
+        if mode == 'exif':
+            exif_info = get_jpeg_info(image_path)
+            print(image_path, exif_info)
+            if (exif_info[0] is None) or (exif_info[1] is None) or (exif_info[2] is None):
+                print('No EXIF: ' + image_path)
+                continue
+        
+        crop_images(image_path, mode)
         
 
 
@@ -149,8 +156,9 @@ def crop(input_dirpath):
 
 if __name__ == '__main__':
     
-    input_dpath = sys.argv[1]
-    crop(input_dpath)
+    mode = sys.argv[1]
+    input_dpath = sys.argv[2]
+    crop(mode, input_dpath)
         
 
 
