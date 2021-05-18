@@ -1,5 +1,10 @@
-# Dragonfly Classification
+# DragonflyCls
 
+To create deep learning models for odonates prediction, run the following scripts one by one.
+
+
+
+## Setup Variables
 
 ```bash
 PROJECT_PATH=${HOME}/projects/dragonfly
@@ -10,15 +15,15 @@ SCRIPT_PATH=${PROJECT_PATH}/scripts
 
 
 
-## Datasets
+## Dataset Preparation
 
 Check README.md in `data` to prepare datasets.
 
 
 
-## Model training
+## Training
 
-The 6 archtectures x 5 types of dataset.
+To train VGG16 architecture with dataset W1, run the following scripts.
 
 ```bash
 python train.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
@@ -30,6 +35,10 @@ python train.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 
 ```
 
+Run shell scripts to train six architectures (VGG16, VGG19, ResNet18, ResNet152, DenseNet, MobileNet)
+with the five types of dataset (W1, W2, W1F, W2F, F).
+
+
 ```bash
 bash train_W1.sh
 bash train_W2.sh
@@ -38,41 +47,36 @@ bash train_W1F.sh
 bash train_W2F.sh
 ```
 
-Then find the best model and rename to `best.pth`.
-
-
-```bash
-ln weights_species/xxx.pth weights_species/best_resnet152.pth
-```
-
 
 ## Inference
 
+To perform odonate prediciton with trained models, use the following scripts.
+
 ```bash
+cd ${PROJECTCLS_PATH}
+
 # image foler
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights_species/best.pth \
+                  --model-weight weights_species/W1__resnet152__1.pth \
                   -i testimagedir \
                   -o test_result.tmp
 
 # single image
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights_species/best.pth \
+                  --model-weight weights_species/W1__resnet152__1.pth \
                   -i testimagedir/Sympetrum_darwinianum_1.png \
                   -o test_result.tmp
-
 ```
 
-
-# DragonflyCls + DragonflyMesh
-
+To perform odonate prediction with trained image models and occurrence records,
+use the following scripts.
 
 ```bash
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights_species/best.pth \
+                  --model-weight weights_species/W1__resnet152__1.pth \
                   --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
                   -i testimagedir/Sympetrum_darwinianum_2.jpg \
                   -o test_result.tmp
@@ -80,7 +84,7 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 
 python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                   --model-arch resnet152 \
-                  --model-weight weights_species/best.pth \
+                  --model-weight weights_species/W1__resnet152__1.pth \
                   --mesh ${DATA_PATH}/meshmatrix.tsv.gz \
                   -i testimagedir \
                   -o test_result.tmp
@@ -88,9 +92,12 @@ python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
 
 
 
-# Validation with field photo
+## Validation
 
-for species level
+To validate trained models with/without occurrence records with dataset T,
+run the following scripts.
+
+### Species Level 
 
 ```bash
 cd ${PROJECTCLS_PATH}
@@ -111,22 +118,21 @@ do
         
         python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 50         \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d50.tsv  \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 50          \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d50.tsv    \
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}   \
-                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 100           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d100.tsv  \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 100         \
+                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d100.tsv   \
                       --overwrite
     done
 done
 
 ```
 
-
-for genus level
+### Genus Level
 
 ```bash
 cd ${PROJECTCLS_PATH}
