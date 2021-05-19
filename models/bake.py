@@ -5,7 +5,7 @@ import json
 import numpy as np
 import torch
 import argparse
-from model import *
+from model_dnn import *
 import matplotlib.pyplot as plt
 import sklearn.metrics
 
@@ -45,7 +45,7 @@ def get_params(params_fpath):
 
 
 
-def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epochs=50, n_tries=1):
+def train_cv(model, weight, feature_type, train_dataset, valid_dataset, batch_size=1024, epochs=50, n_tries=1):
     
     if weight is None:
         raise ValueError('argument `weight` cannot be None.')
@@ -95,7 +95,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
                 param_ = {'dropout': dropout, 'n_hidden': n_hidden, 'activate_func': activate_func}
                 print('--------')
                 print(param_)
-                loss_hist = train(weight_, train_dataset, valid_dataset, batch_size, epochs, param_, False, n_tries)
+                loss_hist = train(weight_, feature_type, train_dataset, valid_dataset, batch_size, epochs, param_, False, n_tries)
                 
                 eval_stats['activate_func'].extend([activate_func] * n_tries)
                 eval_stats['dropout'].extend([dropout] * n_tries)
@@ -110,7 +110,7 @@ def train_cv(model, weight, train_dataset, valid_dataset, batch_size=1024, epoch
 
 
     
-def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = None, save_weight=True, n_try=10):
+def train(weight, feature_type, train_dataset, valid_dataset, batch_size, epochs, params = None, save_weight=True, n_try=10):
     if TIRAMISU_DEBUG:
         epochs = 2
     
@@ -123,16 +123,15 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
     if weight is None:
         raise ValueError('argument `weight` cannot be None.')
     
-    
     best_loss_ = 1e10
     best_model_ = None
     min_loss = {'train': [], 'valid': []}
     train_history_ = None
     
     for i in range(n_try):
-        jppnet = Jppnet(n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
+        jppnet = Jppnet(feature_type=feature_type, n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
         train_history = jppnet.train(train_dataset, valid_dataset, batch_size, epochs)
-        
+
         min_loss['train'].append(train_history.loc[:, 'train'].min())
         min_loss['valid'].append(train_history.loc[:, 'valid'].min())
         
@@ -154,9 +153,9 @@ def train(weight, train_dataset, valid_dataset, batch_size, epochs, params = Non
 
 
 
-def validate(weight, params, valid_dataset, output):
+def validate(weight, feature_type, params, valid_dataset, output):
     
-    jppnet = Jppnet(n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
+    jppnet = Jppnet(feature_type=feature_type, n_hidden=params['n_hidden'], dropout=params['dropout'], activate_func=params['activate_func'])
     jppnet.load_weights(weight)
     predicted_df = jppnet.validate(valid_dataset)
     predicted_df.to_csv(output + '.tsv', index=False, header=True, sep='\t')
@@ -182,6 +181,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Let dragonfly fly!')
      
     parser.add_argument('--model', default='L1')
+    parser.add_argument('--feature-type', default='category')
     parser.add_argument('--weight', default='./weights/test.pth')
     parser.add_argument('--output', default='./weights/test.txt')
     parser.add_argument('--train-dataset', default='../formatted_data/test/train_std.tsv')
@@ -194,15 +194,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     if args.mode == 'cv':
-        train_cv(args.model, args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs)
+        train_cv(args.model, args.weight, args.feature_type, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs)
         
     elif args.mode == 'train':
         params = get_params(args.params)
-        train(args.weight, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 3)
+        train(args.weight, args.feature_type, args.train_dataset, args.valid_dataset, args.batch_size, args.epochs, params, True, 3)
     
     elif args.mode == 'valid':
         params = get_params(args.params)
-        validate(args.weight, params, args.valid_dataset, args.output)
+        validate(args.weight, args.feature_type, params, args.valid_dataset, args.output)
     
     elif args.mode == 'inference':
         pass    

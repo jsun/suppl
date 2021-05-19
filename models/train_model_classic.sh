@@ -22,7 +22,7 @@ DATA_PATH=${PROJECT_PATH}/data/send210315
 
 # move to project working space
 cd ${PROJECT_PATH}
-pyenv local tiramisu
+#pyenv local tiramisu
 
 
 # list up the target diseases
@@ -39,15 +39,20 @@ mkdir -p ${result_dpath}
 
 # cv to find the best parameters
 if [ ${RUN_MODE} -eq 1 ]
+cd models
+echo "${disease_name}"
+echo "${disease_datapath}"
+
 then
     
     for alg in svm rf dc knn lasso elasticnet
     do
+        echo "#####"
         for ft in category decimal
         do
             printf "\e[31m# ALGORITHM: ${alg}   FEATURE_TYPE: ${ft}\e[m\n"
 
-            python model_classic.py  \
+            ~/.pyenv/versions/tiramisu/bin/python model_classic.py  \
                 --algorithm ${alg} \
                 --dataset ${disease_datapath} \
                 --feature-type ${ft} \

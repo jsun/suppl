@@ -12,53 +12,53 @@ import torch.autograd
 
 
 PREFECTURE_DICT = {
-                   'Hokkaido': 1,
-                   'Aomori' : 2,
-                   'Iwate' : 3,
-                   'Miyagi' : 4,
-                   'Akita' : 5,
-                   'Yamagata' : 6,
-                   'Fukushima': 7,
-                   'Ibaraki': 8,
-                   'Tochigi': 9,
-                   'Gunma': 10,
-                   'Saitama': 11,
-                   'Chiba': 12,
-                   'Tokyo': 13,
-                   'Kanagawa': 14,
-                   'Niigata': 15,
-                   'Toyama': 16,
-                   'Ishikawa': 17,
-                   'Fukui': 18,
-                   'Yamanashi': 19,
-                   'Nagano': 20,
-                   'Gifu': 21,
-                   'Shizuoka': 22,
-                   'Aichi': 23,
-                   'Mie': 24,
-                   'Shiga': 25,
-                   'Kyoto': 26,
-                   'Osaka': 27,
-                   'Hyogo': 28,
-                   'Nara': 29,
-                   'Wakayama': 30,
-                   'Tottori': 31,
-                   'Shimane': 32,
-                   'Okayama': 33,
-                   'Hiroshima': 34,
-                   'Yamaguchi': 35,
-                   'Tokushima': 36,
-                   'Kagawa': 37,
-                   'Ehime': 38,
-                   'Kochi': 39,
-                   'Fukuoka': 40,
-                   'Saga': 41,
-                   'Nagasaki': 42,
-                   'Kumamoto': 43, 
-                   'Oita': 44,
-                   'Miyazaki': 45,
-                   'Kagoshima': 46,
-                   'Okinawa': 47
+                   'hokkaido': 1,
+                   'aomori' : 2,
+                   'iwate' : 3,
+                   'miyagi' : 4,
+                   'akita' : 5,
+                   'yamagata' : 6,
+                   'fukushima': 7,
+                   'ibaraki': 8,
+                   'tochigi': 9,
+                   'gunma': 10,
+                   'saitama': 11,
+                   'chiba': 12,
+                   'tokyo': 13,
+                   'kanagawa': 14,
+                   'niigata': 15,
+                   'toyama': 16,
+                   'ishikawa': 17,
+                   'fukui': 18,
+                   'yamanashi': 19,
+                   'nagano': 20,
+                   'gifu': 21,
+                   'shizuoka': 22,
+                   'aichi': 23,
+                   'mie': 24,
+                   'shiga': 25,
+                   'kyoto': 26,
+                   'osaka': 27,
+                   'hyogo': 28,
+                   'nara': 29,
+                   'wakayama': 30,
+                   'tottori': 31,
+                   'shimane': 32,
+                   'okayama': 33,
+                   'hiroshima': 34,
+                   'yamaguchi': 35,
+                   'tokushima': 36,
+                   'kagawa': 37,
+                   'ehime': 38,
+                   'kochi': 39,
+                   'fukuoka': 40,
+                   'saga': 41,
+                   'nagasaki': 42,
+                   'kumamoto': 43, 
+                   'oita': 44,
+                   'miyazaki': 45,
+                   'kagoshima': 46,
+                   'okinawa': 47
                   }
 
 
@@ -69,14 +69,14 @@ PREFECTURE_DICT = {
 
 class JppnetArch(torch.nn.Module):
     
-    def __init__(self, n_hidden=12, dropout=0, activate_func='relu'):
+    def __init__(self, n_input=None, n_hidden=12, dropout=0, activate_func='relu'):
         super(JppnetArch, self).__init__()
         
         if isinstance(n_hidden, int):
             n_hidden = [n_hidden]
         
         # input layer
-        self.input = torch.nn.Linear(16, n_hidden[0])
+        self.input = torch.nn.Linear(n_input, n_hidden[0])
 
         # hidden layer
         hidden_layers = []
@@ -116,13 +116,12 @@ class JppnetArch(torch.nn.Module):
 class textDataset(torch.utils.data.Dataset):
     
     
-    def __init__(self, dat_fpath, is_test=False):
+    def __init__(self, dat_fpath, feature_type = 'category', is_test=False):
         self.is_test = is_test
-        self.X, self.y = self.__read_csv(dat_fpath)
+        self.X, self.y = self.__read_csv(dat_fpath, feature_type)
         self.size = len(self.y)
-        
     
-    def __read_csv(self, dat_fpath):
+    def __read_csv(self, dat_fpath, feature_type):
         '''
         load dataset from CSV file
         '''
@@ -132,18 +131,26 @@ class textDataset(torch.utils.data.Dataset):
         
         with open(dat_fpath, 'r') as datfh:
             for dat_buf in datfh:
-                dat_buf = dat_buf.replace('\n', '').split('\t')
-                if dat_buf[0] == 'incidence':
-                    continue
+                _i, year, month, pref, season, incidence, lng, lat, temp, rain, area = dat_buf.replace('\n', '').replace('"', '').split(',')
                 
-                _y, year, month, prefecture, temp, rain, lat, lng = dat_buf
+                if _i == '':
+                    continue  # data header
                 
-                # change month and prefecture name into one-hot codes
                 _x = []
-                _x.extend(self.__month2onehot(month))
-                #_x.extend(self.__prefecture2onehot(prefecture))
-                _x.extend([float(temp), float(rain), float(lat), float(lng)])
+                _y = incidence
                 
+                # features
+                if feature_type == 'category':
+                    # use one-hot encoding for month and prefecture
+                    _x.extend(self.__month2onehot(month))
+                    _x.extend(self.__prefecture2onehot(pref))
+                elif feature_type == 'decimal':
+                    # use temperature and precipication instead of month and prefecture name
+                    _x = [float(temp), float(rain), float(lat), float(lng)]
+                else:
+                    raise ValueError('set `category` or `decimal` in `get_xy` function.')
+                
+                # labels
                 if self.is_test:
                     X.append(_x)
                     y.append('NA')
@@ -153,6 +160,7 @@ class textDataset(torch.utils.data.Dataset):
                         #_y = [np.log10(float(_y) + 1)]
                         X.append(_x)
                         y.append(_y)
+        
         
         X = torch.from_numpy(np.array(X)).float()
         y = torch.from_numpy(np.array(y)).float()
@@ -196,7 +204,7 @@ class textDataset(torch.utils.data.Dataset):
     
     def __prefecture2onehot(self, p):
         p_vec = np.zeros(len(PREFECTURE_DICT))
-        p_vec[PREFECTURE_DICT[p] - 1] = 1
+        p_vec[PREFECTURE_DICT[p.lower()] - 1] = 1
         return p_vec.tolist()
 
 
@@ -207,14 +215,19 @@ class textDataset(torch.utils.data.Dataset):
 
 class Jppnet():
     
-    def __init__(self, n_hidden=12, dropout=0.5, activate_func='relu'):
+    def __init__(self, feature_type=None, n_hidden=12, dropout=0.5, activate_func='relu'):
         
-        self.model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
-        self.__best_model = JppnetArch(n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
+        if feature_type == 'category':
+            n_input = 12 + 47
+        elif feature_type == 'decimal':
+            n_input = 4
+        
+        self.model = JppnetArch(n_input=n_input, n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
+        self.__best_model = JppnetArch(n_input=n_input, n_hidden=n_hidden, dropout=dropout, activate_func=activate_func) 
         #self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.device = torch.device('cpu')
         self.model.to(self.device)
-        
+        self.feature_type = feature_type
         
     def load_weights(self, weights_fpath):
         self.model.load_state_dict(torch.load(weights_fpath))
@@ -228,8 +241,8 @@ class Jppnet():
         
         # load train and validation dataset
         datasets = {
-            'train': textDataset(train_data),
-            'valid': textDataset(valid_data)
+            'train': textDataset(train_data, self.feature_type),
+            'valid': textDataset(valid_data, self.feature_type)
         }
         dataloader = {
             'train': torch.utils.data.DataLoader(datasets['train'],
@@ -310,7 +323,7 @@ class Jppnet():
         
         self.model.eval()
         
-        dataset = textDataset(test_data)
+        dataset = textDataset(test_data, self.feature_type)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1024, shuffle=False)
         
         pred = {'label': [], 'predicted': []}
@@ -331,7 +344,7 @@ class Jppnet():
         
         self.model.eval()
         
-        dataset = textDataset(test_data, is_test)
+        dataset = textDataset(test_data, self.feature_type, is_test)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1024, shuffle=False)
         
         pred = {'label': [], 'predicted': []}

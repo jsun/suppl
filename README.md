@@ -43,35 +43,54 @@ do
     done
 done
 
-bash run_classicmodel.sh
+qsub train_model_classic.sh
 ```
 
-
-
+## Deep neural network models
 
 ```bash
-cd ${PROJECT_PATH}
-cd model
+cd ${PROJECT_PATH}/models
 
-dpath=${PROJECT_PATH}/formatted_data/test
-mkdir -p ${dpath}/weights
-mkdir -p ${dpath}/weights_cv
+dpath=${PROJECT_PATH}/data/send210315
+mkdir -p ${dpath}/cv_dnnresults
 
 
-# check cv training function
-python bake.py --mode cv --model L1 \
-               --weight ${dpath}/weights_cv/L1.cv_1.pth \
-               --train-dataset ${dpath}/cv/train_std_1.tsv \
-               --valid-dataset ${dpath}/cv/valid_std_1.tsv \
+# check cv training function for category type
+
+python bake.py --mode cv --feature-type category --model L2 \
+               --weight ${dpath}/cv_dnnresults/test_L2.cv_1.pth    \
+               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
                --epochs 5 --batch-size 1024
 
-python bake.py --mode cv --model L1 \
-               --weight ${dpath}/weights_cv/L1.cv_2.pth \
-               --train-dataset ${dpath}/cv/train_std_2.tsv \
-               --valid-dataset ${dpath}/cv/valid_std_2.tsv \
+python bake.py --mode cv --feature-type category --model L2 \
+               --weight ${dpath}/cv_dnnresults/test_L2.cv_2.pth \
+               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
                --epochs 5 --batch-size 1024
 
-python summarise_cv.py L1 ${dpath}/weights_cv ${dpath}/best_param.json.L1
+
+# check cv training function for decimal type
+
+python bake.py --mode cv --feature-type decimal --model L2 \
+               --weight ${dpath}/cv_dnnresults/test_L2.cv_1.pth    \
+               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --epochs 5 --batch-size 1024
+
+python bake.py --mode cv --feature-type decimal --model L2 \
+               --weight ${dpath}/cv_dnnresults/test_L2.cv_2.pth \
+               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --epochs 5 --batch-size 1024
+
+python summarise_cv.py L2 ${dpath}/cv_dnnresults ${dpath}/cv_dnnresults/test_bestparam.json.L2
+
+
+
+
+
+
 
 
 
