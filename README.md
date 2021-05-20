@@ -14,7 +14,20 @@ Put dataset into `formatted_data` and run the `format_data.R` scirpt.
 
 ```bash
 cd ${PROJECT_PATH}
-Rscript scripts/format_data.R 
+cd data
+
+# create dataset for trainig classic models
+for crop in cucumber eggplant strawberry tomato
+do
+    mkdir -p formatted_data/${crop}/shuffle
+    python format_data.py "send210315/${crop}" "formatted_data/${crop}/shuffle" shuffle
+    mkdir -p formatted_data/${crop}/randomize
+    python format_data.py "send210315/${crop}" "formatted_data/${crop}/randomize" randomize
+done
+
+# create dataset for training deep nn mdoels
+
+
 ```
 
 

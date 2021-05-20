@@ -28,13 +28,18 @@ def load_dataset(fpath):
 
 
 def randomize_dataset(df, method='shuffle', seed=0):
+    np.random.seed(seed)
     df_randomized = df.copy()
     
     if method == 'shuffle':
-        df_randomized = df_randomized.sample(frac=1, replace=False, random_state=seed).reset_index()
-    
-    if method == 'randomize':
-        df_randomized.apply(np.random.shuffle, axis=1)
+        df_randomized = df_randomized.sample(frac=1, replace=False, random_state=seed)
+    elif method == 'randomize':
+        for _ in range(df_randomized.shape[1]):
+            np.random.seed(seed + _ * 2)
+            random.seed(seed + _ * 2)
+            df_randomized.iloc[:, _] = random.sample(df_randomized.iloc[:, _].values.tolist(), len(df_randomized.iloc[:, _]))
+    else:
+        raise ValueError('not supported!')
     
     return df_randomized
 

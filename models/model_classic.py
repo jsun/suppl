@@ -139,10 +139,11 @@ def generate_pipeline(algorithm, feature_type, test_run):
 
 
 
-def main(algorithm, dataset, feature_type, output, test_run):
+def main(algorithm, dataset, feature_type, randomize_type, output, test_run):
     
     pipe, params = generate_pipeline(algorithm, feature_type, test_run)
     data = utils.load_dataset(dataset)
+    data = utils.randomize_dataset(data, randomize_type)
     X, y = utils.get_xy(data, feature_type)
     pred_values = simulate(X, y, pipe, params)
     pred_values.to_csv(output, header=True, index=False, sep='\t')
@@ -156,12 +157,13 @@ if __name__ == '__main__':
     parser.add_argument('--algorithm', required=True)
     parser.add_argument('--dataset', required=True)
     parser.add_argument('--feature-type', required=True)
+    parser.add_argument('--randomize-type', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--test-run', action='store_true')
 
     args = parser.parse_args()
 
-    main(args.algorithm, args.dataset, args.feature_type, args.output, args.test_run)
+    main(args.algorithm, args.dataset, args.feature_type, args.randomize_type, args.output, args.test_run)
     
     
     
