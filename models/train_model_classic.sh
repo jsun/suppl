@@ -40,7 +40,7 @@ do
     disease_name=${disease_name%.shuffle}
 
     # path to save cv results
-    result_path=${RESULT_PATH}/${CROP_NAME}/${rt}/classic_models
+    result_dpath=${RESULT_PATH}/${CROP_NAME}/${rt}/classic_models
     mkdir -p ${result_dpath}
 
     # cv to find the best parameters
@@ -57,7 +57,7 @@ do
                     --algorithm ${alg}        \
                     --dataset ${disease_path} \
                     --feature-type ${ft}      \
-                    --randomize-type ${fr}    \
+                    --randomize-type ${rt}    \
                     --output ${result_dpath}/${alg}____${ft}____${rt}____${disease_name}.tsv
             done
         done
