@@ -8,7 +8,8 @@
 
 
 # set crop name: cucumber eggplant tomato strawberry
-CROP_NAME=strawberry
+# CROP_NAME=strawberry
+CROP_NAME=$1
 
 # project path
 PROJECT_PATH=~/projects/tiramisu
