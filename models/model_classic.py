@@ -33,7 +33,7 @@ def simulate(X, y, pipe, params):
         # 2-fold cross validation to determine hyper-paramaters of the model
         kf_ = sklearn.model_selection.KFold(n_splits=2, random_state=random_seed * 2, shuffle=True)
         #gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=-1, cv=kf_)
-        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=4, cv=kf_)
+        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=64, cv=kf_)
         gs.fit(X_train, y_train)
        
         pred_values = gs.predict(X_test)

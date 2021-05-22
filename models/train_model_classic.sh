@@ -8,7 +8,7 @@
 
 
 # set crop name: cucumber eggplant tomato strawberry
-CROP_NAME=cucumber
+CROP_NAME=strawberry
 
 # project path
 PROJECT_PATH=~/projects/tiramisu
@@ -24,6 +24,10 @@ cd ${PROJECT_PATH}
 cd models
 
 
+for SGE_TASK_ID in $(seq 0 80)
+do
+
+
 # randomized or shuffled data
 for rt in shuffle randomize
 do
@@ -35,7 +39,8 @@ do
 
     # set the target disease in this thread
     disease_path=${disease_paths[${SGE_TASK_ID}]}
-    disease_name=${disease_names[${SGE_TASK_ID}]%.csv}
+    disease_name=${disease_names[${SGE_TASK_ID}]}
+    disease_name=${disease_name%.csv}
     disease_name=${disease_name%.randomize}
     disease_name=${disease_name%.shuffle}
 
@@ -64,4 +69,5 @@ do
 done
 
 
+done
 
