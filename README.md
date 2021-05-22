@@ -20,14 +20,31 @@ cd data
 for crop in cucumber eggplant strawberry tomato
 do
     mkdir -p formatted_data/${crop}/shuffle
-    python format_data.py "send210315/${crop}" "formatted_data/${crop}/shuffle" shuffle
+    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/shuffle" shuffle
     mkdir -p formatted_data/${crop}/randomize
-    python format_data.py "send210315/${crop}" "formatted_data/${crop}/randomize" randomize
+    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/randomize" randomize
 done
 
 # create dataset for training deep nn mdoels
-
-
+# this step should run after the `format_data.classic.py`
+for crop in cucumber eggplant strawberry tomato
+do
+    cd ${PROJECT_PATH}/data/formatted_data/${crop}
+    
+    mkdir -p randomize4dnn
+    for fpath in `ls randomize`
+    do
+        mkdir -p "randomize4dnn/${fpath%.randomize.csv}"
+        python ${PROJECT_PATH}/data/format_data.dnn.py "randomize/${fpath}" randomize4dnn/${fpath%.randomize.csv}
+    done
+    
+    mkdir -p shuffle4dnn
+    for fpath in `ls shuffle`
+    do
+        mkdir -p "shuffle4dnn/${fpath%.randomize.csv}"
+        python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.randomize.csv}
+    done
+done
 ```
 
 
@@ -35,7 +52,7 @@ done
 
 # Modeling
 
-## Standard machine learning models
+## Classic machine learning models
 
 ```bash
 cd ${PROJECT_PATH}/models
