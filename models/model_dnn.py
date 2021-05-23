@@ -118,7 +118,13 @@ class textDataset(torch.utils.data.Dataset):
     
     def __init__(self, dat_fpath, feature_type = 'category', is_test=False):
         self.is_test = is_test
-        self.X, self.y = self.__read_csv(dat_fpath, feature_type)
+        
+        if (type(dat_fpath) is str):
+            self.X, self.y = self.__read_csv(dat_fpath, feature_type)
+        else:
+            # pandas data.frame
+            self.X, self.y =  self.__read_df(dat_fpath, feature_type)
+        
         self.size = len(self.y)
     
     def __read_csv(self, dat_fpath, feature_type):
@@ -161,13 +167,61 @@ class textDataset(torch.utils.data.Dataset):
                         X.append(_x)
                         y.append(_y)
         
-        
         X = torch.from_numpy(np.array(X)).float()
         y = torch.from_numpy(np.array(y)).float()
         
         return X, y
         
     
+    def __read_df(self, df, feature_type):
+        '''
+        arrange dataset from data.frame
+        '''
+        
+        X = []
+        y = []
+        
+        year = df.loc[:, 'Year'].values
+        month = df.loc[:, 'Month'].values
+        pref = df.loc[:, 'Pref'].values
+        incidence = df.loc[:, 'incidence'].values
+        lng = df.loc[:, 'longi'].values
+        lat = df.loc[:, 'lati'].values
+        temp = df.loc[:, 'airtemp'].values
+        rain = df.loc[:, 'precip'].values
+        
+        for i in range(len(month)):
+            _x = []
+            _y = incidence[i]
+                
+            # features
+            if feature_type == 'category':
+                # use one-hot encoding for month and prefecture
+                _x.extend(self.__month2onehot(month[i]))
+                _x.extend(self.__prefecture2onehot(pref[i]))
+            elif feature_type == 'decimal':
+                # use temperature and precipication instead of month and prefecture name
+                _x = [float(temp[i]), float(rain[i]), float(lat[i]), float(lng[i])]
+            else:
+                raise ValueError('set `category` or `decimal` in `get_xy` function.')
+                
+            # labels
+            if self.is_test:
+                X.append(_x)
+                y.append('NA')
+            else:
+                if _y != 'NA':
+                    _y = [float(_y)]
+                    X.append(_x)
+                    y.append(_y)
+        
+        X = torch.from_numpy(np.array(X)).float()
+        y = torch.from_numpy(np.array(y)).float()
+        
+        return X, y
+        
+ 
+
     def __len__(self):
         return self.y.shape[0]
     
@@ -238,7 +292,6 @@ class Jppnet():
     
     
     def train(self, train_data, valid_data, batch_size=1024, num_epochs=100, num_workers=4):
-        
         # load train and validation dataset
         datasets = {
             'train': textDataset(train_data, self.feature_type),

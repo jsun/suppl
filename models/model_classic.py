@@ -61,9 +61,9 @@ def generate_pipeline(algorithm, feature_type, test_run):
     if algorithm == 'svm':
         estimators.append(('reg', sklearn.svm.SVR(kernel='rbf')))
         params = {
-            'reg__gamma':   np.logspace(-5, 10, 20),
-            'reg__C':       np.logspace(0, 1, 20),
-            'reg__epsilon': np.logspace(-5, 10, 20),
+            'reg__gamma':   np.logspace(-5, 10, 30),
+            'reg__C':       np.logspace(-5, 10, 30),
+            'reg__epsilon': np.logspace(-5, 10, 30),
         }
         if test_run:
             params = {
@@ -75,7 +75,7 @@ def generate_pipeline(algorithm, feature_type, test_run):
     elif algorithm == 'rf':
         estimators.append(('reg', sklearn.ensemble.RandomForestRegressor(criterion='mse')))
         params = {
-            'reg__n_estimators': np.arange(2, 50, 2),
+            'reg__n_estimators': np.arange(2, 50, 1),
             'reg__max_depth':    np.arange(2, 10, 1),
         }
         if test_run:

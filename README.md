@@ -7,10 +7,9 @@ PROJECT_PATH=~/projects/tiramisu
 
 
 
-# Data preparation
+# Dataset
 
-
-Put dataset into `formatted_data` and run the `format_data.R` scirpt.
+Put dataset into `formatted_data` and run the `format_data.classic.py` and `format_data.dnn.py`.
 
 ```bash
 cd ${PROJECT_PATH}
@@ -41,8 +40,8 @@ do
     mkdir -p shuffle4dnn
     for fpath in `ls shuffle`
     do
-        mkdir -p "shuffle4dnn/${fpath%.randomize.csv}"
-        python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.randomize.csv}
+        mkdir -p "shuffle4dnn/${fpath%.shuffle.csv}"
+        python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.shuffle.csv}
     done
 done
 ```
@@ -56,7 +55,7 @@ done
 
 ```bash
 cd ${PROJECT_PATH}/models
-mkdir test_results
+mkdir -p test_results
 
 for alg in svm rf dc knn lasso elasticnet
 do
@@ -73,85 +72,33 @@ do
     done
 done
 
-qsub train_model_classic.sh
+# qsub is not working well for some deseases, no error-log, so cannot debug.
+bash train_model_classic.sh cucumber > cucumber_log.txt
+bash train_model_classic.sh eggplant > eggplant_log.txt
+bash train_model_classic.sh strawberry > strawberry_log.txt
+bash train_model_classic.sh tomato > tomato_log.txt
 ```
 
 ## Deep neural network models
 
 ```bash
 cd ${PROJECT_PATH}/models
-
-dpath=${PROJECT_PATH}/data/send210315
-mkdir -p ${dpath}/cv_dnnresults
-
+dpath=${PROJECT_PATH}/data/formatted_data
+mkdir -p test_results
 
 # check cv training function for category type
-
 python bake.py --mode cv --feature-type category --model L2 \
-               --weight ${dpath}/cv_dnnresults/test_L2.cv_1.pth    \
-               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --epochs 5 --batch-size 1024
-
-python bake.py --mode cv --feature-type category --model L2 \
-               --weight ${dpath}/cv_dnnresults/test_L2.cv_2.pth \
-               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --epochs 5 --batch-size 1024
-
-
-# check cv training function for decimal type
-
-python bake.py --mode cv --feature-type decimal --model L2 \
-               --weight ${dpath}/cv_dnnresults/test_L2.cv_1.pth    \
-               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --weight test_results/test_L2_category.pth   \
+               --cv-dataset ${dpath}/cucumber/randomize4dnn/cucumber__udonkobyo__hompohatsubyoyoritsu \
                --epochs 5 --batch-size 1024
 
 python bake.py --mode cv --feature-type decimal --model L2 \
-               --weight ${dpath}/cv_dnnresults/test_L2.cv_2.pth \
-               --train-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
-               --valid-dataset ${dpath}/cucumber/cucumber__udonkobyo__hompohatsubyoyoritsu.csv \
+               --weight test_results/test_L2_decimal.pth   \
+               --cv-dataset ${dpath}/cucumber/randomize4dnn/cucumber__udonkobyo__hompohatsubyoyoritsu \
                --epochs 5 --batch-size 1024
 
-python summarise_cv.py L2 ${dpath}/cv_dnnresults ${dpath}/cv_dnnresults/test_bestparam.json.L2
 
-
-
-
-
-
-
-
-
-
-# check trainning function
-python bake.py --mode train --model L1 \
-               --params ${dpath}/best_param.json.L1 \
-               --weight ${dpath}/weights/L1_best.pth \
-               --train-dataset ${dpath}/train_std.tsv    \
-               --valid-dataset ${dpath}/valid_std.tsv    \
-               --epochs 5 --batch-size 1024
-
-python bake.py --mode valid --model L1 \
-               --params ${dpath}/best_param.json.L1 \
-               --weight ${dpath}/weights/L1_best.pth \
-               --valid-dataset ${dpath}/valid_std.tsv    \
-               --output ${dpath}/weights/L1_best.pth_valid \
-
-
-# grid search
-qsub train.sh
-
-```
-
-
-
-# Summarization
-
-```
-R
-source('scripts/eval_sunkishi_results.R')
+qsub train_model_dnn.sh
 ```
 
 
