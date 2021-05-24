@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import sklearn.metrics
 import sklearn.model_selection
 
-TIRAMISU_DEBUG = True
+TIRAMISU_DEBUG = False
 
 def get_params(params_fpath):
     
