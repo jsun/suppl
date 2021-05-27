@@ -148,19 +148,95 @@ do
         
         python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}   \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.image.tsv  \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tg_valid.image.tsv  \
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}    \
                       --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 50           \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d50.tsv     \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tg_valid.d50.tsv     \
                       --overwrite
         
         python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
                       --model-arch ${model_arch} --model-weight ${model}    \
                       --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 100          \
-                      -i ${dpath}/${d} -o ${model%.pth}.T_valid.d100.tsv  \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tg_valid.d100.tsv  \
+                      --overwrite
+    done
+done
+```
+
+
+
+## Validation (tmp)
+
+To validate trained models with/without occurrence records with dataset T,
+run the following scripts.
+
+### Species Level 
+
+```bash
+cd ${PROJECTCLS_PATH}
+dpath=${DATA_PATH}/dataset_Tw/raw
+
+for model in `ls weights_species/*.pth`
+do
+    for d in `ls ${dpath}`
+    do
+        echo "${model%.pth} -- ${dpath}/${d}"
+        model_arch=(${model//__/ })
+        model_arch=${model_arch[1]}
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tw_valid.image.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 50          \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tw_valid.d50.tsv    \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      --mesh ${DATA_PATH}/meshmatrix.tsv.gz -d 100         \
+                      -i ${dpath}/${d} -o ${model%.pth}.Tw_valid.d100.tsv   \
+                      --overwrite
+    done
+done
+
+```
+
+### Genus Level
+
+```bash
+cd ${PROJECTCLS_PATH}
+dpath=${DATA_PATH}/dataset_Twg/raw
+
+for model in `ls weights_genus/*.pth`
+do
+    for d in `ls ${dpath}`
+    do
+        echo "${model%.pth} -- ${dpath}/${d}"
+        model_arch=(${model//__/ })
+        model_arch=${model_arch[1]}
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}   \
+                      -i ${dpath}/${d} -o ${model%.pth}.Twg_valid.image.tsv  \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}    \
+                      --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 50           \
+                      -i ${dpath}/${d} -o ${model%.pth}.Twg_valid.d50.tsv     \
+                      --overwrite
+        
+        python predict.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
+                      --model-arch ${model_arch} --model-weight ${model}    \
+                      --mesh ${DATA_PATH}/meshmatrixg.tsv.gz -d 100          \
+                      -i ${dpath}/${d} -o ${model%.pth}.Twg_valid.d100.tsv  \
                       --overwrite
     done
 done
