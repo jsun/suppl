@@ -167,8 +167,19 @@ done
 ```
 
 
+### Summarization
 
-## Validation (tmp)
+Use R script to summarize training status and validation results.
+
+```bash
+cd ${PROJECTCLS_PATH}
+Rscript eval_results.R
+```
+
+
+
+
+## Validation (for Specimen dataset)
 
 To validate trained models with/without occurrence records with dataset T,
 run the following scripts.

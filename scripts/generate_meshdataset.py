@@ -81,6 +81,7 @@ fdata_species.extend(['Rhipidolestes_yakusimensis'])
 fdata_mesh.extend(['473002'])
 
 
+
 # change species name (level) to genus name (level)
 if level == 'genus':
     for i, spname in enumerate(fdata_species):
@@ -101,16 +102,25 @@ print(len(class_labels))
 dmat = pd.DataFrame(np.zeros((len(set(fdata_mesh)), len(class_labels))))
 dmat.columns = class_labels
 dmat.index = sorted(list(set(fdata_mesh)))
+# appearance matrix summary
+dsum = pd.DataFrame(np.zeros((len(set(fdata_mesh)), len(class_labels))))
+dsum.columns = class_labels
+dsum.index = sorted(list(set(fdata_mesh)))
+
 for _mesh, _species in zip(fdata_mesh, fdata_species):
     if _species in class_labels:
-        dmat.loc[_mesh, _species] = 1.0
-
+        dmat.loc[_mesh, _species] = 1
+        dsum.loc[_mesh, _species] += 1
 
 dmat = pd.concat([latlng, dmat], axis=1)
 
+
+dsum = dsum.sum(axis=0)
+print(dsum)
+
 # write out the data
 dmat.to_csv(output_fpath, header=True, index=True, sep='\t', compression='gzip')
-
+dsum.to_csv(output_fpath.replace('.tsv', '').replace('.gz', '') + '.summary.tsv', header=False, index=True, sep='\t')
 
 
 

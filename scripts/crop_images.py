@@ -136,18 +136,19 @@ def crop_images(img_fpath, mode):
 
 
 def crop(mode, input_dirpath):
-    for image_path in sorted(glob.glob(os.path.join(input_dirpath, '*', '*.jpg'))):
-        if not os.path.exists(os.path.splitext(image_path)[0] + '.xml'):
-            continue
-        
-        if mode == 'exif':
-            exif_info = get_jpeg_info(image_path)
-            print(image_path, exif_info)
-            if (exif_info[0] is None) or (exif_info[1] is None) or (exif_info[2] is None):
-                print('No EXIF: ' + image_path)
+    for f_ext in ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG']:
+        for image_path in sorted(glob.glob(os.path.join(input_dirpath, '*', '*' + f_ext))):
+            if not os.path.exists(os.path.splitext(image_path)[0] + '.xml'):
                 continue
         
-        crop_images(image_path, mode)
+            if mode == 'exif':
+                exif_info = get_jpeg_info(image_path)
+                print(image_path, exif_info)
+                if (exif_info[0] is None) or (exif_info[1] is None) or (exif_info[2] is None):
+                    print('No EXIF: ' + image_path)
+                    continue
+        
+            crop_images(image_path, mode)
         
 
 

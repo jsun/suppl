@@ -45,7 +45,7 @@ summarise_train_stats <- function(dpath) {
 
 
 
-summarise_valid_stats <- function(dpath, model_type) {
+summarise_valid_stats <- function(dpath, model_type, valid_tag) {
     
     .sumvalid <- function(fpath, full_return = FALSE) {
         # validation condition
@@ -107,9 +107,10 @@ summarise_valid_stats <- function(dpath, model_type) {
         }
     }
     
-    .figout <- function(pattern) {
+    .figout <- function(valid_tag, model_type) {
+        pattern <- paste0('.', valid_tag, '.', model_type, '.tsv')
         validstats <- NULL
-        for (fpath in sort(list.files(dpath, pattern = paste0('.', pattern, '.tsv')))) {
+        for (fpath in sort(list.files(dpath, pattern = pattern))) {
             print(fpath)
             validstats <- rbind(validstats, .sumvalid(fpath))
         }
@@ -133,11 +134,11 @@ summarise_valid_stats <- function(dpath, model_type) {
         list(data = validstats_df, fig = validstats_fig)
     }
     
-    stats_image   <- .figout(model_type)
+    stats_image   <- .figout(valid_tag, model_type)
     if (dpath == 'weights_species') {
-        vgg19_confmat <- .sumvalid(paste0('W2F__vgg19__1.T_valid.', model_type, '.tsv'), TRUE)
+        vgg19_confmat <- .sumvalid(paste0('W2F__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
     } else {
-        vgg19_confmat <- .sumvalid(paste0('W2Fg__vgg19__1.T_valid.', model_type, '.tsv'), TRUE)
+        vgg19_confmat <- .sumvalid(paste0('W2Fg__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
     }
     
     list(accstats = stats_image$data, accfig = stats_image$fig, confmat = vgg19_confmat$confmat)
@@ -147,28 +148,34 @@ summarise_valid_stats <- function(dpath, model_type) {
 
 
 
-if (FALSE) {
+if (TRUE) {
 
 # species identification
 spmodel_train_stats <- summarise_train_stats('weights_species')
-spmodel_valid_stats_image <- summarise_valid_stats('weights_species', 'image')
-spmodel_valid_stats_mesh1 <- summarise_valid_stats('weights_species', 'meshk1')
+spmodel_valid_stats_image <- summarise_valid_stats('weights_species', 'image', 'T_valid')
+spmodel_valid_stats_d50   <- summarise_valid_stats('weights_species', 'd50', 'T_valid')
 
 valid_sum_table <- data.frame(dataset = spmodel_valid_stats_image$accstats$dataset,
                               model   = spmodel_valid_stats_image$accstats$model,
                               topacc  = spmodel_valid_stats_image$accstats$topacc,
                               image_mean = spmodel_valid_stats_image$accstats$mean,
                               image_sd   = spmodel_valid_stats_image$accstats$sd,
-                              binded_mean = spmodel_valid_stats_mesh1$accstats$mean,
-                              binded_sd   = spmodel_valid_stats_mesh1$accstats$sd)
+                              binded_mean = spmodel_valid_stats_d50$accstats$mean,
+                              binded_sd   = spmodel_valid_stats_d50$accstats$sd)
+
+valid_sum_table$dataset <- factor(valid_sum_table$dataset, levels = c('W1', 'W2', 'F', 'W1F', 'W2F'))
+valid_sum_table$model <- factor(valid_sum_table$model, levels = c('VGGNet16', 'VGGNet19', 'ResNet18', 'ResNet152'))
+valid_sum_table <- valid_sum_table %>%
+        arrange(dataset, model)
+
 write_tsv(valid_sum_table[valid_sum_table$topacc == 'Top-1', -3],
           path = 'eval_results/validacc_top1.tsv', col_names = TRUE)
 write_tsv(valid_sum_table[valid_sum_table$topacc == 'Top-3', -3],
           path = 'eval_results/validacc_top3.tsv', col_names = TRUE)
 write.table(spmodel_valid_stats_image$confmat, 
-            file = 'eval_results/validconfmatrix_W2F_vgg19_1_image.tsv', sep = '\t')
-write.table(spmodel_valid_stats_mesh1$confmat, 
-            file = 'eval_results/validconfmatrix_W2F_vgg19_1_mesh.tsv', sep = '\t')
+            file = 'eval_results/validconfmatrix_W2F_resnet152_1_image.tsv', sep = '\t')
+write.table(spmodel_valid_stats_d50$confmat, 
+            file = 'eval_results/validconfmatrix_W2F_resnet152_1_mesh.tsv', sep = '\t')
 
 
 png('eval_results/validacc_barplot_image.png', 3800, 1800, res = 460)
@@ -176,7 +183,7 @@ spmodel_valid_stats_image$accfig
 dev.off()
 
 png('eval_results/validacc_barplot_mesh.png', 3800, 1800, res = 460)
-spmodel_valid_stats_mesh1$accfig
+spmodel_valid_stats_d50$accfig
 dev.off()
 
 
@@ -190,33 +197,42 @@ dev.off()
 
 
 # genus identification
-spmodel_train_stats <- summarise_train_stats('weights_genus')
-spmodel_valid_stats_image <- summarise_valid_stats('weights_genus', 'image')
+gnmodel_train_stats <- summarise_train_stats('weights_genus')
+gnmodel_valid_stats_image <- summarise_valid_stats('weights_genus', 'image', 'Tg_valid')
+gnmodel_valid_stats_d50   <- summarise_valid_stats('weights_genus', 'd50', 'Tg_valid')
 
-valid_sum_table <- data.frame(dataset = spmodel_valid_stats_image$accstats$dataset,
-                              model   = spmodel_valid_stats_image$accstats$model,
-                              topacc  = spmodel_valid_stats_image$accstats$topacc,
-                              image_mean = spmodel_valid_stats_image$accstats$mean,
-                              image_sd   = spmodel_valid_stats_image$accstats$sd)
+valid_sum_table <- data.frame(dataset = gnmodel_valid_stats_image$accstats$dataset,
+                              model   = gnmodel_valid_stats_image$accstats$model,
+                              topacc  = gnmodel_valid_stats_image$accstats$topacc,
+                              image_mean = gnmodel_valid_stats_image$accstats$mean,
+                              image_sd   = gnmodel_valid_stats_image$accstats$sd,
+                              binded_mean = gnmodel_valid_stats_d50$accstats$mean,
+                              binded_sd   = gnmodel_valid_stats_d50$accstats$sd)
+
+valid_sum_table$dataset <- factor(valid_sum_table$dataset, levels = c('W1', 'W2', 'F', 'W1F', 'W2F'))
+valid_sum_table$model <- factor(valid_sum_table$model, levels = c('VGGNet16', 'VGGNet19', 'ResNet18', 'ResNet152'))
+valid_sum_table <- valid_sum_table %>%
+        arrange(dataset, model)
+
 write_tsv(valid_sum_table[valid_sum_table$topacc == 'Top-1', -3],
           path = 'eval_results/validaccg_top1.tsv', col_names = TRUE)
 write_tsv(valid_sum_table[valid_sum_table$topacc == 'Top-3', -3],
           path = 'eval_results/validaccg_top3.tsv', col_names = TRUE)
-write.table(spmodel_valid_stats_image$confmat, 
-            file = 'eval_results/validconfmatrixg_W2F_vgg19_1_image.tsv', sep = '\t')
+write.table(gnmodel_valid_stats_image$confmat, 
+            file = 'eval_results/validconfmatrixg_W2F_resnet152_1_image.tsv', sep = '\t')
+write.table(gnmodel_valid_stats_d50$confmat, 
+            file = 'eval_results/validconfmatrixg_W2F_resnet152_1_mesh.tsv', sep = '\t')
 
 
 png('eval_results/validaccg_barplot_image.png', 3800, 1800, res = 460)
-spmodel_valid_stats_image$accfig
+gnmodel_valid_stats_image$accfig
 dev.off()
-
-
 
 png('eval_results/trainstats_genus_history.png', 2200, 1800, res = 220)
-print(spmodel_train_stats$fig$acc_history)
+print(gnmodel_train_stats$fig$acc_history)
 dev.off()
 png('eval_results/trainstats_genus_acc.png', 2200, 1800, res = 220)
-print(spmodel_train_stats$fig$acc)
+print(gnmodel_train_stats$fig$acc)
 dev.off()
 
 
