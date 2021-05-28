@@ -4,17 +4,16 @@ library(maps)
 
 world <- map_data('world')
 
-png('japan_map.png', 1800, 1800, res = 220)
 
+if (FALSE) {
+png('japan_map.png', 1800, 1800, res = 220)
 world %>% 
     filter(region == 'Japan') %>% 
     ggplot(aes(x = long, y = lat, group = group)) +
     geom_polygon(fill = 'white', colour = 'black', size = 1) +
     coord_fixed() + theme_void()
-
 dev.off()
-
-
+}
 
 
 x <- read_tsv('dataset_T.exif.tsv', col_names = F, comment = '#')
@@ -22,6 +21,7 @@ x <- read_tsv('dataset_T.exif.tsv', col_names = F, comment = '#')
 
 japan <- world %>% filter(region == 'Japan') 
 
+# pdf('japan_map.pdf')
 png('japan_map.png', 1800, 1800, res = 220)
 ggplot() +
     geom_polygon(aes(x = long, y = lat, group = group),
