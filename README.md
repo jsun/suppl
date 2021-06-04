@@ -102,5 +102,17 @@ qsub train_model_dnn.sh
 ```
 
 
+## Validation
+
+Summarise validation results of DNN and classic models.
+
+```
+cd ${PROJECT_PATH}/models
+
+python summarise_valid.py ${PROJECT_PATH}/data/cv_results/cucumber
+python summarise_valid.py ${PROJECT_PATH}/data/cv_results/strawberry
+python summarise_valid.py ${PROJECT_PATH}/data/cv_results/eggplant
+python summarise_valid.py ${PROJECT_PATH}/data/cv_results/tomato
+```
 
 
