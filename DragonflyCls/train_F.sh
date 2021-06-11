@@ -3,7 +3,7 @@
 #$ -jc hostos_g1
 #$ -cwd
 #$ -N qslog_train_F
-#$ -mods l_hard h_rt 144:00:00
+#$ -mods l_hard h_rt 288:00:00
 #$ -t 1:10
 
 source /etc/profile.d/modules.sh

@@ -334,7 +334,7 @@ class DragonflyCls():
             else:
                 dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
                 
-            dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=6)
+            dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4)
             logging.info('Loaded images from the directory {} for training.'.format(dataset_path))
         
         
@@ -351,8 +351,8 @@ class DragonflyCls():
                         y.append(os.path.join(dataset_path, fpath))
                 
             dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
-            dataset = torch.utils.data.DataLoader(dataset, batch_size=2, shuffle=False, num_workers=6)
-            #dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=6)
+            #dataset = torch.utils.data.DataLoader(dataset, batch_size=2, shuffle=False, num_workers=4)
+            dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=4)
             logging.info('Loaded images from the directory {} for inference.'.format(dataset_path))
         
         else:
