@@ -308,7 +308,6 @@ class Jppnet():
             'valid': len(datasets['valid']),
         }
         
-        
         # training parameters
         criterion = torch.nn.MSELoss()
         optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-2)
@@ -338,14 +337,14 @@ class Jppnet():
                     with torch.set_grad_enabled(phase == 'train'):
                         outputs = self.model(inputs)
                         loss = criterion(outputs, labels)
-                        
+
                         if phase == 'train':
                             optimizer.zero_grad()
                             loss.backward()
                             optimizer.step()
-                
+
                     running_loss += loss.item() * inputs.size(0)
-                
+
                 if phase == 'train':
                     scheduler.step()
 

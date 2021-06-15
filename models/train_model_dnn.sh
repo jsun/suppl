@@ -3,7 +3,7 @@
 #$ -jc hostos_g1
 #$ -cwd
 #$ -N qs_tiramisu_cucumber
-#$ -mods l_hard h_rt 240:00:00
+#$ -mods l_hard h_rt 720:00:00
 #$ -t 1-80:1
 
 

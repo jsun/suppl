@@ -59,9 +59,9 @@ def train_cv(model, weight, feature_type, cv_dataset, batch_size=1024, epochs=50
             activate_funcs = ['relu']
         
     elif model == 'L2':
-        dropouts = [0, 0.5]
-        n_hiddens = [[i, j] for i in [8, 12, 16, 20, 24, 28, 32, 36, 40]
-                            for j in [8, 12, 16, 20, 24, 28, 32, 36, 40]]
+        dropouts = [0.5]
+        n_hiddens = [[i, j] for i in [8, 16, 24, 32, 40]
+                            for j in [8, 16, 24, 32, 40]]
         activate_funcs = ['relu']
         if TIRAMISU_DEBUG:
             dropouts = [0, 0.5]
@@ -85,7 +85,7 @@ def train_cv(model, weight, feature_type, cv_dataset, batch_size=1024, epochs=50
         
         # glid search / 2-fold cv to determine hyper-params of DNN
         seed = abs(hash(cv_dataset)) % (10 ** 8)
-        best_loss = 1e10 * 1.0
+        best_loss = 1e100 * 1.0
         best_params = None
         best_weight = None
         for activate_func in activate_funcs:
