@@ -60,9 +60,15 @@ with open(kankyo_fpath, 'r') as infh:
         if cl == 'Rhipidolestes_yakusimensis':
             if bufs[1] in  ['472935', '472945']:
                 print('removed: ' + cl + ' -- ' + bufs[1])
+            else:
+                fdata_mesh.append(bufs[1])
+                fdata_species.append(id2class[bufs[0]])
         elif cl == 'Anotogaster_sieboldii':
             if bufs[1] in ['362336', '362337', '362346', '362347', '362441', '362451']:
                 print('removed: ' + cl + ' -- ' + bufs[1])
+            else:
+                fdata_mesh.append(bufs[1])
+                fdata_species.append(id2class[bufs[0]])
         else:
             fdata_mesh.append(bufs[1])
             fdata_species.append(id2class[bufs[0]])
