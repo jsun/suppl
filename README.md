@@ -44,6 +44,8 @@ do
         python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.shuffle.csv}
     done
 done
+
+python summary_datasets.py dataset_summary.xlsx
 ```
 
 
