@@ -179,11 +179,11 @@ write.table(spmodel_valid_stats_d50$confmat,
 
 
 png('eval_results/validacc_barplot_image.png', 3800, 1800, res = 460)
-spmodel_valid_stats_image$accfig
+print(spmodel_valid_stats_image$accfig)
 dev.off()
 
 png('eval_results/validacc_barplot_mesh.png', 3800, 1800, res = 460)
-spmodel_valid_stats_d50$accfig
+print(spmodel_valid_stats_d50$accfig)
 dev.off()
 
 
@@ -225,7 +225,7 @@ write.table(gnmodel_valid_stats_d50$confmat,
 
 
 png('eval_results/validaccg_barplot_image.png', 3800, 1800, res = 460)
-gnmodel_valid_stats_image$accfig
+print(gnmodel_valid_stats_image$accfig)
 dev.off()
 
 png('eval_results/trainstats_genus_history.png', 2200, 1800, res = 220)
