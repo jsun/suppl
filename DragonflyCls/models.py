@@ -351,7 +351,6 @@ class DragonflyCls():
                         y.append(os.path.join(dataset_path, fpath))
                 
             dataset = nnTorchDataset(x, y=y, transforms=self.transforms_valid)
-            #dataset = torch.utils.data.DataLoader(dataset, batch_size=2, shuffle=False, num_workers=4)
             dataset = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=4)
             logging.info('Loaded images from the directory {} for inference.'.format(dataset_path))
         
@@ -662,42 +661,13 @@ class DragonflyMesh():
         return (capture_date, lat, lng)
     
     
-        
-    def __predict(self, meshcode, k=1):
-        meshcodes = []
-        
-        if k == 1:
-            meshcodes.append(meshcode)
-        elif k > 1:
-            d12 = int(meshcode[0:2])
-            d34 = int(meshcode[2:4])
-            for i in range(d12 - k + 1, d12 + k):
-                for j in range(d34 - k + 1, d34 + k):
-                    meshcodes.append('{:02d}{:02d}'.format(i, j))
-        
-        is_neighbors = []
-        for m in self.dragonflymesh['mesh'].index:
-            if m[0:4] in meshcodes:
-                is_neighbors.append(True)
-            else:
-                is_neighbors.append(False)
-        
-        output = self.dragonflymesh['mesh'].loc[is_neighbors, ]
-        output = output.sum(axis=0)
-        # output = (output - output.min()) / (output.max() - output.min())
-        output[output > 0] = 1
-        
-        if not all(is_neighbors):
-            output = output.fillna(1.0)
-        
-        return output
     
     
     def __calc_dist(self, x):
         return geopy.distance.great_circle((x[0], x[1]), (x[2], x[3])).km
         
     
-    def __predict2(self, gis, d=100):
+    def __predict(self, gis, d=100):
         gisdf =pd.DataFrame([gis] * self.dragonflymesh['grid'].shape[0],
                             index=self.dragonflymesh['grid'].index, columns=['lat0', 'lng0'])
         meshmat = pd.concat([self.dragonflymesh['grid'], gisdf], axis=1)
@@ -719,8 +689,7 @@ class DragonflyMesh():
             capture_date, lat, lng = self.get_jpeg_info(img_fpath)
             if lat is not None and lng is not None:
                 mesh = self.gis2mesh(lat, lng, 1)
-                #pred_score = self.__predict(mesh, k)
-                pred_score = self.__predict2((lat, lng), d)
+                pred_score = self.__predict((lat, lng), d)
                 pred_score = pd.DataFrame([pred_score.to_list()],
                                            index=[img_fpath], columns=self.dragonflymesh['mesh'].columns)
             else:
