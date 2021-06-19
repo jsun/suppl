@@ -1,8 +1,9 @@
-# Odonates Classification with Deep Learning
+# Odonates Classification
 
-To generate image classification model with deep learning,
-check README.md in DragonflyCls directory.
-To format occurrence records which were downloaded from the National Biodiversity Center of Japan,
-see README.md in DragonflyMesh directory.
+To prepare and arrange datasets for machine learning,
+see README.md in data directory.
+To train models for species/genus classification,
+see README.md in DragonflyCls directory.
+
 
 

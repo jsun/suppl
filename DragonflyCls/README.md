@@ -1,7 +1,5 @@
 # DragonflyCls
 
-To create deep learning models for odonates prediction, run the following scripts one by one.
-
 
 
 ## Setup Variables
