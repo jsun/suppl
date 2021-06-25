@@ -20,9 +20,9 @@ PROJECT_DIR=~/projects/HuoberBrezel
 cd ${PROJECT_DIR}
 
 
-nCPU=8
-BIN=/home/jqsun/local/bin
-UTILS=/home/jqsun/local/utilfunc
+nCPU=32
+BIN=~/local/bin
+UTILS=~/local/utilfunc
 
 DATA_DIR=${PROJECT_DIR}/data
 FASTQ_DIR=${PROJECT_DIR}/data/tagseq/fastq
@@ -53,11 +53,11 @@ if [ ${pTrimLQ} -eq 1 ]; then
         fastq_name=`basename ${fastq_path} _R1.fastq.gz`
         echo ${fastq_path}
     
-        java -jar ${BIN}/trimmomatic-0.36.jar  \
+        java -jar ${BIN}/trimmomatic-0.39.jar  \
                   SE -phred33 -threads ${nCPU} \
                   ${fastq_path} \
                   ${CLEAN_FASTQ_DIR}/${fastq_name}.clean.trimmomatic.fastq.gz          \
-                  ILLUMINACLIP:/home/jqsun/local/meta/trimmomatic_adapters.txt:2:30:10 \
+                  ILLUMINACLIP:/home/sonk414/local/meta/trimmomatic_adapters.txt:2:30:10 \
                   TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:20 MINLEN:40
     done
 fi

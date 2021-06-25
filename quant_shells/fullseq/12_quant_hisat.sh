@@ -1,11 +1,10 @@
 #!/bin/bash
-#PBS --group=g-mlbi
-#PBS -q cq
-#PBS -l gpunum_job=0
-#PBS -l cpunum_job=16
-#PBS -l elapstim_req=72:00:00
-#PBS -b 1
-#PBS -N HB_SFUL_QUANT_HISAT
+#$ -S /bin/bash
+#$ -jc hostos_g1
+#$ -cwd
+#$ -N qslog_hb_shortfull_hisat2
+#$ -mods l_hard h_rt 288:00:00
+
 
 pHISAT=1
 pQuant=1
@@ -14,16 +13,15 @@ nCPU=16
 
 PROJECT_DIR=~/projects/HuoberBrezel
 BIN=~/local/bin
-UTILS=~/local/utilfunc
 DATA_DIR=${PROJECT_DIR}/data/shortfullseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
 BAM_DIR=${DATA_DIR}/bam
-GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
+
+GENOME_DIR=~/projects/db/genome/IWGSC_RefSeq_v2.1_CS
 GENOME_INDEX=${GENOME_DIR}/index/dna_hisat2
-
-
+GTF_FILEPATH=${GENOME_DIR}/seqdata/dna.gff3
 COUNTS_DIR=${DATA_DIR}/counts
-GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706
+
 
 
 cd ${PROJECT_DIR}
@@ -62,9 +60,11 @@ if [ ${pQuant} -eq 1 ]; then
 #
 mkdir -p ${COUNTS_DIR}
 cd ${BAM_DIR}
-gff_versions=("iwgsc" "ext_1.0k")
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} \
+                     -o ${COUNTS_DIR}/counts.gene.tsv *.bam
+gff_versions=("ext_1.0k")
 for gff in ${gff_versions[@]}; do
-    ${BIN}/featureCounts -p -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 \
+    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH%.gff3}.${gff}.gff3 \
                          -o ${COUNTS_DIR}/counts.gene.${gff}.tsv *.bam
 done
 fi

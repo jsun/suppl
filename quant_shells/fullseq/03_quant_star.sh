@@ -1,30 +1,26 @@
 #!/bin/bash
-#PBS --group=g-mlbi
-#PBS -q cq
-#PBS -l gpunum_job=0
-#PBS -l cpunum_job=16
-#PBS -l memsz_job=256gb
-#PBS -l elapstim_req=72:00:00
-#PBS -b 1
-#PBS -N HB_FUL_QUANT_STARCOUNT
+#$ -S /bin/bash
+#$ -jc hostos_g1
+#$ -cwd
+#$ -N qslog_hb_full_star
+#$ -mods l_hard h_rt 288:00:00
 
-pSTAR=0
+pSTAR=1
 pQuant=1
 nCPU=16
 
 
 PROJECT_DIR=~/projects/HuoberBrezel
 BIN=~/local/bin
-UTILS=~/local/utilfunc
 DATA_DIR=${PROJECT_DIR}/data/fullseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
 BAM_DIR=${DATA_DIR}/bamstar
-GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
-GENOME_INDEX=${GENOME_DIR}/index/dnapart_star
 
 
+GENOME_DIR=~/projects/db/genome/IWGSC_RefSeq_v2.1_CS
+GENOME_INDEX=${GENOME_DIR}/index/dna_star
+GTF_FILEPATH=${GENOME_DIR}/seqdata/dna.ext_1.0k.gff3
 COUNTS_DIR=${DATA_DIR}/countsstar
-GTF_FILEPATH=${GENOME_DIR}/refseqv1.0_part/IWGSC_v1.1_HC_20170706.ext_1.0k.part.gff3
 
 
 

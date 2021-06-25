@@ -19,7 +19,7 @@ PROJECT_DIR=~/projects/HuoberBrezel
 cd ${PROJECT_DIR}
 
 
-nCPU=8
+nCPU=32
 BIN=~/local/bin
 UTILS=~/local/utilfunc
 
@@ -42,7 +42,7 @@ if [ ${pQC1} -eq 1 ]; then
                   -a ~/local/meta/trimmomatic_adapters.txt \
                   -o fastqc_reports                        \
                   --kmers 7 *_R1.fastq.gz
-    rm fastqc_reports/*.zip
+    #rm fastqc_reports/*.zip
     cd -
 fi
 
@@ -52,23 +52,23 @@ if [ ${pTrimLQ} -eq 1 ]; then
     cd ${DATA_DIR}
     mkdir -p ${CLEAN_FASTQ_DIR}
 
-    for fastq_path in `ls ${FASTQ_DIR}/*_R1.fastq.gz | grep W2017_1_CS-4`; do
+    for fastq_path in `ls ${FASTQ_DIR}/*_R1.fastq.gz`; do
         fastq_name=`basename ${fastq_path} _R1.fastq.gz`
         fastq1_path=${FASTQ_DIR}/${fastq_name}_R1.fastq.gz
         fastq2_path=${FASTQ_DIR}/${fastq_name}_R2.fastq.gz
         
-        java -jar ${BIN}/trimmomatic-0.36.jar   \
+        java -jar ${BIN}/trimmomatic-0.39.jar   \
               PE -phred33 -threads ${nCPU}  \
               ${fastq1_path} ${fastq2_path} \
               ${FASTQ_DIR}/${fastq_name}_R1.cleaned.fastq.gz  \
               ${FASTQ_DIR}/${fastq_name}_R1.unpaired.fastq.gz \
               ${FASTQ_DIR}/${fastq_name}_R2.cleaned.fastq.gz  \
               ${FASTQ_DIR}/${fastq_name}_R2.unpaired.fastq.gz \
-              ILLUMINACLIP:/home/jqsun/local/meta/trimmomatic_adapters.txt:2:30:10 \
+              ILLUMINACLIP:/home/sonk414/local/meta/trimmomatic_adapters.txt:2:30:10 \
               TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:20 MINLEN:40
     done
     
-    mv ${FASTQ_DIR}/*_cleaned.fastq.gz ${CLEAN_FASTQ_DIR}/
+    mv ${FASTQ_DIR}/*.cleaned.fastq.gz ${CLEAN_FASTQ_DIR}/
 fi
 
 

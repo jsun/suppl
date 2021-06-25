@@ -1,32 +1,30 @@
 #!/bin/bash
-#PBS --group=g-mlbi
-#PBS -q cq
-#PBS -l gpunum_job=0
-#PBS -l cpunum_job=16
-#PBS -l memsz_job=256gb
-#PBS -l elapstim_req=72:00:00
-#PBS -N HB_TAG_QUANT_STARCOUNT
+#$ -S /bin/bash
+#$ -jc hostos_g1
+#$ -cwd
+#$ -N qslog_hb_tag_star
+#$ -mods l_hard h_rt 288:00:00
 
 
 pSTAR=1
-pQuant=0
+pQuant=1
 nCPU=16
 
 
 
 PROJECT_DIR=~/projects/HuoberBrezel
-
-BIN=/home/jqsun/local/bin
-UTILS=/home/jqsun/local/utilfunc
+BIN=~/local/bin
 DATA_DIR=${PROJECT_DIR}/data/tagseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
 BAM_DIR=${DATA_DIR}/bamstar
-GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
-GENOME_INDEX=${GENOME_DIR}/index/dnapart_star
 
 
-GTF_FILEPATH=${GENOME_DIR}/refseqv1.0_part/IWGSC_v1.1_HC_20170706.ext_1.0k.part.gff3
+GENOME_DIR=~/projects/db/genome/IWGSC_RefSeq_v2.1_CS
+GENOME_INDEX=${GENOME_DIR}/index/dna_star
+
+GTF_FILEPATH=${GENOME_DIR}/seqdata/dna.ext_1.0k.gff3
 COUNTS_DIR=${DATA_DIR}/countsstar
+
 
 
 
@@ -69,13 +67,14 @@ fi
 
 
 if [ ${pQuant} -eq 1 ]; then
-
-    # count mapped reads
-    mkdir -p ${COUNTS_DIR}
-    cd ${BAM_DIR}
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+#
+# count mapped reads
+#
+mkdir -p ${COUNTS_DIR}
+cd ${BAM_DIR}
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
                      -o ${COUNTS_DIR}/tcs.counts.gene.ext_1.0k.tsv TaeRS2728_*.bam
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
                      -o ${COUNTS_DIR}/cs.counts.gene.ext_1.0k.tsv 20181109*.bam
 fi
 

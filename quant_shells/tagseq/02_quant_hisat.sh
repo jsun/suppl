@@ -1,31 +1,27 @@
 #!/bin/bash
-#PBS --group=g-mlbi
-#PBS -q cq
-#PBS -l gpunum_job=0
-#PBS -l cpunum_job=16
-#PBS -l memsz_job=64gb
-#PBS -l elapstim_req=72:00:00
-#PBS -N HB_TAG_QUANT_COUNT
+#$ -S /bin/bash
+#$ -jc hostos_g1
+#$ -cwd
+#$ -N qslog_hb_tag_hisat
+#$ -mods l_hard h_rt 288:00:00
 
 
-pHISAT=0
+
+pHISAT=1
 pQuant=1
 nCPU=16
 
 
 
 PROJECT_DIR=~/projects/HuoberBrezel
-
-BIN=/home/jqsun/local/bin
-UTILS=/home/jqsun/local/utilfunc
+BIN=~/local/bin
 DATA_DIR=${PROJECT_DIR}/data/tagseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
 BAM_DIR=${DATA_DIR}/bam
-GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
+
+GENOME_DIR=~/projects/db/genome/IWGSC_RefSeq_v2.1_CS
 GENOME_INDEX=${GENOME_DIR}/index/dna_hisat2
-
-
-GTF_FILEPATH=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706
+GTF_FILEPATH=${GENOME_DIR}/seqdata/dna.gff3
 COUNTS_DIR=${DATA_DIR}/counts
 
 
@@ -69,11 +65,15 @@ if [ ${pQuant} -eq 1 ]; then
 #
 mkdir -p ${COUNTS_DIR}
 cd ${BAM_DIR}
-gff_versions=("iwgsc" "ext_0.5k" "ext_1.0k" "ext_1.5k" "ext_2.0k" "ext_2.5k" "ext_3.0k" "ext_3.5k" "ext_4.0k")
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+                     -o ${COUNTS_DIR}/tcs.counts.gene.tsv TaeRS2728_*.bam
+${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH} -s 1 \
+                     -o ${COUNTS_DIR}/cs.counts.gene.tsv 20181109*.bam
+gff_versions=("ext_0.5k" "ext_1.0k" "ext_1.5k" "ext_2.0k" "ext_2.5k" "ext_3.0k" "ext_3.5k" "ext_4.0k")
 for gff in ${gff_versions[@]}; do
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
+    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH%.gff3}.${gff}.gff3 -s 1 \
                          -o ${COUNTS_DIR}/tcs.counts.gene.${gff}.tsv TaeRS2728_*.bam
-    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH}.${gff}.gff3 -s 1 \
+    ${BIN}/featureCounts -T ${nCPU} -t gene -g ID -a ${GTF_FILEPATH%.gff3}.${gff}.gff3 -s 1 \
                          -o ${COUNTS_DIR}/cs.counts.gene.${gff}.tsv 20181109*.bam
 done
 fi

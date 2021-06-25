@@ -1,50 +1,49 @@
 #!/bin/bash
-#PBS --group=g-mlbi
-#PBS -q cq
-#PBS -l gpunum_job=0
-#PBS -l cpunum_job=1
-#PBS -l memsz_job=128gb
-#PBS -l elapstim_req=72:00:00
-#PBS -N HB_FUL_QUANT_EAGLE_4
+#$ -S /bin/bash
+#$ -jc hostos_g1
+#$ -cwd
+#$ -N qslog_hb_full_eaglerc_count
+#$ -mods l_hard h_rt 720:00:00
+
+
+pSTAR=0
+pEAGLE=0
+pCount=1
+
+
+
+
 
 nCPU=16
 
 PROJECT_DIR=~/projects/HuoberBrezel
 
 BIN=~/local/bin
-UTILS=~/local/utilfunc
 EAGLE_SCRIPT_DIR=~/local/src/eagle/scripts
-
-
+PY2=~/.pyenv/versions/eagle/bin/python
 
 DATA_DIR=${PROJECT_DIR}/data/fullseq
 CLEAN_FASTQ_DIR=${DATA_DIR}/clean_fastq
 BAM_DIR=${DATA_DIR}/bameaglerc
-COUNTS_DIR=${DATA_DIR}/countseaglrc
+COUNTS_DIR=${DATA_DIR}/countseaglerc
 EAGLE_DIR=${DATA_DIR}/eaglerc
 
-GENOME_DIR=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
-GENOME_INDEX=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS/index/dna_hisat2
-GENOME_INDEX_PREFIX=/home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS/index/dna_
+GENOME_DIR=~/projects/db/genome/IWGSC_RefSeq_v2.1_CS
+GENOME_INDEX_PREFIX=${GENOME_DIR}/index/dna_
 GENOME_INDEX_SUFFIX=_star
-GTF_A=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.ext_1.0k.chrA.gff3
-GTF_B=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.ext_1.0k.chrB.gff3
-GTF_D=${GENOME_DIR}/iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.ext_1.0k.chrD.gff3
+
+GTF_A=${GENOME_DIR}/seqdata/dna.ext_1.0k.chrA.gff3
+GTF_B=${GENOME_DIR}/seqdata/dna.ext_1.0k.chrB.gff3
+GTF_D=${GENOME_DIR}/seqdata/dna.ext_1.0k.chrD.gff3
 
 
-pSTAR=0
-pEAGLE=0
-pEAGLERC=0
-pCountHomeolog=1
 
 
-echo "shell: 02_fullseq.eaglerc.sh"
+echo "shell: 04_quant_eaglerc.sh"
 echo "LIBPTN: ${LIBPTN}"
 echo "pSTAR: ${pSTAR}"
 echo "pEAGLE: ${pEAGLE}"
-echo "pEAGLERC: ${pEAGLERC}"
-echo "pCountHomeolog: ${pCountHomeolog}"
-echo "pCountUnique: ${pCountUnique}"
+echo "pCount: ${pCount}"
 echo "nCPU: ${nCPU}"
 echo "----- start -----"
 echo `date`
@@ -106,14 +105,19 @@ if [ ${pEAGLE} -eq 1 ]; then
         chr_names=(A B D)
         for chr_name in ${chr_names[@]}; do
             cd ${seqlib}__on__chr${chr_name}
-            for vcf_file in `ls ${GENOME_DIR}/${chr_name}.vs.*.gtf.vcf`; do
+            for vcf_file in `ls ${GENOME_DIR}/seqdata/${chr_name}.vs.*.gtf.vcf`; do
                 vcf_basename=`basename ${vcf_file} .gtf.vcf`
                 echo "start eagle"
                 time ${BIN}/eagle -t ${nCPU} -a Aligned.out.refsort.bam \
-                     -r ${GENOME_DIR}/chr${chr_name}.fa \
+                     -r ${GENOME_DIR}/seqdata/dna_chr${chr_name}.fa \
                      -v ${vcf_file} \
                      --splice --rc 1> eagle.out.${vcf_basename}.txt 2> eagle.out.${vcf_basename}.readinfo.txt
                 echo "finished eagle"
+                echo "start eaglerc"
+                time ${BIN}/eagle-rc --paired --listonly -a Aligned.out.refsort.bam \
+                                -o eaglerc.${vcf_basename} \
+                                -v eagle.out.${vcf_basename}.txt eagle.out.${vcf_basename}.readinfo.txt > eaglerc.out.${vcf_basename}.list
+                echo "finished eaglerc"
             done
             cd -
         done
@@ -124,38 +128,15 @@ fi
 
 
 
-## EAGLE-RC processes (single-CPUs)
-if [ ${pEAGLERC} -eq 1 ]; then
-    cd ${BAM_DIR}
-    for seqlib in `ls | awk 'BEGIN{FS="__on__"}{print $1}' | sort | uniq`; do
-        echo ${seqlib}
-        chr_names=(A B D)
-        for chr_name in ${chr_names[@]}; do
-            cd ${seqlib}__on__chr${chr_name}
-            for vcf_file in `ls ${GENOME_DIR}/${chr_name}.vs.*.gtf.vcf`; do
-                vcf_basename=`basename ${vcf_file} .gtf.vcf`
-                echo "start eaglerc"
-                time ${BIN}/eagle-rc --listonly -a Aligned.out.refsort.bam \
-                                -o eaglerc.${vcf_basename} \
-                                -v eagle.out.${vcf_basename}.txt eagle.out.${vcf_basename}.readinfo.txt > eaglerc.out.${vcf_basename}.list
-                echo "finished eaglerc"
-            done
-            cd ../
-        done
-    done
-fi
-
-
 
 
 
 
 # EAGLE-RC & featureCounts
 cd ${PROJECT_DIR}
-pyenv local eagle
 mkdir -p ${COUNTS_DIR}
 
-if [ ${pCountHomeolog} -eq 1 ]; then
+if [ ${pCount} -eq 1 ]; then
     mkdir -p ${EAGLE_DIR}
     cd ${EAGLE_DIR}
     
@@ -168,7 +149,7 @@ if [ ${pCountHomeolog} -eq 1 ]; then
         cd ${seqlib}
         
         # homeolog reads
-        python ${EAGLE_SCRIPT_DIR}/ref3_consensus.py --pe -d -u -o ${seqlib}.ref        \
+        ${PY2} ${EAGLE_SCRIPT_DIR}/ref3_consensus.py --pe -d -u -o ${seqlib}.ref        \
            -A ${bam_on__A}/eaglerc.out.A.vs.B.list ${bam_on__A}/eaglerc.out.A.vs.D.list \
            -B ${bam_on__B}/eaglerc.out.B.vs.A.list ${bam_on__B}/eaglerc.out.B.vs.D.list \
            -D ${bam_on__D}/eaglerc.out.D.vs.A.list ${bam_on__D}/eaglerc.out.D.vs.B.list
