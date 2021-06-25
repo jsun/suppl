@@ -1,0 +1,45 @@
+shell: 04_quant_eaglerc.sh
+pSTAR: 0
+pEAGLE: 0
+pCount: 1
+nCPU: 16
+----- start -----
+Wed Jun 23 09:28:28 JST 2021
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+couting homeolog reads
+couting subgenome specific reads
+/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglerc
+Wed Jun 23 09:58:03 JST 2021
+----- finish -----

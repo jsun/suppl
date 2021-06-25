@@ -1,0 +1,598 @@
+shell: 04_quant_eaglerc.sh
+pSTAR: 1
+pEAGLE: 0
+pEAGLERC: 0
+pCount: 0
+nCPU: 16
+----- start -----
+Mon Jun 21 13:37:15 JST 2021
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_16.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrA chromosome.
+Mon Jun 21 13:37:15 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_16.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:37:15 ..... started STAR run
+Jun 21 13:37:15 ..... loading genome
+Jun 21 13:37:48 ..... started mapping
+Jun 21 13:38:18 ..... finished mapping
+Jun 21 13:38:19 ..... finished successfully
+Mon Jun 21 13:38:19 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:38:19 JST 2021
+Mon Jun 21 13:38:32 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrB chromosome.
+Mon Jun 21 13:38:32 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_16.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:38:32 ..... started STAR run
+Jun 21 13:38:32 ..... loading genome
+Jun 21 13:39:06 ..... started mapping
+Jun 21 13:39:33 ..... finished mapping
+Jun 21 13:39:34 ..... finished successfully
+Mon Jun 21 13:39:34 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:39:34 JST 2021
+Mon Jun 21 13:39:47 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_16 on chrD chromosome.
+Mon Jun 21 13:39:47 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_16.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:39:47 ..... started STAR run
+Jun 21 13:39:47 ..... loading genome
+Jun 21 13:40:12 ..... started mapping
+Jun 21 13:40:37 ..... finished mapping
+Jun 21 13:40:38 ..... finished successfully
+Mon Jun 21 13:40:38 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:40:38 JST 2021
+Mon Jun 21 13:40:49 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_17.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrA chromosome.
+Mon Jun 21 13:40:49 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_17.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:40:49 ..... started STAR run
+Jun 21 13:40:49 ..... loading genome
+Jun 21 13:41:22 ..... started mapping
+Jun 21 13:42:26 ..... finished mapping
+Jun 21 13:42:27 ..... finished successfully
+Mon Jun 21 13:42:27 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:42:27 JST 2021
+Mon Jun 21 13:42:56 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrB chromosome.
+Mon Jun 21 13:42:56 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_17.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:42:56 ..... started STAR run
+Jun 21 13:42:56 ..... loading genome
+Jun 21 13:43:30 ..... started mapping
+Jun 21 13:44:31 ..... finished mapping
+Jun 21 13:44:32 ..... finished successfully
+Mon Jun 21 13:44:32 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:44:32 JST 2021
+Mon Jun 21 13:45:00 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_17 on chrD chromosome.
+Mon Jun 21 13:45:00 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_17.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:45:00 ..... started STAR run
+Jun 21 13:45:00 ..... loading genome
+Jun 21 13:45:26 ..... started mapping
+Jun 21 13:46:20 ..... finished mapping
+Jun 21 13:46:21 ..... finished successfully
+Mon Jun 21 13:46:21 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:46:21 JST 2021
+Mon Jun 21 13:46:48 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_18.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrA chromosome.
+Mon Jun 21 13:46:48 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_18.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:46:48 ..... started STAR run
+Jun 21 13:46:48 ..... loading genome
+Jun 21 13:47:21 ..... started mapping
+Jun 21 13:48:20 ..... finished mapping
+Jun 21 13:48:21 ..... finished successfully
+Mon Jun 21 13:48:21 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:48:21 JST 2021
+Mon Jun 21 13:48:49 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrB chromosome.
+Mon Jun 21 13:48:49 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_18.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:48:49 ..... started STAR run
+Jun 21 13:48:49 ..... loading genome
+Jun 21 13:49:23 ..... started mapping
+Jun 21 13:50:17 ..... finished mapping
+Jun 21 13:50:19 ..... finished successfully
+Mon Jun 21 13:50:19 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:50:19 JST 2021
+Mon Jun 21 13:50:45 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_18 on chrD chromosome.
+Mon Jun 21 13:50:45 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_18.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:50:45 ..... started STAR run
+Jun 21 13:50:45 ..... loading genome
+Jun 21 13:51:11 ..... started mapping
+Jun 21 13:52:01 ..... finished mapping
+Jun 21 13:52:02 ..... finished successfully
+Mon Jun 21 13:52:02 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:52:02 JST 2021
+Mon Jun 21 13:52:28 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_1.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrA chromosome.
+Mon Jun 21 13:52:28 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_1.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:52:28 ..... started STAR run
+Jun 21 13:52:28 ..... loading genome
+Jun 21 13:53:01 ..... started mapping
+Jun 21 13:53:43 ..... finished mapping
+Jun 21 13:53:44 ..... finished successfully
+Mon Jun 21 13:53:44 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:53:44 JST 2021
+Mon Jun 21 13:54:03 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrB chromosome.
+Mon Jun 21 13:54:03 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_1.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:54:03 ..... started STAR run
+Jun 21 13:54:03 ..... loading genome
+Jun 21 13:54:38 ..... started mapping
+Jun 21 13:55:15 ..... finished mapping
+Jun 21 13:55:16 ..... finished successfully
+Mon Jun 21 13:55:16 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:55:16 JST 2021
+Mon Jun 21 13:55:35 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_1 on chrD chromosome.
+Mon Jun 21 13:55:35 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_1.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:55:35 ..... started STAR run
+Jun 21 13:55:35 ..... loading genome
+Jun 21 13:56:01 ..... started mapping
+Jun 21 13:56:35 ..... finished mapping
+Jun 21 13:56:36 ..... finished successfully
+Mon Jun 21 13:56:36 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:56:36 JST 2021
+Mon Jun 21 13:56:53 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_2.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrA chromosome.
+Mon Jun 21 13:56:53 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_2.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:56:53 ..... started STAR run
+Jun 21 13:56:53 ..... loading genome
+Jun 21 13:57:25 ..... started mapping
+Jun 21 13:57:49 ..... finished mapping
+Jun 21 13:57:50 ..... finished successfully
+Mon Jun 21 13:57:50 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:57:50 JST 2021
+Mon Jun 21 13:58:01 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrB chromosome.
+Mon Jun 21 13:58:01 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_2.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:58:01 ..... started STAR run
+Jun 21 13:58:01 ..... loading genome
+Jun 21 13:58:34 ..... started mapping
+Jun 21 13:58:56 ..... finished mapping
+Jun 21 13:58:57 ..... finished successfully
+Mon Jun 21 13:58:57 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:58:57 JST 2021
+Mon Jun 21 13:59:08 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_2 on chrD chromosome.
+Mon Jun 21 13:59:08 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_2.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:59:08 ..... started STAR run
+Jun 21 13:59:08 ..... loading genome
+Jun 21 13:59:33 ..... started mapping
+Jun 21 13:59:53 ..... finished mapping
+Jun 21 13:59:54 ..... finished successfully
+Mon Jun 21 13:59:54 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 13:59:54 JST 2021
+Mon Jun 21 14:00:04 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_3.clean.fastq.gz
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrA chromosome.
+Mon Jun 21 14:00:04 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_3.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:00:04 ..... started STAR run
+Jun 21 14:00:04 ..... loading genome
+Jun 21 14:00:35 ..... started mapping
+Jun 21 14:01:31 ..... finished mapping
+Jun 21 14:01:32 ..... finished successfully
+Mon Jun 21 14:01:32 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:01:32 JST 2021
+Mon Jun 21 14:01:58 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrB chromosome.
+Mon Jun 21 14:01:58 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_3.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:01:58 ..... started STAR run
+Jun 21 14:01:58 ..... loading genome
+Jun 21 14:02:31 ..... started mapping
+Jun 21 14:03:22 ..... finished mapping
+Jun 21 14:03:23 ..... finished successfully
+Mon Jun 21 14:03:23 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:03:23 JST 2021
+Mon Jun 21 14:03:48 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map 20181109.A-TaeRS_1_Tae_RS1_3 on chrD chromosome.
+Mon Jun 21 14:03:48 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/20181109.A-TaeRS_1_Tae_RS1_3.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:03:48 ..... started STAR run
+Jun 21 14:03:48 ..... loading genome
+Jun 21 14:04:13 ..... started mapping
+Jun 21 14:05:02 ..... finished mapping
+Jun 21 14:05:03 ..... finished successfully
+Mon Jun 21 14:05:03 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:05:03 JST 2021
+Mon Jun 21 14:05:26 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g086.clean.fastq.gz
+map TaeRS2728_g086 on chrA chromosome.
+Mon Jun 21 14:05:26 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g086.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:05:26 ..... started STAR run
+Jun 21 14:05:26 ..... loading genome
+Jun 21 14:05:57 ..... started mapping
+Jun 21 14:06:40 ..... finished mapping
+Jun 21 14:06:41 ..... finished successfully
+Mon Jun 21 14:06:41 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:06:41 JST 2021
+Mon Jun 21 14:07:06 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g086 on chrB chromosome.
+Mon Jun 21 14:07:06 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g086.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:07:06 ..... started STAR run
+Jun 21 14:07:06 ..... loading genome
+Jun 21 14:07:40 ..... started mapping
+Jun 21 14:08:24 ..... finished mapping
+Jun 21 14:08:25 ..... finished successfully
+Mon Jun 21 14:08:25 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:08:25 JST 2021
+Mon Jun 21 14:08:48 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g086 on chrD chromosome.
+Mon Jun 21 14:08:48 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g086.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:08:48 ..... started STAR run
+Jun 21 14:08:48 ..... loading genome
+Jun 21 14:09:13 ..... started mapping
+Jun 21 14:10:07 ..... finished mapping
+Jun 21 14:10:08 ..... finished successfully
+Mon Jun 21 14:10:08 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:10:08 JST 2021
+Mon Jun 21 14:10:31 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g091.clean.fastq.gz
+map TaeRS2728_g091 on chrA chromosome.
+Mon Jun 21 14:10:31 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g091.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:10:31 ..... started STAR run
+Jun 21 14:10:31 ..... loading genome
+Jun 21 14:11:03 ..... started mapping
+Jun 21 14:11:27 ..... finished mapping
+Jun 21 14:11:28 ..... finished successfully
+Mon Jun 21 14:11:28 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:11:28 JST 2021
+Mon Jun 21 14:11:41 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g091 on chrB chromosome.
+Mon Jun 21 14:11:41 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g091.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:11:41 ..... started STAR run
+Jun 21 14:11:41 ..... loading genome
+Jun 21 14:12:15 ..... started mapping
+Jun 21 14:12:40 ..... finished mapping
+Jun 21 14:12:41 ..... finished successfully
+Mon Jun 21 14:12:41 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:12:41 JST 2021
+Mon Jun 21 14:12:53 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g091 on chrD chromosome.
+Mon Jun 21 14:12:53 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g091.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:12:53 ..... started STAR run
+Jun 21 14:12:53 ..... loading genome
+Jun 21 14:13:18 ..... started mapping
+Jun 21 14:13:49 ..... finished mapping
+Jun 21 14:13:50 ..... finished successfully
+Mon Jun 21 14:13:50 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:13:50 JST 2021
+Mon Jun 21 14:14:02 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g160.clean.fastq.gz
+map TaeRS2728_g160 on chrA chromosome.
+Mon Jun 21 14:14:02 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g160.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:14:02 ..... started STAR run
+Jun 21 14:14:02 ..... loading genome
+Jun 21 14:14:35 ..... started mapping
+Jun 21 14:15:11 ..... finished mapping
+Jun 21 14:15:12 ..... finished successfully
+Mon Jun 21 14:15:13 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:15:13 JST 2021
+Mon Jun 21 14:15:31 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g160 on chrB chromosome.
+Mon Jun 21 14:15:31 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g160.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:15:31 ..... started STAR run
+Jun 21 14:15:31 ..... loading genome
+Jun 21 14:16:05 ..... started mapping
+Jun 21 14:16:41 ..... finished mapping
+Jun 21 14:16:42 ..... finished successfully
+Mon Jun 21 14:16:42 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:16:42 JST 2021
+Mon Jun 21 14:17:00 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g160 on chrD chromosome.
+Mon Jun 21 14:17:00 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g160.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:17:00 ..... started STAR run
+Jun 21 14:17:00 ..... loading genome
+Jun 21 14:17:26 ..... started mapping
+Jun 21 14:18:10 ..... finished mapping
+Jun 21 14:18:11 ..... finished successfully
+Mon Jun 21 14:18:11 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:18:11 JST 2021
+Mon Jun 21 14:18:29 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g165.clean.fastq.gz
+map TaeRS2728_g165 on chrA chromosome.
+Mon Jun 21 14:18:29 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g165.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:18:29 ..... started STAR run
+Jun 21 14:18:29 ..... loading genome
+Jun 21 14:19:01 ..... started mapping
+Jun 21 14:19:30 ..... finished mapping
+Jun 21 14:19:32 ..... finished successfully
+Mon Jun 21 14:19:32 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:19:32 JST 2021
+Mon Jun 21 14:19:46 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g165 on chrB chromosome.
+Mon Jun 21 14:19:46 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g165.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:19:46 ..... started STAR run
+Jun 21 14:19:46 ..... loading genome
+Jun 21 14:20:20 ..... started mapping
+Jun 21 14:20:48 ..... finished mapping
+Jun 21 14:20:50 ..... finished successfully
+Mon Jun 21 14:20:50 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:20:50 JST 2021
+Mon Jun 21 14:21:04 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g165 on chrD chromosome.
+Mon Jun 21 14:21:04 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g165.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:21:04 ..... started STAR run
+Jun 21 14:21:04 ..... loading genome
+Jun 21 14:21:30 ..... started mapping
+Jun 21 14:22:04 ..... finished mapping
+Jun 21 14:22:05 ..... finished successfully
+Mon Jun 21 14:22:05 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:22:05 JST 2021
+Mon Jun 21 14:22:19 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g167.clean.fastq.gz
+map TaeRS2728_g167 on chrA chromosome.
+Mon Jun 21 14:22:19 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g167.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:22:19 ..... started STAR run
+Jun 21 14:22:19 ..... loading genome
+Jun 21 14:22:51 ..... started mapping
+Jun 21 14:23:32 ..... finished mapping
+Jun 21 14:23:33 ..... finished successfully
+Mon Jun 21 14:23:33 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:23:33 JST 2021
+Mon Jun 21 14:23:55 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g167 on chrB chromosome.
+Mon Jun 21 14:23:55 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g167.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:23:55 ..... started STAR run
+Jun 21 14:23:55 ..... loading genome
+Jun 21 14:24:30 ..... started mapping
+Jun 21 14:25:11 ..... finished mapping
+Jun 21 14:25:13 ..... finished successfully
+Mon Jun 21 14:25:13 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:25:13 JST 2021
+Mon Jun 21 14:25:33 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g167 on chrD chromosome.
+Mon Jun 21 14:25:33 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g167.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:25:33 ..... started STAR run
+Jun 21 14:25:33 ..... loading genome
+Jun 21 14:25:58 ..... started mapping
+Jun 21 14:26:49 ..... finished mapping
+Jun 21 14:26:50 ..... finished successfully
+Mon Jun 21 14:26:50 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:26:50 JST 2021
+Mon Jun 21 14:27:11 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g172.clean.fastq.gz
+map TaeRS2728_g172 on chrA chromosome.
+Mon Jun 21 14:27:11 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g172.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:27:11 ..... started STAR run
+Jun 21 14:27:11 ..... loading genome
+Jun 21 14:27:44 ..... started mapping
+Jun 21 14:28:33 ..... finished mapping
+Jun 21 14:28:34 ..... finished successfully
+Mon Jun 21 14:28:34 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:28:34 JST 2021
+Mon Jun 21 14:29:01 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g172 on chrB chromosome.
+Mon Jun 21 14:29:01 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g172.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:29:01 ..... started STAR run
+Jun 21 14:29:01 ..... loading genome
+Jun 21 14:29:35 ..... started mapping
+Jun 21 14:30:23 ..... finished mapping
+Jun 21 14:30:25 ..... finished successfully
+Mon Jun 21 14:30:25 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:30:25 JST 2021
+Mon Jun 21 14:30:51 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+map TaeRS2728_g172 on chrD chromosome.
+Mon Jun 21 14:30:51 JST 2021
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/tagseq/clean_fastq/TaeRS2728_g172.clean.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:30:51 ..... started STAR run
+Jun 21 14:30:51 ..... loading genome
+Jun 21 14:31:15 ..... started mapping
+Jun 21 14:32:14 ..... finished mapping
+Jun 21 14:32:15 ..... finished successfully
+Mon Jun 21 14:32:15 JST 2021
+finished.
+start samtools for sorting BAM.
+Mon Jun 21 14:32:15 JST 2021
+Mon Jun 21 14:32:41 JST 2021
+fnished.
+/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglerc
+Mon Jun 21 14:32:41 JST 2021
+----- finish -----

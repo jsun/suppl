@@ -1,0 +1,745 @@
+rm: cannot remove '/home/sonk414/projects/HuoberBrezel/data/tagseq/bameaglercngi/*/eaglerc*': No such file or directory
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:01:32 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:01:56 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:02:17 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:02:36 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:02:55 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	3144346 reads	Wed Jun 23 10:02:58 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:03:25 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:03:45 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:04:04 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:04:24 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	3097773 reads	Wed Jun 23 10:04:26 2021
+# Reads Classified:	Wed Jun 23 10:04:29 2021
+# CPU time (hr):	0.049965
+
+real	3m0.014s
+user	2m50.517s
+sys	0m9.392s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:04:32 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:04:56 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:05:17 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:05:36 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:05:55 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrA/Aligned.out.refsort.bam	3144346 reads	Wed Jun 23 10:05:58 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:06:18 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:06:37 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:06:55 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	2701864 reads	Wed Jun 23 10:07:09 2021
+# Reads Classified:	Wed Jun 23 10:07:12 2021
+# CPU time (hr):	0.045336
+
+real	2m43.331s
+user	2m34.973s
+sys	0m8.272s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:07:15 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:07:41 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:08:02 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:08:21 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:08:41 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrB/Aligned.out.refsort.bam	3097773 reads	Wed Jun 23 10:08:43 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:09:03 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:09:22 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:09:40 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_1__on__chrD/Aligned.out.refsort.bam	2701864 reads	Wed Jun 23 10:09:54 2021
+# Reads Classified:	Wed Jun 23 10:09:57 2021
+# CPU time (hr):	0.045556
+
+real	2m44.137s
+user	2m35.409s
+sys	0m8.628s
+Start:	2021-06-23 10:10:00.144515
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_1/eaglerc.out.A.vs.B.list	2021-06-23 10:10:06.857206
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_1/eaglerc.out.A.vs.D.list	2021-06-23 10:10:19.186249
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_1/eaglerc.out.B.vs.D.list	2021-06-23 10:10:35.741234
+Done:	2021-06-23 10:11:38.598214
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:11:42 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:12:06 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:12:26 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:12:45 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	2036637 reads	Wed Jun 23 10:12:46 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:13:12 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:13:32 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:13:52 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	2040449 reads	Wed Jun 23 10:13:52 2021
+# Reads Classified:	Wed Jun 23 10:13:55 2021
+# CPU time (hr):	0.037411
+
+real	2m14.778s
+user	2m6.193s
+sys	0m8.512s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:13:56 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:14:21 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:14:41 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:15:00 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrA/Aligned.out.refsort.bam	2036637 reads	Wed Jun 23 10:15:01 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:15:21 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:15:39 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrD/Aligned.out.refsort.bam	1811486 reads	Wed Jun 23 10:15:54 2021
+# Reads Classified:	Wed Jun 23 10:15:57 2021
+# CPU time (hr):	0.033843
+
+real	2m1.939s
+user	1m54.194s
+sys	0m7.668s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:15:58 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:16:24 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:16:45 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:17:04 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrB/Aligned.out.refsort.bam	2040449 reads	Wed Jun 23 10:17:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:17:25 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:17:43 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_16__on__chrD/Aligned.out.refsort.bam	1811486 reads	Wed Jun 23 10:17:59 2021
+# Reads Classified:	Wed Jun 23 10:18:01 2021
+# CPU time (hr):	0.034212
+
+real	2m3.261s
+user	1m55.518s
+sys	0m7.673s
+Start:	2021-06-23 10:18:02.643444
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_16/eaglerc.out.A.vs.B.list	2021-06-23 10:18:06.949581
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_16/eaglerc.out.A.vs.D.list	2021-06-23 10:18:14.958368
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_16/eaglerc.out.B.vs.D.list	2021-06-23 10:18:25.741982
+Done:	2021-06-23 10:19:06.941684
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:19:09 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:19:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:19:54 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:20:13 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:20:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:20:52 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	4677156 reads	Wed Jun 23 10:21:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:21:30 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:21:51 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:22:10 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:22:29 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:22:48 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	4470085 reads	Wed Jun 23 10:22:57 2021
+# Reads Classified:	Wed Jun 23 10:23:03 2021
+# CPU time (hr):	0.065394
+
+real	3m55.587s
+user	3m45.375s
+sys	0m10.100s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:23:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:23:29 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:23:49 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:24:08 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:24:28 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:24:46 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrA/Aligned.out.refsort.bam	4677156 reads	Wed Jun 23 10:24:59 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:25:19 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:25:37 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:25:56 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:26:15 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:26:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	4275601 reads	Wed Jun 23 10:26:39 2021
+# Reads Classified:	Wed Jun 23 10:26:44 2021
+# CPU time (hr):	0.061535
+
+real	3m41.655s
+user	3m32.444s
+sys	0m9.136s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:26:46 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:27:12 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:27:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:27:52 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:28:11 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:28:30 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrB/Aligned.out.refsort.bam	4470085 reads	Wed Jun 23 10:28:39 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:28:59 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:29:18 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:29:37 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:29:56 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:30:15 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_17__on__chrD/Aligned.out.refsort.bam	4275601 reads	Wed Jun 23 10:30:20 2021
+# Reads Classified:	Wed Jun 23 10:30:26 2021
+# CPU time (hr):	0.062074
+
+real	3m43.610s
+user	3m33.830s
+sys	0m9.692s
+Start:	2021-06-23 10:30:30.396350
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_17/eaglerc.out.A.vs.B.list	2021-06-23 10:30:41.445311
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_17/eaglerc.out.A.vs.D.list	2021-06-23 10:31:01.850673
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_17/eaglerc.out.B.vs.D.list	2021-06-23 10:31:29.233333
+Done:	2021-06-23 10:33:11.481846
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:33:17 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:33:42 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:34:02 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:34:21 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:34:41 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:35:00 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	4501086 reads	Wed Jun 23 10:35:09 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:35:35 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:35:55 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:36:15 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:36:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:36:53 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	4171504 reads	Wed Jun 23 10:36:56 2021
+# Reads Classified:	Wed Jun 23 10:37:01 2021
+# CPU time (hr):	0.063268
+
+real	3m47.897s
+user	3m37.658s
+sys	0m10.161s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:37:05 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:37:30 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:37:50 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:38:09 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:38:28 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:38:47 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrA/Aligned.out.refsort.bam	4501086 reads	Wed Jun 23 10:38:56 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:39:16 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:39:34 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:39:53 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:40:12 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:40:30 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	4208014 reads	Wed Jun 23 10:40:34 2021
+# Reads Classified:	Wed Jun 23 10:40:39 2021
+# CPU time (hr):	0.059873
+
+real	3m35.670s
+user	3m26.501s
+sys	0m9.096s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:40:41 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:41:07 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:41:27 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:41:47 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:42:05 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:42:24 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrB/Aligned.out.refsort.bam	4171504 reads	Wed Jun 23 10:42:28 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:42:48 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:43:06 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:43:25 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:43:44 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:44:02 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_18__on__chrD/Aligned.out.refsort.bam	4208014 reads	Wed Jun 23 10:44:06 2021
+# Reads Classified:	Wed Jun 23 10:44:11 2021
+# CPU time (hr):	0.058819
+
+real	3m31.884s
+user	3m22.210s
+sys	0m9.592s
+Start:	2021-06-23 10:44:13.709820
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_18/eaglerc.out.A.vs.B.list	2021-06-23 10:44:24.351939
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_18/eaglerc.out.A.vs.D.list	2021-06-23 10:44:43.203159
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_18/eaglerc.out.B.vs.D.list	2021-06-23 10:45:08.050564
+Done:	2021-06-23 10:46:42.853305
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:46:48 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:47:13 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:47:32 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrA/Aligned.out.refsort.bam	1760000 reads	Wed Jun 23 10:47:47 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:48:13 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:48:32 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrB/Aligned.out.refsort.bam	1645585 reads	Wed Jun 23 10:48:44 2021
+# Reads Classified:	Wed Jun 23 10:48:46 2021
+# CPU time (hr):	0.032889
+
+real	1m58.500s
+user	1m49.992s
+sys	0m8.432s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:48:47 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:49:12 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:49:31 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrA/Aligned.out.refsort.bam	1760000 reads	Wed Jun 23 10:49:45 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:50:05 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:50:24 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrD/Aligned.out.refsort.bam	1530164 reads	Wed Jun 23 10:50:34 2021
+# Reads Classified:	Wed Jun 23 10:50:36 2021
+# CPU time (hr):	0.030608
+
+real	1m50.289s
+user	1m42.465s
+sys	0m7.748s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:50:37 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:51:03 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:51:23 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrB/Aligned.out.refsort.bam	1645585 reads	Wed Jun 23 10:51:35 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:51:55 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:52:14 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_2__on__chrD/Aligned.out.refsort.bam	1530164 reads	Wed Jun 23 10:52:24 2021
+# Reads Classified:	Wed Jun 23 10:52:26 2021
+# CPU time (hr):	0.030267
+
+real	1m49.050s
+user	1m41.422s
+sys	0m7.564s
+Start:	2021-06-23 10:52:27.100971
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_2/eaglerc.out.A.vs.B.list	2021-06-23 10:52:30.999356
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_2/eaglerc.out.A.vs.D.list	2021-06-23 10:52:38.413847
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_2/eaglerc.out.B.vs.D.list	2021-06-23 10:52:48.451046
+Done:	2021-06-23 10:53:25.390977
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:53:27 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:53:51 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:54:12 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:54:31 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:54:50 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:55:09 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	4292430 reads	Wed Jun 23 10:55:14 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 10:55:40 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:56:00 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:56:20 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:56:39 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	3919357 reads	Wed Jun 23 10:56:56 2021
+# Reads Classified:	Wed Jun 23 10:57:01 2021
+# CPU time (hr):	0.060264
+
+real	3m37.072s
+user	3m26.988s
+sys	0m10.012s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:57:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 10:57:29 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:57:49 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:58:08 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 10:58:27 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	4000000 reads	Wed Jun 23 10:58:46 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrA/Aligned.out.refsort.bam	4292430 reads	Wed Jun 23 10:58:51 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 10:59:11 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 10:59:30 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 10:59:49 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:00:08 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	3685417 reads	Wed Jun 23 11:00:21 2021
+# Reads Classified:	Wed Jun 23 11:00:25 2021
+# CPU time (hr):	0.056332
+
+real	3m22.911s
+user	3m13.764s
+sys	0m9.080s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:00:27 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:00:53 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:01:13 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:01:33 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:01:52 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrB/Aligned.out.refsort.bam	3919357 reads	Wed Jun 23 11:02:09 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:02:29 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:02:48 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:03:07 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:03:25 2021
+# Read bam:	20181109.A-TaeRS_1_Tae_RS1_3__on__chrD/Aligned.out.refsort.bam	3685417 reads	Wed Jun 23 11:03:38 2021
+# Reads Classified:	Wed Jun 23 11:03:43 2021
+# CPU time (hr):	0.054779
+
+real	3m17.321s
+user	3m8.024s
+sys	0m9.228s
+Start:	2021-06-23 11:03:44.910101
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_3/eaglerc.out.A.vs.B.list	2021-06-23 11:03:53.800794
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_3/eaglerc.out.A.vs.D.list	2021-06-23 11:04:10.850196
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/20181109.A-TaeRS_1_Tae_RS1_3/eaglerc.out.B.vs.D.list	2021-06-23 11:04:33.904385
+Done:	2021-06-23 11:05:59.496982
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:06:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:06:29 2021
+[E::hts_open_format] Failed to open file "bameaglerc__on__chrA/Aligned.out.refsort.bam" : No such file or directory
+ERROR: (eagle-rc.c:540: errno: No such file or directory) failed to open BAM file bameaglerc__on__chrA/Aligned.out.refsort.bam
+
+
+real	0m24.894s
+user	0m21.203s
+sys	0m3.663s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:06:29 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:06:54 2021
+[E::hts_open_format] Failed to open file "bameaglerc__on__chrA/Aligned.out.refsort.bam" : No such file or directory
+ERROR: (eagle-rc.c:540: errno: No such file or directory) failed to open BAM file bameaglerc__on__chrA/Aligned.out.refsort.bam
+
+
+real	0m24.854s
+user	0m21.369s
+sys	0m3.473s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:06:54 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:07:20 2021
+[E::hts_open_format] Failed to open file "bameaglerc__on__chrB/Aligned.out.refsort.bam" : No such file or directory
+ERROR: (eagle-rc.c:540: errno: No such file or directory) failed to open BAM file bameaglerc__on__chrB/Aligned.out.refsort.bam
+
+
+real	0m26.210s
+user	0m22.577s
+sys	0m3.617s
+Start:	2021-06-23 11:07:20.815478
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/bameaglerc/eaglerc.out.A.vs.B.list	2021-06-23 11:07:20.815859
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/bameaglerc/eaglerc.out.A.vs.D.list	2021-06-23 11:07:20.816111
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/bameaglerc/eaglerc.out.B.vs.D.list	2021-06-23 11:07:20.816277
+Done:	2021-06-23 11:07:20.817028
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:07:20 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:07:45 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:08:15 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:08:44 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:09:13 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	3391589 reads	Wed Jun 23 11:09:24 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:09:50 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:10:18 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:10:47 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:11:16 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	3063504 reads	Wed Jun 23 11:11:18 2021
+# Reads Classified:	Wed Jun 23 11:11:22 2021
+# CPU time (hr):	0.068282
+
+real	4m5.940s
+user	3m55.582s
+sys	0m10.280s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:11:26 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:11:51 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:12:21 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:12:50 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:13:19 2021
+# Read bam:	TaeRS2728_g086__on__chrA/Aligned.out.refsort.bam	3391589 reads	Wed Jun 23 11:13:30 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:13:51 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:14:20 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:14:49 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:15:18 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	3216559 reads	Wed Jun 23 11:15:24 2021
+# Reads Classified:	Wed Jun 23 11:15:29 2021
+# CPU time (hr):	0.068206
+
+real	4m5.662s
+user	3m56.260s
+sys	0m9.328s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:15:32 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:15:58 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:16:27 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:16:56 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:17:25 2021
+# Read bam:	TaeRS2728_g086__on__chrB/Aligned.out.refsort.bam	3063504 reads	Wed Jun 23 11:17:26 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:17:46 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:18:15 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:18:43 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 11:19:13 2021
+# Read bam:	TaeRS2728_g086__on__chrD/Aligned.out.refsort.bam	3216559 reads	Wed Jun 23 11:19:19 2021
+# Reads Classified:	Wed Jun 23 11:19:23 2021
+# CPU time (hr):	0.064612
+
+real	3m52.718s
+user	3m42.676s
+sys	0m9.972s
+Start:	2021-06-23 11:19:25.412156
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g086/eaglerc.out.A.vs.B.list	2021-06-23 11:19:34.213823
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g086/eaglerc.out.A.vs.D.list	2021-06-23 11:19:49.799604
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g086/eaglerc.out.B.vs.D.list	2021-06-23 11:20:10.368072
+Done:	2021-06-23 11:21:28.691211
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:21:33 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:21:58 2021
+# Read bam:	TaeRS2728_g091__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:22:26 2021
+# Read bam:	TaeRS2728_g091__on__chrA/Aligned.out.refsort.bam	1756488 reads	Wed Jun 23 11:22:47 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:23:14 2021
+# Read bam:	TaeRS2728_g091__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:23:42 2021
+# Read bam:	TaeRS2728_g091__on__chrB/Aligned.out.refsort.bam	1670451 reads	Wed Jun 23 11:24:00 2021
+# Reads Classified:	Wed Jun 23 11:24:03 2021
+# CPU time (hr):	0.041823
+
+real	2m30.665s
+user	2m22.055s
+sys	0m8.536s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:24:04 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:24:28 2021
+# Read bam:	TaeRS2728_g091__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:24:57 2021
+# Read bam:	TaeRS2728_g091__on__chrA/Aligned.out.refsort.bam	1756488 reads	Wed Jun 23 11:25:18 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:25:38 2021
+# Read bam:	TaeRS2728_g091__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:26:06 2021
+# Read bam:	TaeRS2728_g091__on__chrD/Aligned.out.refsort.bam	1709718 reads	Wed Jun 23 11:26:27 2021
+# Reads Classified:	Wed Jun 23 11:26:29 2021
+# CPU time (hr):	0.040571
+
+real	2m26.156s
+user	2m18.252s
+sys	0m7.833s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:26:30 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:26:56 2021
+# Read bam:	TaeRS2728_g091__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:27:24 2021
+# Read bam:	TaeRS2728_g091__on__chrB/Aligned.out.refsort.bam	1670451 reads	Wed Jun 23 11:27:43 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:28:03 2021
+# Read bam:	TaeRS2728_g091__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:28:32 2021
+# Read bam:	TaeRS2728_g091__on__chrD/Aligned.out.refsort.bam	1709718 reads	Wed Jun 23 11:28:52 2021
+# Reads Classified:	Wed Jun 23 11:28:54 2021
+# CPU time (hr):	0.040338
+
+real	2m25.310s
+user	2m17.274s
+sys	0m7.968s
+Start:	2021-06-23 11:28:55.843767
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g091/eaglerc.out.A.vs.B.list	2021-06-23 11:29:00.429423
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g091/eaglerc.out.A.vs.D.list	2021-06-23 11:29:08.707004
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g091/eaglerc.out.B.vs.D.list	2021-06-23 11:29:19.665007
+Done:	2021-06-23 11:30:01.001948
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:30:03 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:30:27 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:30:57 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:31:25 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	2514406 reads	Wed Jun 23 11:31:40 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:32:06 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:32:35 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:33:02 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	2463856 reads	Wed Jun 23 11:33:15 2021
+# Reads Classified:	Wed Jun 23 11:33:19 2021
+# CPU time (hr):	0.054855
+
+real	3m17.607s
+user	3m7.508s
+sys	0m10.016s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:33:20 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:33:45 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:34:14 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:34:43 2021
+# Read bam:	TaeRS2728_g160__on__chrA/Aligned.out.refsort.bam	2514406 reads	Wed Jun 23 11:34:58 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:35:18 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:35:46 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:36:14 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	2522515 reads	Wed Jun 23 11:36:29 2021
+# Reads Classified:	Wed Jun 23 11:36:33 2021
+# CPU time (hr):	0.054110
+
+real	3m14.917s
+user	3m6.263s
+sys	0m8.576s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:36:35 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:37:01 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:37:31 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:37:59 2021
+# Read bam:	TaeRS2728_g160__on__chrB/Aligned.out.refsort.bam	2463856 reads	Wed Jun 23 11:38:13 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:38:33 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:39:02 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:39:30 2021
+# Read bam:	TaeRS2728_g160__on__chrD/Aligned.out.refsort.bam	2522515 reads	Wed Jun 23 11:39:45 2021
+# Reads Classified:	Wed Jun 23 11:39:49 2021
+# CPU time (hr):	0.053997
+
+real	3m14.505s
+user	3m5.761s
+sys	0m8.672s
+Start:	2021-06-23 11:39:50.536178
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g160/eaglerc.out.A.vs.B.list	2021-06-23 11:39:57.563432
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g160/eaglerc.out.A.vs.D.list	2021-06-23 11:40:10.305663
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g160/eaglerc.out.B.vs.D.list	2021-06-23 11:40:27.104798
+Done:	2021-06-23 11:41:29.768422
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:41:33 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:41:58 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:42:27 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:42:55 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	2004109 reads	Wed Jun 23 11:42:55 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:43:21 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:43:50 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:44:18 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	2006755 reads	Wed Jun 23 11:44:18 2021
+# Reads Classified:	Wed Jun 23 11:44:21 2021
+# CPU time (hr):	0.046946
+
+real	2m49.111s
+user	2m39.886s
+sys	0m9.156s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:44:22 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:44:47 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:45:16 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:45:44 2021
+# Read bam:	TaeRS2728_g165__on__chrA/Aligned.out.refsort.bam	2004109 reads	Wed Jun 23 11:45:44 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:46:04 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:46:32 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:47:01 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	2056200 reads	Wed Jun 23 11:47:02 2021
+# Reads Classified:	Wed Jun 23 11:47:05 2021
+# CPU time (hr):	0.045504
+
+real	2m43.921s
+user	2m35.918s
+sys	0m7.933s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:47:06 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:47:32 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:48:01 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:48:30 2021
+# Read bam:	TaeRS2728_g165__on__chrB/Aligned.out.refsort.bam	2006755 reads	Wed Jun 23 11:48:30 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:48:50 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:49:19 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:49:47 2021
+# Read bam:	TaeRS2728_g165__on__chrD/Aligned.out.refsort.bam	2056200 reads	Wed Jun 23 11:49:49 2021
+# Reads Classified:	Wed Jun 23 11:49:52 2021
+# CPU time (hr):	0.046187
+
+real	2m46.374s
+user	2m38.006s
+sys	0m8.300s
+Start:	2021-06-23 11:49:53.120258
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g165/eaglerc.out.A.vs.B.list	2021-06-23 11:49:58.424707
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g165/eaglerc.out.A.vs.D.list	2021-06-23 11:50:07.475729
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g165/eaglerc.out.B.vs.D.list	2021-06-23 11:50:19.218341
+Done:	2021-06-23 11:51:04.984272
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:51:07 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:51:32 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:52:01 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:52:30 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	2991581 reads	Wed Jun 23 11:52:58 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:53:24 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:53:53 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:54:21 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	2808190 reads	Wed Jun 23 11:54:44 2021
+# Reads Classified:	Wed Jun 23 11:54:49 2021
+# CPU time (hr):	0.062487
+
+real	3m45.078s
+user	3m34.669s
+sys	0m10.336s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:54:52 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 11:55:17 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:55:46 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:56:15 2021
+# Read bam:	TaeRS2728_g167__on__chrA/Aligned.out.refsort.bam	2991581 reads	Wed Jun 23 11:56:42 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 11:57:03 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:57:31 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:57:59 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	2928674 reads	Wed Jun 23 11:58:25 2021
+# Reads Classified:	Wed Jun 23 11:58:30 2021
+# CPU time (hr):	0.060704
+
+real	3m38.649s
+user	3m29.446s
+sys	0m9.136s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:58:31 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 11:58:57 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 11:59:26 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 11:59:54 2021
+# Read bam:	TaeRS2728_g167__on__chrB/Aligned.out.refsort.bam	2808190 reads	Wed Jun 23 12:00:17 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 12:00:38 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:01:06 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:01:34 2021
+# Read bam:	TaeRS2728_g167__on__chrD/Aligned.out.refsort.bam	2928674 reads	Wed Jun 23 12:02:00 2021
+# Reads Classified:	Wed Jun 23 12:02:05 2021
+# CPU time (hr):	0.060278
+
+real	3m37.117s
+user	3m27.520s
+sys	0m9.528s
+Start:	2021-06-23 12:02:08.725439
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g167/eaglerc.out.A.vs.B.list	2021-06-23 12:02:16.870122
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g167/eaglerc.out.A.vs.D.list	2021-06-23 12:02:31.379446
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g167/eaglerc.out.B.vs.D.list	2021-06-23 12:02:50.610734
+Done:	2021-06-23 12:04:03.117425
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 12:04:07 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 12:04:32 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:05:01 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:05:30 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:05:58 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	3678056 reads	Wed Jun 23 12:06:17 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 12:06:43 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:07:13 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:07:41 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:08:09 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	3605670 reads	Wed Jun 23 12:08:26 2021
+# Reads Classified:	Wed Jun 23 12:08:31 2021
+# CPU time (hr):	0.073818
+
+real	4m25.874s
+user	4m14.822s
+sys	0m10.976s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 12:08:33 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrA.fa	Wed Jun 23 12:08:58 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:09:27 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:09:56 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:10:25 2021
+# Read bam:	TaeRS2728_g172__on__chrA/Aligned.out.refsort.bam	3678056 reads	Wed Jun 23 12:10:44 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 12:11:04 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:11:32 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:12:01 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:12:29 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	3763765 reads	Wed Jun 23 12:12:51 2021
+# Reads Classified:	Wed Jun 23 12:12:56 2021
+# CPU time (hr):	0.073308
+
+real	4m24.036s
+user	4m14.789s
+sys	0m9.173s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=0 pao=0
+#          ngi=1 isc=1 nodup=0 splice=1 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 12:12:57 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrB.fa	Wed Jun 23 12:13:23 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:13:52 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:14:21 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:14:50 2021
+# Read bam:	TaeRS2728_g172__on__chrB/Aligned.out.refsort.bam	3605670 reads	Wed Jun 23 12:15:07 2021
+# Read reference genome: /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/seqdata/dna_chrD.fa	Wed Jun 23 12:15:27 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	1000000 reads	Wed Jun 23 12:15:55 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	2000000 reads	Wed Jun 23 12:16:25 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	3000000 reads	Wed Jun 23 12:16:53 2021
+# Read bam:	TaeRS2728_g172__on__chrD/Aligned.out.refsort.bam	3763765 reads	Wed Jun 23 12:17:15 2021
+# Reads Classified:	Wed Jun 23 12:17:20 2021
+# CPU time (hr):	0.073440
+
+real	4m24.519s
+user	4m14.344s
+sys	0m10.088s
+Start:	2021-06-23 12:17:22.218805
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g172/eaglerc.out.A.vs.B.list	2021-06-23 12:17:31.477696
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g172/eaglerc.out.A.vs.D.list	2021-06-23 12:17:47.943429
+Read:	/home/sonk414/projects/HuoberBrezel/data/tagseq/eaglercngi/TaeRS2728_g172/eaglerc.out.B.vs.D.list	2021-06-23 12:18:09.627999
+Done:	2021-06-23 12:19:34.844318
