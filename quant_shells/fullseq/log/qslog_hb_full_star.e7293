@@ -1,0 +1,115 @@
+
+real	22m47.624s
+user	122m41.832s
+sys	3m43.361s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+
+real	16m14.153s
+user	84m23.015s
+sys	3m3.607s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+
+real	11m53.552s
+user	59m26.315s
+sys	2m23.289s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+
+real	16m43.015s
+user	87m22.191s
+sys	3m4.682s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+
+real	19m16.067s
+user	101m32.372s
+sys	3m32.347s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+
+real	19m29.330s
+user	103m16.373s
+sys	3m26.620s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.bam                 ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.bam                 ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.bam                 ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.bam            ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.bam            ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.bam            ||
+||                                                                            ||
+||             Output file : counts.gene.ext_1.0k.tsv                         ||
+||                 Summary : counts.gene.ext_1.0k.tsv.summary                 ||
+||              Annotation : dna.ext_1.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/ful ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.bam...                         ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 23641169                                             ||
+||    Successfully assigned alignments : 11350358 (48.0%)                     ||
+||    Running time : 0.36 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.bam...                         ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 19681084                                             ||
+||    Successfully assigned alignments : 10299408 (52.3%)                     ||
+||    Running time : 0.24 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.bam...                         ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 14372633                                             ||
+||    Successfully assigned alignments : 7603195 (52.9%)                      ||
+||    Running time : 0.17 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.bam...                    ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 18708481                                             ||
+||    Successfully assigned alignments : 10515526 (56.2%)                     ||
+||    Running time : 0.21 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.bam...                    ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 23754411                                             ||
+||    Successfully assigned alignments : 14137296 (59.5%)                     ||
+||    Running time : 0.25 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.bam...                    ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 24722073                                             ||
+||    Successfully assigned alignments : 13764328 (55.7%)                     ||
+||    Running time : 0.28 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/fullseq/countsstar/counts.gene.ext_1.0k.tsv.summary"     ||
+||                                                                            ||
+\\============================================================================//
+

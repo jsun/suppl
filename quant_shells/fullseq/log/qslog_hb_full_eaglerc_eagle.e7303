@@ -1,0 +1,542 @@
+
+real	99m1.632s
+user	375m20.254s
+sys	15m42.182s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 11:55:45 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	641073 entries	Tue Jun 22 11:55:45 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	17218501 reads	Tue Jun 22 11:57:40 2021
+# Reads Classified:	Tue Jun 22 12:01:56 2021
+# CPU time (hr):	0.110074
+
+real	6m36.929s
+user	6m24.154s
+sys	0m12.456s
+
+real	91m15.722s
+user	346m57.801s
+sys	14m9.699s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 13:33:37 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	604086 entries	Tue Jun 22 13:33:38 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	16667120 reads	Tue Jun 22 13:35:20 2021
+# Reads Classified:	Tue Jun 22 13:39:23 2021
+# CPU time (hr):	0.102650
+
+real	6m10.074s
+user	5m57.764s
+sys	0m12.168s
+
+real	102m19.183s
+user	389m47.675s
+sys	15m47.604s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 15:22:06 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	636795 entries	Tue Jun 22 15:22:07 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	17264951 reads	Tue Jun 22 15:24:01 2021
+# Reads Classified:	Tue Jun 22 15:28:12 2021
+# CPU time (hr):	0.108501
+
+real	6m31.224s
+user	6m18.191s
+sys	0m12.816s
+
+real	95m15.089s
+user	362m51.434s
+sys	14m19.046s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 17:03:53 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	610408 entries	Tue Jun 22 17:03:53 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	16745211 reads	Tue Jun 22 17:05:37 2021
+# Reads Classified:	Tue Jun 22 17:09:37 2021
+# CPU time (hr):	0.102312
+
+real	6m8.859s
+user	5m56.849s
+sys	0m11.852s
+
+real	89m3.729s
+user	337m58.913s
+sys	14m0.491s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 18:39:05 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	602374 entries	Tue Jun 22 18:39:06 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	17092670 reads	Tue Jun 22 18:40:52 2021
+# Reads Classified:	Tue Jun 22 18:45:00 2021
+# CPU time (hr):	0.105362
+
+real	6m19.882s
+user	6m7.419s
+sys	0m12.308s
+
+real	89m33.226s
+user	340m27.891s
+sys	14m2.809s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 20:14:58 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	612233 entries	Tue Jun 22 20:14:59 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	16911872 reads	Tue Jun 22 20:16:45 2021
+# Reads Classified:	Tue Jun 22 20:20:53 2021
+# CPU time (hr):	0.105102
+
+real	6m18.940s
+user	6m6.823s
+sys	0m11.948s
+
+real	89m49.194s
+user	340m43.500s
+sys	13m51.295s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 21:51:07 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	591662 entries	Tue Jun 22 21:51:07 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	15780044 reads	Tue Jun 22 21:52:51 2021
+# Reads Classified:	Tue Jun 22 21:56:10 2021
+# CPU time (hr):	0.090793
+
+real	5m27.387s
+user	5m16.081s
+sys	0m11.140s
+
+real	83m9.841s
+user	315m14.589s
+sys	12m33.121s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Tue Jun 22 23:19:44 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	554834 entries	Tue Jun 22 23:19:44 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	15328964 reads	Tue Jun 22 23:21:17 2021
+# Reads Classified:	Tue Jun 22 23:24:02 2021
+# CPU time (hr):	0.078020
+
+real	4m41.374s
+user	4m30.467s
+sys	0m10.804s
+
+real	92m33.771s
+user	352m9.167s
+sys	14m1.517s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 00:56:59 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	589414 entries	Wed Jun 23 00:56:59 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	15827063 reads	Wed Jun 23 00:58:42 2021
+# Reads Classified:	Wed Jun 23 01:01:59 2021
+# CPU time (hr):	0.089617
+
+real	5m23.190s
+user	5m11.490s
+sys	0m11.516s
+
+real	86m50.747s
+user	329m57.805s
+sys	12m56.070s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 02:29:13 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	561946 entries	Wed Jun 23 02:29:13 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	15407604 reads	Wed Jun 23 02:30:47 2021
+# Reads Classified:	Wed Jun 23 02:33:34 2021
+# CPU time (hr):	0.078535
+
+real	4m43.294s
+user	4m33.129s
+sys	0m9.960s
+
+real	78m44.708s
+user	298m30.708s
+sys	12m25.625s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 03:52:41 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	554860 entries	Wed Jun 23 03:52:41 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	15665001 reads	Wed Jun 23 03:54:18 2021
+# Reads Classified:	Wed Jun 23 03:57:30 2021
+# CPU time (hr):	0.086344
+
+real	5m11.308s
+user	5m0.188s
+sys	0m11.000s
+
+real	80m9.491s
+user	303m57.868s
+sys	12m30.383s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 05:18:02 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	563250 entries	Wed Jun 23 05:18:02 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	15581390 reads	Wed Jun 23 05:19:38 2021
+# Reads Classified:	Wed Jun 23 05:22:38 2021
+# CPU time (hr):	0.082757
+
+real	4m58.428s
+user	4m47.357s
+sys	0m10.956s
+
+real	79m45.542s
+user	304m0.013s
+sys	10m39.255s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 06:42:46 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	596033 entries	Wed Jun 23 06:42:46 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	11874607 reads	Wed Jun 23 06:44:01 2021
+# Reads Classified:	Wed Jun 23 06:44:56 2021
+# CPU time (hr):	0.040574
+
+real	2m26.420s
+user	2m19.172s
+sys	0m7.196s
+
+real	74m43.032s
+user	284m2.322s
+sys	9m40.675s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 07:59:55 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	560836 entries	Wed Jun 23 07:59:56 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	11501392 reads	Wed Jun 23 08:01:03 2021
+# Reads Classified:	Wed Jun 23 08:01:56 2021
+# CPU time (hr):	0.037876
+
+real	2m16.717s
+user	2m10.346s
+sys	0m6.296s
+
+real	81m1.793s
+user	308m19.453s
+sys	10m58.340s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 09:23:14 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	590876 entries	Wed Jun 23 09:23:14 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	11920113 reads	Wed Jun 23 09:24:29 2021
+# Reads Classified:	Wed Jun 23 09:25:25 2021
+# CPU time (hr):	0.041106
+
+real	2m28.375s
+user	2m20.947s
+sys	0m7.353s
+
+real	76m26.317s
+user	291m25.946s
+sys	10m17.863s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 10:42:08 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	563353 entries	Wed Jun 23 10:42:09 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	11620844 reads	Wed Jun 23 10:43:18 2021
+# Reads Classified:	Wed Jun 23 10:44:13 2021
+# CPU time (hr):	0.038881
+
+real	2m20.336s
+user	2m13.145s
+sys	0m7.124s
+
+real	68m16.935s
+user	258m59.388s
+sys	9m50.098s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 11:52:46 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	559635 entries	Wed Jun 23 11:52:46 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	11773985 reads	Wed Jun 23 11:53:56 2021
+# Reads Classified:	Wed Jun 23 11:54:50 2021
+# CPU time (hr):	0.038926
+
+real	2m20.499s
+user	2m13.361s
+sys	0m7.080s
+
+real	69m7.708s
+user	262m17.426s
+sys	10m9.271s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 13:04:14 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	566910 entries	Wed Jun 23 13:04:14 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	11740818 reads	Wed Jun 23 13:05:25 2021
+# Reads Classified:	Wed Jun 23 13:06:20 2021
+# CPU time (hr):	0.039415
+
+real	2m22.253s
+user	2m15.062s
+sys	0m7.136s
+
+real	97m32.222s
+user	371m33.700s
+sys	14m28.766s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 14:44:08 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	635769 entries	Wed Jun 23 14:44:09 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	15633202 reads	Wed Jun 23 14:45:54 2021
+# Reads Classified:	Wed Jun 23 14:48:29 2021
+# CPU time (hr):	0.078529
+
+real	4m43.256s
+user	4m32.292s
+sys	0m10.780s
+
+real	89m45.153s
+user	341m38.323s
+sys	13m10.278s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 16:18:37 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	600657 entries	Wed Jun 23 16:18:37 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	15223751 reads	Wed Jun 23 16:20:12 2021
+# Reads Classified:	Wed Jun 23 16:22:17 2021
+# CPU time (hr):	0.067127
+
+real	4m2.118s
+user	3m52.971s
+sys	0m9.012s
+
+real	101m27.316s
+user	387m15.708s
+sys	14m24.109s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 18:04:06 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	631573 entries	Wed Jun 23 18:04:07 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	15650569 reads	Wed Jun 23 18:05:53 2021
+# Reads Classified:	Wed Jun 23 18:08:36 2021
+# CPU time (hr):	0.081326
+
+real	4m53.312s
+user	4m41.940s
+sys	0m11.171s
+
+real	96m3.477s
+user	367m3.141s
+sys	13m24.055s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 19:45:03 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	606682 entries	Wed Jun 23 19:45:04 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	15180442 reads	Wed Jun 23 19:46:40 2021
+# Reads Classified:	Wed Jun 23 19:48:35 2021
+# CPU time (hr):	0.064989
+
+real	3m54.451s
+user	3m44.671s
+sys	0m9.612s
+
+real	86m30.951s
+user	329m18.768s
+sys	12m52.462s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 21:15:29 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	602776 entries	Wed Jun 23 21:15:29 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	15581561 reads	Wed Jun 23 21:17:05 2021
+# Reads Classified:	Wed Jun 23 21:19:53 2021
+# CPU time (hr):	0.079335
+
+real	4m46.067s
+user	4m36.288s
+sys	0m9.639s
+
+real	86m34.154s
+user	329m40.375s
+sys	12m57.098s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Wed Jun 23 22:46:49 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	609187 entries	Wed Jun 23 22:46:49 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	15374485 reads	Wed Jun 23 22:48:26 2021
+# Reads Classified:	Wed Jun 23 22:50:40 2021
+# CPU time (hr):	0.069674
+
+real	4m11.313s
+user	4m1.414s
+sys	0m9.720s
+
+real	109m57.265s
+user	415m56.712s
+sys	18m42.001s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 00:40:57 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	666786 entries	Thu Jun 24 00:40:58 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	21835496 reads	Thu Jun 24 00:43:20 2021
+# Reads Classified:	Thu Jun 24 00:45:56 2021
+# CPU time (hr):	0.091594
+
+real	5m30.682s
+user	5m16.642s
+sys	0m13.515s
+
+real	101m21.378s
+user	382m5.152s
+sys	17m38.344s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 02:27:49 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	628118 entries	Thu Jun 24 02:27:50 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	21252956 reads	Thu Jun 24 02:30:01 2021
+# Reads Classified:	Thu Jun 24 02:32:52 2021
+# CPU time (hr):	0.092687
+
+real	5m34.553s
+user	5m20.980s
+sys	0m13.107s
+
+real	116m39.111s
+user	442m47.979s
+sys	18m37.703s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 04:30:03 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	661861 entries	Thu Jun 24 04:30:04 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	21858360 reads	Thu Jun 24 04:32:25 2021
+# Reads Classified:	Thu Jun 24 04:34:51 2021
+# CPU time (hr):	0.087846
+
+real	5m17.132s
+user	5m3.528s
+sys	0m13.119s
+
+real	106m20.271s
+user	402m25.536s
+sys	17m24.618s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 06:21:40 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	634989 entries	Thu Jun 24 06:21:41 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	21290923 reads	Thu Jun 24 06:23:52 2021
+# Reads Classified:	Thu Jun 24 06:26:45 2021
+# CPU time (hr):	0.092183
+
+real	5m32.748s
+user	5m19.133s
+sys	0m13.114s
+
+real	98m10.266s
+user	369m52.301s
+sys	16m56.582s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 08:05:24 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	629869 entries	Thu Jun 24 08:05:24 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	21697625 reads	Thu Jun 24 08:07:38 2021
+# Reads Classified:	Thu Jun 24 08:10:05 2021
+# CPU time (hr):	0.086041
+
+real	5m10.700s
+user	4m57.063s
+sys	0m13.077s
+
+real	98m44.661s
+user	372m43.894s
+sys	17m5.662s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 09:49:19 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	637926 entries	Thu Jun 24 09:49:19 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	21572343 reads	Thu Jun 24 09:51:32 2021
+# Reads Classified:	Thu Jun 24 09:54:07 2021
+# CPU time (hr):	0.089189
+
+real	5m21.814s
+user	5m8.389s
+sys	0m13.108s
+
+real	108m13.581s
+user	409m14.224s
+sys	18m27.352s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 11:42:54 2021
+# Read EAGLE variants file: eagle.out.A.vs.B.txt	635970 entries	Thu Jun 24 11:42:55 2021
+# Read EAGLE read info file: eagle.out.A.vs.B.readinfo.txt	21006768 reads	Thu Jun 24 11:45:12 2021
+# Reads Classified:	Thu Jun 24 11:48:17 2021
+# CPU time (hr):	0.097758
+
+real	5m52.565s
+user	5m38.729s
+sys	0m13.599s
+
+real	98m28.038s
+user	372m1.039s
+sys	16m45.625s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 13:27:15 2021
+# Read EAGLE variants file: eagle.out.A.vs.D.txt	600849 entries	Thu Jun 24 13:27:15 2021
+# Read EAGLE read info file: eagle.out.A.vs.D.readinfo.txt	20444720 reads	Thu Jun 24 13:29:20 2021
+# Reads Classified:	Thu Jun 24 13:32:37 2021
+# CPU time (hr):	0.096785
+
+real	5m49.295s
+user	5m35.832s
+sys	0m12.971s
+
+real	111m28.421s
+user	422m21.511s
+sys	18m36.120s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 15:24:33 2021
+# Read EAGLE variants file: eagle.out.B.vs.A.txt	634080 entries	Thu Jun 24 15:24:33 2021
+# Read EAGLE read info file: eagle.out.B.vs.A.readinfo.txt	21090166 reads	Thu Jun 24 15:26:51 2021
+# Reads Classified:	Thu Jun 24 15:29:50 2021
+# CPU time (hr):	0.096569
+
+real	5m48.486s
+user	5m35.266s
+sys	0m12.787s
+
+real	105m47.803s
+user	399m47.493s
+sys	17m24.335s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 17:16:09 2021
+# Read EAGLE variants file: eagle.out.B.vs.D.txt	610280 entries	Thu Jun 24 17:16:09 2021
+# Read EAGLE read info file: eagle.out.B.vs.D.readinfo.txt	20545800 reads	Thu Jun 24 17:18:24 2021
+# Reads Classified:	Thu Jun 24 17:21:41 2021
+# CPU time (hr):	0.100942
+
+real	6m4.142s
+user	5m51.098s
+sys	0m12.699s
+
+real	93m14.457s
+user	350m45.903s
+sys	16m33.158s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 18:55:28 2021
+# Read EAGLE variants file: eagle.out.D.vs.A.txt	600764 entries	Thu Jun 24 18:55:28 2021
+# Read EAGLE read info file: eagle.out.D.vs.A.readinfo.txt	20901259 reads	Thu Jun 24 18:57:36 2021
+# Reads Classified:	Thu Jun 24 19:00:44 2021
+# CPU time (hr):	0.096222
+
+real	5m47.347s
+user	5m33.612s
+sys	0m13.194s
+
+real	95m44.896s
+user	360m46.223s
+sys	16m25.094s
+# Options: listonly=1 readlist=0 reclassify=0 refonly=0 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Thu Jun 24 20:37:00 2021
+# Read EAGLE variants file: eagle.out.D.vs.B.txt	608656 entries	Thu Jun 24 20:37:00 2021
+# Read EAGLE read info file: eagle.out.D.vs.B.readinfo.txt	20734787 reads	Thu Jun 24 20:39:08 2021
+# Reads Classified:	Thu Jun 24 20:42:21 2021
+# CPU time (hr):	0.097986
+
+real	5m53.487s
+user	5m39.982s
+sys	0m13.175s
+/hss/opt/uge/uge_8610/default/spool/gsc14/job_scripts/7303: line 136: pyenv: command not found
+/hss/opt/uge/uge_8610/default/spool/gsc14/job_scripts/7303: line 139: [: -eq: unary operator expected

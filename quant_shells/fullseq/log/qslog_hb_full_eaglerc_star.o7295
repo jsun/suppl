@@ -1,0 +1,233 @@
+shell: 04_quant_eaglerc.sh
+LIBPTN: 
+pSTAR: 1
+pEAGLE: 0
+pEAGLERC: 0
+pCount: 0
+nCPU: 16
+----- start -----
+Mon Jun 21 13:42:59 JST 2021
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_2 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 13:42:59 ..... started STAR run
+Jun 21 13:42:59 ..... loading genome
+Jun 21 13:43:34 ..... started mapping
+Jun 21 14:04:48 ..... finished mapping
+Jun 21 14:04:50 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_2 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:08:29 ..... started STAR run
+Jun 21 14:08:29 ..... loading genome
+Jun 21 14:09:04 ..... started mapping
+Jun 21 14:28:06 ..... finished mapping
+Jun 21 14:28:08 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_2 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:32:57 ..... started STAR run
+Jun 21 14:32:57 ..... loading genome
+Jun 21 14:33:23 ..... started mapping
+Jun 21 14:49:14 ..... finished mapping
+Jun 21 14:49:15 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_3 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 14:54:15 ..... started STAR run
+Jun 21 14:54:15 ..... loading genome
+Jun 21 14:54:48 ..... started mapping
+Jun 21 15:11:57 ..... finished mapping
+Jun 21 15:11:59 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_3 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 15:14:58 ..... started STAR run
+Jun 21 15:14:58 ..... loading genome
+Jun 21 15:15:33 ..... started mapping
+Jun 21 15:31:50 ..... finished mapping
+Jun 21 15:31:52 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_3 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 15:35:14 ..... started STAR run
+Jun 21 15:35:15 ..... loading genome
+Jun 21 15:35:40 ..... started mapping
+Jun 21 15:49:38 ..... finished mapping
+Jun 21 15:49:40 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_4 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 15:53:10 ..... started STAR run
+Jun 21 15:53:10 ..... loading genome
+Jun 21 15:53:45 ..... started mapping
+Jun 21 16:05:44 ..... finished mapping
+Jun 21 16:05:46 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_4 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 16:07:59 ..... started STAR run
+Jun 21 16:07:59 ..... loading genome
+Jun 21 16:08:35 ..... started mapping
+Jun 21 16:19:57 ..... finished mapping
+Jun 21 16:19:58 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_4 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 16:22:29 ..... started STAR run
+Jun 21 16:22:29 ..... loading genome
+Jun 21 16:22:55 ..... started mapping
+Jun 21 16:32:44 ..... finished mapping
+Jun 21 16:32:46 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 16:35:22 ..... started STAR run
+Jun 21 16:35:22 ..... loading genome
+Jun 21 16:35:56 ..... started mapping
+Jun 21 16:54:20 ..... finished mapping
+Jun 21 16:54:22 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 16:57:04 ..... started STAR run
+Jun 21 16:57:04 ..... loading genome
+Jun 21 16:57:38 ..... started mapping
+Jun 21 17:14:55 ..... finished mapping
+Jun 21 17:14:57 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_2 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_2_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 17:18:01 ..... started STAR run
+Jun 21 17:18:01 ..... loading genome
+Jun 21 17:18:26 ..... started mapping
+Jun 21 17:33:41 ..... finished mapping
+Jun 21 17:33:43 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 17:36:49 ..... started STAR run
+Jun 21 17:36:49 ..... loading genome
+Jun 21 17:37:22 ..... started mapping
+Jun 21 17:59:49 ..... finished mapping
+Jun 21 17:59:51 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 18:03:18 ..... started STAR run
+Jun 21 18:03:18 ..... loading genome
+Jun 21 18:03:54 ..... started mapping
+Jun 21 18:26:01 ..... finished mapping
+Jun 21 18:26:02 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_3 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_3_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 18:30:12 ..... started STAR run
+Jun 21 18:30:12 ..... loading genome
+Jun 21 18:30:37 ..... started mapping
+Jun 21 18:50:04 ..... finished mapping
+Jun 21 18:50:05 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrA chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrA_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 18:54:08 ..... started STAR run
+Jun 21 18:54:08 ..... loading genome
+Jun 21 18:54:40 ..... started mapping
+Jun 21 19:15:26 ..... finished mapping
+Jun 21 19:15:28 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrB chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrB_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 19:19:27 ..... started STAR run
+Jun 21 19:19:27 ..... loading genome
+Jun 21 19:20:03 ..... started mapping
+Jun 21 19:40:14 ..... finished mapping
+Jun 21 19:40:15 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+map 20181221.A-ZH_W2017_1_CS_cold_4 on chrD chromosome.
+	/home/sonk414/local/bin/STAR --genomeDir /home/sonk414/projects/db/genome/IWGSC_RefSeq_v2.1_CS/index/dna_chrD_star --readFilesCommand zcat --readFilesIn /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R1.cleaned.fastq.gz /home/sonk414/projects/HuoberBrezel/data/fullseq/clean_fastq/20181221.A-ZH_W2017_1_CS_cold_4_R2.cleaned.fastq.gz --runThreadN 16 --genomeLoad NoSharedMemory --outSAMstrandField intronMotif --outFilterIntronMotifs RemoveNoncanonicalUnannotated --outSJfilterCountUniqueMin 3 2 2 2 --outMultimapperOrder Random --outFilterType BySJout
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Jun 21 19:44:40 ..... started STAR run
+Jun 21 19:44:40 ..... loading genome
+Jun 21 19:45:06 ..... started mapping
+Jun 21 20:03:00 ..... finished mapping
+Jun 21 20:03:02 ..... finished successfully
+finished.
+start bamsort.
+fnished bamsort.
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+Mon Jun 21 20:07:36 JST 2021
+----- finish -----

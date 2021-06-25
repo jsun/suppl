@@ -1,0 +1,178 @@
+shell: 04_quant_eaglerc.sh
+LIBPTN: 
+pSTAR: 0
+pEAGLE: 1
+pCount: 0
+nCPU: 16
+----- start -----
+Tue Jun 22 10:16:43 JST 2021
+20181221.A-ZH_W2017_1_CS_2
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_3
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_4
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_cold_2
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_cold_3
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+20181221.A-ZH_W2017_1_CS_cold_4
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+start eagle
+finished eagle
+start eaglerc
+finished eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc
+Thu Jun 24 20:42:53 JST 2021
+----- finish -----

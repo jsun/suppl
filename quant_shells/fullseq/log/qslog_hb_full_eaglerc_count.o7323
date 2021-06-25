@@ -1,0 +1,16 @@
+shell: 04_quant_eaglerc.sh
+LIBPTN: 
+pSTAR: 0
+pEAGLE: 0
+pCount: 1
+nCPU: 16
+----- start -----
+Fri Jun 25 06:37:56 JST 2021
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+/home/sonk414/projects/HuoberBrezel/data/fullseq/eaglerc
+Fri Jun 25 10:27:55 JST 2021
+----- finish -----

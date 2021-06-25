@@ -1,90 +1,92 @@
 
-real	10m35.321s
-user	152m17.675s
-sys	0m55.038s
+real	21m51.403s
+user	123m33.697s
+sys	2m0.559s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	9m27.850s
-user	141m6.198s
-sys	0m53.620s
+real	19m38.932s
+user	110m31.565s
+sys	2m11.333s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
 
-real	8m14.972s
-user	117m31.663s
-sys	0m45.271s
+real	16m17.961s
+user	91m26.370s
+sys	1m38.539s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
 
-real	8m18.576s
-user	123m24.146s
-sys	0m43.709s
+real	17m44.087s
+user	99m23.463s
+sys	1m50.197s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	8m27.362s
-user	118m16.613s
-sys	0m55.297s
+real	16m53.650s
+user	94m12.922s
+sys	1m56.450s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	6m59.819s
-user	103m27.379s
-sys	0m41.022s
+real	14m25.288s
+user	80m44.479s
+sys	1m31.430s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	6m30.629s
-user	85m19.163s
-sys	0m45.432s
+real	12m35.469s
+user	69m12.752s
+sys	1m33.234s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	6m2.424s
-user	82m13.747s
-sys	0m46.993s
+real	11m59.177s
+user	65m39.413s
+sys	1m36.252s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	5m30.957s
-user	72m45.733s
-sys	0m39.291s
+real	10m16.772s
+user	56m44.669s
+sys	1m16.824s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	9m13.200s
-user	132m52.721s
-sys	0m50.483s
+real	18m59.482s
+user	106m37.410s
+sys	1m54.775s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	9m8.511s
-user	126m24.626s
-sys	0m54.604s
+real	17m53.377s
+user	100m24.901s
+sys	1m59.965s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	8m2.579s
-user	112m31.913s
-sys	0m45.002s
+real	15m42.347s
+user	88m20.292s
+sys	1m35.644s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	11m21.333s
-user	163m14.634s
-sys	0m56.954s
+real	23m2.145s
+user	130m1.531s
+sys	2m10.641s
 [bam_sort_core] merging from 0 files and 16 in-memory blocks...
 
-real	11m16.170s
-user	160m43.164s
-sys	1m0.994s
+real	22m43.916s
+user	128m6.144s
+sys	2m17.021s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
 
-real	10m4.519s
-user	144m7.036s
-sys	0m50.458s
+real	19m53.811s
+user	112m43.882s
+sys	1m49.535s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
 
-real	13m8.146s
-user	196m34.907s
-sys	0m55.836s
-[bam_sort_core] merging from 0 files and 16 in-memory blocks...
-
-real	13m7.477s
-user	197m46.070s
-sys	0m51.488s
+real	21m19.864s
+user	120m39.528s
+sys	2m3.689s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
 
-real	11m40.147s
-user	175m53.355s
-sys	0m41.765s
+real	20m48.477s
+user	117m17.671s
+sys	2m12.983s
 [bam_sort_core] merging from 16 files and 16 in-memory blocks...
+
+real	18m22.266s
+user	103m19.656s
+sys	1m46.833s
+[bam_sort_core] merging from 16 files and 16 in-memory blocks...
+/hss/opt/uge/uge_8610/default/spool/gsc13/job_scripts/7295: line 155: pyenv: command not found
+/hss/opt/uge/uge_8610/default/spool/gsc13/job_scripts/7295: line 158: [: -eq: unary operator expected
