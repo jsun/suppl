@@ -75,10 +75,10 @@ do
 done
 
 # qsub is not working well for some deseases, no error-log, so cannot debug.
-qsub train_model_classic.sh cucumber > cucumber_log.txt
-qsub train_model_classic.sh eggplant > eggplant_log.txt
-qsub train_model_classic.sh strawberry > strawberry_log.txt
-qsub train_model_classic.sh tomato > tomato_log.txt
+qsub train_model_classic.sh cucumber
+qsub train_model_classic.sh eggplant
+qsub train_model_classic.sh strawberry
+qsub train_model_classic.sh tomato
 ```
 
 ## Deep neural network models
@@ -100,7 +100,10 @@ python bake.py --mode cv --feature-type decimal --model L2 \
                --epochs 5 --batch-size 1024
 
 
-qsub train_model_dnn.sh
+qsub train_model_dnn.sh cucumber
+qsub train_model_dnn.sh strawberry
+qsub train_model_dnn.sh eggplant
+qsub train_model_dnn.sh tomato
 ```
 
 
