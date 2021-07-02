@@ -75,10 +75,10 @@ do
 done
 
 # qsub is not working well for some deseases, no error-log, so cannot debug.
-bash train_model_classic.sh cucumber > cucumber_log.txt
-bash train_model_classic.sh eggplant > eggplant_log.txt
-bash train_model_classic.sh strawberry > strawberry_log.txt
-bash train_model_classic.sh tomato > tomato_log.txt
+qsub train_model_classic.sh cucumber > cucumber_log.txt
+qsub train_model_classic.sh eggplant > eggplant_log.txt
+qsub train_model_classic.sh strawberry > strawberry_log.txt
+qsub train_model_classic.sh tomato > tomato_log.txt
 ```
 
 ## Deep neural network models

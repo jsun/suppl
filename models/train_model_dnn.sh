@@ -2,27 +2,25 @@
 #$ -S /bin/bash
 #$ -jc hostos_g1
 #$ -cwd
-#$ -N qs_tiramisu_cucumber
+#$ -N qs_tiramisu_dnn
 #$ -mods l_hard h_rt 720:00:00
-#$ -t 1-80:1
+#$ -t 1-90:1
 
 
 # crop name for analyses
 # cucumber eggplant tomato strawberry
-CROP_NAME=cucumber
+CROP_NAME=$1
 
 # project path
 PROJECT_PATH=~/projects/tiramisu
 DATA_PATH=${PROJECT_PATH}/data/formatted_data
 RESULT_PATH=${PROJECT_PATH}/data/cv_results
+PYTHON=/data/ai_plantdisease/tiramisu/python_env/bin/python
 
-# load shell config data
-source ~/.profile
 
 # move to project working space
 cd ${PROJECT_PATH}
 cd models
-pyenv local tiramisu
 
 
 
@@ -44,7 +42,7 @@ do
     do
         for model_arch in L2
         do
-            python ${PROJECT_PATH}/models/bake.py \
+            ${PYTHON} ${PROJECT_PATH}/models/bake.py \
                 --mode cv --feature-type ${ft} --model L2 \
                 --weight ${result_dpath}/dnn____${ft}____${rt}____${disease_name}.pth \
                 --cv-dataset ${disease_path} \

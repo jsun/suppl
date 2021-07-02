@@ -1,6 +1,7 @@
 import os
 import sys
 import argparse
+import datetime
 import numpy as np
 import pandas as pd
 import sklearn
@@ -17,10 +18,15 @@ import utils
 
 
 
-def simulate(X, y, pipe, params):
+def simulate(X, y, pipe, params, use_random_seed=True):
     output_matrix = None
     
-    random_seed = int(np.sum(y))
+    if use_random_seed:
+        # same datasets will give the same random seed
+        random_seed = int(np.sum(y))
+    else:
+        # random seed is depending on date and time and never be same even if the datasets are same
+        random_seed = int(datetime.datetime.now().strftime('%Y%m%d%H%M%S')) + int(np.sum(y))
     
     # 10-fold cross validation for model validation
     i = 0
@@ -145,7 +151,7 @@ def main(algorithm, dataset, feature_type, randomize_type, output, test_run):
     data = utils.load_dataset(dataset)
     data = utils.randomize_dataset(data, randomize_type)
     X, y = utils.get_xy(data, feature_type)
-    pred_values = simulate(X, y, pipe, params)
+    pred_values = simulate(X, y, pipe, params, use_random_seed=False)
     pred_values.to_csv(output, header=True, index=False, sep='\t')
 
 

@@ -2,9 +2,9 @@
 #$ -S /bin/bash
 #$ -jc hostos_g1
 #$ -cwd
-#$ -N qs_tiramisu_classic_cucumber
-#$ -mods l_hard h_rt 240:00:00
-#$ -t 1:50
+#$ -N qs_tiramisu_classic
+#$ -mods l_hard h_rt 720:00:00
+#$ -t 1:90
 
 
 # set crop name: cucumber eggplant tomato strawberry
@@ -15,18 +15,14 @@ CROP_NAME=$1
 PROJECT_PATH=~/projects/tiramisu
 DATA_PATH=${PROJECT_PATH}/data/formatted_data
 RESULT_PATH=${PROJECT_PATH}/data/cv_results
+PYTHON=/data/ai_plantdisease/tiramisu/python_env/bin/python
 
-# load shell config data
-#source ~/.profile
 
 # move to project working space
 cd ${PROJECT_PATH}
-#pyenv local tiramisu
 cd models
 
 
-for SGE_TASK_ID in $(seq 0 80)
-do
 
 
 # randomized or shuffled data
@@ -59,7 +55,7 @@ do
         for ft in category decimal
         do
                 printf "\e[31m# ALGORITHM: ${alg}   FEATURE_TYPE: ${ft}\e[m\n"
-                ~/.pyenv/versions/tiramisu/bin/python model_classic.py  \
+                ${PYTHON} model_classic.py  \
                     --algorithm ${alg}        \
                     --dataset ${disease_path} \
                     --feature-type ${ft}      \
@@ -70,5 +66,4 @@ do
 done
 
 
-done
 
