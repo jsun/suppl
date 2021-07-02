@@ -4,7 +4,7 @@
 #$ -cwd
 #$ -N qs_tiramisu_classic
 #$ -mods l_hard h_rt 720:00:00
-#$ -t 1:90
+#$ -t 1-90:1
 
 
 # set crop name: cucumber eggplant tomato strawberry
@@ -12,7 +12,8 @@
 CROP_NAME=$1
 
 # project path
-PROJECT_PATH=~/projects/tiramisu
+# PROJECT_PATH=~/projects/tiramisu
+PROJECT_PATH=/data/ai_plantdisease/tiramisu
 DATA_PATH=${PROJECT_PATH}/data/formatted_data
 RESULT_PATH=${PROJECT_PATH}/data/cv_results
 PYTHON=/data/ai_plantdisease/tiramisu/python_env/bin/python

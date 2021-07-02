@@ -12,7 +12,8 @@
 CROP_NAME=$1
 
 # project path
-PROJECT_PATH=~/projects/tiramisu
+# PROJECT_PATH=~/projects/tiramisu
+PROJECT_PATH=/data/ai_plantdisease/tiramisu
 DATA_PATH=${PROJECT_PATH}/data/formatted_data
 RESULT_PATH=${PROJECT_PATH}/data/cv_results
 PYTHON=/data/ai_plantdisease/tiramisu/python_env/bin/python

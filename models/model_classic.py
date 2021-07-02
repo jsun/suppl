@@ -27,19 +27,21 @@ def simulate(X, y, pipe, params, use_random_seed=True):
     else:
         # random seed is depending on date and time and never be same even if the datasets are same
         random_seed = int(datetime.datetime.now().strftime('%Y%m%d%H%M%S')) + int(np.sum(y))
+    if 2**32 - 1 < random_seed:
+        random_seed = random_seed % (2**32)
     
     # 10-fold cross validation for model validation
     i = 0
-    kf = sklearn.model_selection.KFold(n_splits=10, random_state=random_seed, shuffle=True)
+    kf = sklearn.model_selection.KFold(n_splits=5, random_state=random_seed, shuffle=True)
     for train_index, test_index in kf.split(X):
         i += 1
         X_train, X_test = X[train_index], X[test_index]
         y_train, y_test = y[train_index], y[test_index]
         
         # 2-fold cross validation to determine hyper-paramaters of the model
-        kf_ = sklearn.model_selection.KFold(n_splits=2, random_state=random_seed * 2, shuffle=True)
+        kf_ = sklearn.model_selection.KFold(n_splits=2, random_state=random_seed + i * i, shuffle=True)
         #gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=-1, cv=kf_)
-        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=64, cv=kf_)
+        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=32, cv=kf_)
         gs.fit(X_train, y_train)
        
         pred_values = gs.predict(X_test)
