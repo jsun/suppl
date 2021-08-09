@@ -18,30 +18,22 @@ import utils
 
 
 
-def simulate(X, y, pipe, params, use_random_seed=True):
+def simulate(X, y, subset_id, pipe, params):
     output_matrix = None
     
-    if use_random_seed:
-        # same datasets will give the same random seed
-        random_seed = int(np.sum(y))
-    else:
-        # random seed is depending on date and time and never be same even if the datasets are same
-        random_seed = int(datetime.datetime.now().strftime('%Y%m%d%H%M%S')) + int(np.sum(y))
+    random_seed = int(np.sum(y))
     if 2**32 - 1 < random_seed:
         random_seed = random_seed % (2**32)
     
     # 10-fold cross validation for model validation
-    i = 0
-    kf = sklearn.model_selection.KFold(n_splits=5, random_state=random_seed, shuffle=True)
-    for train_index, test_index in kf.split(X):
-        i += 1
-        X_train, X_test = X[train_index], X[test_index]
-        y_train, y_test = y[train_index], y[test_index]
+    for i in np.unique(subset_id):
+        print('Cross-validation #{}'.format(i))
+        X_train, X_test = X[(subset_id != i)], X[(subset_id == i)]
+        y_train, y_test = y[(subset_id != i)], y[(subset_id == i)]
         
         # 2-fold cross validation to determine hyper-paramaters of the model
         kf_ = sklearn.model_selection.KFold(n_splits=2, random_state=random_seed + i * i, shuffle=True)
-        #gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=-1, cv=kf_)
-        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=32, cv=kf_)
+        gs = sklearn.model_selection.GridSearchCV(pipe, params, n_jobs=-1, cv=kf_)
         gs.fit(X_train, y_train)
        
         pred_values = gs.predict(X_test)
@@ -50,7 +42,6 @@ def simulate(X, y, pipe, params, use_random_seed=True):
                                         'predicted': pred_values})
         
         output_matrix = pd.concat([output_matrix, ouotput_matrix_], axis=0)
-        
     return output_matrix
 
 
@@ -147,13 +138,12 @@ def generate_pipeline(algorithm, feature_type, test_run):
 
 
 
-def main(algorithm, dataset, feature_type, randomize_type, output, test_run):
+def main(algorithm, dataset, feature_type, output, test_run):
     
     pipe, params = generate_pipeline(algorithm, feature_type, test_run)
     data = utils.load_dataset(dataset)
-    data = utils.randomize_dataset(data, randomize_type)
-    X, y = utils.get_xy(data, feature_type)
-    pred_values = simulate(X, y, pipe, params, use_random_seed=False)
+    X, y, subset_id = utils.get_xy(data, feature_type)
+    pred_values = simulate(X, y, subset_id, pipe, params)
     pred_values.to_csv(output, header=True, index=False, sep='\t')
 
 
@@ -165,13 +155,12 @@ if __name__ == '__main__':
     parser.add_argument('--algorithm', required=True)
     parser.add_argument('--dataset', required=True)
     parser.add_argument('--feature-type', required=True)
-    parser.add_argument('--randomize-type', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--test-run', action='store_true')
 
     args = parser.parse_args()
 
-    main(args.algorithm, args.dataset, args.feature_type, args.randomize_type, args.output, args.test_run)
+    main(args.algorithm, args.dataset, args.feature_type, args.output, args.test_run)
     
     
     

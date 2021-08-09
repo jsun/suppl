@@ -63,8 +63,10 @@ def pref2onehot(x):
 
 
 def get_xy(df, feature_type='category'):
-    y = df.iloc[:, -1].values
+    subset_id = df.iloc[:, -2].values
+    y = df.iloc[:, -3].values
     X = None
+    
     if feature_type == 'category':
         m = month2onehot(df.loc[:, 'Month'])
         p = pref2onehot(df.loc[:, 'Pref'])
@@ -75,7 +77,7 @@ def get_xy(df, feature_type='category'):
         raise ValueError('set `category` or `decimal` in `get_xy` function.')
     
     
-    return X, y
+    return X, y, subset_id
 
 
 
