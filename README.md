@@ -9,21 +9,22 @@ PROJECT_PATH=~/projects/tiramisu
 
 # Dataset
 
-Put dataset into `formatted_data` and run the `format_data.classic.py` and `format_data.dnn.py`.
+Download Kishi's dataset, decompress ZIP and put all csv files into
+`data/formatted_data/random` and `data/formatted_data/shuffle` directories.
+The script `format_data.classic.py` was used for randomizing and shuffling dataset
+by myself, but Kishi's dataset (send210725) has already randomized and shffuled,
+therefore we do not need run this script any more.
+
 
 ```bash
 cd ${PROJECT_PATH}
 cd data
 
-# create dataset for trainig classic models
-
-# extend ZIP from Kishi's dataset, and put all csv files into
-# `formatted_data/random` and `formatted_data/shuffle` directories.
-# format_data.classic.py is not used any more since Kishi shuffled and randomized dataset already.
-
-
-# create dataset for training deep nn mdoels
 cd formatted_data
+mkdir random
+mkdir shuffle
+
+# move all csv files in Kishi's dataset into random and shuffle directories
 
 mkdir -p random4dnn
 for fpath in `ls random`
@@ -38,8 +39,6 @@ do
     mkdir -p "shuffle4dnn/${fpath%_shuffle.csv}"
     python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%_shuffle.csv}
 done
-
-# python summary_datasets.py dataset_summary.xlsx
 ```
 
 
@@ -68,11 +67,8 @@ do
     done
 done
 
-# qsub is not working well for some deseases, no error-log, so cannot debug.
-qsub train_model_classic.sh cucumber
-qsub train_model_classic.sh eggplant
-qsub train_model_classic.sh strawberry
-qsub train_model_classic.sh tomato
+
+qsub train_model_classic.sh
 ```
 
 ## Deep neural network models
@@ -94,10 +90,7 @@ python bake.py --mode cv --feature-type decimal --model L2 \
                --epochs 5 --batch-size 1024
 
 
-qsub train_model_dnn.sh cucumber
-qsub train_model_dnn.sh strawberry
-qsub train_model_dnn.sh eggplant
-qsub train_model_dnn.sh tomato
+qsub train_model_dnn.sh
 ```
 
 
