@@ -4,41 +4,34 @@
 #$ -cwd
 #$ -N qs_tiramisu_dnn
 #$ -mods l_hard h_rt 720:00:00
-#$ -t 1-90:1
+#$ -t 1-210:1
 
-
-# crop name for analyses
-# cucumber eggplant tomato strawberry
-CROP_NAME=$1
 
 # project path
-# PROJECT_PATH=~/projects/tiramisu
 PROJECT_PATH=/data/ai_plantdisease/tiramisu
 DATA_PATH=${PROJECT_PATH}/data/formatted_data
 RESULT_PATH=${PROJECT_PATH}/data/cv_results
-PYTHON=/data/ai_plantdisease/tiramisu/python_env/bin/python
+PYTHON=/home/sonk414/.pyenv/versions/tiramisu/bin/python
 
 
-# move to project working space
 cd ${PROJECT_PATH}
 cd models
 
 
-
-for rt in shuffle randomize
+for rt in shuffle random
 do
-    i=`expr ${SGE_TASK_ID} - 1`
+    data_path=${DATA_PATH}/${rt}4dnn
+   
+    disease_paths=($(ls -d ${data_path}/*))
+    disease_names=($(ls -d ${data_path}/* | xargs -n1 basename))
 
-    data_path=${DATA_PATH}/${CROP_NAME}/${rt}4dnn
-    disease_names=($(ls ${data_path}))
-    disease_path=${data_path}/${disease_names[${i}]}
-    disease_name=${disease_names[${i}]}
-
+    disease_path=${disease_paths[${SGE_TASK_ID}]}
+    disease_name=${disease_names[${SGE_TASK_ID}]}
+    
     # path to save cv results
-    result_dpath=${RESULT_PATH}/${CROP_NAME}/${rt}/dnn_models/${disease_name}
+    result_dpath=${RESULT_PATH}/dnn_models/${rt}/${disease_name}
     mkdir -p ${result_dpath}
         
-    # model architecture L1 and L2
     for ft in category decimal
     do
         for model_arch in L2

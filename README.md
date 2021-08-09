@@ -16,36 +16,30 @@ cd ${PROJECT_PATH}
 cd data
 
 # create dataset for trainig classic models
-for crop in cucumber eggplant strawberry tomato
-do
-    mkdir -p formatted_data/${crop}/shuffle
-    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/shuffle" shuffle
-    mkdir -p formatted_data/${crop}/randomize
-    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/randomize" randomize
-done
+
+# extend ZIP from Kishi's dataset, and put all csv files into
+# `formatted_data/random` and `formatted_data/shuffle` directories.
+# format_data.classic.py is not used any more since Kishi shuffled and randomized dataset already.
+
 
 # create dataset for training deep nn mdoels
-# this step should run after the `format_data.classic.py`
-for crop in cucumber eggplant strawberry tomato
+cd formatted_data
+
+mkdir -p random4dnn
+for fpath in `ls random`
 do
-    cd ${PROJECT_PATH}/data/formatted_data/${crop}
+    mkdir -p "random4dnn/${fpath%_random.csv}"
+    python ${PROJECT_PATH}/data/format_data.dnn.py "random/${fpath}" random4dnn/${fpath%_random.csv}
+done
     
-    mkdir -p randomize4dnn
-    for fpath in `ls randomize`
-    do
-        mkdir -p "randomize4dnn/${fpath%.randomize.csv}"
-        python ${PROJECT_PATH}/data/format_data.dnn.py "randomize/${fpath}" randomize4dnn/${fpath%.randomize.csv}
-    done
-    
-    mkdir -p shuffle4dnn
-    for fpath in `ls shuffle`
-    do
-        mkdir -p "shuffle4dnn/${fpath%.shuffle.csv}"
-        python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.shuffle.csv}
-    done
+mkdir -p shuffle4dnn
+for fpath in `ls shuffle`
+do
+    mkdir -p "shuffle4dnn/${fpath%_shuffle.csv}"
+    python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%_shuffle.csv}
 done
 
-python summary_datasets.py dataset_summary.xlsx
+# python summary_datasets.py dataset_summary.xlsx
 ```
 
 
