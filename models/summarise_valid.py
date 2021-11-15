@@ -26,12 +26,17 @@ def calc_rmse_from_df(df):
     return calc_rmse(df.loc[:, 'true'].values, df.loc[:, 'predicted'].values)
 
 
-def summarise_classic_cvresults(dpath):
+def summarise_classic_cvresults(dpath, dtag=None):
     sum_table = []
     
     for fpath in sorted(glob.glob(os.path.join(dpath, '*.tsv'))):
+        if dtag not in fpath:
+            continue
+        
         fname = os.path.basename(fpath)
         dat = os.path.splitext(fname)[0].split('____')
+        dat.append(dat[3].split('__')[0])
+        dat.append(dat[3].split('__')[1])
         
         cv_results = pd.read_csv(fpath, sep='\t', header=0)
         rmse = []
@@ -44,7 +49,7 @@ def summarise_classic_cvresults(dpath):
         sum_table.append(dat)
     
     sum_table = pd.DataFrame(sum_table,
-                    columns=['model', 'feature_type', 'data_type', 'disease',
+                    columns=['model', 'feature_type', 'data_type', 'disease_id', 'crop', 'disease',
                              'cv_mean', 'cv_var',
                              'cv_1', 'cv_2', 'cv_3', 'cv_4', 'cv_5',
                              'cv_6', 'cv_7', 'cv_8', 'cv_9', 'cv_10'])
@@ -53,12 +58,13 @@ def summarise_classic_cvresults(dpath):
     
 def summarise_dnn_cvresults(dpath):
     sum_table = []
-    
     for ddpath in sorted(glob.glob(os.path.join(dpath, '**'))):
         ddname = os.path.basename(ddpath)
         for fpath in sorted(glob.glob(os.path.join(ddpath, '*_cvresults.tsv'))):
             fname = os.path.basename(fpath)
             dat = fname.replace('_cvresults.tsv', '').split('____')
+            dat.append(dat[3].split('__')[0])
+            dat.append(dat[3].split('__')[1])
             
             cv_results = pd.read_csv(fpath, sep='\t', header=0)
             rmse = []
@@ -71,7 +77,7 @@ def summarise_dnn_cvresults(dpath):
             sum_table.append(dat)
 
     sum_table = pd.DataFrame(sum_table,
-                    columns=['model', 'feature_type', 'data_type', 'disease',
+                    columns=['model', 'feature_type', 'data_type', 'disease_id', 'crop', 'disease',
                              'cv_mean', 'cv_var',
                              'cv_1', 'cv_2', 'cv_3', 'cv_4', 'cv_5',
                              'cv_6', 'cv_7', 'cv_8', 'cv_9', 'cv_10'])
@@ -80,10 +86,10 @@ def summarise_dnn_cvresults(dpath):
     
 
 def main(dpath):
-    sum_table_rc = summarise_classic_cvresults(os.path.join(dpath, 'randomize', 'classic_models'))
-    sum_table_rd = summarise_dnn_cvresults(os.path.join(dpath, 'randomize', 'dnn_models'))
-    sum_table_sc = summarise_classic_cvresults(os.path.join(dpath, 'shuffle', 'classic_models'))
-    sum_table_sd = summarise_dnn_cvresults(os.path.join(dpath, 'shuffle', 'dnn_models'))
+    sum_table_rc = summarise_classic_cvresults(os.path.join(dpath, 'classic_models'), 'random')
+    sum_table_rd = summarise_dnn_cvresults(os.path.join(dpath, 'dnn_models', 'random'))
+    sum_table_sc = summarise_classic_cvresults(os.path.join(dpath, 'classic_models'), 'shuffle')
+    sum_table_sd = summarise_dnn_cvresults(os.path.join(dpath, 'dnn_models', 'shuffle'))
     
     sum_table = pd.concat([sum_table_rc, sum_table_rd, sum_table_sc, sum_table_sd])
     sum_table = sum_table.sort_values(['model', 'feature_type', 'disease', 'data_type']).reset_index(drop=True)

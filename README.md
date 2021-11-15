@@ -111,17 +111,11 @@ Summarise validation results of DNN and classic models.
 ```
 cd ${PROJECT_PATH}/models
 
-python summarise_valid.py ${PROJECT_PATH}/data/cv_results/cucumber
-python summarise_valid.py ${PROJECT_PATH}/data/cv_results/strawberry
-python summarise_valid.py ${PROJECT_PATH}/data/cv_results/eggplant
-python summarise_valid.py ${PROJECT_PATH}/data/cv_results/tomato
+python summarise_valid.py ${PROJECT_PATH}/data/cv_results
+
 
 mkdir cv_results
-cp ${PROJECT_PATH}/data/cv_results/cucumber/summary.tsv cv_results/cucumber_summary.tsv
-cp ${PROJECT_PATH}/data/cv_results/strawberry/summary.tsv cv_results/strawberry_summary.tsv
-cp ${PROJECT_PATH}/data/cv_results/eggplant/summary.tsv cv_results/eggplant_summary.tsv
-cp ${PROJECT_PATH}/data/cv_results/tomato/summary.tsv cv_results/tomato_summary.tsv
-
+cp ${PROJECT_PATH}/data/cv_results/summary.tsv cv_results/
 R
 > source('summarise_valid.R')
 ```

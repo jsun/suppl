@@ -1,11 +1,17 @@
 #!/bin/bash
-#$ -S /bin/bash
-#$ -jc hostos_g1
-#$ -cwd
-#$ -N qs_tiramisu_classic
-#$ -mods l_hard h_rt 720:00:00
-#$ -t 1-210:1
 
+# bash train_model_classic.cmd.sh 0 > qs_tiramisu_classic.log.0  2>&1
+
+
+export OPENBLAS_NUM_THREADS=4
+export MKL_NUM_THREADS=4
+export OMP_NUM_THREADS=4
+export VECLIB_NUM_THREADS=4
+export NUMEXPR_NUM_THREADS=4
+
+
+
+SGE_TASK_ID=$1
 
 # project path
 PROJECT_PATH=/data/ai_plantdisease/tiramisu
