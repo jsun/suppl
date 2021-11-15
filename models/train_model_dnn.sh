@@ -4,8 +4,7 @@
 #$ -cwd
 #$ -N qs_tiramisu_dnn
 #$ -mods l_hard h_rt 720:00:00
-#$ -t 101-210:1
-## $ -t 1-210:1
+#$ -t 1-210:1
 
 
 # project path

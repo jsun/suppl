@@ -9,43 +9,36 @@ PROJECT_PATH=~/projects/tiramisu
 
 # Dataset
 
-Put dataset into `formatted_data` and run the `format_data.classic.py` and `format_data.dnn.py`.
+Download Kishi's dataset, decompress ZIP and put all csv files into
+`data/formatted_data/random` and `data/formatted_data/shuffle` directories.
+The script `format_data.classic.py` was used for randomizing and shuffling dataset
+by myself, but Kishi's dataset (send210725) has already randomized and shffuled,
+therefore we do not need run this script any more.
+
 
 ```bash
 cd ${PROJECT_PATH}
 cd data
 
-# create dataset for trainig classic models
-for crop in cucumber eggplant strawberry tomato
-do
-    mkdir -p formatted_data/${crop}/shuffle
-    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/shuffle" shuffle
-    mkdir -p formatted_data/${crop}/randomize
-    python format_data.classic.py "send210315/${crop}" "formatted_data/${crop}/randomize" randomize
-done
+cd formatted_data
+mkdir random
+mkdir shuffle
 
-# create dataset for training deep nn mdoels
-# this step should run after the `format_data.classic.py`
-for crop in cucumber eggplant strawberry tomato
-do
-    cd ${PROJECT_PATH}/data/formatted_data/${crop}
-    
-    mkdir -p randomize4dnn
-    for fpath in `ls randomize`
-    do
-        mkdir -p "randomize4dnn/${fpath%.randomize.csv}"
-        python ${PROJECT_PATH}/data/format_data.dnn.py "randomize/${fpath}" randomize4dnn/${fpath%.randomize.csv}
-    done
-    
-    mkdir -p shuffle4dnn
-    for fpath in `ls shuffle`
-    do
-        mkdir -p "shuffle4dnn/${fpath%.shuffle.csv}"
-        python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%.shuffle.csv}
-    done
-done
+# move all csv files in Kishi's dataset into random and shuffle directories
 
-python summary_datasets.py dataset_summary.xlsx
+mkdir -p random4dnn
+for fpath in `ls random`
+do
+    mkdir -p "random4dnn/${fpath%_random.csv}"
+    python ${PROJECT_PATH}/data/format_data.dnn.py "random/${fpath}" random4dnn/${fpath%_random.csv}
+done
+    
+mkdir -p shuffle4dnn
+for fpath in `ls shuffle`
+do
+    mkdir -p "shuffle4dnn/${fpath%_shuffle.csv}"
+    python ${PROJECT_PATH}/data/format_data.dnn.py "shuffle/${fpath}" shuffle4dnn/${fpath%_shuffle.csv}
+done
 ```
 
 
@@ -74,11 +67,8 @@ do
     done
 done
 
-# qsub is not working well for some deseases, no error-log, so cannot debug.
-qsub train_model_classic.sh cucumber > cucumber_log.txt
-qsub train_model_classic.sh eggplant > eggplant_log.txt
-qsub train_model_classic.sh strawberry > strawberry_log.txt
-qsub train_model_classic.sh tomato > tomato_log.txt
+
+qsub train_model_classic.sh
 ```
 
 ## Deep neural network models
