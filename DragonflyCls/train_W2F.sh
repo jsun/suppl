@@ -29,7 +29,8 @@ i=${SGE_TASK_ID}
 
 
 
-model_archs=(vgg resnet mobilenet vgg19 resnet152 densenet)
+# model_archs=(vgg resnet mobilenet vgg19 resnet152 densenet)
+model_archs=(vgg resnet vgg19 resnet152)
 
 
 for model_arch in "${model_archs[@]}"
@@ -39,7 +40,7 @@ do
     time python train.py --class-label ${DATA_PATH}/dragonfly_classes.txt \
                 --model-arch ${model_arch} \
                 --model-outpath ./weights_species/W2F__${model_arch}__${i}.pth \
-                --traindata ${DATA_PATH}/dataset_W2F/merged \
+                --traindata ${DATA_PATH}/dataset_W2F/train_images \
                 --validdata ${DATA_PATH}/dataset_T/cropped_image  \
                 -e 50 -b 32 -l 0.001
 done
@@ -53,7 +54,7 @@ do
     time python train.py --class-label ${DATA_PATH}/dragonflyg_classes.txt \
                 --model-arch ${model_arch} \
                 --model-outpath ./weights_genus/W2Fg__${model_arch}__${i}.pth \
-                --traindata ${DATA_PATH}/dataset_W2Fg/merged \
+                --traindata ${DATA_PATH}/dataset_W2Fg/train_images \
                 --validdata ${DATA_PATH}/dataset_Tg/cropped_image  \
                 -e 50 -b 32 -l 0.001
 done

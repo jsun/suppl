@@ -134,20 +134,85 @@ summarise_valid_stats <- function(dpath, model_type, valid_tag) {
         list(data = validstats_df, fig = validstats_fig)
     }
     
+    # calculate micro averages of accuracy
     stats_image   <- .figout(valid_tag, model_type)
+    
+    # calculate macro averages of accuracy and plots figures
+    macroave <- microave <- NULL
+    pattern <- paste0('.', valid_tag, '.', model_type, '.tsv')
+    for (fpath in sort(list.files(dpath, pattern = pattern))) {
+        print(fpath)
+        xconfmat <- .sumvalid(fpath, TRUE)$confmat
+        keys <- unlist(strsplit(fpath, '__'))
+        keys[2] <- norm_model_name(keys[2])
+        i <- as.integer(unlist(strsplit(keys[3], '\\.'))[1])
+        
+        microave <- rbind(microave, data.frame(dataset = keys[1], model = keys[2], topacc = 'Top-1'),
+                                    acc = sum(diag(xconfmat)) / sum(xconfmat))
+        if (!(paste(keys[c(1, 2)], collapse = '__') %in% names(macroave))) {
+            macroave[[paste(keys[c(1, 2)], collapse = '__')]] <- matrix(NA, ncol = 10, nrow = nrow(xconfmat))
+            rownames(macroave[[paste(keys[c(1, 2)], collapse = '__')]]) <- rownames(xconfmat)
+        }
+        macroave[[paste(keys[c(1, 2)], collapse = '__')]][, i] <- diag(xconfmat) / rowSums(xconfmat)
+    }
     if (dpath == 'weights_species') {
-        vgg19_confmat <- .sumvalid(paste0('W2F__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
+        xconfmat <- macroave[['W2F__ResNet152']]
     } else {
-        vgg19_confmat <- .sumvalid(paste0('W2Fg__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
+        xconfmat <- macroave[['W2Fg__ResNet152']]
+    }
+    xconfdf <- data.frame(predicted = rownames(xconfmat), xconfmat) %>%
+         pivot_longer(- predicted, names_to = 'try', values_to = 'precision')
+    xconfdf$predicted <- factor(xconfdf$predicted, levels  = rownames(xconfmat))
+    #xconfdfsum <- xconfdf %>% group_by(predicted) %>% summarise(precision = mean(precision[!is.nan(precision)]))
+    #figconf <- ggplot() +
+    #    geom_bar(aes(x = predicted, y = precision), data = xconfdfsum, stat = 'identity', fill = '#999999') +
+    #    geom_jitter(aes(x = predicted, y = precision), data = xconfdf, width = 0.4, size = 0.5) +
+    #    theme(axis.text = element_text(angle = 45, vjust=1, hjust=1))
+
+    # calculate confusion matrix for ResNet152#1
+    if (dpath == 'weights_species') {
+        net_confmat <- .sumvalid(paste0('W2F__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
+    } else {
+        net_confmat <- .sumvalid(paste0('W2Fg__resnet152__1.', valid_tag, '.', model_type, '.tsv'), TRUE)
     }
     
-    list(accstats = stats_image$data, accfig = stats_image$fig, confmat = vgg19_confmat$confmat)
+    list(accstats = stats_image$data, accfig = stats_image$fig, conffig = xconfdf, confmat = net_confmat$confmat)
+}
+
+
+plot_confmat <- function(confmat, remove_zeros = FALSE) {
+    if (remove_zeros) {
+        allzero_col <- (colSums(confmat) == 0)
+        allzero_row <- (rowSums(confmat) == 0)
+        allzero_colrow <- (allzero_col & allzero_row)
+        confmat_mini <- confmat[!allzero_colrow, !allzero_colrow]
+    } else {
+        confmat_mini <- confmat
+    }
+    confdf <- data.frame(predicted_label = rownames(confmat_mini), confmat_mini)
+    rownames(confdf) <- NULL
+    confdf <- confdf %>% pivot_longer(- predicted_label, names_to = 'true_label', values_to = 'value')
+    confdf$predicted_label <- factor(confdf$predicted_label, levels = rownames(confmat_mini))
+    confdf$true_label <- factor(confdf$true_label, levels = rownames(confmat_mini))
+    confdf$value[confdf$value == 0] <- NA
+    f <- ggplot(confdf, aes(x = predicted_label, y = true_label, fill = value)) +
+        geom_tile() + coord_fixed() +
+        theme(axis.text.x=element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+        scale_fill_gradientn(limits = c(1, 40), colours = c('#20854E', '#BC3C29'), na.value = 'white')
+    
+    f
+}
+
+
+plot_acc_boxplot <- function(confmat1, confmat2) {
+    acc1 <- diag(confmat1) / rowSums(confmat1)
+    acc2 <- diag(confmat2) / rowSums(confmat2)
+    
 }
 
 
 
-
-
+# change TRUE to perform summarization
 if (TRUE) {
 
 # species identification
@@ -195,6 +260,37 @@ print(spmodel_train_stats$fig$acc)
 dev.off()
 
 
+cf1 <- spmodel_valid_stats_image$confmat
+cf2 <- spmodel_valid_stats_d50$confmat
+keep1 <- (colSums(cf1) > 0) | (rowSums(cf1) > 0)
+keep2 <- (colSums(cf2) > 0) | (rowSums(cf2) > 0)
+keep <- (keep1 | keep2)
+
+png('eval_results/spmodel_confmat_image.png', 2900, 2900, res = 220)
+print(plot_confmat(cf1[keep, keep]))
+dev.off()
+png('eval_results/spmodel_confmat_d50.png', 2900, 2900, res = 220)
+print(plot_confmat(cf2[keep, keep]))
+dev.off()
+
+
+
+
+confdf <- rbind(data.frame(spmodel_valid_stats_image$conffig, model = 'image-based'),
+                data.frame(spmodel_valid_stats_d50$conffig, model = 'combined'))
+confdfsum <- confdf %>% group_by(model, predicted) %>% summarise(precision = mean(precision[!is.nan(precision)]))
+conffig <- ggplot() +
+        geom_bar(aes(x = predicted, y = precision), data = confdfsum, stat = 'identity', fill = '#999999') +
+        geom_jitter(aes(x = predicted, y = precision), data = confdf, width = 0.4, size = 0.5) +
+        theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1)) +
+        facet_grid(model ~ .)
+
+png('eval_results/macro_precision_barplot.png', 7000, 1500, res=220)
+print(conffig)
+dev.off()
+
+
+
 
 # genus identification
 gnmodel_train_stats <- summarise_train_stats('weights_genus')
@@ -235,6 +331,38 @@ png('eval_results/trainstats_genus_acc.png', 2200, 1800, res = 220)
 print(gnmodel_train_stats$fig$acc)
 dev.off()
 
+
+cf1 <- gnmodel_valid_stats_image$confmat
+cf2 <- gnmodel_valid_stats_d50$confmat
+keep1 <- (colSums(cf1) > 0) | (rowSums(cf1) > 0)
+keep2 <- (colSums(cf2) > 0) | (rowSums(cf2) > 0)
+keep <- (keep1 | keep2)
+
+png('eval_results/gnmodel_confmat_image.png', 2900, 2900, res = 220)
+print(plot_confmat(cf1[keep, keep]))
+dev.off()
+png('eval_results/gnmodel_confmat_d50.png', 2900, 2900, res = 220)
+print(plot_confmat(cf2[keep, keep]))
+dev.off()
+
+
+
+
+
+
+
+confdf <- rbind(data.frame(gnmodel_valid_stats_image$conffig, model = 'image-based'),
+                data.frame(gnmodel_valid_stats_d50$conffig, model = 'combined'))
+confdfsum <- confdf %>% group_by(model, predicted) %>% summarise(precision = mean(precision[!is.nan(precision)]))
+conffig <- ggplot() +
+        geom_bar(aes(x = predicted, y = precision), data = confdfsum, stat = 'identity', fill = '#999999') +
+        geom_jitter(aes(x = predicted, y = precision), data = confdf, width = 0.4, size = 0.5) +
+        theme(axis.text.x = element_text(angle = 90, vjust = .5, hjust = 1)) +
+        facet_grid(model ~ .)
+
+png('eval_results/macro_precision_barplot_genus.png', 2500, 1500, res=220)
+print(conffig)
+dev.off()
 
 
 
