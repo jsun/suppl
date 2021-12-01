@@ -278,6 +278,7 @@ dev.off()
 
 confdf <- rbind(data.frame(spmodel_valid_stats_image$conffig, model = 'image-based'),
                 data.frame(spmodel_valid_stats_d50$conffig, model = 'combined'))
+confdf$model <- factor(confdf$model, levels = c('image-based', 'combined'))
 confdfsum <- confdf %>% group_by(model, predicted) %>% summarise(precision = mean(precision[!is.nan(precision)]))
 conffig <- ggplot() +
         geom_bar(aes(x = predicted, y = precision), data = confdfsum, stat = 'identity', fill = '#999999') +
@@ -353,6 +354,7 @@ dev.off()
 
 confdf <- rbind(data.frame(gnmodel_valid_stats_image$conffig, model = 'image-based'),
                 data.frame(gnmodel_valid_stats_d50$conffig, model = 'combined'))
+confdf$model <- factor(confdf$model, levels = c('image-based', 'combined'))
 confdfsum <- confdf %>% group_by(model, predicted) %>% summarise(precision = mean(precision[!is.nan(precision)]))
 conffig <- ggplot() +
         geom_bar(aes(x = predicted, y = precision), data = confdfsum, stat = 'identity', fill = '#999999') +

@@ -1,8 +1,8 @@
 library(tidyverse)
 library(ggsci)
 
-set.seeed(2020)
-tag <- 'genus'
+set.seed(2020)
+for (tag in c('genus',  'species')) {
 
 x <- read_tsv(paste0(tag, '.log'), col_names = TRUE)
 x <- x[x$model != 'mobilenet',]
@@ -23,14 +23,13 @@ x_sd <- x %>%
 x_mu$sd <- x_sd$sd
 
 g <- ggplot() +
-    geom_jitter(aes(x = model, y = time), alpha=0.5, data = x) +
-    facet_grid(~ data) +
-    theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1)) +
+    geom_jitter(aes(x = data, y = time), alpha=0.5, data = x) +
+    facet_grid(~ model) +
     ylab('training time [h]')
 
-png(paste0(tag, '.png'), 1600, 800, res = 300)
+png(paste0(tag, '.png'), 2000, 800, res = 300)
 print(g)
 dev.off()
 
-
+}
 
