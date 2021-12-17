@@ -1,4 +1,27 @@
-# desserts
+# suppl
+
+
+```bash
+git clone suppl
+git clone tiramisu
+
+cd suppl
+mkdir dragonfly
+touch dragonfly/.gitkeep
+
+git add -A tiramisu
+git commit -m 'prepare to merge tiramisu.'
+git remote add tiramisu ~/tiraimsu
+git fetch tiramisu
+git merge --allow-unrelated-histories -X subtree=tiraimsu tiramisu/master
+
+git mv dragonfly 10.3389/fevo.2021.762173
+rm 10.3389/fevo.2021.762173/.gitkeep
+git rm 10.3389/fevo.2021.762173/.gitkeep
+git commit -m 'change dirname to doi'
+
+git log --graph --all
+```
 
 
 ```bash
@@ -29,5 +52,4 @@ echo -e $output | column -t -s ', '
 git filter-branch -f --tree-filter "rm -rf tmp" -- --all
 git checkout master && git push -f origin master
 ```
-
 
