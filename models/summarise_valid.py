@@ -40,13 +40,16 @@ def summarise_classic_cvresults(dpath, dtag=None):
         
         cv_results = pd.read_csv(fpath, sep='\t', header=0)
         rmse = []
+        nk = 0
         for k in cv_results.loc[:, 'cv'].unique():
             rmse.append(calc_rmse_from_df(cv_results.loc[cv_results.loc[:, 'cv'] == k, :]))
+            nk += 1
         
         dat.extend([np.mean(rmse), np.var(rmse, ddof=1)])
         dat.extend(rmse)
         
-        sum_table.append(dat)
+        if nk == 10:
+            sum_table.append(dat)
     
     sum_table = pd.DataFrame(sum_table,
                     columns=['model', 'feature_type', 'data_type', 'disease_id', 'crop', 'disease',

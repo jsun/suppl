@@ -104,8 +104,7 @@ cd ${PROJECT_PATH}/models
 python summarise_valid.py ${PROJECT_PATH}/data/cv_results
 
 
-mkdir cv_results
-cp ${PROJECT_PATH}/data/cv_results/summary.tsv cv_results/
+cd ${PROJECT_PATH}/data
 R
 > source('summarise_valid.R')
 ```

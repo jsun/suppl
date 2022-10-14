@@ -9,6 +9,7 @@ cv_sum_fpath <- 'cv_results/summary.tsv'
 ##   category: month and prefecture name were converted to one-hot vectors during modeling.
 ##   decimal:  use temperature, precipitation, longitude, latitude instead of month and prefecture.
 feature_type <- 'category'
+#feature_type <- 'decimal'
 
 
 
