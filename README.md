@@ -6,18 +6,19 @@ git clone suppl
 git clone tiramisu
 
 cd suppl
-mkdir dragonfly
-touch dragonfly/.gitkeep
+mkdir tiramisu 
+touch tiramisu/.gitkeep
 
 git add -A tiramisu
 git commit -m 'prepare to merge tiramisu.'
 git remote add tiramisu ~/tiraimsu
 git fetch tiramisu
+git merge -X subtree=tiraimsu tiramisu/master
 git merge --allow-unrelated-histories -X subtree=tiraimsu tiramisu/master
 
-git mv dragonfly 10.3389/fevo.2021.762173
-rm 10.3389/fevo.2021.762173/.gitkeep
-git rm 10.3389/fevo.2021.762173/.gitkeep
+git mv tiramisu 10.xxx/xxx.xxx.xxx
+rm 10.xxx/xxx.xxx.xxx.gitkeep
+git rm 10.xxx/xxx.xxx.xxx.gitkeep
 git commit -m 'change dirname to doi'
 
 git log --graph --all
