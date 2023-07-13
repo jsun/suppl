@@ -1,0 +1,1716 @@
+1374577 reads; of these:
+  1374577 (100.00%) were unpaired; of these:
+    136268 (9.91%) aligned 0 times
+    814409 (59.25%) aligned exactly 1 time
+    423900 (30.84%) aligned >1 times
+90.09% overall alignment rate
+
+real	0m47.239s
+user	1m39.571s
+sys	0m26.335s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+3340992 reads; of these:
+  3340992 (100.00%) were unpaired; of these:
+    302209 (9.05%) aligned 0 times
+    2050250 (61.37%) aligned exactly 1 time
+    988533 (29.59%) aligned >1 times
+90.95% overall alignment rate
+
+real	1m21.502s
+user	3m43.163s
+sys	0m36.980s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+3176144 reads; of these:
+  3176144 (100.00%) were unpaired; of these:
+    267389 (8.42%) aligned 0 times
+    1917534 (60.37%) aligned exactly 1 time
+    991221 (31.21%) aligned >1 times
+91.58% overall alignment rate
+
+real	1m17.875s
+user	3m30.019s
+sys	0m35.452s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2052039 reads; of these:
+  2052039 (100.00%) were unpaired; of these:
+    178725 (8.71%) aligned 0 times
+    1198885 (58.42%) aligned exactly 1 time
+    674429 (32.87%) aligned >1 times
+91.29% overall alignment rate
+
+real	0m59.019s
+user	2m22.423s
+sys	0m29.719s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+1225463 reads; of these:
+  1225463 (100.00%) were unpaired; of these:
+    120967 (9.87%) aligned 0 times
+    735371 (60.01%) aligned exactly 1 time
+    369125 (30.12%) aligned >1 times
+90.13% overall alignment rate
+
+real	0m43.013s
+user	1m24.212s
+sys	0m25.417s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2840365 reads; of these:
+  2840365 (100.00%) were unpaired; of these:
+    307532 (10.83%) aligned 0 times
+    1613504 (56.81%) aligned exactly 1 time
+    919329 (32.37%) aligned >1 times
+89.17% overall alignment rate
+
+real	1m17.483s
+user	3m30.290s
+sys	0m34.669s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2616170 reads; of these:
+  2616170 (100.00%) were unpaired; of these:
+    294899 (11.27%) aligned 0 times
+    1575875 (60.24%) aligned exactly 1 time
+    745396 (28.49%) aligned >1 times
+88.73% overall alignment rate
+
+real	1m10.662s
+user	3m2.914s
+sys	0m34.094s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+1388788 reads; of these:
+  1388788 (100.00%) were unpaired; of these:
+    177977 (12.82%) aligned 0 times
+    841515 (60.59%) aligned exactly 1 time
+    369296 (26.59%) aligned >1 times
+87.18% overall alignment rate
+
+real	0m47.539s
+user	1m40.222s
+sys	0m27.183s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2116056 reads; of these:
+  2116056 (100.00%) were unpaired; of these:
+    271750 (12.84%) aligned 0 times
+    1304846 (61.66%) aligned exactly 1 time
+    539460 (25.49%) aligned >1 times
+87.16% overall alignment rate
+
+real	1m1.440s
+user	2m30.769s
+sys	0m30.876s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+1557764 reads; of these:
+  1557764 (100.00%) were unpaired; of these:
+    205382 (13.18%) aligned 0 times
+    906602 (58.20%) aligned exactly 1 time
+    445780 (28.62%) aligned >1 times
+86.82% overall alignment rate
+
+real	0m53.696s
+user	2m2.627s
+sys	0m28.746s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2448737 reads; of these:
+  2448737 (100.00%) were unpaired; of these:
+    303929 (12.41%) aligned 0 times
+    1488302 (60.78%) aligned exactly 1 time
+    656506 (26.81%) aligned >1 times
+87.59% overall alignment rate
+
+real	1m7.258s
+user	2m50.856s
+sys	0m33.314s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+2763351 reads; of these:
+  2763351 (100.00%) were unpaired; of these:
+    350370 (12.68%) aligned 0 times
+    1547547 (56.00%) aligned exactly 1 time
+    865434 (31.32%) aligned >1 times
+87.32% overall alignment rate
+
+real	1m19.633s
+user	3m36.200s
+sys	0m36.607s
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.tsv                              ||
+||                 Summary : tcs.counts.gene.tsv.summary                      ||
+||              Annotation : dna.gff3 (GTF)                                   ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.gff3 ...                                          ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1366549 (27.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 701505 (27.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1103872 (29.5%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 744461 (25.1%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1265199 (28.4%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1277012 (23.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.tsv.summary"               ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.tsv                               ||
+||                 Summary : cs.counts.gene.tsv.summary                       ||
+||              Annotation : dna.gff3 (GTF)                                   ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.gff3 ...                                          ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 642859 (23.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1657090 (26.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1558591 (24.9%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 949269 (22.5%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 591773 (25.0%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1319687 (23.1%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.tsv.summary"                ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_0.5k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_0.5k.tsv.summary             ||
+||              Annotation : dna.ext_0.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_0.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1452963 (29.4%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 759430 (29.8%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1188214 (31.8%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 812638 (27.4%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1355005 (30.4%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1388280 (25.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_0.5k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_0.5k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_0.5k.tsv.summary              ||
+||              Annotation : dna.ext_0.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_0.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 713278 (26.2%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1827762 (28.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1720198 (27.4%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1050793 (24.9%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 652516 (27.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1448491 (25.3%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_0.5k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_1.0k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_1.0k.tsv.summary             ||
+||              Annotation : dna.ext_1.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1458442 (29.5%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 762905 (30.0%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1193642 (31.9%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 816473 (27.5%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1360398 (30.5%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1395221 (25.1%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_1.0k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_1.0k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_1.0k.tsv.summary              ||
+||              Annotation : dna.ext_1.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 716847 (26.3%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1836043 (28.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1727879 (27.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1056608 (25.0%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 655490 (27.7%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1453934 (25.4%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_1.0k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_1.5k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_1.5k.tsv.summary             ||
+||              Annotation : dna.ext_1.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1460268 (29.5%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 764395 (30.0%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1195284 (32.0%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 818077 (27.6%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1362261 (30.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1398013 (25.1%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_1.5k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_1.5k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_1.5k.tsv.summary              ||
+||              Annotation : dna.ext_1.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 719213 (26.4%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1840461 (28.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1732006 (27.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1060278 (25.1%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 656952 (27.8%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1456901 (25.5%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_1.5k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_2.0k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_2.0k.tsv.summary             ||
+||              Annotation : dna.ext_2.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_2.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1461799 (29.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 765889 (30.1%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1196503 (32.0%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 819564 (27.6%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1363710 (30.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1400754 (25.2%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_2.0k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_2.0k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_2.0k.tsv.summary              ||
+||              Annotation : dna.ext_2.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_2.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 720983 (26.5%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1844952 (28.9%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1735914 (27.7%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1063555 (25.2%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 658414 (27.8%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1459899 (25.5%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_2.0k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_2.5k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_2.5k.tsv.summary             ||
+||              Annotation : dna.ext_2.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_2.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1462698 (29.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 766455 (30.1%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1197361 (32.0%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 820206 (27.6%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1364786 (30.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1401727 (25.2%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_2.5k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_2.5k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_2.5k.tsv.summary              ||
+||              Annotation : dna.ext_2.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_2.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 722294 (26.5%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1847738 (29.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1738338 (27.7%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1065680 (25.2%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 659302 (27.9%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1461324 (25.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_2.5k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_3.0k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_3.0k.tsv.summary             ||
+||              Annotation : dna.ext_3.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_3.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1463697 (29.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 767002 (30.1%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1198245 (32.0%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 820823 (27.6%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1365740 (30.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1402777 (25.2%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_3.0k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_3.0k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_3.0k.tsv.summary              ||
+||              Annotation : dna.ext_3.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_3.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 723312 (26.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1850580 (29.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1741179 (27.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1069030 (25.3%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 660543 (27.9%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1463711 (25.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_3.0k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_3.5k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_3.5k.tsv.summary             ||
+||              Annotation : dna.ext_3.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_3.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1464478 (29.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 767628 (30.2%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1198918 (32.1%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 821450 (27.7%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1366494 (30.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1403785 (25.2%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_3.5k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_3.5k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_3.5k.tsv.summary              ||
+||              Annotation : dna.ext_3.5k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_3.5k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 724457 (26.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1852906 (29.0%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1743353 (27.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1070497 (25.3%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 661476 (28.0%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1465444 (25.6%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_3.5k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o TaeRS2728_g086.bam                             ||
+||                           o TaeRS2728_g091.bam                             ||
+||                           o TaeRS2728_g160.bam                             ||
+||                           o TaeRS2728_g165.bam                             ||
+||                           o TaeRS2728_g167.bam                             ||
+||                           o TaeRS2728_g172.bam                             ||
+||                                                                            ||
+||             Output file : tcs.counts.gene.ext_4.0k.tsv                     ||
+||                 Summary : tcs.counts.gene.ext_4.0k.tsv.summary             ||
+||              Annotation : dna.ext_4.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_4.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g086.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4941974                                              ||
+||    Successfully assigned alignments : 1465286 (29.6%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g091.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2545741                                              ||
+||    Successfully assigned alignments : 768181 (30.2%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g160.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 3739848                                              ||
+||    Successfully assigned alignments : 1199744 (32.1%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g165.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2969077                                              ||
+||    Successfully assigned alignments : 822058 (27.7%)                       ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g167.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4454398                                              ||
+||    Successfully assigned alignments : 1367528 (30.7%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TaeRS2728_g172.bam...                                     ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5562988                                              ||
+||    Successfully assigned alignments : 1404732 (25.3%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/tcs.counts.gene.ext_4.0k.tsv.summary"      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 6 BAM files                                      ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_16.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_17.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_18.bam              ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_1.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_2.bam               ||
+||                           o 20181109.A-TaeRS_1_Tae_RS1_3.bam               ||
+||                                                                            ||
+||             Output file : cs.counts.gene.ext_4.0k.tsv                      ||
+||                 Summary : cs.counts.gene.ext_4.0k.tsv.summary              ||
+||              Annotation : dna.ext_4.0k.gff3 (GTF)                          ||
+||      Dir for temp files : /home/sonk414/projects/HuoberBrezel/data/tag ... ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_4.0k.gff3 ...                                 ||
+||    Features : 106914                                                       ||
+||    Meta-features : 106914                                                  ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_16.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2724084                                              ||
+||    Successfully assigned alignments : 725405 (26.6%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_17.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6381144                                              ||
+||    Successfully assigned alignments : 1855139 (29.1%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_18.bam...                      ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 6269859                                              ||
+||    Successfully assigned alignments : 1745554 (27.8%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_1.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 4224016                                              ||
+||    Successfully assigned alignments : 1072233 (25.4%)                      ||
+||    Running time : 0.02 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_2.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 2366544                                              ||
+||    Successfully assigned alignments : 662445 (28.0%)                       ||
+||    Running time : 0.01 minutes                                             ||
+||                                                                            ||
+|| Process BAM file 20181109.A-TaeRS_1_Tae_RS1_3.bam...                       ||
+||    Strand specific : stranded                                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 5714504                                              ||
+||    Successfully assigned alignments : 1467432 (25.7%)                      ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/home/sonk414/projects/  ||
+|| HuoberBrezel/data/tagseq/counts/cs.counts.gene.ext_4.0k.tsv.summary"       ||
+||                                                                            ||
+\\============================================================================//
+

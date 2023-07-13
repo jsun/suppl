@@ -1,0 +1,21 @@
+shell: 05_tagseq.eaglerc.sh
+pEAGLE: 1
+pCount: 0
+nCPU: 16
+----- start -----
+Wed Jun 23 10:01:00 JST 2021
+20181109.A-TaeRS_1_Tae_RS1_1
+20181109.A-TaeRS_1_Tae_RS1_16
+20181109.A-TaeRS_1_Tae_RS1_17
+20181109.A-TaeRS_1_Tae_RS1_18
+20181109.A-TaeRS_1_Tae_RS1_2
+20181109.A-TaeRS_1_Tae_RS1_3
+bameaglerc
+TaeRS2728_g086
+TaeRS2728_g091
+TaeRS2728_g160
+TaeRS2728_g165
+TaeRS2728_g167
+TaeRS2728_g172
+Wed Jun 23 12:19:39 JST 2021
+----- finish -----

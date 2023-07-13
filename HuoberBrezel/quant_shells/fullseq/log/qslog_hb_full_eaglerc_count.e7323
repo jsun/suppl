@@ -1,0 +1,2280 @@
+Start:	2021-06-25 06:37:57.151749
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 06:38:22.740513
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 06:38:55.574068
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 06:39:21.125029
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 06:39:53.750808
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 06:40:29.889142
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 06:41:02.657014
+Done:	2021-06-25 06:48:35.479384
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 06:49:18 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrA.list	4585441 reads	Fri Jun 25 06:49:29 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 06:50:35 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 06:53:34 2021
+# CPU time (hr):	0.072844
+
+real	4m22.410s
+user	4m16.585s
+sys	0m5.751s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 06:53:41 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrB.list	4468528 reads	Fri Jun 25 06:53:51 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 06:54:45 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 06:58:13 2021
+# CPU time (hr):	0.077313
+
+real	4m38.487s
+user	4m32.395s
+sys	0m6.027s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 06:58:19 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_2.ref.chrD.list	4239898 reads	Fri Jun 25 06:58:29 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 06:58:51 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:02:19 2021
+# CPU time (hr):	0.065414
+
+real	4m5.457s
+user	3m50.718s
+sys	0m4.864s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4877646                                              ||
+||    Successfully assigned alignments : 4267575 (87.5%)                      ||
+||    Running time : 0.23 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4967981                                              ||
+||    Successfully assigned alignments : 4096231 (82.5%)                      ||
+||    Running time : 0.23 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4456314                                              ||
+||    Successfully assigned alignments : 3892695 (87.4%)                      ||
+||    Running time : 0.21 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:03:06 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:03:06 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:05:05 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:06:56 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:06:56 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:09:08 2021
+# CPU time (hr):	0.100342
+
+real	6m1.576s
+user	5m52.089s
+sys	0m9.395s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:09:08 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:09:08 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:10:41 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:12:33 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:12:33 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:15:16 2021
+# CPU time (hr):	0.102378
+
+real	6m8.883s
+user	5m59.498s
+sys	0m9.311s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:15:17 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:15:17 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:16:50 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:18:40 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:18:40 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:22:01 2021
+# CPU time (hr):	0.112160
+
+real	6m44.119s
+user	6m34.229s
+sys	0m9.795s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrA.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1046576                                              ||
+||    Successfully assigned alignments : 673187 (64.3%)                       ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrB.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1295282                                              ||
+||    Successfully assigned alignments : 684280 (52.8%)                       ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_2.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_2.chrD.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_2.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 3276524                                              ||
+||    Successfully assigned alignments : 608641 (18.6%)                       ||
+||    Running time : 0.22 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_2.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+Start:	2021-06-25 07:22:22.287035
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 07:22:45.989073
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 07:23:16.955667
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 07:23:40.806243
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 07:24:11.704483
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 07:24:45.318540
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 07:25:16.252955
+Done:	2021-06-25 07:32:11.436871
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:32:49 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrA.list	4214342 reads	Fri Jun 25 07:32:58 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:33:14 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:35:45 2021
+# CPU time (hr):	0.050777
+
+real	3m2.936s
+user	2m58.579s
+sys	0m4.312s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:35:52 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrB.list	4092651 reads	Fri Jun 25 07:36:01 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:36:09 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:38:51 2021
+# CPU time (hr):	0.051554
+
+real	3m5.734s
+user	3m1.130s
+sys	0m4.556s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:38:57 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_3.ref.chrD.list	3850516 reads	Fri Jun 25 07:39:07 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:39:14 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:41:53 2021
+# CPU time (hr):	0.050584
+
+real	3m2.237s
+user	2m57.776s
+sys	0m4.412s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4405519                                              ||
+||    Successfully assigned alignments : 3938436 (89.4%)                      ||
+||    Running time : 0.21 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4382072                                              ||
+||    Successfully assigned alignments : 3764291 (85.9%)                      ||
+||    Running time : 0.21 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 3998018                                              ||
+||    Successfully assigned alignments : 3536442 (88.5%)                      ||
+||    Running time : 0.19 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:42:37 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:42:37 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:44:05 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:45:25 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:45:25 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:47:13 2021
+# CPU time (hr):	0.076817
+
+real	4m36.831s
+user	4m29.389s
+sys	0m7.375s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:47:14 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:47:14 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:48:30 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:49:51 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:49:51 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:51:56 2021
+# CPU time (hr):	0.078505
+
+real	4m42.908s
+user	4m35.226s
+sys	0m7.611s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 07:51:56 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 07:51:56 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 07:53:13 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 07:54:30 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:54:30 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 07:56:52 2021
+# CPU time (hr):	0.082051
+
+real	4m55.659s
+user	4m48.112s
+sys	0m7.487s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrA.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 967449                                               ||
+||    Successfully assigned alignments : 616985 (63.8%)                       ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrB.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1189749                                              ||
+||    Successfully assigned alignments : 634414 (53.3%)                       ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_3.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_3.chrD.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_3.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 2077154                                              ||
+||    Successfully assigned alignments : 552636 (26.6%)                       ||
+||    Running time : 0.12 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_3.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+Start:	2021-06-25 07:57:07.222728
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 07:57:25.414653
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 07:57:47.532468
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 07:58:05.921551
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 07:58:27.866270
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 07:58:46.210717
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 07:59:08.208897
+Done:	2021-06-25 08:04:22.265669
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:04:42 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_4.ref.chrA.list	3166430 reads	Fri Jun 25 08:04:49 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:04:55 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:06:52 2021
+# CPU time (hr):	0.037232
+
+real	2m14.172s
+user	2m11.339s
+sys	0m2.764s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:06:57 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_4.ref.chrB.list	3041840 reads	Fri Jun 25 08:07:03 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:07:12 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:09:17 2021
+# CPU time (hr):	0.040002
+
+real	2m24.118s
+user	2m21.317s
+sys	0m2.756s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:09:21 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_4.ref.chrD.list	2847138 reads	Fri Jun 25 08:09:27 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:09:41 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:11:42 2021
+# CPU time (hr):	0.040395
+
+real	2m25.530s
+user	2m22.797s
+sys	0m2.688s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrA.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrA.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrA.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrA.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 3305722                                              ||
+||    Successfully assigned alignments : 2960954 (89.6%)                      ||
+||    Running time : 0.16 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrA.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrB.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrB.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrB.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrB.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 3254637                                              ||
+||    Successfully assigned alignments : 2788838 (85.7%)                      ||
+||    Running time : 0.15 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrB.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrD.homeolog.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrD.counts.homeo ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrD.counts.homeo ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrD.homeolog.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 2960736                                              ||
+||    Successfully assigned alignments : 2611750 (88.2%)                      ||
+||    Running time : 0.14 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrD.counts.homeolog.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:12:14 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:12:14 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:13:18 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:14:18 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:14:18 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:15:37 2021
+# CPU time (hr):	0.056315
+
+real	3m22.965s
+user	3m17.213s
+sys	0m5.691s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:15:37 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:15:37 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:16:31 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:17:32 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:17:32 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:19:05 2021
+# CPU time (hr):	0.057579
+
+real	3m27.490s
+user	3m21.807s
+sys	0m5.644s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:19:05 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:19:05 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:19:59 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:20:57 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:20:57 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:22:41 2021
+# CPU time (hr):	0.059939
+
+real	3m35.978s
+user	3m30.311s
+sys	0m5.632s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrA.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrA.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrA.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrA.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 668293                                               ||
+||    Successfully assigned alignments : 429008 (64.2%)                       ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrA.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrB.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrB.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrB.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrB.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 816650                                               ||
+||    Successfully assigned alignments : 443258 (54.3%)                       ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrB.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_4.chrD.specific.r ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_4.chrD.counts.speci ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_4.chrD.counts.speci ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_4.chrD.specific.ref.bam...       ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1451691                                              ||
+||    Successfully assigned alignments : 385238 (26.5%)                       ||
+||    Running time : 0.08 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_4.chrD.counts.specific.txt.summary"                                      ||
+||                                                                            ||
+\\============================================================================//
+
+Start:	2021-06-25 08:22:51.621816
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 08:23:14.945902
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 08:23:44.806983
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 08:24:08.049639
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 08:24:37.673627
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 08:25:01.149244
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 08:25:41.124663
+Done:	2021-06-25 08:32:21.613164
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:32:57 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrA.list	4084629 reads	Fri Jun 25 08:33:06 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:33:14 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:35:30 2021
+# CPU time (hr):	0.044191
+
+real	2m39.229s
+user	2m35.174s
+sys	0m4.004s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:35:36 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrB.list	4032447 reads	Fri Jun 25 08:35:45 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:35:53 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:38:22 2021
+# CPU time (hr):	0.047870
+
+real	2m52.466s
+user	2m48.455s
+sys	0m3.964s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:38:28 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_2.ref.chrD.list	3857023 reads	Fri Jun 25 08:38:37 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:38:45 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:41:09 2021
+# CPU time (hr):	0.046050
+
+real	2m45.906s
+user	2m42.019s
+sys	0m3.844s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4258985                                              ||
+||    Successfully assigned alignments : 3825804 (89.8%)                      ||
+||    Running time : 0.20 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 4292306                                              ||
+||    Successfully assigned alignments : 3727601 (86.8%)                      ||
+||    Running time : 0.20 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 3981840                                              ||
+||    Successfully assigned alignments : 3572819 (89.7%)                      ||
+||    Running time : 0.18 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:41:50 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:41:50 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:43:12 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:44:23 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:44:23 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:46:02 2021
+# CPU time (hr):	0.070081
+
+real	4m12.568s
+user	4m5.456s
+sys	0m7.056s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:46:02 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:46:02 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:47:13 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:48:27 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:48:27 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:50:25 2021
+# CPU time (hr):	0.072890
+
+real	4m22.673s
+user	4m15.309s
+sys	0m7.312s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 08:50:25 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 08:50:25 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 08:51:36 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 08:52:49 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:52:49 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_2__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 08:54:55 2021
+# CPU time (hr):	0.074995
+
+real	4m30.239s
+user	4m23.420s
+sys	0m6.776s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1035413                                              ||
+||    Successfully assigned alignments : 648155 (62.6%)                       ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1268371                                              ||
+||    Successfully assigned alignments : 659969 (52.0%)                       ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_2.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_2.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_2.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1928408                                              ||
+||    Successfully assigned alignments : 585706 (30.4%)                       ||
+||    Running time : 0.10 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_2.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+Start:	2021-06-25 08:55:09.386552
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 08:55:41.984670
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 08:56:22.793758
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 08:56:55.439883
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 08:57:49.884580
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 08:58:22.740326
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 08:59:03.790848
+Done:	2021-06-25 09:09:09.638445
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:10:21 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrA.list	5693444 reads	Fri Jun 25 09:10:34 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:11:24 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:14:28 2021
+# CPU time (hr):	0.071004
+
+real	4m15.855s
+user	4m10.658s
+sys	0m5.080s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:14:37 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrB.list	5567849 reads	Fri Jun 25 09:14:50 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:15:50 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:19:03 2021
+# CPU time (hr):	0.076211
+
+real	4m34.541s
+user	4m29.434s
+sys	0m5.044s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:19:11 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_3.ref.chrD.list	5261589 reads	Fri Jun 25 09:19:24 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:20:45 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:23:53 2021
+# CPU time (hr):	0.080290
+
+real	4m49.217s
+user	4m45.186s
+sys	0m3.972s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5892479                                              ||
+||    Successfully assigned alignments : 5330310 (90.5%)                      ||
+||    Running time : 0.27 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5827485                                              ||
+||    Successfully assigned alignments : 5143290 (88.3%)                      ||
+||    Running time : 0.27 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5405574                                              ||
+||    Successfully assigned alignments : 4847626 (89.7%)                      ||
+||    Running time : 0.25 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:24:49 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 09:24:49 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:26:26 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:27:53 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:27:53 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:30:00 2021
+# CPU time (hr):	0.086428
+
+real	5m11.495s
+user	5m3.050s
+sys	0m8.347s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:30:01 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 09:30:01 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:31:29 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:32:56 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:32:56 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:35:17 2021
+# CPU time (hr):	0.087741
+
+real	5m16.246s
+user	5m7.948s
+sys	0m8.171s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:35:17 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 09:35:17 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:36:45 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 09:38:11 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:38:11 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_3__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 09:40:39 2021
+# CPU time (hr):	0.089359
+
+real	5m22.067s
+user	5m13.679s
+sys	0m8.271s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1323183                                              ||
+||    Successfully assigned alignments : 854636 (64.6%)                       ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1559055                                              ||
+||    Successfully assigned alignments : 856121 (54.9%)                       ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_3.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_3.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_3.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1971881                                              ||
+||    Successfully assigned alignments : 762949 (38.7%)                       ||
+||    Running time : 0.10 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_3.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+Start:	2021-06-25 09:40:54.920085
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/eaglerc.out.A.vs.B.list	2021-06-25 09:41:26.901611
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/eaglerc.out.A.vs.D.list	2021-06-25 09:42:05.790094
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/eaglerc.out.B.vs.A.list	2021-06-25 09:42:37.916963
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/eaglerc.out.B.vs.D.list	2021-06-25 09:43:16.604775
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/eaglerc.out.D.vs.A.list	2021-06-25 09:43:56.733161
+Read:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/eaglerc.out.D.vs.B.list	2021-06-25 09:44:35.620868
+Done:	2021-06-25 09:54:04.089093
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:55:10 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrA.list	5436653 reads	Fri Jun 25 09:55:22 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:56:37 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 09:59:41 2021
+# CPU time (hr):	0.077563
+
+real	4m39.427s
+user	4m34.239s
+sys	0m5.104s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 09:59:49 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrB.list	5336301 reads	Fri Jun 25 10:00:01 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:01:10 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:04:30 2021
+# CPU time (hr):	0.079818
+
+real	4m47.552s
+user	4m42.624s
+sys	0m4.828s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 10:04:37 2021
+# Classified list: 20181221.A-ZH_W2017_1_CS_cold_4.ref.chrD.list	5093406 reads	Fri Jun 25 10:04:48 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:06:06 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:09:21 2021
+# CPU time (hr):	0.080924
+
+real	4m51.544s
+user	4m46.580s
+sys	0m4.852s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrA.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrA.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5664610                                              ||
+||    Successfully assigned alignments : 5087289 (89.8%)                      ||
+||    Running time : 0.26 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrA.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrB.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrB.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5742369                                              ||
+||    Successfully assigned alignments : 4919219 (85.7%)                      ||
+||    Running time : 0.26 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrB.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrD.homeo ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrD.homeolog.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 5269958                                              ||
+||    Successfully assigned alignments : 4699849 (89.2%)                      ||
+||    Running time : 0.24 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrD.counts.homeolog.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 10:10:15 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 10:10:15 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:12:04 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:13:46 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 10:13:46 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 10:15:57 2021
+# CPU time (hr):	0.094788
+
+real	5m41.619s
+user	5m32.376s
+sys	0m9.132s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 10:15:57 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 10:15:57 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 10:17:29 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:19:11 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:19:11 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:21:42 2021
+# CPU time (hr):	0.095782
+
+real	5m45.182s
+user	5m36.654s
+sys	0m8.424s
+# Options: listonly=0 readlist=1 reclassify=0 refonly=1 paired=1 pao=0
+#          ngi=0 isc=0 nodup=0 splice=0 bs=0 phred64=0 omega=1e-40 cq=0
+# Start: 	Fri Jun 25 10:21:42 2021
+# Classified list: dummy.txt	0 reads	Fri Jun 25 10:21:42 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrA/Aligned.out.refsort.bam	Fri Jun 25 10:23:14 2021
+# Read other bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrB/Aligned.out.refsort.bam	Fri Jun 25 10:24:51 2021
+# Open input bam:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:24:51 2021
+# BAM Processed:	/home/sonk414/projects/HuoberBrezel/data/fullseq/bameaglerc/20181221.A-ZH_W2017_1_CS_cold_4__on__chrD/Aligned.out.refsort.bam	Fri Jun 25 10:27:38 2021
+# CPU time (hr):	0.098878
+
+real	5m56.337s
+user	5m47.085s
+sys	0m9.135s
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrA.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrA.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrA.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrA.gff3 ...                            ||
+||    Features : 35470                                                        ||
+||    Meta-features : 35470                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrA.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1198763                                              ||
+||    Successfully assigned alignments : 778648 (65.0%)                       ||
+||    Running time : 0.06 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrA.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrB.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrB.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrB.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrB.gff3 ...                            ||
+||    Features : 35800                                                        ||
+||    Meta-features : 35800                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrB.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 1467148                                              ||
+||    Successfully assigned alignments : 824898 (56.2%)                       ||
+||    Running time : 0.07 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrB.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.0
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o 20181221.A-ZH_W2017_1_CS_cold_4.chrD.speci ... ||
+||                                                                            ||
+||             Output file : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||                 Summary : 20181221.A-ZH_W2017_1_CS_cold_4.chrD.counts. ... ||
+||              Annotation : dna.ext_1.0k.chrD.gff3 (GTF)                     ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file dna.ext_1.0k.chrD.gff3 ...                            ||
+||    Features : 34265                                                        ||
+||    Meta-features : 34265                                                   ||
+||    Chromosomes/contigs : 7                                                 ||
+||                                                                            ||
+|| Process BAM file 20181221.A-ZH_W2017_1_CS_cold_4.chrD.specific.ref.bam...  ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 2380892                                              ||
+||    Successfully assigned alignments : 713549 (30.0%)                       ||
+||    Running time : 0.14 minutes                                             ||
+||                                                                            ||
+||                                                                            ||
+|| Summary of counting results can be found in file "20181221.A-ZH_W2017_1_C  ||
+|| S_cold_4.chrD.counts.specific.txt.summary"                                 ||
+||                                                                            ||
+\\============================================================================//
+
