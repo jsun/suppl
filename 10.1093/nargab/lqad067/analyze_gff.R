@@ -49,8 +49,8 @@ plot_log <- function() {
 
         x <- x[x[, 1] %in% tcode, ]
         y <- y[y[, 1] %in% tcode, ]
-        # print(DWCODE_FMT[di])      # print for Excel data
-        # print(t(x[, -1]))  # print for Excel data
+        print(DWCODE_FMT[wi])      # print for Excel data
+        print(t(x[, -1]))  # print for Excel data
         
         assigned_df <- rbind(assigned_df,
               data.frame(annotation = DWCODE_FMT[wi], sample = colnames(y[, -1]), value = as.numeric(y[1, -1])))
@@ -97,6 +97,9 @@ plot_gene <- function() {
               data.frame(annotation = DWCODE_FMT[wi], sample = colnames(x), value = ngenes))
     }
     
+    print('n of genes with CPM>0')
+    print(gene_df)
+    print('^^^^')
     gene_df %>% select(annotation, value) %>%
             group_by(annotation) %>% summarise(mean = mean(value), sd = sd(value))
     
@@ -131,6 +134,7 @@ plot_gene <- function() {
 
 
 find_gene_cs <- function() {
+    print('=== CS ===')
     
     for (wi in 1:length(DWCODE)) {
 
@@ -164,7 +168,7 @@ find_gene_cs <- function() {
         if (wi == 3) {
             df <- dfcnt %>% filter(lib_name == '#1')
             gp <- ggplot(df, aes(x = x, y = y)) +
-                        geom_point() +
+                        geom_point(size = 0.1) +
                         coord_fixed() + 
                         xlab(paste0(DWCODE_FMT[1], ' log10(count)')) +
                         ylab(paste0('IWGSC', DWCODE_FMT[wi], ' log10(count)'))
@@ -192,13 +196,14 @@ find_gene_cs <- function() {
         }
     }
     
+    df
 }
 
 
 
 
 find_gene_tcs <- function() {
-    
+    print('=== TCS ===')
     x0k <- read.table(paste0('data/tagseq/counts/tcs.counts.gene.iwgsc.tsv.gz'),
                       sep = '\t', header = TRUE)
     x1k <- read.table(paste0('data/tagseq/counts/tcs.counts.gene.ext_1.0k.tsv.gz'),
@@ -218,7 +223,7 @@ find_gene_tcs <- function() {
         
     df <- dfcnt %>% filter(lib_name == '#6')
     gp <- ggplot(df, aes(x = x, y = y)) +
-                        geom_point() +
+                        geom_point(size = 0.1) +
                         coord_fixed() + 
                         xlab(paste0('IWGSC', ' log10(count)')) +
                         ylab(paste0('IWGSC+1k',  ' log10(count)'))
@@ -229,9 +234,17 @@ find_gene_tcs <- function() {
     dfcnt_targets <- df %>% filter(gene %in% c('TraesCS7A02G115400', 'TraesCS7B02G013100'))
     gp + geom_point(aes(x = x, y = y), data = dfcnt_targets, color = 'red')
     
-
+    print('---- x != 0 && y != 0 ----')
+    df <- df[!(df$x == 0 & df$y == 0), ]
+    print(nrow(df[df$y < df$x, ]))
+    print(nrow(df[df$y < df$x, ]) / nrow(df))
+    print(nrow(df[df$y > df$x, ]))
+    print(nrow(df[df$y > df$x, ]) / nrow(df))
+    print(nrow(df[df$y == df$x, ]))
+    print(nrow(df[df$y == df$x, ]) / nrow(df))
+    
+    df
 }
-
 
 
 
@@ -239,8 +252,8 @@ find_gene_tcs <- function() {
 
 plot_log()
 plot_gene()
-find_gene_cs()
-find_gene_tcs()
+diffcs  <- find_gene_cs()
+difftcs <- find_gene_tcs()
 
 
 

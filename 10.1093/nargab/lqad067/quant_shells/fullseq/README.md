@@ -1,6 +1,6 @@
 # paired-end RNA-Seq
 
-## quantification
+## Quantification
 
 ```bash
 qsub 01_qc.sh
@@ -20,10 +20,7 @@ qsub 12_quant_hisat.sh
 
 
 
-## summarizing of mapping statistics
-
-This step takes a lot of time since the CS dataset are very large.
-Use `calc_nmappedreads.sh` instead of the following scripts.
+## Summarizing of mapping statistics
 
 
 ```bash
@@ -31,7 +28,11 @@ qsub calc_nmappedreads.sh
 ```
 
 
+## Downsampling
 
+```bash
+qsub downsampling.sh
+```
 
 
 

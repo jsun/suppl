@@ -9,10 +9,8 @@
 
 
 
-cd /home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
+cd ~/projects/data/genome/IWGSC_RefSeq_v1.1_CS
 
-
-BIN=/home/jqsun/local/bin
 dna_fasta=iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules_parts.fasta
 transcript_fasta=iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706_transcripts.fasta
 gtf=iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.gtf
@@ -27,7 +25,7 @@ mkdir -p index
 for chr in chrA chrB chrD
 do
     mkdir -p index/dna_${chr}_star
-    ${BIN}/STAR --runMode genomeGenerate --genomeDir index/dna_${chr}_star \
+    STAR --runMode genomeGenerate --genomeDir index/dna_${chr}_star \
                                          --genomeFastaFiles ${chr}.fa      \
                                          --sjdbGTFfile ${gtf} --runThreadN 8
 done
@@ -42,7 +40,7 @@ gff=refseqv1.0_part/IWGSC_v1.1_HC_20170706.ext_1.0k.part.gff3
 # whole genome index
 #
 mkdir -p index/dnapart_star
-${BIN}/STAR --runMode genomeGenerate --genomeDir index/dnapart_star \
+STAR --runMode genomeGenerate --genomeDir index/dnapart_star \
                                      --genomeFastaFiles ${dna_fasta} \
                                      --limitGenomeGenerateRAM 50000000000 \
                                      --runThreadN 8

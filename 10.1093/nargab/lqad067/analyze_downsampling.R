@@ -8,7 +8,8 @@ LIBNAME <- c('control_1', 'control_2', 'control_3', 'cold_1', 'cold_2', 'cold_3'
 NGFF <- 107903
 
 # down-sampling was sampled from cleaned FASTQ, so I will estimate the size of un-cleaned FASTQ with downsampling rate
-FQSIZE <- c(2604973 , 1596414, 3694206, 1764702, 4347049, 4122508)  # reads of the raw FASTQ
+FQSIZE <- c(2604973, 1596414, 3694206, 1764702, 4347049, 4122508)  # reads of the raw FASTQ
+ 
 
 
 genemat2homeologmat <- function(mat) {
@@ -52,6 +53,7 @@ a <- summary(fit)$coefficients[2]
 b <- summary(fit)$coefficients[1]
 newx <- seq(min(dfsz$n_read), max(dfsz$n_read), 100)
 dffit <- data.frame(n_read = newx, n_gene = predict(fit, newdata = data.frame(n_read = newx)))
+print('number of detected genes / 1e6 2e6 3e6 4e6')
 print(predict(fit, newdata = data.frame(n_read = c(1e6, 2e6, 3e6, 4e6))))
 print(predict(fit, newdata = data.frame(n_read = c(1e6, 2e6, 3e6, 4e6)))/NGFF)
 
@@ -98,6 +100,7 @@ a <- summary(fit)$coefficients[2]
 b <- summary(fit)$coefficients[1]
 newx <- seq(min(dfsz$n_read), max(dfsz$n_read), 100)
 dffit <- data.frame(n_read = newx, n_gene = predict(fit, newdata = data.frame(n_read = newx)))
+print('number of detected homeologs / 1e6 2e6 3e6 4e6')
 print(predict(fit, newdata = data.frame(n_read = c(1e6, 2e6, 3e6, 4e6))))
 print(predict(fit, newdata = data.frame(n_read = c(1e6, 2e6, 3e6, 4e6)))/NGFF)
 
@@ -125,15 +128,15 @@ dev.off()
 #
 
 load_counts <- function() {
-    tags <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
+    tags <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS_4',
               '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
     cnt <- NULL
     for (tag in tags) {
         cg <- NULL
         for (chr in c('chrA', 'chrB', 'chrD')) {
-            hc <- read.table(paste0('data/fullseq/countseaglrc/', tag, '.', chr, '.counts.homeolog.txt.gz'),
+            hc <- read.table(paste0('data/fullseq/countseaglerc/', tag, '.', chr, '.counts.homeolog.txt.gz'),
                              header = TRUE, sep = '\t', stringsAsFactors = FALSE)
-            uc <- read.table(paste0('data/fullseq/countseaglrc/', tag, '.', chr, '.counts.specific.txt.gz'),
+            uc <- read.table(paste0('data/fullseq/countseaglerc/', tag, '.', chr, '.counts.specific.txt.gz'),
                              header = TRUE, sep = '\t', stringsAsFactors = FALSE)
             cc <- rep(0, nrow(hc))
             names(cc) <- hc[, 1]
@@ -151,8 +154,9 @@ load_counts <- function() {
 }
 
 cnt <- load_counts()
-colSums(cnt > 0)
-mean(colSums(cnt > 0))
+print('fullseq -- genes ---')
+print(colSums(cnt > 0))
+print(mean(colSums(cnt > 0)))
 
 
 
@@ -173,13 +177,13 @@ genemat2homeologmat <- function(mat) {
     list(A = mat.a, B = mat.b, D = mat.d)
 }
 
-lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
+lbnms <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS_4',
            '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
 fullseq_eagle <- NULL
 for (lbnm in lbnms) {
-    xa <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrA.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xb <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrB.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
-    xd <- read.table(paste0('data/fullseq/countseaglrc/', lbnm, '.chrD.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xa <- read.table(paste0('data/fullseq/countseaglerc/', lbnm, '.chrA.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xb <- read.table(paste0('data/fullseq/countseaglerc/', lbnm, '.chrB.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
+    xd <- read.table(paste0('data/fullseq/countseaglerc/', lbnm, '.chrD.counts.homeolog.txt.gz'), sep = '\t', header = TRUE)[, c(1, 7)]
     colnames(xa) <- colnames(xb) <- colnames(xd) <- c('gene', 'count')
     xabd <- rbind(xa, xb, xd)
     fullseq_eagle <- cbind(fullseq_eagle, as.matrix(xabd[, 2]))
@@ -189,8 +193,9 @@ colnames(fullseq_eagle) <- paste0('rep', 1:6)
 fullseq_eagle_h <- genemat2homeologmat(fullseq_eagle)
 
 h <- fullseq_eagle_h$A + fullseq_eagle_h$B + fullseq_eagle_h$D
-colSums(h > 0)
-mean(colSums(h > 0))
+print('fullseq -- homeologs ---')
+print(colSums(h > 0))
+print(mean(colSums(h > 0)))
 
 
 

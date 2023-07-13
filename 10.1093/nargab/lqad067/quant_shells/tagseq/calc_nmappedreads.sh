@@ -1,16 +1,11 @@
 #!/bin/bash
-#$ -S /bin/bash
-#$ -jc hostos_g1
-#$ -cwd
-#$ -N qslog_hb_tag_bamstats
-#$ -mods l_hard h_rt 288:00:00
-
 
 
 PROJECT_DIR=~/projects/HuoberBrezel
-cd ${PROJECT_DIR}/data
 
 
+ 
+cd ~/projects/HuoberBrezel/data
 for dpath in `ls -d tagseq*`; do
     cd ${dpath}/bam
 
@@ -21,9 +16,9 @@ for dpath in `ls -d tagseq*`; do
 
     for bam_fpath in `ls *.bam`; do
         echo ${bam_fpath} >> ${log_fpath}
-        samtools view -h ${bam_fpath} | grep 'Chr.A' | grep 'NH:i:1' | wc -l >> ${log_fpath}
-        samtools view -h ${bam_fpath} | grep 'Chr.B' | grep 'NH:i:1' | wc -l >> ${log_fpath}
-        samtools view -h ${bam_fpath} | grep 'Chr.D' | grep 'NH:i:1' | wc -l >> ${log_fpath}
+        samtools view -h ${bam_fpath} | grep 'chr.A' | grep 'NH:i:1' | wc -l >> ${log_fpath}
+        samtools view -h ${bam_fpath} | grep 'chr.B' | grep 'NH:i:1' | wc -l >> ${log_fpath}
+        samtools view -h ${bam_fpath} | grep 'chr.D' | grep 'NH:i:1' | wc -l >> ${log_fpath}
     done
 
     cd -
@@ -32,8 +27,8 @@ done
 
 
 
-
-cd ${PROJECT_DIR}/data/tagseq/bamstar
+cd ~/projects/HuoberBrezel/data
+cd tagseq/bamstar
 
 log_fpath=nreads_mapped_stats.tsv
 if [ -f ${log_fpath} ]; then
@@ -42,15 +37,17 @@ fi
 
 for bam_fpath in `ls *.bam`; do
     echo ${bam_fpath} >> ${log_fpath}
-    samtools view -h -q 255 ${bam_fpath} | grep 'Chr.A' | grep -v "@SQ" | wc -l >> ${log_fpath}
-    samtools view -h -q 255 ${bam_fpath} | grep 'Chr.B' | grep -v "@SQ" | wc -l >> ${log_fpath}
-    samtools view -h -q 255 ${bam_fpath} | grep 'Chr.D' | grep -v "@SQ" | wc -l >> ${log_fpath}
+    samtools view -h -q 255 ${bam_fpath} | grep 'chr.A' | grep -v "@SQ" | wc -l >> ${log_fpath}
+    samtools view -h -q 255 ${bam_fpath} | grep 'chr.B' | grep -v "@SQ" | wc -l >> ${log_fpath}
+    samtools view -h -q 255 ${bam_fpath} | grep 'chr.D' | grep -v "@SQ" | wc -l >> ${log_fpath}
 done
 
 
 
 
-cd ${PROJECT_DIR}/data/tagseq/eaglerc
+
+cd ~/projects/HuoberBrezel/data
+cd tagseq/eaglerc
 
 log_fpath=nreads_mapped_stats.tsv
 if [ -f ${log_fpath} ]; then
@@ -65,10 +62,7 @@ for list_dpath in `ls -d *`; do
 done
 
 
-
-
-cd ${PROJECT_DIR}/data/tagseq/eaglercngi
-
+cd tagseq/eaglercngi
 
 log_fpath=nreads_mapped_stats.tsv
 if [ -f ${log_fpath} ]; then
@@ -81,6 +75,8 @@ for list_dpath in `ls -d *`; do
     grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrB.list | grep -c REF >> ${log_fpath}
     grep -v REVERSE ${list_dpath}/${list_dpath}.ref.chrD.list | grep -c REF >> ${log_fpath}
 done
+
+
 
 
 

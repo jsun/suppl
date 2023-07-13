@@ -7,6 +7,8 @@
 Download sequences and annotations from IWGSC website.
 
 ```
+cd ~/projects/HuoberBrezel/data/genome
+
 wget https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Assemblies/v1.0/iwgsc_refseqv1.0_all_chromosomes.zip
 wget https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Assemblies/v1.0/iwgsc_refseqv1.0_all_chromosomes.zip.md5.txt
 wget https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Annotations/v1.1/iwgsc_refseqv1.1_genes_2017July06.zip
@@ -19,14 +21,12 @@ wget https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Annotations/v1.
 ## HISAT index
 
 ```
-cd /home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
+cd ~/projects/HuoberBrezel/data/genome/IWGSC_RefSeq_v1.1_CS
 mkdir -p index
 
-cd shell
-qsub make_index_hisat.sh
+qsub ~/projects/HuoberBrezel/quant_shells/genome_index/make_index_hisat.sh
 
-cd -
-
+cd ~/projects/HuoberBrezel/data/genome
 
 # then extend 3'-dicrection 1kbp
 cd iwgsc_refseqv1.1_genes_2017July06
@@ -44,15 +44,17 @@ python ../scripts/extend_gff.py IWGSC_v1.1_HC_20170706.gff3 4000 > IWGSC_v1.1_HC
 grep '^chr.A' IWGSC_v1.1_HC_20170706.ext_1.0k.gff3 > IWGSC_v1.1_HC_20170706.ext_1.0k.chrA.gff3
 grep '^chr.B' IWGSC_v1.1_HC_20170706.ext_1.0k.gff3 > IWGSC_v1.1_HC_20170706.ext_1.0k.chrB.gff3
 grep '^chr.D' IWGSC_v1.1_HC_20170706.ext_1.0k.gff3 > IWGSC_v1.1_HC_20170706.ext_1.0k.chrD.gff3
-
 ```
 
 
-## EAGLE index (STAR index for each chromosome)
+## STAR index (& EAGLE-RC index)
+
+EAGLE-RC internally uses STAR for read mapping agains each subgenome,
+we create STAR index for each subgenome.
 
 ```
-cd shell
-qsub make_index_star.sh
+cd ~/projects/HuoberBrezel/data/genome/IWGSC_RefSeq_v1.1_CS
+qsub ~/projects/HuoberBrezel/quant_shells/genome_index/make_index_star.sh
 ```
 
 
@@ -69,7 +71,7 @@ by using reciprocal best hit approach with LAST alignemnt results.
 ```sh
 # split whole genome into A, B, and D subgenomes
 
-cd iwgsc_refseqv1.1_genes_2017July06
+cd ~/projects/HuoberBrezel/data/genome/IWGSC_RefSeq_v1.1_CS/iwgsc_refseqv1.1_genes_2017July06
 
 gffread -T -o IWGSC_v1.1_HC_20170706.gtf IWGSC_v1.1_HC_20170706.gff
 
@@ -84,28 +86,25 @@ grep $'mRNA\t' IWGSC_v1.1_HC_20170706.gff3 | grep $'chr.D\t' | perl -ne 'chomp; 
 
 cd ..
 
-gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrA.cds.fa ../iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrA.gtf
-gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrB.cds.fa ../iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrB.gtf
-gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrD.cds.fa ../iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrD.gtf
+gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrA.cds.fa iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrA.gtf
+gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrB.cds.fa iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrB.gtf
+gffread -g iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta -w chrD.cds.fa iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.chrD.gtf
 
-python scripts/calc_cds_length.py > cds.length.tsv
+python ../scripts/calc_cds_length.py > cds.length.tsv
 
-
-cd ..
 
 # make sub-genome sequences (NOT CDS sequences !!)
-python scripts/make_subgenome_fasta.py iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta \
+python ../scripts/make_subgenome_fasta.py iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta \
                                        chrA.fa chrB.fa chrD.fa chrUnknown.fa
 
 
 # make LAST index and perform reciprocal best hit
 
-mkdir index
-qsub shell/make_index_last.sh
-
+mkdir -p index
+qsub ~/projects/HuoberBrezel/quant_shells/genome_index/make_index_last.sh
 
 # use EAGEL script, set the path
-script=/home/jqsun/local/src/eagle/scripts
+script=~/local/src/eagle/scripts
 
 # SNP detection and homeolog identification
 gtf=./iwgsc_refseqv1.1_genes_2017July06/IWGSC_v1.1_HC_20170706.gtf
@@ -131,8 +130,5 @@ cut -f 1 homeolog.ABD.list > homeolog.A.list
 awk '{print $2"\t"$1;}' homeolog.ABD.list > homeolog.B.list
 awk '{print $3"\t"$1;}' homeolog.ABD.list > homeolog.D.list
 ```
-
-
-
 
 

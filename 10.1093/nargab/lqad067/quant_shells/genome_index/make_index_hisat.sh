@@ -9,11 +9,10 @@
 #PBS -N MKIDX_HISAT
 
 nCPU=16
-BIN=/home/jqsun/local/bin
-cd /home/jqsun/research/data/genome/IWGSC_RefSeq_v1.1_CS
+cd ~/projects/data/genome/IWGSC_RefSeq_v1.1_CS
 mkdir -p index
 
 dna_fasta=iwgsc_refseqv1.0_all_chromosomes/161010_Chinese_Spring_v1.0_pseudomolecules.fasta
-${BIN}/hisat2-build  -p ${nCPU} ${dna_fasta} index/dna_hisat2
+hisat2-build  -p ${nCPU} ${dna_fasta} index/dna_hisat2
 
 

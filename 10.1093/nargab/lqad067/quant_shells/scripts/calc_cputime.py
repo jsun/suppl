@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 buf = buf.replace('\n', '')
                 i = i + 1
                 s = s + get_time(buf)
-                
+
                 if i == nitems:
                     print(s)
                     i = 0

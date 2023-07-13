@@ -7,15 +7,23 @@ library(pROC)
 options(stringsAsFactors = FALSE)
 
 
+LIBNAME <- c('a_ctrl_1', 'a_ctrl_2', 'a_ctrl_3', 'b_cold_1', 'b_cold_2', 'b_cold_3')
+
 
 load_eagle_counts <- function() {
     load_count <- function(lib_name) {
-        xa1 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrA.counts.homeolog.txt.gz'), header = TRUE)
-        xa2 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrA.counts.specific.txt.gz'), header = TRUE)
-        xb1 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrB.counts.homeolog.txt.gz'), header = TRUE)
-        xb2 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrB.counts.specific.txt.gz'), header = TRUE)
-        xd1 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrD.counts.homeolog.txt.gz'), header = TRUE)
-        xd2 <- read.table(paste0('data/fullseq/countseaglrc/', lib_name, '.chrD.counts.specific.txt.gz'), header = TRUE)
+        xa1 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                 lib_name, '.chrA.counts.homeolog.txt.gz'), header = TRUE)
+        xa2 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                 lib_name, '.chrA.counts.specific.txt.gz'), header = TRUE)
+        xb1 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                 lib_name, '.chrB.counts.homeolog.txt.gz'), header = TRUE)
+        xb2 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                 lib_name, '.chrB.counts.specific.txt.gz'), header = TRUE)
+        xd1 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                 lib_name, '.chrD.counts.homeolog.txt.gz'), header = TRUE)
+        xd2 <- read.table(paste0('data/fullseq/countseaglerc/',
+                                  lib_name, '.chrD.counts.specific.txt.gz'), header = TRUE)
         
         gid <- c(xa1$Geneid, xb1$Geneid, xd1$Geneid)
         gcounts <- as.matrix(c(xa1[, 7] + xa2[, 7], xb1[, 7] + xb2[, 7], xd1[, 7] + xd2[, 7]))
@@ -24,12 +32,13 @@ load_eagle_counts <- function() {
     }
     
     x <- NULL
-    lib_names <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3', '20181221.A-ZH_W2017_1_CS-4',
-                   '20181221.A-ZH_W2017_1_CS_cold_2', '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
+    lib_names <- c('20181221.A-ZH_W2017_1_CS_2', '20181221.A-ZH_W2017_1_CS_3',
+                   '20181221.A-ZH_W2017_1_CS_4', '20181221.A-ZH_W2017_1_CS_cold_2',
+                   '20181221.A-ZH_W2017_1_CS_cold_3', '20181221.A-ZH_W2017_1_CS_cold_4')
     for (lib_name in lib_names) {
         x <- cbind(x, load_count(lib_name))
     }
-    colnames(x) <- c('ctrl_1', 'ctrl_2', 'ctrl_3', 'cold_1', 'cold_2', 'cold_3')
+    colnames(x) <- LIBNAME
     
     x
 }
@@ -53,6 +62,34 @@ bind_gene_symbols <- function(x) {
 }
 
 
+run_edger <- function(x, group, plantid = NULL) {
+    min.count <- mean(3 / colSums(x) * 1e6)
+    y <- DGEList(counts = x, group = group)
+    keep <- filterByExpr(y, min.count = min.count, min.prop = 0.5)
+    y <- y[keep,,keep.lib.sizes = FALSE]
+    y <- calcNormFactors(y)
+    if (is.null(plantid)) {
+        d <- model.matrix(~ group)
+        y <- estimateDisp(y, d)
+        fit <- glmQLFit(y, d)
+        qlf <- glmLRT(fit, coef = 2)
+    } else {
+        d <- model.matrix(~ plantid + group)
+        y <- estimateDisp(y, d)
+        fit <- glmQLFit(y, d)
+        qlf <- glmLRT(fit, coef = 4)
+    }
+    deg_table <- as.data.frame(topTags(qlf, n = nrow(y)))
+    
+    deg_table_full <- data.frame(logFC = rep(NA, length = nrow(x)),
+                                 logCPM = NA, F = NA, PValue = NA, FDR = NA)
+    rownames(deg_table_full) <- rownames(x)
+    deg_table_full[rownames(deg_table), ] <- deg_table
+    deg_table_full$PValue[is.na(deg_table_full$PValue)] <- 1.0
+    deg_table_full$FDR[is.na(deg_table_full$FDR)] <- 1.0
+    deg_table_full$DEG <- ifelse(deg_table_full$FDR < 0.1, TRUE, FALSE)
+    deg_table_full
+}
 
 
 run_topgo <- function(allgene, siggene) {
@@ -75,147 +112,170 @@ run_topgo <- function(allgene, siggene) {
     topgotable
 }
 
-
-
-
+deg2go <- function(x, cutoff = 500, output_prefix = NULL) {
+    x <- x[!is.na(x$F),]
+    x <- x[order(x$PValue), ]
+    x <- bind_gene_symbols(x)
+    
+    g_background <- rownames(x)
+    g_deg <- NA
+    if (cutoff <= 1) {
+        g_deg <- rownames(x)[x$FDR < cutoff & abs(x$logFC) > 1]
+    } else {
+        g_deg <- rownames(x)[1:cutoff]
+    }
+    
+    x_go <- run_topgo(g_background, g_deg)
+    
+    if (!is.null(output_prefix)) {
+        write.table(x, file = paste0(output_prefix, '_DEG.txt'), sep = '\t',
+                    row.names = TRUE, col.names = TRUE)
+        write.table(x_go, file = paste0(output_prefix, '_DEGGO.txt'), sep = '\t',
+                    row.names = TRUE, col.names = TRUE)
+    }
+}
 
 
 
 # fullseq IWGSC+1k counts (HISAT2)
-
-x <- read.table(paste0('data/fullseq/counts/counts.gene.ext_1.0k.tsv.gz'), sep = '\t', header = TRUE)
+x <- read.table('data/fullseq/counts/counts.gene.ext_1.0k.tsv.gz',
+                sep = '\t', header = TRUE)
 fullseq_hisat <- as.matrix(x[, -c(1:6)])
 rownames(fullseq_hisat) <- x$Geneid
-colnames(fullseq_hisat) <- c('ctrl_1', 'ctrl_2', 'ctrl_3', 'cold_1', 'cold_2', 'cold_3')
+colnames(fullseq_hisat) <- LIBNAME
 fullseqhisat_all_zeros <- (rowSums(fullseq_hisat) == 0)
 
 
 
-# fullseq IWGSC+1k counts (EAGLERC)
+# downsampled fullseq IWGSC+1k counts (HISAT2)
+x <- read.table('data/dwfullseq/counts/counts.gene.ext_1.0k.tsv.gz',
+                sep = '\t', header = TRUE)
+dwfullseq_hisat <- as.matrix(x[, -c(1:6)])
+rownames(dwfullseq_hisat) <- x$Geneid
+colnames(dwfullseq_hisat) <- LIBNAME
+dwfullseqhisat_all_zeros <- (rowSums(dwfullseq_hisat) == 0)
 
+
+
+# fullseq IWGSC+1k counts (EAGLERC)
 fullseq_eagle <- load_eagle_counts()
 fullseqeagle_all_zeros <- (rowSums(fullseq_eagle) == 0)
 
 
 
 # tagseq IWGSC+1k counts
-
-x <- read.table('data/tagseq/counts/cs.counts.gene.ext_1.0k.tsv.gz', sep = '\t', header = TRUE)
+x <- read.table('data/tagseq/counts/cs.counts.gene.ext_1.0k.tsv.gz',
+                 sep = '\t', header = TRUE)
 tagseq_hisat <- as.matrix(x[, -c(1:6)][, c(4, 5, 6, 1, 2, 3)])
 rownames(tagseq_hisat) <- x$Geneid
-colnames(tagseq_hisat) <- c('ctrl_1', 'ctrl_2', 'ctrl_3', 'cold_1', 'cold_2', 'cold_3')
+colnames(tagseq_hisat) <- LIBNAME
 tagseq_all_zeros <- (rowSums(tagseq_hisat) == 0)
 
 
 
 
+# DEG analysis (tagseq vs fullseq), HISAT2
+group <- factor(rep(c('a_control', 'b_cold'), each = 3))
+plantid <- rep(c('1', '2', '3'), times = 2)
+tagseq_deg <- run_edger(tagseq_hisat, group, plantid)
+fullseq_deg <- run_edger(fullseq_hisat, group, plantid)
 
-run_edger <- function(x, group) {
-    
+td <- tagseq_deg[order(tagseq_deg$PValue), ]
+fd <- fullseq_deg[order(fullseq_deg$PValue), ]
+
+td_degid <- rownames(td)[td$FDR < 0.05 & abs(td$logFC) > 1]
+fd_degid <- rownames(fd)[fd$FDR < 0.05 & abs(fd$logFC) > 1]
+
+td <- bind_gene_symbols(td)
+fd <- bind_gene_symbols(fd)
+
+deg2go(tagseq_deg, 0.1, 'results/tagseq_hisat2_')
+deg2go(fullseq_deg, 0.1, 'results/fullseq_hisat2_')
+
+common_deg <- td[td_degid[td_degid %in% fd_degid], ]
+write.table(common_deg, 'results/tagseq_fullseq_shared_DEG.tsv',
+            sep = '\t', col.names = TRUE, row.names = TRUE)
+
+print(length(td_degid))
+print(length(fd_degid))
+print(sum(td_degid %in% fd_degid))
+
+
+
+go_tagseq <- read.table('results/tagseq_hisat2__DEGGO.txt', quote = '"', sep = '\t')
+go_fullseq <- read.table('results/fullseq_hisat2__DEGGO.txt', quote = '"', sep = '\t')
+
+go_tagseq_sig <- go_tagseq$Term[go_tagseq$elimFisher < 0.05]
+go_fullseq_sig <- go_fullseq$Term[go_fullseq$elimFisher < 0.05]
+
+
+
+
+
+# DEG analysis (tagseq vs dwfullseq), HISAT2
+group <- factor(rep(c('a_control', 'b_cold'), each = 3))
+plantid <- rep(c('1', '2', '3'), times = 2)
+tagseq_deg <- run_edger(tagseq_hisat, group, plantid)
+dwfullseq_deg <- run_edger(dwfullseq_hisat, group, plantid)
+
+td <- tagseq_deg[order(tagseq_deg$PValue), ]
+fd <- dwfullseq_deg[order(dwfullseq_deg$PValue), ]
+
+td_degid <- rownames(td)[td$FDR < 0.05 & abs(td$logFC) > 1]
+fd_degid <- rownames(fd)[fd$FDR < 0.05 & abs(fd$logFC) > 1]
+
+td <- bind_gene_symbols(td)
+fd <- bind_gene_symbols(fd)
+
+deg2go(tagseq_deg, 0.1, 'results/tagseq_hisat2_')
+deg2go(dwfullseq_deg, 0.1, 'results/dwfullseq_hisat2_')
+
+common_deg <- td[td_degid[td_degid %in% fd_degid], ]
+write.table(common_deg, 'results/tagseq_dwfullseq_shared_DEG.tsv',
+            sep = '\t', col.names = TRUE, row.names = TRUE)
+
+print(length(td_degid))
+print(length(fd_degid))
+print(sum(td_degid %in% fd_degid))
+
+
+
+
+data4plots <- function(x) {
+    group <- rep(c('control', 'cold'), each = 3)
+    design  <- model.matrix(~ group)
+
     min.count <- mean(3 / colSums(x) * 1e6)
-
     y <- DGEList(counts = x, group = group)
-    
     keep <- filterByExpr(y, min.count = min.count, min.prop = 0.5)
-    y <- y[keep,,keep.lib.sizes = FALSE]
+    y <- y[keep, , keep.lib.sizes = FALSE]
     y <- calcNormFactors(y)
+    y <- estimateDisp(y, design)
     
-    d <- model.matrix(~ group)
-    y <- estimateDisp(y, d)
-
-    fit <- glmQLFit(y, d)
-    qlf <- glmQLFTest(fit, coef = 2)
-    deg_table <- as.data.frame(topTags(qlf, n = nrow(y)))
-    
-    deg_table_full <- data.frame(logFC = rep(NA, length = nrow(x)),
-                                 logCPM = NA, F = NA, PValue = NA, FDR = NA)
-    rownames(deg_table_full) <- rownames(x)
-    deg_table_full[rownames(deg_table), ] <- deg_table
-    deg_table_full$PValue[is.na(deg_table_full$PValue)] <- 1.0
-    deg_table_full$FDR[is.na(deg_table_full$FDR)] <- 1.0
-    deg_table_full$DEG <- ifelse(deg_table_full$FDR < 0.1, TRUE, FALSE)
-
-    deg_table_full
+    y
 }
 
+d1 <- data4plots(dwfullseq_hisat)
+d2 <- data4plots(tagseq_hisat)
+
+png('results/maplot_rep1_dwfullseq.png', 1000, 1000, res = 220)
+plotSmear(d1, ylim = c(-10, 10))
+dev.off()
+
+png('results/maplot_rep1_tagseq.png', 1000, 1000, res = 220)
+plotSmear(d2, ylim = c(-10, 10))
+dev.off()
 
 
+png('results/BCAplot_rep1_dwfullseq.png', 1000, 1000, res = 220)
+plotBCV(d1, ylim = c(0, 1.7))
+dev.off()
 
-
-# DEG ROC analysis (tagseq vs fullseq HISAT)
-
-group <- factor(rep(c('control', 'cold'), each = 3))
-tagseq_deg <- run_edger(tagseq_hisat, group)
-fullseq_deg <- run_edger(fullseq_hisat, group)
-
-# remove all zero-counts in both approaches
-tagseq_deg <- tagseq_deg[!(fullseqhisat_all_zeros | tagseq_all_zeros), ]
-fullseq_deg <- fullseq_deg[!(fullseqhisat_all_zeros | tagseq_all_zeros), ]
-
-dat <- data.frame(true = as.numeric(fullseq_deg$DEG), score = (1 - tagseq_deg$PValue))
-roc_obj <- roc(true ~ score, data = dat, ci = FALSE)
-
-roc_coordinates <- plot(roc_obj, identity = TRUE, print.thres = 'best',
-                        print.thres.best.method = 'closest.topleft', legacy.axes = TRUE)
-roc_coordinates <- data.frame(sensitivities = roc_coordinates$sensitivities,
-                              specificities = roc_coordinates$specificities,
-                              thresholds = roc_coordinates$thresholds)
-
-roc_fig <- ggplot(roc_coordinates, aes(x = 1 - specificities, y = sensitivities)) +
-                geom_line() + coord_fixed()
-
-png(paste0('results/plots/DEG_ROC_fullseqhisat.png'), 1000, 900, res = 220)
-print(roc_fig)
+png('results/BCAplot_rep1_tagseq.png', 1000, 1000, res = 220)
+plotBCV(d2, ylim = c(0, 1.7))
 dev.off()
 
 
 
-
-# DEG ROC analysis (tagseq vs fullseq EAGLERC) 
-
-group <- factor(rep(c('control', 'cold'), each = 3))
-tagseq_deg <- run_edger(tagseq_hisat, group)
-fullseqeagle_deg <- run_edger(fullseq_eagle, group)
-
-# remove all zero-counts in both approaches and get the common genes
-tagseq_deg <- tagseq_deg[!tagseq_all_zeros, ]
-fullseqeagle_deg <- fullseqeagle_deg[!fullseqeagle_all_zeros, ]
-common_genes <- intersect(rownames(tagseq_deg), rownames(fullseqeagle_deg))
-tagseq_deg <- tagseq_deg[common_genes, ]
-fullseqeagle_deg <- fullseqeagle_deg[common_genes, ]
-
-dat <- data.frame(true = as.numeric(fullseqeagle_deg$DEG), score = (1 - tagseq_deg$PValue))
-roc_obj <- roc(true ~ score, data = dat, ci = FALSE)
-
-roc_coordinates <- plot(roc_obj, identity = TRUE, print.thres = 'best',
-                        print.thres.best.method = 'closest.topleft', legacy.axes = TRUE)
-roc_coordinates <- data.frame(sensitivities = roc_coordinates$sensitivities,
-                              specificities = roc_coordinates$specificities,
-                              thresholds = roc_coordinates$thresholds)
-
-roc_fig <- ggplot(roc_coordinates, aes(x = 1 - specificities, y = sensitivities)) +
-                geom_line() + coord_fixed()
-
-png(paste0('results/plots/DEG_ROC_fullseqeagle.png'), 1000, 900, res = 220)
-print(roc_fig)
-dev.off()
-
-
-
-
-
-# DEG analysis
-
-group <- factor(rep(c('control', 'cold'), each = 3))
-tagseq_deg <- run_edger(tagseq_hisat, group)
-tagseq_deg <- tagseq_deg[!is.na(tagseq_deg$F),]
-tagseq_deg <- tagseq_deg[order(tagseq_deg$PValue), ]
-tagseq_deg <- bind_gene_symbols(tagseq_deg)
-tagseq_deg_go <- run_topgo(rownames(tagseq_deg), rownames(tagseq_deg)[1:500])
-
-write.table(tagseq_deg, file = 'results/tagseq_cold_deg.txt', sep = '\t',
-            row.names = TRUE, col.names = TRUE)
-write.table(tagseq_deg_go, file = 'results/tagseq_cold_deg_go.txt', sep = '\t',
-            row.names = TRUE, col.names = TRUE)
 
 

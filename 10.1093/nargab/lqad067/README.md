@@ -1,56 +1,22 @@
-# HuoberBrezel
+# A low-coverage 3' RNA-seq to detect homeolog expression in polyploid wheat
 
-## RNA-Seq data analysis
 
-To analysis paired-end RNA-Seq data, see `quant_shells/fullseq`.
-To anlaysis 3'-end RNA-Seq data, see `quant_shells/tagseq`.
+## Expression Quantification with RNA-Seq Data
+
+1. See `quant_shells/genome_index/README.md` to check how to prepare reference sequence of Chinese Scpring (IWGSC v1.1) and how to identify homeolog triads.
+2. See `quant_shells/fullseq/README.md` to check the analysis processes (e.g., QC, read mapping, read counting) of the conventional paired-end RNA-seq data.
+3. See `quant_shells/tagseq/README.md` to check the analysis processes of 3' RNA-seq data.
 
 
 ## Data summarization
 
-To summarize RNA-Seq data anlysis results, use R scripts.
+To summarize the gene and homeolog expression and perform the downstream analysis, run the following R scripts in this directory.
 
-- analyze_gff.R
-- analyze_seqlendist.R
-- analyze_correlation.R
-- analyze_downsampling.R
-- bam_overlap.R
+- `analyze_gff.R`
+- `analyze_seqlendist.R`
+- `analyze_correlation.R`
+- `analyze_downsampling.R`
+- `bam_overlap.R`
+- `analyze_deg.R`
 
-
-## Mapping coverage
-
-```
-cd data/gene_regions
-
-for gene in TraesCS2B02G330500 TraesCS4D02G145400 TraesCS4D02G263300 TraesCS7A02G115400 TraesCS7B02G013100
-do
-    bedtools coverage \
-             -a ${gene}.bed \
-             -b ~/projects/HuoberBrezel/data/tagseq/bam/TaeRS2728_g172.bam \
-             -bed -d -s  > ${gene}.tcs.coverage.plus.bed
-    bedtools coverage \
-             -a ${gene}.bed \
-             -b ~/projects/HuoberBrezel/data/tagseq/bam/TaeRS2728_g172.bam \
-             -bed -d -S  > ${gene}.tcs.coverage.minus.bed
-    bedtools coverage \
-             -a ${gene}.bed \
-             -b ~/projects/HuoberBrezel/data/tagseq/bam/20181109.A-TaeRS_1_Tae_RS1_1.bam \
-             -bed -d -s  > ${gene}.cs.coverage.plus.bed
-    bedtools coverage \
-             -a ${gene}.bed \
-             -b ~/projects/HuoberBrezel/data/tagseq/bam/20181109.A-TaeRS_1_Tae_RS1_1.bam \
-             -bed -d -S  > ${gene}.cs.coverage.minus.bed
-done
-
-Rscript plot_coverage.R
-```
-
-
-## Gene annotations
-
-```
-cd data
-# download iwgsc_refseqv1.0_FunctionalAnnotation_v1__HCgenes_v1.0.TAB.gz from IWGSC
-python parse_funcanno_v1.py
-```
 

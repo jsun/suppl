@@ -1,13 +1,10 @@
-import os
-import sys
 import gzip
+import sys
 import random
 
 
 def downsampling_fasq(input_fpath, output_fpath, downsample_rate):
-    
-    random.seed(int(hash(os.path.basename(input_fpath))))
-    
+
     record = []
     i = 0
 
